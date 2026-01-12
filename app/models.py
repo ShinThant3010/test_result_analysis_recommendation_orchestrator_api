@@ -2,12 +2,14 @@ from __future__ import annotations
 
 from typing import Any, Dict, List, Optional
 
-from pydantic import BaseModel, Field
+from pydantic import BaseModel, ConfigDict, Field
 
 from .config import DEFAULT_LANGUAGE, DEFAULT_MAX_COURSES
+from .utils.json_naming_converter import snake_to_camel
 
 
 class OrchestrateRequest(BaseModel):
+    model_config = ConfigDict(populate_by_name=True, alias_generator=snake_to_camel)
     student_id: str = Field(..., description="Student identifier.")
     test_id: str = Field(..., description="Test identifier.")
     max_courses: int = Field(
@@ -19,6 +21,7 @@ class OrchestrateRequest(BaseModel):
 
 
 class OrchestrateResponse(BaseModel):
+    model_config = ConfigDict(populate_by_name=True, alias_generator=snake_to_camel)
     status: str
     student_id: str
     test_id: str
