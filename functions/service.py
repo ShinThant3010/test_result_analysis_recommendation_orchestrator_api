@@ -2,12 +2,20 @@ from __future__ import annotations
 
 import json
 import os
+import time
+import uuid
 from typing import Any, Dict, List, Optional, Tuple
 
 import httpx
 from google import genai
 
-from .config import (
+from functions.utils.run_logging import (
+    extract_token_counts,
+    log_token_usage,
+    reset_token_log,
+    write_run_log,
+)
+from functions.config import (
     COURSE_RECOMMENDATION_API_BASE_URL,
     COURSE_RECOMMENDATION_PATH,
     DATA_GATHERING_API_BASE_URL,
@@ -16,6 +24,7 @@ from .config import (
     DEFAULT_LANGUAGE,
     GENERATION_MODEL,
     HTTP_TIMEOUT_SECONDS,
+    RUN_LOG_PATH,
     TEST_ANALYSIS_API_BASE_URL,
     TEST_ANALYSIS_PATH,
 )
@@ -39,76 +48,105 @@ class OrchestratorService:
     async def orchestrate(
         self, *, student_id: str, test_id: str, max_courses: int, language: str
     ) -> Dict[str, Any]:
-        attempts = await self._fetch_attempts(student_id=student_id, test_id=test_id)
-        current, history = self._split_attempts(attempts)
-        if not current:
-            raise ValueError("No exam attempts found for student/test.")
+        run_id = f"run_{uuid.uuid4().hex}"
+        reset_token_log()
+        start = time.time()
+        status = "ok"
+        try:
+            attempts = await self._fetch_attempts(student_id=student_id, test_id=test_id)
+            current, history = self._split_attempts(attempts)
+            if not current:
+                raise ValueError("No exam attempts found for student/test.")
 
-        question_bank = await self._fetch_question_bank(test_id=test_id)
-        question_lookup = {
-            item.get("question", {}).get("id"): item
-            for item in question_bank
-            if item.get("question") and item.get("question", {}).get("id")
-        }
+            question_bank = await self._fetch_question_bank(test_id=test_id)
+            question_lookup = {
+                item.get("question", {}).get("id"): item
+                for item in question_bank
+                if item.get("question") and item.get("question", {}).get("id")
+            }
 
-        incorrect_cases, incorrect_summary = self._build_incorrect_cases(
-            current=current,
-            question_lookup=question_lookup,
-        )
+            incorrect_cases, incorrect_summary = self._build_incorrect_cases(
+                current=current,
+                question_lookup=question_lookup,
+            )
 
-        if incorrect_summary["total_incorrect_questions"] == 0:
+            if incorrect_summary["total_incorrect_questions"] == 0:
+                user_response = generate_user_facing_response(
+                    weaknesses=[],
+                    recommendations=[],
+                    test_result=current.get("exam_result"),
+                    history_result=history.get("exam_result") if history else None,
+                    incorrect_summary=incorrect_summary,
+                    all_correct=True,
+                    language=language,
+                )
+                return {
+                    "status": "all_correct",
+                    "student_id": student_id,
+                    "test_id": test_id,
+                    "incorrect_summary": incorrect_summary,
+                    "weaknesses": [],
+                    "recommendations": [],
+                    "user_facing_response": user_response,
+                }
+
+            weaknesses = await self._fetch_weaknesses(incorrect_cases)
+            recommendations = await self._fetch_recommendations(
+                weaknesses=weaknesses, max_courses=max_courses
+            )
+
             user_response = generate_user_facing_response(
-                weaknesses=[],
-                recommendations=[],
+                weaknesses=weaknesses,
+                recommendations=recommendations,
                 test_result=current.get("exam_result"),
                 history_result=history.get("exam_result") if history else None,
                 incorrect_summary=incorrect_summary,
-                all_correct=True,
+                all_correct=False,
                 language=language,
             )
+
             return {
-                "status": "all_correct",
+                "status": "ok",
                 "student_id": student_id,
                 "test_id": test_id,
                 "incorrect_summary": incorrect_summary,
-                "weaknesses": [],
-                "recommendations": [],
+                "weaknesses": weaknesses,
+                "recommendations": recommendations,
                 "user_facing_response": user_response,
             }
-
-        weaknesses = await self._fetch_weaknesses(incorrect_cases)
-        recommendations = await self._fetch_recommendations(
-            weaknesses=weaknesses, max_courses=max_courses
-        )
-
-        user_response = generate_user_facing_response(
-            weaknesses=weaknesses,
-            recommendations=recommendations,
-            test_result=current.get("exam_result"),
-            history_result=history.get("exam_result") if history else None,
-            incorrect_summary=incorrect_summary,
-            all_correct=False,
-            language=language,
-        )
-
-        return {
-            "status": "ok",
-            "student_id": student_id,
-            "test_id": test_id,
-            "incorrect_summary": incorrect_summary,
-            "weaknesses": weaknesses,
-            "recommendations": recommendations,
-            "user_facing_response": user_response,
-        }
+        except Exception:
+            status = "error"
+            raise
+        finally:
+            runtime = time.time() - start
+            write_run_log(
+                path=RUN_LOG_PATH,
+                run_id=run_id,
+                status=status,
+                runtime_seconds=runtime,
+                metadata={
+                    "student_id": student_id,
+                    "test_id": test_id,
+                    "max_courses": max_courses,
+                    "language": language,
+                },
+            )
 
     async def _fetch_attempts(self, *, student_id: str, test_id: str) -> List[Dict[str, Any]]:
         url = (
             f"{DATA_GATHERING_API_BASE_URL}"
             + DATA_GATHERING_ATTEMPTS_PATH.format(student_id=student_id, test_id=test_id)
         )
+        start = time.time()
         response = await self._client.get(url, params={"limit": 2})
         response.raise_for_status()
         payload = response.json()
+        log_token_usage(
+            "api:data_gathering_attempts",
+            input_tokens=None,
+            output_tokens=None,
+            runtime_seconds=time.time() - start,
+        )
         return payload.get("attempts", [])
 
     async def _fetch_question_bank(self, *, test_id: str) -> List[Dict[str, Any]]:
@@ -116,9 +154,16 @@ class OrchestratorService:
             f"{DATA_GATHERING_API_BASE_URL}"
             + DATA_GATHERING_QUESTIONS_PATH.format(test_id=test_id)
         )
+        start = time.time()
         response = await self._client.get(url)
         response.raise_for_status()
         payload = response.json()
+        log_token_usage(
+            "api:data_gathering_questions",
+            input_tokens=None,
+            output_tokens=None,
+            runtime_seconds=time.time() - start,
+        )
         return payload.get("questions", [])
 
     async def _fetch_weaknesses(
@@ -129,9 +174,16 @@ class OrchestratorService:
             "incorrect_cases": incorrect_cases,
             "model_name": GENERATION_MODEL,
         }
+        start = time.time()
         response = await self._client.post(url, json=payload)
         response.raise_for_status()
         data = response.json()
+        log_token_usage(
+            "api:test_analysis",
+            input_tokens=None,
+            output_tokens=None,
+            runtime_seconds=time.time() - start,
+        )
         return data.get("weaknesses", [])
 
     async def _fetch_recommendations(
@@ -139,9 +191,16 @@ class OrchestratorService:
     ) -> List[Dict[str, Any]]:
         url = f"{COURSE_RECOMMENDATION_API_BASE_URL}{COURSE_RECOMMENDATION_PATH}"
         payload = {"weaknesses": weaknesses, "max_courses": max_courses}
+        start = time.time()
         response = await self._client.post(url, json=payload)
         response.raise_for_status()
         data = response.json()
+        log_token_usage(
+            "api:course_recommendation",
+            input_tokens=None,
+            output_tokens=None,
+            runtime_seconds=time.time() - start,
+        )
         return data.get("recommendations", [])
 
     def _split_attempts(
@@ -293,11 +352,19 @@ Selected recommended courses (do NOT change this list):
 """
 
     client = _get_genai_client()
+    start = time.time()
     response = client.models.generate_content(
         model=GENERATION_MODEL,
         contents=[{"parts": [{"text": prompt}]}],
     )
     raw_text = (response.text or "").strip()
+    input_tokens, output_tokens = extract_token_counts(response)
+    log_token_usage(
+        "llm:user_facing_response",
+        input_tokens=input_tokens,
+        output_tokens=output_tokens,
+        runtime_seconds=time.time() - start,
+    )
     summary_json = _parse_llm_json(raw_text)
 
     if not summary_json:

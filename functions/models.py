@@ -4,8 +4,8 @@ from typing import Any, Dict, List, Optional
 
 from pydantic import BaseModel, ConfigDict, Field
 
-from .config import DEFAULT_LANGUAGE, DEFAULT_MAX_COURSES
-from .utils.json_naming_converter import snake_to_camel
+from functions.config import DEFAULT_LANGUAGE, DEFAULT_MAX_COURSES
+from functions.utils.json_naming_converter import snake_to_camel
 
 
 class OrchestrateRequest(BaseModel):
@@ -30,3 +30,11 @@ class OrchestrateResponse(BaseModel):
     recommendations: List[Dict[str, Any]]
     user_facing_response: Dict[str, Any]
     metadata: Optional[Dict[str, Any]] = None
+
+
+
+class OrchestrateEnvelope(BaseModel):
+    model_config = ConfigDict(populate_by_name=True, alias_generator=snake_to_camel)
+
+    correlation_id: str
+    data: OrchestrateResponse

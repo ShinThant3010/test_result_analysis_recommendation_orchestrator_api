@@ -7,15 +7,38 @@ FastAPI orchestrator that calls:
 
 ## Endpoints
 - `GET /health`
-- `POST /orchestrate`
+- `POST /api/v1/orchestrate`
 
-Example request:
+Example request (camelCase):
 ```json
 {
-  "student_id": "STUDENT_A",
-  "test_id": "01KCXGG0SS0001H0Q1FW1K4S0G",
-  "max_courses": 5,
+  "studentId": "STUDENT_A",
+  "testId": "01KCXGG0SS0001H0Q1FW1K4S0G",
+  "maxCourses": 5,
   "language": "EN"
+}
+```
+
+Example response (camelCase envelope):
+```json
+{
+  "correlationId": "corr_abc123",
+  "data": {
+    "status": "ok",
+    "studentId": "STUDENT_A",
+    "testId": "01KCXGG0SS0001H0Q1FW1K4S0G",
+    "incorrectSummary": {
+      "totalQuestionsInTest": 20,
+      "totalIncorrectQuestions": 4
+    },
+    "weaknesses": ["..."],
+    "recommendations": ["..."],
+    "userFacingResponse": {
+      "summary": {"...": "..."},
+      "userFacingParagraph": "...",
+      "recommendations": ["..."]
+    }
+  }
 }
 ```
 
@@ -25,8 +48,13 @@ Example request:
 - `COURSE_RECOMMENDATION_API_BASE_URL`
 - `GOOGLE_API_KEY`
 - `GENERATION_MODEL` (default: `gemini-2.5-flash`)
+- `API_BEARER_TOKEN` (optional)
 
 ## Run Locally
 ```bash
-uvicorn app.main:app --host 0.0.0.0 --port 8080
+uvicorn api:app --host 0.0.0.0 --port 8080
 ```
+
+
+## Logging
+- `data/run_log.json` contains per-run timing and token usage logs.
