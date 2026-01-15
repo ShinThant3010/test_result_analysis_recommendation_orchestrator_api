@@ -37,8 +37,8 @@ Example response (plain text, Markdown):
 - `GOOGLE_API_KEY`
 - `GENERATION_MODEL` (default: `gemini-2.5-flash`)
 - `API_BEARER_TOKEN` (optional)
-- `RUN_LOG_PATH` (optional, default: `log/run_log.json`)
 - `RESPONSE_LOG_PATH` (optional, default: `log/response_log.json`)
+- `USER_FACING_RESPONSE_LOG_PATH` (optional, default: `log/user_facing_response_log.md`)
 
 ## Run Locally
 ```bash
@@ -47,5 +47,6 @@ uvicorn api:app --host 0.0.0.0 --port 8080
 
 
 ## Logging
-- `log/run_log.json` contains per-run JSON logs (appends, keeps last 50).
+- `log/response_log.json` contains per-run JSON logs (appends, keeps last 50).
+- `log/user_facing_response_log.md` contains per-run markdown responses (appends).
 - `log/response_log.json` contains upstream API responses (appends, keeps last 50).

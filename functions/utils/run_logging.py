@@ -4,7 +4,7 @@ Run-scoped logging helpers for token usage and runtime.
 from __future__ import annotations
 
 import json
-import time
+from datetime import datetime, timezone
 from pathlib import Path
 from typing import Any, Dict, List, Optional
 
@@ -20,8 +20,7 @@ def log_api_call(
     *,
     name: str,
     request_runtime: float | None,
-    response_runtime: float | None = None,
-    api_runtime: Optional[Dict[str, Any]] = None,
+    api_runtime: Any = None,
     input_tokens: int | None = None,
     output_tokens: int | None = None,
     llm_runtime: float | None = None,
@@ -31,8 +30,6 @@ def log_api_call(
         "name": name,
         "request_runtime": round(request_runtime or 0.0, 4),
     }
-    if response_runtime is not None:
-        entry["response_runtime"] = round(response_runtime, 4)
     if api_runtime:
         entry["api_runtime"] = api_runtime
     if input_tokens is not None:
@@ -83,22 +80,24 @@ def extract_token_counts(response: Any) -> tuple[int | None, int | None]:
     return input_tokens, output_tokens
 
 
-def write_run_log(
+def write_response_log(
     *,
     path: str,
     run_id: str,
     status: str,
     runtime_seconds: float,
+    api_output: Dict[str, Any],
     metadata: Optional[Dict[str, Any]] = None,
+    entries: Optional[List[Dict[str, Any]]] = None,
 ) -> None:
-    entry = {
-        "run_id": run_id,
-        "status": status,
-        "timestamp": int(time.time()),
-        "orchestrator_runtime": round(runtime_seconds, 4),
-        "entries": list(_run_entries),
-        "metadata": metadata or {},
-    }
+    entry = _build_run_entry(
+        run_id=run_id,
+        status=status,
+        runtime_seconds=runtime_seconds,
+        metadata=metadata,
+        entries=entries,
+    )
+    entry["api_output"] = api_output
 
     log_path = Path(path)
     log_path.parent.mkdir(parents=True, exist_ok=True)
@@ -121,39 +120,17 @@ def write_run_log(
     log_path.write_text(json.dumps(current, indent=2, ensure_ascii=False))
 
 
-def write_response_log(
+def write_user_facing_log(
     *,
     path: str,
-    name: str,
-    payload: Any,
-    metadata: Optional[Dict[str, Any]] = None,
+    run_id: str,
+    response: str,
 ) -> None:
-    entry = {
-        "timestamp": int(time.time()),
-        "name": name,
-        "payload": payload,
-        "metadata": metadata or {},
-    }
-
     log_path = Path(path)
     log_path.parent.mkdir(parents=True, exist_ok=True)
-
-    if log_path.exists():
-        try:
-            current = json.loads(log_path.read_text())
-            if isinstance(current, list):
-                current.append(entry)
-            else:
-                current = [current, entry]
-        except json.JSONDecodeError:
-            current = [entry]
-    else:
-        current = [entry]
-
-    if len(current) > 50:
-        current = current[-50:]
-
-    log_path.write_text(json.dumps(current, indent=2, ensure_ascii=False))
+    entry = f"## {run_id}\n\n{response}\n\n---\n"
+    with log_path.open("a", encoding="utf-8") as handle:
+        handle.write(entry)
 
 
 def extract_runtime_log(payload: Any) -> Dict[str, Any]:
@@ -168,13 +145,21 @@ def extract_runtime_log(payload: Any) -> Dict[str, Any]:
     ]
     for candidate in candidates:
         if isinstance(candidate, dict) and candidate:
+            log_entries = candidate.get("log")
+            if isinstance(log_entries, list):
+                return {**candidate, **_summarize_log_entries(log_entries)}
             return candidate
         if isinstance(candidate, list) and candidate:
-            return _summarize_log_entries(candidate)
+            return {"log": candidate, **_summarize_log_entries(candidate)}
         if isinstance(candidate, dict):
             nested = candidate.get("runtime_log") or candidate.get("log")
             if isinstance(nested, dict) and nested:
+                log_entries = nested.get("log")
+                if isinstance(log_entries, list):
+                    return {**nested, **_summarize_log_entries(log_entries)}
                 return nested
+            if isinstance(nested, list) and nested:
+                return {"log": nested, **_summarize_log_entries(nested)}
     return {}
 
 
@@ -192,23 +177,6 @@ def parse_runtime_metrics(runtime_log: Dict[str, Any]) -> Dict[str, Any]:
             _get_value(
             runtime_log,
             ["output_token", "output_tokens", "candidates_token_count", "completion_token_count"],
-        ),
-        ),
-        "llm_runtime": _coerce_number(
-            _get_value(
-            runtime_log,
-            ["llm_runtime", "llm_runtime_seconds", "llm_time", "llm_duration"],
-        ),
-        ),
-        "response_runtime": _coerce_number(
-            _get_value(
-            runtime_log,
-            [
-                "response_runtime",
-                "response_runtime_seconds",
-                "response_time",
-                "response_time_seconds",
-            ],
         ),
         ),
         "api_runtime": _coerce_number(
@@ -253,20 +221,38 @@ def _coerce_int(value: Any) -> int | None:
 def _summarize_log_entries(entries: List[Dict[str, Any]]) -> Dict[str, Any]:
     input_tokens = 0
     output_tokens = 0
-    runtime_seconds = 0.0
 
     for entry in entries:
         if not isinstance(entry, dict):
             continue
         input_tokens += _coerce_int(entry.get("input_token") or entry.get("input_tokens") or 0) or 0
         output_tokens += _coerce_int(entry.get("output_token") or entry.get("output_tokens") or 0) or 0
-        runtime_seconds += _coerce_number(entry.get("runtime") or entry.get("runtime_seconds") or 0.0) or 0.0
 
     summarized: Dict[str, Any] = {}
     if input_tokens:
         summarized["input_token"] = input_tokens
     if output_tokens:
         summarized["output_token"] = output_tokens
-    if runtime_seconds:
-        summarized["llm_runtime"] = round(runtime_seconds, 4)
     return summarized
+
+
+def _build_run_entry(
+    *,
+    run_id: str,
+    status: str,
+    runtime_seconds: float,
+    metadata: Optional[Dict[str, Any]] = None,
+    entries: Optional[List[Dict[str, Any]]] = None,
+) -> Dict[str, Any]:
+    return {
+        "run_id": run_id,
+        "status": status,
+        "datetime": _now_iso(),
+        "orchestrator_runtime": round(runtime_seconds, 4),
+        "entries": list(entries) if entries is not None else list(_run_entries),
+        "metadata": metadata or {},
+    }
+
+
+def _now_iso() -> str:
+    return datetime.now(timezone.utc).isoformat(timespec="seconds")

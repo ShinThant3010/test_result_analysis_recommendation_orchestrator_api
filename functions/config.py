@@ -26,5 +26,8 @@ DEFAULT_MAX_COURSES_PER_WEAKNESS = int(os.getenv("DEFAULT_MAX_COURSES_PER_WEAKNE
 DEFAULT_LANGUAGE = os.getenv("DEFAULT_LANGUAGE", "EN")
 GENERATION_MODEL = os.getenv("GENERATION_MODEL", "gemini-2.5-flash")
 
-RUN_LOG_PATH = os.getenv("RUN_LOG_PATH", "log/run_log.json")
 RESPONSE_LOG_PATH = os.getenv("RESPONSE_LOG_PATH", "log/response_log.json")
+USER_FACING_RESPONSE_LOG_PATH = os.getenv(
+    "USER_FACING_RESPONSE_LOG_PATH",
+    "log/user_facing_response_log.md",
+)

@@ -14,8 +14,8 @@ from functions.config import (
     DATA_GATHERING_QUESTIONS_PATH,
     GENERATION_MODEL,
     HTTP_TIMEOUT_SECONDS,
-    RUN_LOG_PATH,
     RESPONSE_LOG_PATH,
+    USER_FACING_RESPONSE_LOG_PATH,
     TEST_ANALYSIS_API_BASE_URL,
     TEST_ANALYSIS_PATH,
 )
@@ -25,8 +25,8 @@ from functions.utils.run_logging import (
     log_api_call,
     parse_runtime_metrics,
     reset_run_log,
-    write_run_log,
     write_response_log,
+    write_user_facing_log,
 )
 
 
@@ -52,6 +52,9 @@ class OrchestratorService:
         reset_run_log()
         start = time.time()
         status = "ok"
+        test_analysis_output: Optional[Dict[str, Any]] = None
+        course_recommendation_output: Optional[List[Dict[str, Any]]] = None
+        user_facing_output: Optional[str] = None
         try:
             attempts = await self._fetch_attempts(student_id=student_id, test_id=test_id)
             current, history = _split_attempts(attempts)
@@ -92,6 +95,7 @@ class OrchestratorService:
                     domain_performance=domain_performance,
                     language=language,
                 )
+                user_facing_output = user_response
                 return {
                     "status": "all_correct",
                     "student_id": student_id,
@@ -103,12 +107,14 @@ class OrchestratorService:
                 }
 
             weaknesses = await self._fetch_weaknesses(incorrect_cases)
+            test_analysis_output = _summarize_weaknesses(weaknesses)
             limited_weaknesses = weaknesses[:5]
             recommendations = await self._fetch_recommendations(
                 weaknesses=limited_weaknesses,
                 max_courses=max_courses,
                 max_courses_per_weakness=max_courses_per_weakness,
             )
+            course_recommendation_output = _summarize_recommendations(recommendations)
 
             participant_ranking_value = (
                 participant_ranking
@@ -126,6 +132,7 @@ class OrchestratorService:
                 domain_performance=domain_performance,
                 language=language,
             )
+            user_facing_output = user_response
 
             return {
                 "status": "ok",
@@ -141,11 +148,17 @@ class OrchestratorService:
             raise
         finally:
             runtime = time.time() - start
-            write_run_log(
-                path=RUN_LOG_PATH,
+            api_output: Dict[str, Any] = {
+                "test_analysis": test_analysis_output or {"weaknesses": []},
+                "course_recommendation": course_recommendation_output or [],
+                "user_facing_response": user_facing_output or "",
+            }
+            write_response_log(
+                path=RESPONSE_LOG_PATH,
                 run_id=run_id,
                 status=status,
                 runtime_seconds=runtime,
+                api_output=api_output,
                 metadata={
                     "student_id": student_id,
                     "test_id": test_id,
@@ -155,6 +168,12 @@ class OrchestratorService:
                     "language": language,
                 },
             )
+            if user_facing_output:
+                write_user_facing_log(
+                    path=USER_FACING_RESPONSE_LOG_PATH,
+                    run_id=run_id,
+                    response=user_facing_output,
+                )
 
     async def _fetch_attempts(self, *, student_id: str, test_id: str) -> List[Dict[str, Any]]:
         url = (
@@ -165,11 +184,6 @@ class OrchestratorService:
         response = await self._client.get(url, params={"limit": 2})
         response.raise_for_status()
         payload = response.json()
-        write_response_log(
-            path=RESPONSE_LOG_PATH,
-            name="data_gathering_attempts",
-            payload=payload,
-        )
         request_runtime = time.time() - start
         log_api_call(
             name="data_gathering_attempts",
@@ -186,11 +200,6 @@ class OrchestratorService:
         response = await self._client.get(url)
         response.raise_for_status()
         payload = response.json()
-        write_response_log(
-            path=RESPONSE_LOG_PATH,
-            name="data_gathering_questions",
-            payload=payload,
-        )
         request_runtime = time.time() - start
         log_api_call(
             name="data_gathering_questions",
@@ -209,25 +218,21 @@ class OrchestratorService:
         start = time.time()
         response = await self._client.post(url, json=payload, headers={"x-log": "true"})
         response.raise_for_status()
-        data = response.json()
-        write_response_log(
-            path=RESPONSE_LOG_PATH,
-            name="test_analysis",
-            payload=data,
-        )
+        data = _remove_importance(response.json())
+        weaknesses = data.get("weaknesses", []) if isinstance(data, dict) else []
         runtime_log = extract_runtime_log(data)
         runtime_metrics = parse_runtime_metrics(runtime_log)
         request_runtime = time.time() - start
+        api_log = runtime_log.get("log") if isinstance(runtime_log, dict) else None
         log_api_call(
             name="test_analysis",
             request_runtime=request_runtime,
-            response_runtime=runtime_metrics.get("response_runtime", request_runtime),
-            api_runtime=runtime_log or None,
+            api_runtime=api_log,
             input_tokens=runtime_metrics.get("input_token"),
             output_tokens=runtime_metrics.get("output_token"),
             llm_runtime=runtime_metrics.get("llm_runtime"),
         )
-        return data.get("weaknesses", [])
+        return weaknesses
 
     async def _fetch_recommendations(
         self,
@@ -245,20 +250,23 @@ class OrchestratorService:
         start = time.time()
         response = await self._client.post(url, json=payload, headers={"include_log": "true"})
         response.raise_for_status()
-        data = response.json()
-        write_response_log(
-            path=RESPONSE_LOG_PATH,
-            name="course_recommendation",
-            payload=data,
-        )
+        data = _remove_importance(response.json())
+        if isinstance(data, dict):
+            data = {
+                **data,
+                "recommendations": _filter_recommendations(
+                    data.get("recommendations", []),
+                    min_score=0.7,
+                ),
+            }
         runtime_log = extract_runtime_log(data)
         runtime_metrics = parse_runtime_metrics(runtime_log)
         request_runtime = time.time() - start
+        api_log = runtime_log.get("log") if isinstance(runtime_log, dict) else None
         log_api_call(
             name="course_recommendation",
             request_runtime=request_runtime,
-            response_runtime=runtime_metrics.get("response_runtime", request_runtime),
-            api_runtime=runtime_log or None,
+            api_runtime=api_log,
             input_tokens=runtime_metrics.get("input_token"),
             output_tokens=runtime_metrics.get("output_token"),
             llm_runtime=runtime_metrics.get("llm_runtime"),
@@ -274,6 +282,104 @@ def _split_attempts(
     current = attempts[0]
     history = attempts[1] if len(attempts) > 1 else None
     return current, history
+
+
+def _remove_importance(value: Any) -> Any:
+    if isinstance(value, dict):
+        return {
+            key: _remove_importance(val)
+            for key, val in value.items()
+            if key not in ("importance", "patternType", "pattern_type")
+        }
+    if isinstance(value, list):
+        return [_remove_importance(item) for item in value]
+    return value
+
+
+def _summarize_weaknesses(weaknesses: List[Dict[str, Any]]) -> Dict[str, Any]:
+    keys = [
+        "id",
+        "weakness",
+        "text",
+        "description",
+        "frequency",
+        "evidenceQuestionIds",
+    ]
+    summarized = [_pick_keys(weakness, keys) for weakness in weaknesses if isinstance(weakness, dict)]
+    return {"weaknesses": [item for item in summarized if item]}
+
+
+def _summarize_recommendations(recommendations: List[Dict[str, Any]]) -> List[Dict[str, Any]]:
+    weakness_keys = ["id", "weakness", "text", "description"]
+    course_keys = [
+        "courseId",
+        "course_id",
+        "lessonTitle",
+        "lesson_title",
+        "courseTitle",
+        "course_title",
+        "description",
+        "link",
+        "courseLink",
+        "course_link",
+        "score",
+        "reason",
+        "weaknessId",
+    ]
+    summarized: List[Dict[str, Any]] = []
+    for rec in recommendations:
+        if not isinstance(rec, dict):
+            continue
+        weakness_data = rec.get("weakness", {})
+        if not isinstance(weakness_data, dict):
+            weakness_data = {}
+        weakness = _pick_keys(weakness_data, weakness_keys)
+        courses = rec.get("recommendedCourses")
+        if not isinstance(courses, list):
+            courses = []
+        summarized_courses = [
+            _pick_keys(course, course_keys) for course in courses if isinstance(course, dict)
+        ]
+        summarized.append(
+            {
+                "weakness": weakness,
+                "recommendedCourses": [course for course in summarized_courses if course],
+            }
+        )
+    return summarized
+
+
+def _pick_keys(data: Dict[str, Any], keys: List[str]) -> Dict[str, Any]:
+    return {key: data[key] for key in keys if key in data}
+
+
+def _filter_recommendations(
+    recommendations: List[Dict[str, Any]],
+    *,
+    min_score: float,
+) -> List[Dict[str, Any]]:
+    filtered: List[Dict[str, Any]] = []
+    for rec in recommendations:
+        if not isinstance(rec, dict):
+            continue
+        courses = rec.get("recommendedCourses")
+        if not isinstance(courses, list):
+            filtered.append(rec)
+            continue
+        filtered_courses = []
+        for course in courses:
+            if not isinstance(course, dict):
+                continue
+            score = course.get("score")
+            try:
+                numeric_score = float(score) if score is not None else None
+            except (TypeError, ValueError):
+                numeric_score = None
+            if numeric_score is not None and numeric_score <= min_score:
+                continue
+            filtered_courses.append(course)
+        filtered.append({**rec, "recommendedCourses": filtered_courses})
+    return filtered
 
 
 def _build_incorrect_cases(

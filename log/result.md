@@ -1,23 +1,17 @@
-**Computer Science 101**
+**TOEIC Part5 Sample Test**
 
-**Current Performance:** You achieved an excellent score of 19 out of 20, successfully passing the Computer Science 101 test. This places you in the top 10% of all participants, demonstrating strong understanding of the subject matter. Keep up the great work!
+**Current Performance:** You achieved a score of 15 out of 20 (75% accuracy) on the TOEIC Part5 Sample Test, successfully passing this attempt. This is a good foundation, and focusing on specific grammar points will help you further enhance your accuracy.
 
-**Area to be Improved:** Your primary area for improvement is a specific understanding of Python string slicing, particularly clarifying the inclusive/exclusive nature of the `end` index. Mastering this fundamental concept will enhance your precision in Python programming and prevent minor errors.
-
-**Progress Compared to Previous Test:** Progress Compared to Previous Test (Computer Science 101)
-
-**Domain Comparison:**
-
-- Python: Maintained 80% accuracy, demonstrating consistent mastery of the subject.
-
-- Algebra: Improved by +20% (from 80% to 100% accuracy).
-
-- Database: Improved by +60% (from 40% to 100% accuracy).
-
-- Data Visualization: Maintained 100% accuracy, demonstrating consistent mastery of the subject.
+**Area to be Improved:** To elevate your performance, concentrate on understanding logical relationships in sentences, mastering passive voice constructions, and distinguishing between different types of relative pronouns. Paying close attention to correct noun forms and numbers will also significantly boost your accuracy.
 
 **Recommended Course:**
 
-- Computing in Python I: Fundamentals and Procedural Programming: This course will solidify your understanding of core Python concepts, including a detailed review of string manipulation and indexing, ensuring you grasp the nuances of slicing. - Link: https://www.edx.org/course/computing-in-python-i-fundamentals-and-procedural
+- **Connectors & Transition Signals**: This course will strengthen your ability to understand and correctly use words that link ideas and clauses, addressing your difficulty with logical relationships and conjunctive adverbs. - Link: https://example.com/toeic-connectors
 
-- Python Basics for Data Science: While focused on data science, this course offers a strong foundation in Python fundamentals, reinforcing concepts like string operations which are crucial for precise data handling. - Link: https://www.edx.org/course/python-basics-for-data-science
+- **Conjunctions & Sentence Structure**: Focus on how to build complex sentences correctly, ensuring you can identify and apply appropriate conjunctions for clear communication. - Link: https://example.com/toeic-conjunctions
+
+- **Verbs & Tenses for TOEIC Part 5**: This module will clarify the rules for forming and recognizing various verb structures, including the passive voice, which is an identified area for improvement. - Link: https://example.com/toeic-verbs-tenses
+
+- **Noun Clauses & Relative Pronouns**: This course specifically targets the confusion around relative pronouns, helping you confidently use subject and possessive forms within complex sentences. - Link: https://example.com/toeic-relative-clauses
+
+- **Countable & Uncountable Nouns for TOEIC**: Enhance your understanding of noun forms and numbers, ensuring you use them correctly in different contexts and common phrases. - Link: https://example.com/toeic-nouns
