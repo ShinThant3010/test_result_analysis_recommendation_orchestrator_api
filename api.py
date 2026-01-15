@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import os
+import time
 import threading
 import uuid
 
@@ -8,17 +9,16 @@ import httpx
 from dotenv import load_dotenv
 from fastapi import APIRouter, Depends, FastAPI, Header, HTTPException, Response
 
-from functions.models import OrchestrateEnvelope, OrchestrateRequest, OrchestrateResponse
+from functions.models import OrchestrateRequest
 from functions.service import OrchestratorService
 
 load_dotenv()
 
 app = FastAPI(
-    title="Test Result Analysis Recommendation Orchestrator API",
+    title="Test Analysis & Courses Recommendation Orchestrator API",
     version="0.1.0",
     description="Orchestrates data gathering, test analysis, and course recommendation APIs.",
 )
-router_v1 = APIRouter(prefix="/api/v1", tags=["v1"])
 
 service = OrchestratorService()
 
@@ -84,6 +84,15 @@ def require_headers(
     return {"correlation_id": correlation_id, "api_version": version}
 
 
+@app.middleware("http")
+async def response_time_header(request, call_next):
+    start = time.perf_counter()
+    response = await call_next(request)
+    elapsed = time.perf_counter() - start
+    response.headers["X-Response-Time-Seconds"] = f"{elapsed:.4f}"
+    return response
+
+
 @app.on_event("shutdown")
 async def shutdown_event() -> None:
     await service.close()
@@ -97,18 +106,15 @@ def health() -> dict:
         "environment": "prod",
     }
 
-
-@router_v1.post(
-    "v1/orchestrator/test-result-analyze-and-recommend",
-    response_model=OrchestrateEnvelope,
-    response_model_by_alias=True,
-    summary="Execute orchestrator pipeline (v1)",
+@app.post(
+    "/v1/orchestrator/test-result-analysis-and-recommendations",
+    summary="Execute test analysis and course recommendation orchestrator (v1)",
 )
 async def orchestrate(
     body: OrchestrateRequest,
     response: Response,
     context: dict[str, str] = Depends(require_headers),
-) -> OrchestrateEnvelope:
+) -> Response:
     correlation_id = context["correlation_id"]
     with _corr_lock:
         if correlation_id in _active_correlation_ids:
@@ -128,8 +134,11 @@ async def orchestrate(
             student_id=body.student_id,
             test_id=body.test_id,
             max_courses=body.max_courses,
+            max_courses_per_weakness=body.max_courses_per_weakness,
+            participant_ranking=body.participant_ranking,
             language=body.language,
         )
+
     except ValueError as exc:
         raise HTTPException(
             status_code=404,
@@ -140,6 +149,7 @@ async def orchestrate(
             },
             headers={CORRELATION_HEADER: correlation_id, API_VERSION_HEADER: context["api_version"]},
         )
+    
     except httpx.HTTPStatusError as exc:
         raise HTTPException(
             status_code=502,
@@ -150,6 +160,7 @@ async def orchestrate(
             },
             headers={CORRELATION_HEADER: correlation_id, API_VERSION_HEADER: context["api_version"]},
         )
+    
     except Exception as exc:  # noqa: BLE001
         raise HTTPException(
             status_code=500,
@@ -160,15 +171,17 @@ async def orchestrate(
             },
             headers={CORRELATION_HEADER: correlation_id, API_VERSION_HEADER: context["api_version"]},
         )
+    
     finally:
         with _corr_lock:
             _active_correlation_ids.discard(correlation_id)
 
     response.status_code = 200
-    return OrchestrateEnvelope(
-        correlation_id=correlation_id,
-        data=OrchestrateResponse(**payload),
+    return Response(
+        content=payload["user_facing_paragraph"],
+        media_type="text/markdown",
+        headers={
+            CORRELATION_HEADER: correlation_id,
+            API_VERSION_HEADER: context["api_version"],
+        },
     )
-
-
-app.include_router(router_v1)

@@ -16,13 +16,15 @@ COURSE_RECOMMENDATION_API_BASE_URL = os.getenv(
 )
 
 DATA_GATHERING_ATTEMPTS_PATH = "/v1/test-results/students/{student_id}/tests/{test_id}"
-DATA_GATHERING_QUESTIONS_PATH = "/v1/tests/{test_id}/questions"
+DATA_GATHERING_QUESTIONS_PATH = "/v1/test-questions/{test_id}"
 TEST_ANALYSIS_PATH = "/v1/test-analysis"
 COURSE_RECOMMENDATION_PATH = "/v1/course-recommendations"
 
 HTTP_TIMEOUT_SECONDS = float(os.getenv("HTTP_TIMEOUT_SECONDS", "30"))
 DEFAULT_MAX_COURSES = int(os.getenv("DEFAULT_MAX_COURSES", "5"))
+DEFAULT_MAX_COURSES_PER_WEAKNESS = int(os.getenv("DEFAULT_MAX_COURSES_PER_WEAKNESS", "3"))
 DEFAULT_LANGUAGE = os.getenv("DEFAULT_LANGUAGE", "EN")
 GENERATION_MODEL = os.getenv("GENERATION_MODEL", "gemini-2.5-flash")
 
-RUN_LOG_PATH = os.getenv("RUN_LOG_PATH", "data/run_log.json")
+RUN_LOG_PATH = os.getenv("RUN_LOG_PATH", "log/run_log.json")
+RESPONSE_LOG_PATH = os.getenv("RESPONSE_LOG_PATH", "log/response_log.json")

@@ -1,0 +1,944 @@
+[
+  {
+    "run_id": "run_c9fab814a64e4120bfe1cabb473d2250",
+    "status": "ok",
+    "timestamp": 1768386949,
+    "orchestrator_runtime": 42.5323,
+    "entries": [
+      {
+        "type": "api",
+        "name": "data_gathering_attempts",
+        "request_runtime": 6.8369
+      },
+      {
+        "type": "api",
+        "name": "data_gathering_questions",
+        "request_runtime": 1.0601
+      },
+      {
+        "type": "api",
+        "name": "test_analysis",
+        "request_runtime": 10.8594,
+        "response_runtime": 10.8594,
+        "api_runtime": {
+          "input_token": 519,
+          "output_token": 183,
+          "llm_runtime": 7.3418
+        },
+        "input_token": 519,
+        "output_token": 183,
+        "llm_runtime": 7.3418
+      },
+      {
+        "type": "api",
+        "name": "course_recommendation",
+        "request_runtime": 16.6335,
+        "response_runtime": 16.6335,
+        "api_runtime": {
+          "input_token": 203,
+          "output_token": 214,
+          "llm_runtime": 7.2189
+        },
+        "input_token": 203,
+        "output_token": 214,
+        "llm_runtime": 7.2189
+      },
+      {
+        "type": "llm",
+        "name": "user_facing_response",
+        "input_token": 509,
+        "output_token": 317,
+        "llm_runtime": 7.1416
+      }
+    ],
+    "metadata": {
+      "student_id": "STUDENT_A",
+      "test_id": "01KCXGG0SS0001H0Q1FW1K4S0G",
+      "max_courses": 5,
+      "max_courses_per_weakness": 3,
+      "participant_ranking": 0.1,
+      "language": "EN"
+    }
+  },
+  {
+    "run_id": "run_f7830a71dec441d68ed3b6a104a138f9",
+    "status": "ok",
+    "timestamp": 1768388401,
+    "orchestrator_runtime": 50.6935,
+    "entries": [
+      {
+        "type": "api",
+        "name": "data_gathering_attempts",
+        "request_runtime": 10.6521
+      },
+      {
+        "type": "api",
+        "name": "data_gathering_questions",
+        "request_runtime": 1.0258
+      },
+      {
+        "type": "api",
+        "name": "test_analysis",
+        "request_runtime": 8.5002,
+        "response_runtime": 8.5002,
+        "api_runtime": {
+          "input_token": 519,
+          "output_token": 152,
+          "llm_runtime": 5.0225
+        },
+        "input_token": 519,
+        "output_token": 152,
+        "llm_runtime": 5.0225
+      },
+      {
+        "type": "api",
+        "name": "course_recommendation",
+        "request_runtime": 22.2228,
+        "response_runtime": 22.2228,
+        "api_runtime": {
+          "input_token": 203,
+          "output_token": 222,
+          "llm_runtime": 7.3592
+        },
+        "input_token": 203,
+        "output_token": 222,
+        "llm_runtime": 7.3592
+      },
+      {
+        "type": "llm",
+        "name": "user_facing_response",
+        "input_token": 509,
+        "output_token": 343,
+        "llm_runtime": 8.2918
+      }
+    ],
+    "metadata": {
+      "student_id": "STUDENT_A",
+      "test_id": "01KCXGG0SS0001H0Q1FW1K4S0G",
+      "max_courses": 5,
+      "max_courses_per_weakness": 3,
+      "participant_ranking": 0.1,
+      "language": "EN"
+    }
+  },
+  {
+    "run_id": "run_54c829dab0dd4fef924e79b4d011de27",
+    "status": "error",
+    "timestamp": 1768398812,
+    "orchestrator_runtime": 40.7524,
+    "entries": [
+      {
+        "type": "api",
+        "name": "data_gathering_attempts",
+        "request_runtime": 9.2209
+      },
+      {
+        "type": "api",
+        "name": "data_gathering_questions",
+        "request_runtime": 1.4007
+      }
+    ],
+    "metadata": {
+      "student_id": "STUDENT_D",
+      "test_id": "01KCXGG0TV0001H0Q1FW2M1CKG",
+      "max_courses": 5,
+      "max_courses_per_weakness": 3,
+      "participant_ranking": 0.0,
+      "language": "EN"
+    }
+  },
+  {
+    "run_id": "run_b22499ead7eb428ebfd019a08296b8dd",
+    "status": "error",
+    "timestamp": 1768401046,
+    "orchestrator_runtime": 33.164,
+    "entries": [
+      {
+        "type": "api",
+        "name": "data_gathering_attempts",
+        "request_runtime": 1.943
+      },
+      {
+        "type": "api",
+        "name": "data_gathering_questions",
+        "request_runtime": 1.1221
+      }
+    ],
+    "metadata": {
+      "student_id": "STUDENT_D",
+      "test_id": "01KCXGG0TV0001H0Q1FW2M1CKG",
+      "max_courses": 5,
+      "max_courses_per_weakness": 3,
+      "participant_ranking": 0.0,
+      "language": "EN"
+    }
+  },
+  {
+    "run_id": "run_fa888ebdfb604994b22b1cf9c12e0fa1",
+    "status": "ok",
+    "timestamp": 1768401204,
+    "orchestrator_runtime": 3.384,
+    "entries": [
+      {
+        "type": "api",
+        "name": "data_gathering_attempts",
+        "request_runtime": 1.9973
+      },
+      {
+        "type": "api",
+        "name": "data_gathering_questions",
+        "request_runtime": 1.3865
+      }
+    ],
+    "metadata": {
+      "student_id": "STUDENT_B",
+      "test_id": "01KCXGG0TK0001H0Q1FW2BK82G",
+      "max_courses": 5,
+      "max_courses_per_weakness": 3,
+      "participant_ranking": 0.0,
+      "language": "EN"
+    }
+  },
+  {
+    "run_id": "run_6690a0673c2a4e1d8a95b5710cd9b5c1",
+    "status": "ok",
+    "timestamp": 1768401220,
+    "orchestrator_runtime": 2.5799,
+    "entries": [
+      {
+        "type": "api",
+        "name": "data_gathering_attempts",
+        "request_runtime": 1.6683
+      },
+      {
+        "type": "api",
+        "name": "data_gathering_questions",
+        "request_runtime": 0.9116
+      }
+    ],
+    "metadata": {
+      "student_id": "STUDENT_B",
+      "test_id": "01KCXGG0TK0001H0Q1FW2BK82G",
+      "max_courses": 5,
+      "max_courses_per_weakness": 3,
+      "participant_ranking": null,
+      "language": "TH"
+    }
+  },
+  {
+    "run_id": "run_6b6e4c2e151d4284bfbbd36eddff3ecb",
+    "status": "ok",
+    "timestamp": 1768401339,
+    "orchestrator_runtime": 55.2339,
+    "entries": [
+      {
+        "type": "api",
+        "name": "data_gathering_attempts",
+        "request_runtime": 1.7589
+      },
+      {
+        "type": "api",
+        "name": "data_gathering_questions",
+        "request_runtime": 1.2681
+      },
+      {
+        "type": "api",
+        "name": "test_analysis",
+        "request_runtime": 12.698,
+        "response_runtime": 12.698,
+        "api_runtime": {
+          "input_token": 1194,
+          "output_token": 523,
+          "llm_runtime": 12.5337
+        },
+        "input_token": 1194,
+        "output_token": 523,
+        "llm_runtime": 12.5337
+      },
+      {
+        "type": "api",
+        "name": "course_recommendation",
+        "request_runtime": 28.6717,
+        "response_runtime": 28.6717,
+        "api_runtime": {
+          "input_token": 652,
+          "output_token": 740,
+          "llm_runtime": 26.2715
+        },
+        "input_token": 652,
+        "output_token": 740,
+        "llm_runtime": 26.2715
+      },
+      {
+        "type": "llm",
+        "name": "user_facing_response",
+        "input_token": 703,
+        "output_token": 390,
+        "llm_runtime": 10.8365
+      }
+    ],
+    "metadata": {
+      "student_id": "STUDENT_A",
+      "test_id": "01KCXGG0SP0001H0Q1FW1GGERR",
+      "max_courses": 5,
+      "max_courses_per_weakness": 3,
+      "participant_ranking": null,
+      "language": "EN"
+    }
+  },
+  {
+    "run_id": "run_810e1cb42ab8452c95becbc8dadf93e9",
+    "status": "error",
+    "timestamp": 1768401538,
+    "orchestrator_runtime": 50.9242,
+    "entries": [
+      {
+        "type": "api",
+        "name": "data_gathering_attempts",
+        "request_runtime": 1.6795
+      },
+      {
+        "type": "api",
+        "name": "data_gathering_questions",
+        "request_runtime": 1.0303
+      },
+      {
+        "type": "api",
+        "name": "test_analysis",
+        "request_runtime": 18.1282,
+        "response_runtime": 18.1282,
+        "api_runtime": {
+          "input_token": 1194,
+          "output_token": 602,
+          "llm_runtime": 17.8361
+        },
+        "input_token": 1194,
+        "output_token": 602,
+        "llm_runtime": 17.8361
+      }
+    ],
+    "metadata": {
+      "student_id": "STUDENT_A",
+      "test_id": "01KCXGG0SP0001H0Q1FW1GGERR",
+      "max_courses": 5,
+      "max_courses_per_weakness": 3,
+      "participant_ranking": null,
+      "language": "TH"
+    }
+  },
+  {
+    "run_id": "run_73fe9a34861e40eba6a60dac976d466f",
+    "status": "ok",
+    "timestamp": 1768401683,
+    "orchestrator_runtime": 3.4483,
+    "entries": [
+      {
+        "type": "api",
+        "name": "data_gathering_attempts",
+        "request_runtime": 2.2936
+      },
+      {
+        "type": "api",
+        "name": "data_gathering_questions",
+        "request_runtime": 1.1546
+      }
+    ],
+    "metadata": {
+      "student_id": "STUDENT_B",
+      "test_id": "01KCXGG0TM0001H0Q1FW2D8TXG",
+      "max_courses": 5,
+      "max_courses_per_weakness": 3,
+      "participant_ranking": null,
+      "language": "TH"
+    }
+  },
+  {
+    "run_id": "run_b27fe62526d44ed39fb324c0a5e95089",
+    "status": "error",
+    "timestamp": 1768401778,
+    "orchestrator_runtime": 45.4077,
+    "entries": [
+      {
+        "type": "api",
+        "name": "data_gathering_attempts",
+        "request_runtime": 1.7983
+      },
+      {
+        "type": "api",
+        "name": "data_gathering_questions",
+        "request_runtime": 1.3298
+      },
+      {
+        "type": "api",
+        "name": "test_analysis",
+        "request_runtime": 12.184,
+        "response_runtime": 12.184,
+        "api_runtime": {
+          "input_token": 1699,
+          "output_token": 717,
+          "llm_runtime": 11.9695
+        },
+        "input_token": 1699,
+        "output_token": 717,
+        "llm_runtime": 11.9695
+      }
+    ],
+    "metadata": {
+      "student_id": "STUDENT_A",
+      "test_id": "01KCXGG0TF0001H0Q1FW27Z94G",
+      "max_courses": 5,
+      "max_courses_per_weakness": 3,
+      "participant_ranking": null,
+      "language": "EN"
+    }
+  },
+  {
+    "run_id": "run_9cebd4de65764ed197ed742fe2601459",
+    "status": "ok",
+    "timestamp": 1768446271,
+    "orchestrator_runtime": 52.292,
+    "entries": [
+      {
+        "type": "api",
+        "name": "data_gathering_attempts",
+        "request_runtime": 10.1577
+      },
+      {
+        "type": "api",
+        "name": "data_gathering_questions",
+        "request_runtime": 1.2681
+      },
+      {
+        "type": "api",
+        "name": "test_analysis",
+        "request_runtime": 9.8437,
+        "response_runtime": 9.8437,
+        "api_runtime": {
+          "input_token": 519,
+          "output_token": 155,
+          "llm_runtime": 4.3566
+        },
+        "input_token": 519,
+        "output_token": 155,
+        "llm_runtime": 4.3566
+      },
+      {
+        "type": "api",
+        "name": "course_recommendation",
+        "request_runtime": 23.9568,
+        "response_runtime": 23.9568,
+        "api_runtime": {
+          "input_token": 201,
+          "output_token": 212,
+          "llm_runtime": 9.184
+        },
+        "input_token": 201,
+        "output_token": 212,
+        "llm_runtime": 9.184
+      },
+      {
+        "type": "llm",
+        "name": "user_facing_response",
+        "input_token": 829,
+        "output_token": 293,
+        "llm_runtime": 7.0648
+      }
+    ],
+    "metadata": {
+      "student_id": "STUDENT_A",
+      "test_id": "01KCXGG0SS0001H0Q1FW1K4S0G",
+      "max_courses": 5,
+      "max_courses_per_weakness": 3,
+      "participant_ranking": 0.0,
+      "language": "EN"
+    }
+  },
+  {
+    "run_id": "run_6b712a69f6c64be5ace4f0d1f64f8b3b",
+    "status": "ok",
+    "timestamp": 1768446955,
+    "orchestrator_runtime": 28.0385,
+    "entries": [
+      {
+        "type": "api",
+        "name": "data_gathering_attempts",
+        "request_runtime": 2.0881
+      },
+      {
+        "type": "api",
+        "name": "data_gathering_questions",
+        "request_runtime": 1.2217
+      },
+      {
+        "type": "api",
+        "name": "test_analysis",
+        "request_runtime": 4.403,
+        "response_runtime": 4.403,
+        "api_runtime": {
+          "input_token": 519,
+          "output_token": 145,
+          "llm_runtime": 4.2232
+        },
+        "input_token": 519,
+        "output_token": 145,
+        "llm_runtime": 4.2232
+      },
+      {
+        "type": "api",
+        "name": "course_recommendation",
+        "request_runtime": 11.3176,
+        "response_runtime": 11.3176,
+        "api_runtime": {
+          "input_token": 199,
+          "output_token": 221,
+          "llm_runtime": 11.1383
+        },
+        "input_token": 199,
+        "output_token": 221,
+        "llm_runtime": 11.1383
+      },
+      {
+        "type": "llm",
+        "name": "user_facing_response",
+        "input_token": 804,
+        "output_token": 302,
+        "llm_runtime": 9.0078
+      }
+    ],
+    "metadata": {
+      "student_id": "STUDENT_A",
+      "test_id": "01KCXGG0SS0001H0Q1FW1K4S0G",
+      "max_courses": 5,
+      "max_courses_per_weakness": 3,
+      "participant_ranking": 0.0,
+      "language": "EN"
+    }
+  },
+  {
+    "run_id": "run_756de56ffe814e95a04731cc72440537",
+    "status": "ok",
+    "timestamp": 1768449412,
+    "orchestrator_runtime": 54.5898,
+    "entries": [
+      {
+        "type": "api",
+        "name": "data_gathering_attempts",
+        "request_runtime": 9.7749
+      },
+      {
+        "type": "api",
+        "name": "data_gathering_questions",
+        "request_runtime": 1.1853
+      },
+      {
+        "type": "api",
+        "name": "test_analysis",
+        "request_runtime": 11.6283,
+        "response_runtime": 11.6283,
+        "api_runtime": {
+          "input_token": 519,
+          "output_token": 141,
+          "llm_runtime": 5.7562
+        },
+        "input_token": 519,
+        "output_token": 141,
+        "llm_runtime": 5.7562
+      },
+      {
+        "type": "api",
+        "name": "course_recommendation",
+        "request_runtime": 24.6181,
+        "response_runtime": 24.6181,
+        "api_runtime": {
+          "input_token": 202,
+          "output_token": 226,
+          "llm_runtime": 9.6328
+        },
+        "input_token": 202,
+        "output_token": 226,
+        "llm_runtime": 9.6328
+      },
+      {
+        "type": "llm",
+        "name": "user_facing_response",
+        "input_token": 1255,
+        "output_token": 333,
+        "llm_runtime": 7.3821
+      }
+    ],
+    "metadata": {
+      "student_id": "STUDENT_A",
+      "test_id": "01KCXGG0SS0001H0Q1FW1K4S0G",
+      "max_courses": 5,
+      "max_courses_per_weakness": 3,
+      "participant_ranking": 0.0,
+      "language": "EN"
+    }
+  },
+  {
+    "run_id": "run_53ee04194e1b4ba594ee16da2597e1ec",
+    "status": "ok",
+    "timestamp": 1768450238,
+    "orchestrator_runtime": 20.4592,
+    "entries": [
+      {
+        "type": "api",
+        "name": "data_gathering_attempts",
+        "request_runtime": 2.0387
+      },
+      {
+        "type": "api",
+        "name": "data_gathering_questions",
+        "request_runtime": 1.18
+      },
+      {
+        "type": "api",
+        "name": "test_analysis",
+        "request_runtime": 5.1171,
+        "response_runtime": 5.1171,
+        "api_runtime": {
+          "input_token": 519,
+          "output_token": 165,
+          "llm_runtime": 4.9376
+        },
+        "input_token": 519,
+        "output_token": 165,
+        "llm_runtime": 4.9376
+      },
+      {
+        "type": "api",
+        "name": "course_recommendation",
+        "request_runtime": 5.5916,
+        "response_runtime": 5.5916,
+        "api_runtime": {
+          "input_token": 204,
+          "output_token": 216,
+          "llm_runtime": 5.3851
+        },
+        "input_token": 204,
+        "output_token": 216,
+        "llm_runtime": 5.3851
+      },
+      {
+        "type": "llm",
+        "name": "user_facing_response",
+        "input_token": 1246,
+        "output_token": 263,
+        "llm_runtime": 6.5312
+      }
+    ],
+    "metadata": {
+      "student_id": "STUDENT_A",
+      "test_id": "01KCXGG0SS0001H0Q1FW1K4S0G",
+      "max_courses": 5,
+      "max_courses_per_weakness": 3,
+      "participant_ranking": 0.0,
+      "language": "EN"
+    }
+  },
+  {
+    "run_id": "run_9daff4d3aeac46c1a9fb7f2b32775afb",
+    "status": "ok",
+    "timestamp": 1768450500,
+    "orchestrator_runtime": 26.3954,
+    "entries": [
+      {
+        "type": "api",
+        "name": "data_gathering_attempts",
+        "request_runtime": 2.0077
+      },
+      {
+        "type": "api",
+        "name": "data_gathering_questions",
+        "request_runtime": 1.1548
+      },
+      {
+        "type": "api",
+        "name": "test_analysis",
+        "request_runtime": 5.483,
+        "response_runtime": 5.483,
+        "api_runtime": {
+          "input_token": 519,
+          "output_token": 167,
+          "llm_runtime": 5.3401
+        },
+        "input_token": 519,
+        "output_token": 167,
+        "llm_runtime": 5.3401
+      },
+      {
+        "type": "api",
+        "name": "course_recommendation",
+        "request_runtime": 9.5322,
+        "response_runtime": 9.5322,
+        "api_runtime": {
+          "input_token": 201,
+          "output_token": 216,
+          "llm_runtime": 7.6824
+        },
+        "input_token": 201,
+        "output_token": 216,
+        "llm_runtime": 7.6824
+      },
+      {
+        "type": "llm",
+        "name": "user_facing_response",
+        "input_token": 1255,
+        "output_token": 367,
+        "llm_runtime": 8.217
+      }
+    ],
+    "metadata": {
+      "student_id": "STUDENT_A",
+      "test_id": "01KCXGG0SS0001H0Q1FW1K4S0G",
+      "max_courses": 5,
+      "max_courses_per_weakness": 3,
+      "participant_ranking": 0.0,
+      "language": "TH"
+    }
+  },
+  {
+    "run_id": "run_e50b6f3a495b433ab8ac76d989136b01",
+    "status": "ok",
+    "timestamp": 1768450570,
+    "orchestrator_runtime": 21.3475,
+    "entries": [
+      {
+        "type": "api",
+        "name": "data_gathering_attempts",
+        "request_runtime": 2.0078
+      },
+      {
+        "type": "api",
+        "name": "data_gathering_questions",
+        "request_runtime": 1.1072
+      },
+      {
+        "type": "api",
+        "name": "test_analysis",
+        "request_runtime": 5.6055,
+        "response_runtime": 5.6055,
+        "api_runtime": {
+          "input_token": 519,
+          "output_token": 178,
+          "llm_runtime": 5.3291
+        },
+        "input_token": 519,
+        "output_token": 178,
+        "llm_runtime": 5.3291
+      },
+      {
+        "type": "api",
+        "name": "course_recommendation",
+        "request_runtime": 6.1155,
+        "response_runtime": 6.1155,
+        "api_runtime": {
+          "input_token": 203,
+          "output_token": 224,
+          "llm_runtime": 5.961
+        },
+        "input_token": 203,
+        "output_token": 224,
+        "llm_runtime": 5.961
+      },
+      {
+        "type": "llm",
+        "name": "user_facing_response",
+        "input_token": 1269,
+        "output_token": 363,
+        "llm_runtime": 6.5108
+      }
+    ],
+    "metadata": {
+      "student_id": "STUDENT_A",
+      "test_id": "01KCXGG0SS0001H0Q1FW1K4S0G",
+      "max_courses": 5,
+      "max_courses_per_weakness": 3,
+      "participant_ranking": 0.1,
+      "language": "EN"
+    }
+  },
+  {
+    "run_id": "run_070ddcd368a146ae8efabe45f05561ab",
+    "status": "ok",
+    "timestamp": 1768450843,
+    "orchestrator_runtime": 20.5711,
+    "entries": [
+      {
+        "type": "api",
+        "name": "data_gathering_attempts",
+        "request_runtime": 2.0941
+      },
+      {
+        "type": "api",
+        "name": "data_gathering_questions",
+        "request_runtime": 1.2821
+      },
+      {
+        "type": "api",
+        "name": "test_analysis",
+        "request_runtime": 6.3051,
+        "response_runtime": 6.3051,
+        "api_runtime": {
+          "input_token": 519,
+          "output_token": 165,
+          "llm_runtime": 6.1079
+        },
+        "input_token": 519,
+        "output_token": 165,
+        "llm_runtime": 6.1079
+      },
+      {
+        "type": "api",
+        "name": "course_recommendation",
+        "request_runtime": 5.2461,
+        "response_runtime": 5.2461,
+        "api_runtime": {
+          "input_token": 202,
+          "output_token": 236,
+          "llm_runtime": 5.0487
+        },
+        "input_token": 202,
+        "output_token": 236,
+        "llm_runtime": 5.0487
+      },
+      {
+        "type": "llm",
+        "name": "user_facing_response",
+        "input_token": 1269,
+        "output_token": 326,
+        "llm_runtime": 5.6432
+      }
+    ],
+    "metadata": {
+      "student_id": "STUDENT_A",
+      "test_id": "01KCXGG0SS0001H0Q1FW1K4S0G",
+      "max_courses": 5,
+      "max_courses_per_weakness": 3,
+      "participant_ranking": 0.1,
+      "language": "EN"
+    }
+  },
+  {
+    "run_id": "run_2fc1dae36cde48869e17bc550098d732",
+    "status": "ok",
+    "timestamp": 1768451024,
+    "orchestrator_runtime": 22.9102,
+    "entries": [
+      {
+        "type": "api",
+        "name": "data_gathering_attempts",
+        "request_runtime": 2.2088
+      },
+      {
+        "type": "api",
+        "name": "data_gathering_questions",
+        "request_runtime": 1.1567
+      },
+      {
+        "type": "api",
+        "name": "test_analysis",
+        "request_runtime": 5.2475,
+        "response_runtime": 5.2475,
+        "api_runtime": {
+          "input_token": 519,
+          "output_token": 168,
+          "llm_runtime": 5.1093
+        },
+        "input_token": 519,
+        "output_token": 168,
+        "llm_runtime": 5.1093
+      },
+      {
+        "type": "api",
+        "name": "course_recommendation",
+        "request_runtime": 7.3865,
+        "response_runtime": 7.3865,
+        "api_runtime": {
+          "input_token": 206,
+          "output_token": 225,
+          "llm_runtime": 7.2401
+        },
+        "input_token": 206,
+        "output_token": 225,
+        "llm_runtime": 7.2401
+      },
+      {
+        "type": "llm",
+        "name": "user_facing_response",
+        "input_token": 1262,
+        "output_token": 265,
+        "llm_runtime": 6.91
+      }
+    ],
+    "metadata": {
+      "student_id": "STUDENT_A",
+      "test_id": "01KCXGG0SS0001H0Q1FW1K4S0G",
+      "max_courses": 5,
+      "max_courses_per_weakness": 3,
+      "participant_ranking": 0.1,
+      "language": "EN"
+    }
+  },
+  {
+    "run_id": "run_35879f66ad424e1eb31ef458acef99b1",
+    "status": "ok",
+    "timestamp": 1768451306,
+    "orchestrator_runtime": 25.4892,
+    "entries": [
+      {
+        "type": "api",
+        "name": "data_gathering_attempts",
+        "request_runtime": 1.9598
+      },
+      {
+        "type": "api",
+        "name": "data_gathering_questions",
+        "request_runtime": 1.1322
+      },
+      {
+        "type": "api",
+        "name": "test_analysis",
+        "request_runtime": 5.4454,
+        "response_runtime": 5.4454,
+        "api_runtime": {
+          "input_token": 519,
+          "output_token": 154,
+          "llm_runtime": 5.2599
+        },
+        "input_token": 519,
+        "output_token": 154,
+        "llm_runtime": 5.2599
+      },
+      {
+        "type": "api",
+        "name": "course_recommendation",
+        "request_runtime": 10.3616,
+        "response_runtime": 10.3616,
+        "api_runtime": {
+          "input_token": 204,
+          "output_token": 252,
+          "llm_runtime": 10.168
+        },
+        "input_token": 204,
+        "output_token": 252,
+        "llm_runtime": 10.168
+      },
+      {
+        "type": "llm",
+        "name": "user_facing_response",
+        "input_token": 1271,
+        "output_token": 317,
+        "llm_runtime": 6.5891
+      }
+    ],
+    "metadata": {
+      "student_id": "STUDENT_A",
+      "test_id": "01KCXGG0SS0001H0Q1FW1K4S0G",
+      "max_courses": 5,
+      "max_courses_per_weakness": 3,
+      "participant_ranking": 0.1,
+      "language": "EN"
+    }
+  }
+]

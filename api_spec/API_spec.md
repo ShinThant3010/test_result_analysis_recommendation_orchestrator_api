@@ -88,7 +88,9 @@ Runs the orchestrator pipeline. Correlation IDs in-flight are rejected with `409
 | ----------- | ------ | -------: | ----- |
 | studentId   | string | ✅ | Student identifier. |
 | testId      | string | ✅ | Assessment/test identifier. |
-| maxCourses  | int    | ❌ | Max courses per weakness (default 5, min 1). |
+| maxCourses  | int    | ❌ | Max courses overall (default 5, min 1). |
+| maxCoursesPerWeakness | int | ❌ | Max courses per weakness (default 3, min 1). |
+| participantRanking | float | ❌ | Optional fractional ranking (e.g., 0.317 => top 31.7%). Default `0`. |
 | language    | string | ❌ | `EN` or `TH` for the final summary (default `EN`). |
 
 **Example**
@@ -97,6 +99,8 @@ Runs the orchestrator pipeline. Correlation IDs in-flight are rejected with `409
   "studentId": "STUDENT_A",
   "testId": "01KCXGG0SS0001H0Q1FW1K4S0G",
   "maxCourses": 5,
+  "maxCoursesPerWeakness": 3,
+  "participantRanking": 0,
   "language": "EN"
 }
 ```
@@ -105,49 +109,17 @@ Runs the orchestrator pipeline. Correlation IDs in-flight are rejected with `409
 Headers always echo `X-Correlation-Id` and `X-API-Version`.
 
 **200 OK — success**
-```json
-{
-  "correlationId": "corr_abc123",
-  "data": {
-    "status": "ok",
-    "studentId": "STUDENT_A",
-    "testId": "01KCXGG0SS0001H0Q1FW1K4S0G",
-    "incorrectSummary": {
-      "totalQuestionsInTest": 20,
-      "totalIncorrectQuestions": 4
-    },
-    "weaknesses": ["..."],
-    "recommendations": ["..."],
-    "userFacingResponse": {
-      "summary": {"...": "..."},
-      "userFacingParagraph": "...",
-      "recommendations": ["..."]
-    }
-  }
-}
+```text
+**Computer Science 101**
+
+**Current Performance:** ...
 ```
 
 **200 OK — all correct (no analysis needed)**
-```json
-{
-  "correlationId": "corr_abc123",
-  "data": {
-    "status": "all_correct",
-    "studentId": "STUDENT_A",
-    "testId": "01KCXGG0SS0001H0Q1FW1K4S0G",
-    "incorrectSummary": {
-      "totalQuestionsInTest": 20,
-      "totalIncorrectQuestions": 0
-    },
-    "weaknesses": [],
-    "recommendations": [],
-    "userFacingResponse": {
-      "summary": {"...": "..."},
-      "userFacingParagraph": "...",
-      "recommendations": []
-    }
-  }
-}
+```text
+**Computer Science 101**
+
+**Current Performance:** ...
 ```
 
 **Other status codes**

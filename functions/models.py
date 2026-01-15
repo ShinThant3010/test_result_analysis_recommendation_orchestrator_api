@@ -4,37 +4,47 @@ from typing import Any, Dict, List, Optional
 
 from pydantic import BaseModel, ConfigDict, Field
 
-from functions.config import DEFAULT_LANGUAGE, DEFAULT_MAX_COURSES
-from functions.utils.json_naming_converter import snake_to_camel
+from functions.config import (
+    DEFAULT_LANGUAGE,
+    DEFAULT_MAX_COURSES,
+    DEFAULT_MAX_COURSES_PER_WEAKNESS,
+)
 
 
 class OrchestrateRequest(BaseModel):
-    model_config = ConfigDict(populate_by_name=True, alias_generator=snake_to_camel)
-    student_id: str = Field(..., description="Student identifier.")
-    test_id: str = Field(..., description="Test identifier.")
+    model_config = ConfigDict(populate_by_name=True)
+    student_id: str = Field(
+        ...,
+        alias="studentId",
+        description="Student identifier.",
+    )
+    test_id: str = Field(
+        ...,
+        alias="testId",
+        description="Test identifier.",
+    )
     max_courses: int = Field(
-        DEFAULT_MAX_COURSES, ge=1, description="Maximum courses per weakness."
+        DEFAULT_MAX_COURSES,
+        alias="maxCourses",
+        ge=1,
+        description="Maximum total courses returned.",
+    )
+    max_courses_per_weakness: int = Field(
+        DEFAULT_MAX_COURSES_PER_WEAKNESS,
+        alias="maxCoursesPerWeakness",
+        ge=1,
+        description="Maximum courses per weakness.",
+    )
+    participant_ranking: float = Field(
+        default=0.0,
+        alias="participantRanking",
+        description="Optional fractional ranking (e.g., 0.317 => top 31.7%).",
     )
     language: str = Field(
-        DEFAULT_LANGUAGE, description="Output language for the final response (EN or TH)."
+        DEFAULT_LANGUAGE,
+        alias="language",
+        description="Output language for the final response (EN or TH).",
     )
 
 
-class OrchestrateResponse(BaseModel):
-    model_config = ConfigDict(populate_by_name=True, alias_generator=snake_to_camel)
-    status: str
-    student_id: str
-    test_id: str
-    incorrect_summary: Dict[str, Any]
-    weaknesses: List[Dict[str, Any]]
-    recommendations: List[Dict[str, Any]]
-    user_facing_response: Dict[str, Any]
-    metadata: Optional[Dict[str, Any]] = None
-
-
-
-class OrchestrateEnvelope(BaseModel):
-    model_config = ConfigDict(populate_by_name=True, alias_generator=snake_to_camel)
-
-    correlation_id: str
-    data: OrchestrateResponse
+# Response models removed; API returns user_facing_paragraph as the full response body.
