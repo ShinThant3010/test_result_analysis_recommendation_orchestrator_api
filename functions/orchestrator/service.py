@@ -181,8 +181,14 @@ class OrchestratorService:
             + DATA_GATHERING_ATTEMPTS_PATH.format(student_id=student_id, test_id=test_id)
         )
         start = time.time()
-        response = await self._client.get(url, params={"limit": 2})
-        response.raise_for_status()
+        try:
+            response = await self._client.get(url, params={"limit": 2})
+        except Exception as exc:  # noqa: BLE001
+            raise RuntimeError(f"data_gathering_attempts request failed: {exc}") from exc
+        if response.status_code >= 400:
+            raise RuntimeError(
+                f"data_gathering_attempts error: status={response.status_code} body={response.text}"
+            )
         payload = response.json()
         request_runtime = time.time() - start
         log_api_call(
@@ -197,8 +203,14 @@ class OrchestratorService:
             + DATA_GATHERING_QUESTIONS_PATH.format(test_id=test_id)
         )
         start = time.time()
-        response = await self._client.get(url)
-        response.raise_for_status()
+        try:
+            response = await self._client.get(url)
+        except Exception as exc:  # noqa: BLE001
+            raise RuntimeError(f"data_gathering_questions request failed: {exc}") from exc
+        if response.status_code >= 400:
+            raise RuntimeError(
+                f"data_gathering_questions error: status={response.status_code} body={response.text}"
+            )
         payload = response.json()
         request_runtime = time.time() - start
         log_api_call(
@@ -215,9 +227,21 @@ class OrchestratorService:
             "incorrect_cases": incorrect_cases,
             "model_name": GENERATION_MODEL,
         }
+
         start = time.time()
-        response = await self._client.post(url, json=payload, headers={"x-log": "true"})
-        response.raise_for_status()
+
+        try:
+            response = await self._client.post(url, json=payload, headers={"x-log": "true"})
+        except Exception as exc:  # noqa: BLE001
+            raise RuntimeError(
+                f"test_analysis_api request failed: {type(exc).__name__}: {exc!r}"
+            ) from exc
+        if response.status_code >= 400:
+            response_text = response.text
+            raise RuntimeError(
+                f"test_analysis_api error: status={response.status_code} body={response_text}"
+            )
+
         data = _remove_importance(response.json())
         weaknesses = data.get("weaknesses", []) if isinstance(data, dict) else []
         runtime_log = extract_runtime_log(data)
@@ -248,8 +272,14 @@ class OrchestratorService:
             "max_course_pr_weakness": max_courses_per_weakness,
         }
         start = time.time()
-        response = await self._client.post(url, json=payload, headers={"include_log": "true"})
-        response.raise_for_status()
+        try:
+            response = await self._client.post(url, json=payload, headers={"include_log": "true"})
+        except Exception as exc:  # noqa: BLE001
+            raise RuntimeError(f"course_recommendation request failed: {exc}") from exc
+        if response.status_code >= 400:
+            raise RuntimeError(
+                f"course_recommendation error: status={response.status_code} body={response.text}"
+            )
         data = _remove_importance(response.json())
         if isinstance(data, dict):
             data = {
