@@ -3,14 +3,14 @@
 Service: **test_result_analysis_recommendation_orchestrator_api**
 
 **Purpose**  
-Orchestrate data gathering, test analysis, and course recommendation APIs, then generate a user-facing summary.
+Analyze a student’s test results, extract weaknesses via Gemini, recommend courses via Vertex AI Matching Engine, and return a concise user-facing paragraph; Orchestrate data gathering, analyze test, extract weakness, and recommend course(s) through internal APIs, then generate a user-facing summary.
 
 **High-Level Flow**
-1. Fetch current and previous attempts for student/test.
-2. Extract incorrect answers for the current attempt.
-3. If incorrect answers exist, call test analysis API to derive weaknesses.
-4. Call course recommendation API using weaknesses.
-5. Generate a user-facing response via LLM.
+1. Fetch current and previous attempts for student/test. [Data Gathering API]
+2. Extract incorrect answers for the current attempt. [Orchestrator API]
+3. If incorrect answers exist, call test analysis API to derive weaknesses. [Test Analysis API]
+4. Call course recommendation API using weaknesses. [Course Recommendation API]
+5. Generate a user-facing response via LLM. [Orchestrator API]
 
 ---
 
@@ -25,11 +25,14 @@ Orchestrate data gathering, test analysis, and course recommendation APIs, then 
 **Local (Uvicorn/FastAPI):**  
 `http://127.0.0.1:8080`
 
+**Swagger/OpenAPI:**  
+`https://test-result-orchestrator-api-810737581373.asia-southeast1.run.app/docs`
+
 ---
 
 ## Guideline Alignment Notes
 
-* ✅ **Resource-based URL:** `/api/v1/orchestrate`
+* ✅ **Resource-based URL:** `/v1/orchestrator/test-result-analysis-and-recommendations`
 * ✅ **HTTP methods:** `GET` for health, `POST` for synchronous orchestration
 * ✅ **HTTP status codes:** 2xx success, 4xx validation/not-found, 5xx pipeline errors
 * ✅ **Correlation ID:** `X-Correlation-Id` passthrough + auto-generation
@@ -57,7 +60,7 @@ Bearer auth is optional. When `API_BEARER_TOKEN` is set, requests must include:
 ## Endpoints Summary
 
 - `GET /health`
-- `POST /api/v1/orchestrate`
+- `POST /v1/orchestrator/test-result-analysis-and-recommendations`
 
 ---
 
@@ -78,7 +81,7 @@ Bearer auth is optional. When `API_BEARER_TOKEN` is set, requests must include:
 
 ## 2) Run Orchestrator Pipeline
 
-### POST /api/v1/orchestrate
+### POST /v1/orchestrator/test-result-analysis-and-recommendations
 
 Runs the orchestrator pipeline. Correlation IDs in-flight are rejected with `409 CONFLICT`.
 
@@ -106,16 +109,9 @@ Runs the orchestrator pipeline. Correlation IDs in-flight are rejected with `409
 ```
 
 #### Responses
-Headers always echo `X-Correlation-Id` and `X-API-Version`.
+Headers always echo `X-Correlation-Id`, `X-API-Version` and `x-response-time-seconds`.
 
 **200 OK — success**
-```text
-**Computer Science 101**
-
-**Current Performance:** ...
-```
-
-**200 OK — all correct (no analysis needed)**
 ```text
 **Computer Science 101**
 
