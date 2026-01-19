@@ -40,26 +40,14 @@ def generate_user_facing_response(
     )
     progress_heading_text = _progress_heading(test_result, history_result)
 
-    if all_correct:
-        current_perf_parts = ["Congratulations on answering every question correctly!"]
-        if ranking_sentence_text:
-            current_perf_parts.append(ranking_sentence_text)
-        summary = {
-            "Test Title": (test_result or {}).get("testTitle", ""),
-            "Current Performance": " ".join(current_perf_parts),
-            "Area to be Improved": "",
-            "Recommended Course": [],
-            "Progress Compared to Previous Test": progress_heading_text,
-            "Domain Comparison": [],
-        }
-        return _summary_to_paragraph(summary, [])
-
     weaknesses_text = "\n".join(
         f"- {w.get('weakness') or w.get('text') or w.get('description') or ''}"
         for w in weaknesses
     )
 
     flat_recs = _flatten_recommendations(recommendations)
+    if all_correct:
+        flat_recs = []
     recs_text = "\n".join(
         f"- {rec.get('lessonTitle') or rec.get('lesson_title') or rec.get('courseTitle') or rec.get('course_title') or ''}"
         for rec in flat_recs
@@ -91,17 +79,21 @@ def generate_user_facing_response(
         Domain performance by attempt (if history is present, compare current vs previous):
         {json.dumps(domain_performance or {}, ensure_ascii=False, indent=2)}
 
+        All-correct flag (true if the student answered every question correctly):
+        {all_correct}
+
         Weaknesses identified:
         {weaknesses_text}
 
         Selected recommended courses (do NOT change this list):
-        {recs_text}
+        {recs_text or "N/A"}
 
         --- REQUIRED OUTPUT FORMAT (JSON ONLY) ---
         {{
             "Test Title": "<the current test title>",
             "Current Performance": "<short paragraph summarizing current ability>",
             "Area to be Improved": "<short paragraph describing key skills to focus on>",
+            "Next Steps to Explore": "<short paragraph describing advanced next steps when all-correct>",
             "Recommended Course": [
                 "<Course A explanation>",
                 "<Course B explanation>",
@@ -117,7 +109,10 @@ def generate_user_facing_response(
         --- TONE & FORMAT ---
         - Use a supportive and encouraging tone.
         - Keep each section concise (2-4 sentences).
-        - Base "Current Performance" on the provided test result and incorrect summary, and include 1-2 short recommendations for how to improve the key skills.
+        - Base "Current Performance" on the provided test result and incorrect summary, and include 1-2 short recommendations for how to improve the key skills (unless all-correct).
+        - If all-correct is true, keep "Area to be Improved" empty and instead fill "Next Steps to Explore" with a tailored advanced recommendation related to the test content.
+        - If all-correct is true, set "Recommended Course" to an empty array.
+        - If all-correct is false, keep "Next Steps to Explore" empty and provide "Area to be Improved" as usual.
         - If participant ranking is provided (not N/A), include a short ranking statement using that value.
         - If there is a previous attempt, set "Progress Compared to Previous Test" to the heading provided above; otherwise set it to an empty string.
         - If domain performance includes both current and history, add a concise domain-wise comparison highlighting improvements or declines; otherwise omit or leave the array empty.
@@ -143,27 +138,52 @@ def generate_user_facing_response(
     summary_json = _parse_llm_json(raw_text)
 
     if not summary_json:
-        current_perf = (
-            "We reviewed your performance and identified areas to improve. "
-            "Focus on practicing the weakest topics and reviewing core concepts to build accuracy."
-        )
-        if ranking_sentence_text:
-            current_perf = f"{current_perf} {ranking_sentence_text}"
-        summary_json = {
-            "Test Title": (test_result or {}).get("testTitle", ""),
-            "Current Performance": current_perf,
-            "Area to be Improved": "Focus on the weaknesses detected in this attempt.",
-            "Recommended Course": [
-                rec.get("lessonTitle")
-                or rec.get("lesson_title")
-                or rec.get("courseTitle")
-                or rec.get("course_title")
-                or ""
-                for rec in flat_recs
-            ],
-            "Progress Compared to Previous Test": progress_heading_text,
-            "Domain Comparison": [],
-        }
+        if all_correct:
+            if language_code == "TH":
+                current_perf = "คุณตอบถูกทุกข้อ แสดงให้เห็นถึงความเข้าใจที่แข็งแกร่งมาก"
+                next_steps = (
+                    "ลองทำแบบทดสอบระดับสูงขึ้นหรือโจทย์ประยุกต์ที่เกี่ยวข้องกับหัวข้อเดียวกัน "
+                    "เพื่อขยายความเชี่ยวชาญไปสู่แนวคิดขั้นสูง"
+                )
+            else:
+                current_perf = "You answered every question correctly, showing strong mastery."
+                next_steps = (
+                    "Try an advanced-level version of this test or applied problems in the same topic "
+                    "to deepen your understanding of higher-level concepts."
+                )
+            if ranking_sentence_text:
+                current_perf = f"{current_perf} {ranking_sentence_text}"
+            summary_json = {
+                "Test Title": (test_result or {}).get("testTitle", ""),
+                "Current Performance": current_perf,
+                "Area to be Improved": "",
+                "Next Steps to Explore": next_steps,
+                "Recommended Course": [],
+                "Progress Compared to Previous Test": progress_heading_text,
+                "Domain Comparison": [],
+            }
+        else:
+            current_perf = (
+                "We reviewed your performance and identified areas to improve. "
+                "Focus on practicing the weakest topics and reviewing core concepts to build accuracy."
+            )
+            if ranking_sentence_text:
+                current_perf = f"{current_perf} {ranking_sentence_text}"
+            summary_json = {
+                "Test Title": (test_result or {}).get("testTitle", ""),
+                "Current Performance": current_perf,
+                "Area to be Improved": "Focus on the weaknesses detected in this attempt.",
+                "Recommended Course": [
+                    rec.get("lessonTitle")
+                    or rec.get("lesson_title")
+                    or rec.get("courseTitle")
+                    or rec.get("course_title")
+                    or ""
+                    for rec in flat_recs
+                ],
+                "Progress Compared to Previous Test": progress_heading_text,
+                "Domain Comparison": [],
+            }
 
     if history_result:
         if not summary_json.get("Progress Compared to Previous Test"):
@@ -172,6 +192,9 @@ def generate_user_facing_response(
         domain_lines = _domain_improvement_summaries(domain_performance)
         if domain_lines:
             summary_json["Domain Comparison"] = domain_lines
+
+    if all_correct:
+        summary_json["Recommended Course"] = []
 
     paragraph = _summary_to_paragraph(summary_json, flat_recs)
     return paragraph
@@ -207,12 +230,16 @@ def _summary_to_paragraph(summary_json: Dict[str, Any], recs: List[Dict[str, Any
     title = summary_json.get("Test Title") or ""
     current = summary_json.get("Current Performance") or ""
     area = summary_json.get("Area to be Improved") or ""
+    next_steps = summary_json.get("Next Steps to Explore") or ""
     progress = summary_json.get("Progress Compared to Previous Test") or ""
 
     if title:
         lines.append(f"**{title}**")
     add_line("Current Performance", current)
-    add_line("Area to be Improved", area)
+    if next_steps:
+        add_line("Next Steps to Explore", next_steps)
+    else:
+        add_line("Area to be Improved", area)
     if progress:
         lines.append(f"**{progress}**")
 

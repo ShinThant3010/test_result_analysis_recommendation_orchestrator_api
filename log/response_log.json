@@ -4516,5 +4516,356 @@
       ],
       "user_facing_response": "**Reasoning & Literacy 101**\n\n**Current Performance:** You've completed the Reasoning & Literacy 101 test. It appears you've encountered significant challenges, scoring 0 out of 32 questions correctly. This indicates a need to revisit foundational concepts across all tested areas. Focusing on understanding core principles and consistent practice will be key to improving your future performance.\n\n**Area to be Improved:** Your performance highlights several key areas for improvement, including logical reasoning, particularly with inferences and truth conditions, as well as identifying mathematical patterns. Furthermore, strengthening your understanding of digital literacy, cybersecurity, and online safety is crucial.\n\n**Recommended Course:**\n\n- **Modifiers & Sentence Logic**: **Modifiers & Sentence Logic**: This course will help you develop stronger logical reasoning skills, enabling you to better understand and draw inferences from statements, and clarify concepts like the logical OR operator. - Link: https://example.com/toeic-modifiers\n\n- **Introduction to Algebra**: **Introduction to Algebra**: This course will introduce fundamental algebraic concepts and help you recognize and work with patterns, which is essential for identifying multiplicative sequences. - Link: https://www.edx.org/course/introduction-to-algebra\n\n- **Maths Essentials**: **Maths Essentials**: Reinforcing basic mathematical principles through this course will provide a solid foundation, directly assisting with pattern recognition and problem-solving. - Link: https://www.edx.org/course/maths-essentials\n\n- **Introduction to Cybersecurity**: **Introduction to Cybersecurity**: This course is designed to build your knowledge of digital security, addressing your current misunderstanding of core concepts and online safety practices. - Link: https://www.edx.org/course/introduction-to-cybersecurity\n\n- **Social Media: How Media Got Social**: **Social Media: How Media Got Social**: This course will broaden your understanding of digital literacy by exploring the dynamics and implications of social media, enhancing your overall online comprehension. - Link: https://www.edx.org/course/social-media-how-media-got-social"
     }
+  },
+  {
+    "run_id": "run_8ff7d3a4019c49f8a8fcf8349b282afd",
+    "status": "ok",
+    "datetime": "2026-01-19T09:01:15+00:00",
+    "orchestrator_runtime": 65.9132,
+    "entries": [
+      {
+        "type": "api",
+        "name": "data_gathering_attempts",
+        "request_runtime": 2.5599
+      },
+      {
+        "type": "api",
+        "name": "data_gathering_questions",
+        "request_runtime": 1.3849
+      },
+      {
+        "type": "api",
+        "name": "test_analysis",
+        "request_runtime": 37.8901,
+        "api_runtime": [
+          {
+            "usage": "extract_weaknesses",
+            "input_token": 5893,
+            "output_token": 1510,
+            "runtime": 31.7212
+          }
+        ],
+        "input_token": 5893,
+        "output_token": 1510
+      },
+      {
+        "type": "api",
+        "name": "course_recommendation",
+        "request_runtime": 16.5932,
+        "api_runtime": [
+          {
+            "usage": "vector_search: 13d5c20d-3084-4f37-8ab3-6dd2c6f49a92",
+            "input_token": 0,
+            "output_token": 0,
+            "runtime": 0.4143
+          },
+          {
+            "usage": "vector_search: b6999ed4-5bd6-49d8-955f-e2e4b6fd0767",
+            "input_token": 0,
+            "output_token": 0,
+            "runtime": 0.4265
+          },
+          {
+            "usage": "vector_search: 4e0d094f-4503-4acf-a251-27b1bdd32aa3",
+            "input_token": 0,
+            "output_token": 0,
+            "runtime": 0.4469
+          },
+          {
+            "usage": "vector_search: 0da6ad98-1bd5-43e6-bf54-50a67166d876",
+            "input_token": 0,
+            "output_token": 0,
+            "runtime": 0.4661
+          },
+          {
+            "usage": "vector_search: 470ca7b9-d145-4d4e-9ab8-f219dd7598b9",
+            "input_token": 0,
+            "output_token": 0,
+            "runtime": 0.4716
+          },
+          {
+            "usage": "agent4: rerank weakness 4e0d094f-4503-4acf-a251-27b1bdd32aa3",
+            "input_token": 285,
+            "output_token": 218,
+            "runtime": 5.1199
+          },
+          {
+            "usage": "agent4: rerank weakness 470ca7b9-d145-4d4e-9ab8-f219dd7598b9",
+            "input_token": 285,
+            "output_token": 203,
+            "runtime": 5.3348
+          },
+          {
+            "usage": "agent4: rerank weakness b6999ed4-5bd6-49d8-955f-e2e4b6fd0767",
+            "input_token": 285,
+            "output_token": 220,
+            "runtime": 6.014
+          },
+          {
+            "usage": "agent4: rerank weakness 13d5c20d-3084-4f37-8ab3-6dd2c6f49a92",
+            "input_token": 283,
+            "output_token": 225,
+            "runtime": 5.1647
+          },
+          {
+            "usage": "agent4: rerank weakness 0da6ad98-1bd5-43e6-bf54-50a67166d876",
+            "input_token": 287,
+            "output_token": 259,
+            "runtime": 14.7383
+          }
+        ],
+        "input_token": 1425,
+        "output_token": 1125
+      },
+      {
+        "type": "llm",
+        "name": "user_facing_response",
+        "input_token": 966,
+        "output_token": 328,
+        "llm_runtime": 7.4838
+      }
+    ],
+    "metadata": {
+      "student_id": "STUDENT_D",
+      "test_id": "01KCXGG0TT0001H0Q1FW2JBG00",
+      "max_courses": 5,
+      "max_courses_per_weakness": 3,
+      "participant_ranking": 0.0,
+      "language": "EN"
+    },
+    "api_output": {
+      "test_analysis": {
+        "weaknesses": [
+          {
+            "id": "0da6ad98-1bd5-43e6-bf54-50a67166d876",
+            "weakness": "Deductive Reasoning with Quantifiers",
+            "description": "The student struggles with logical inference, particularly when dealing with quantified statements (all, some, no). They frequently draw universal conclusions from particular premises or make incorrect negative inferences, indicating a misunderstanding of how quantifiers affect the validity of arguments.",
+            "frequency": 4,
+            "evidenceQuestionIds": [
+              "01KCXGG0TT0001H0Q1FW2JBNVG",
+              "01KCXGG0TT0001H0Q1FW2JS0KR",
+              "01KCXGG0TT0001H0Q1FW2K64H8",
+              "01KCXGG0TV0001H0Q1FW2KKR2R"
+            ]
+          },
+          {
+            "id": "b6999ed4-5bd6-49d8-955f-e2e4b6fd0767",
+            "weakness": "Identifying Numerical Series Patterns",
+            "description": "The student consistently fails to identify the underlying mathematical operation in a simple number series. They tend to apply incorrect arithmetic operations (e.g., adding a constant) instead of recognizing a multiplicative or exponential pattern.",
+            "frequency": 4,
+            "evidenceQuestionIds": [
+              "01KCXGG0TT0001H0Q1FW2JD9KR",
+              "01KCXGG0TT0001H0Q1FW2JTMC0",
+              "01KCXGG0TV0001H0Q1FW2K7X5R",
+              "01KCXGG0TV0001H0Q1FW2KP1AG"
+            ]
+          },
+          {
+            "id": "470ca7b9-d145-4d4e-9ab8-f219dd7598b9",
+            "weakness": "Understanding HTTPS Security Protocol",
+            "description": "The student misunderstands the primary function of HTTPS. They confuse it with general website attributes like public access, faster speed, or government affiliation, rather than recognizing its core purpose as indicating an encrypted and secure connection.",
+            "frequency": 4,
+            "evidenceQuestionIds": [
+              "01KCXGG0TT0001H0Q1FW2JF37G",
+              "01KCXGG0TT0001H0Q1FW2JW848",
+              "01KCXGG0TV0001H0Q1FW2K9KVR",
+              "01KCXGG0TV0001H0Q1FW2KQRZR"
+            ]
+          },
+          {
+            "id": "4e0d094f-4503-4acf-a251-27b1bdd32aa3",
+            "weakness": "Password Security Best Practices",
+            "description": "The student lacks knowledge regarding the essential components of a strong password. They incorrectly suggest easily guessable personal information or insufficient character types, indicating a gap in understanding modern password complexity and security requirements.",
+            "frequency": 4,
+            "evidenceQuestionIds": [
+              "01KCXGG0TT0001H0Q1FW2JGSXG",
+              "01KCXGG0TT0001H0Q1FW2JXWVR",
+              "01KCXGG0TV0001H0Q1FW2KB7M0",
+              "01KCXGG0TV0001H0Q1FW2KSCR0"
+            ]
+          },
+          {
+            "id": "13d5c20d-3084-4f37-8ab3-6dd2c6f49a92",
+            "weakness": "Broad Scope of Digital Literacy",
+            "description": "The student holds a narrow or incorrect view of digital literacy, mistakenly equating it to specialized technical skills like programming or recreational activities like gaming. This indicates a failure to grasp the comprehensive nature of using digital tools safely, effectively, and responsibly.",
+            "frequency": 4,
+            "evidenceQuestionIds": [
+              "01KCXGG0TT0001H0Q1FW2JJEN0",
+              "01KCXGG0TT0001H0Q1FW2JZJJG",
+              "01KCXGG0TV0001H0Q1FW2KCVC8",
+              "01KCXGG0TV0001H0Q1FW2KV0G8"
+            ]
+          },
+          {
+            "id": "16a640ce-8bdd-487e-9a67-c340070bed23",
+            "weakness": "Recognizing Malicious Intent of Phishing",
+            "description": "The student fails to understand the malicious objective of phishing attempts. They incorrectly associate phishing with beneficial or neutral outcomes like improving security or speeding up systems, rather than its true aim of stealing sensitive information.",
+            "frequency": 4,
+            "evidenceQuestionIds": [
+              "01KCXGG0TT0001H0Q1FW2JM3CG",
+              "01KCXGG0TT0001H0Q1FW2K17A0",
+              "01KCXGG0TV0001H0Q1FW2KEJ28",
+              "01KCXGG0TV0001H0Q1FW2KWN7R"
+            ]
+          },
+          {
+            "id": "117893a5-6158-4af7-9931-d9816a31b098",
+            "weakness": "Propositional Logic: OR Operator Truth Conditions",
+            "description": "The student demonstrates confusion regarding the truth conditions of the logical OR operator. They incorrectly deduce the truth value of a proposition within a disjunction, indicating a fundamental misunderstanding of truth tables and how the OR operator functions.",
+            "frequency": 4,
+            "evidenceQuestionIds": [
+              "01KCXGG0TT0001H0Q1FW2JNQ4R",
+              "01KCXGG0TT0001H0Q1FW2K2W1G",
+              "01KCXGG0TV0001H0Q1FW2KG6SR",
+              "01KCXGG0TV0001H0Q1FW2KY9Z8"
+            ]
+          },
+          {
+            "id": "13842d9c-e903-4aa9-8701-db3b9ba59a7b",
+            "weakness": "Understanding Two-Factor Authentication (2FA)",
+            "description": "The student has a superficial or incorrect understanding of two-factor authentication. They mistake it for simply duplicating existing security measures like passwords or confuse it with other security concepts like encryption, rather than recognizing it as a distinct second layer of verification.",
+            "frequency": 4,
+            "evidenceQuestionIds": [
+              "01KCXGG0TT0001H0Q1FW2JQBW8",
+              "01KCXGG0TT0001H0Q1FW2K4FSR",
+              "01KCXGG0TV0001H0Q1FW2KHVH8",
+              "01KCXGG0TV0001H0Q1FW2KZXQG"
+            ]
+          }
+        ]
+      },
+      "course_recommendation": [
+        {
+          "weakness": {
+            "id": "0da6ad98-1bd5-43e6-bf54-50a67166d876",
+            "text": "Deductive Reasoning with Quantifiers",
+            "description": "The student struggles with logical inference, particularly when dealing with quantified statements (all, some, no). They frequently draw universal conclusions from particular premises or make incorrect negative inferences, indicating a misunderstanding of how quantifiers affect the validity of arguments."
+          },
+          "recommendedCourses": [
+            {
+              "courseId": "01KAWP742E86CZBEYY9YZ0BHWZ",
+              "lessonTitle": "Databases: Advanced Topics in SQL",
+              "description": "About the Database Series of Courses\"Databases\" was one of Stanford's three inaugural massive open online courses in the fall of 2011. It has been offered in synchronous and then in self-paced versions on a variety of platforms continuously since 2011. The material is now being offered as a set of five self-paced courses, which can be taken in a variety of ways to learn about different aspects of databases. Relational Databases and SQL is the most popular course in the Databases series. It is applicable to learners seeking to gain a strong understanding of relational databases, and to master SQL, the long-accepted standard query language for relational database systems. Additional courses focus on advanced concepts in relational databases and SQL, formal foundations and database design methodologies, and semistructured data.All of the courses are based around video lectures and demos. Many of them include quizzes between video segments to check understanding, in-depth standalone quizzes, and/or a variety of automatically-checked interactive exercises. Each course also includes an unmoderated discussion forum and pointers to readings and resources. ",
+              "link": "https://www.edx.org/course/advanced-topics-in-sql",
+              "score": 0.95,
+              "reason": "Advanced SQL topics heavily rely on sophisticated deductive reasoning for complex queries, nested logic, and set operations, which are direct applications of quantifier concepts.",
+              "weaknessId": "0da6ad98-1bd5-43e6-bf54-50a67166d876"
+            },
+            {
+              "courseId": "01KAWP740Q1R5EASTCH3SX17AJ",
+              "lessonTitle": "Databases: Relational Databases and SQL",
+              "description": "About the Database Series of Courses\"Databases\" was one of Stanford's three inaugural massive open online courses in the fall of 2011. It has been offered in synchronous and then in self-paced versions on a variety of platforms continuously since 2011. The material is now being offered as a set of five self-paced courses, which can be taken in a variety of ways to learn about different aspects of databases. Relational Databases and SQL is the most popular course in the Databases series. It is applicable to learners seeking to gain a strong understanding of relational databases, and to master SQL, the long-accepted standard query language for relational database systems. Additional courses focus on advanced concepts in relational databases and SQL, formal foundations and database design methodologies, and semistructured data.All of the courses are based around video lectures and demos. Many of them include quizzes between video segments to check understanding, in-depth standalone quizzes, and/or a variety of automatically-checked interactive exercises. Each course also includes an unmoderated discussion forum and pointers to readings and resources. The courses are described briefly below. Taught by Professor Jennifer Widom, the overall curriculum draws from Stanford's popular longstanding Databases course.",
+              "link": "https://www.edx.org/course/databases-5-sql",
+              "score": 0.9,
+              "reason": "SQL queries require precise deductive reasoning to construct logical conditions, and the language includes explicit quantifiers (e.g., EXISTS, ALL, ANY).",
+              "weaknessId": "0da6ad98-1bd5-43e6-bf54-50a67166d876"
+            }
+          ]
+        },
+        {
+          "weakness": {
+            "id": "b6999ed4-5bd6-49d8-955f-e2e4b6fd0767",
+            "text": "Identifying Numerical Series Patterns",
+            "description": "The student consistently fails to identify the underlying mathematical operation in a simple number series. They tend to apply incorrect arithmetic operations (e.g., adding a constant) instead of recognizing a multiplicative or exponential pattern."
+          },
+          "recommendedCourses": [
+            {
+              "courseId": "01KAWP7415Y58GWG5WHPXPXJ91",
+              "lessonTitle": "Introduction to Algebra",
+              "description": "We live in a world of numbers. You see them every day: on clocks, in the stock market, in sports, and all over the news. Algebra is all about figuring out the numbers you don't see. You might know how fast you can throw a ball, but can you use this number to determine how far you can throw it? You might keep track of stock prices, but how can you figure out how much money you've made (or lost) in the market? And you may already know how to tell time, but can you calculate at what times a clock's hour and minute hands are exactly aligned? With algebra, you can answer all of these questions, using the numbers you already know to solve for the unknown. Algebra is an essential tool for all of high school and college-level math, science, and engineering. So if you're starting out in one of these fields and you haven't yet mastered algebra, then this is the course for you! In this course, you'll be able to choose your own path within each lesson, and you can jump between lessons to quickly review earlier material. AlgebraX covers a standard curriculum in high school Algebra I, and CCSS (common core) alignment is indicated where applicable.Learn more about our High School and AP* Exam Preparation Courses Math",
+              "link": "https://www.edx.org/course/introduction-to-algebra",
+              "score": 0.9,
+              "reason": "Algebra is foundational for understanding and identifying numerical patterns and series.",
+              "weaknessId": "b6999ed4-5bd6-49d8-955f-e2e4b6fd0767"
+            }
+          ]
+        },
+        {
+          "weakness": {
+            "id": "470ca7b9-d145-4d4e-9ab8-f219dd7598b9",
+            "text": "Understanding HTTPS Security Protocol",
+            "description": "The student misunderstands the primary function of HTTPS. They confuse it with general website attributes like public access, faster speed, or government affiliation, rather than recognizing its core purpose as indicating an encrypted and secure connection."
+          },
+          "recommendedCourses": [
+            {
+              "courseId": "01KAWP740X8DS70J2V4P6XAV5N",
+              "lessonTitle": "Introduction to Cybersecurity",
+              "description": "This course serves as an introduction to the exciting field of cybersecurity.As our daily lives become more and more dependent on Internet-based tools and services, and as those platforms accumulate more of our most sensitive data, the demand grows for experts in the field of cybersecurity.In this course, you will gain an overview of the cybersecurity landscape as well as national (USA) and international perspectives on the field. We will cover the legal environment that impacts cybersecurity as well as predominant threat actors.By the end of this course, you will be able to Computer Science",
+              "link": "https://www.edx.org/course/introduction-to-cybersecurity",
+              "score": 0.95,
+              "reason": "HTTPS is a foundational topic within cybersecurity.",
+              "weaknessId": "470ca7b9-d145-4d4e-9ab8-f219dd7598b9"
+            }
+          ]
+        },
+        {
+          "weakness": {
+            "id": "4e0d094f-4503-4acf-a251-27b1bdd32aa3",
+            "text": "Password Security Best Practices",
+            "description": "The student lacks knowledge regarding the essential components of a strong password. They incorrectly suggest easily guessable personal information or insufficient character types, indicating a gap in understanding modern password complexity and security requirements."
+          },
+          "recommendedCourses": []
+        },
+        {
+          "weakness": {
+            "id": "13d5c20d-3084-4f37-8ab3-6dd2c6f49a92",
+            "text": "Broad Scope of Digital Literacy",
+            "description": "The student holds a narrow or incorrect view of digital literacy, mistakenly equating it to specialized technical skills like programming or recreational activities like gaming. This indicates a failure to grasp the comprehensive nature of using digital tools safely, effectively, and responsibly."
+          },
+          "recommendedCourses": [
+            {
+              "courseId": "01KAWP742NDR7KKEGGTGMQAHWX",
+              "lessonTitle": "Social Media: How Media Got Social",
+              "description": "Social media and online communication dominate our daily lives in an unprecedented manner. Wireless connectivity, mobile devices and wearable technologies mean that social media is always on, always part of everyday life for billions of people across the world. While the term 'social media' is barely a decade old, the story of how people started using the internet in a social manner is a much longer and more interesting one. This course willincrease learners' understanding of social media by looking at the ways networked connectivity let users become 'social', how this was amplified with the emergence of the web, and how social media became the default mode of the mobile web we use today.By completing this course, you should be able to:  Communication",
+              "link": "https://www.edx.org/course/social-media-how-media-got-social",
+              "score": 0.9,
+              "reason": "Directly relates to digital communication and understanding online platforms, a key aspect of digital literacy.",
+              "weaknessId": "13d5c20d-3084-4f37-8ab3-6dd2c6f49a92"
+            }
+          ]
+        }
+      ],
+      "user_facing_response": "**Reasoning & Literacy 101**\n\n**Current Performance:** You scored 0 out of 32 on the Reasoning & Literacy 101 test, indicating significant challenges across all questions. It's clear that there are fundamental areas that need strengthening. A dedicated review of the basic concepts is highly recommended to build a solid foundation.\n\n**Area to be Improved:** To improve your performance, it's crucial to focus on foundational skills in deductive reasoning, numerical pattern recognition, and core digital literacy concepts. Understanding how to apply quantifiers, identifying sequences, and grasping essential cybersecurity principles like HTTPS and password best practices will be key.\n\n**Recommended Course:**\n\n- **Databases: Advanced Topics in SQL**: This course will help you develop structured thinking and problem-solving skills, which are transferable to improving logical reasoning and understanding complex digital systems. - Link: https://www.edx.org/course/advanced-topics-in-sql\n\n- **Databases: Relational Databases and SQL**: Building a strong foundation in database concepts will enhance your logical deduction and analytical abilities, essential for both reasoning and digital literacy. - Link: https://www.edx.org/course/databases-5-sql\n\n- **Introduction to Algebra**: Algebra is fundamental for developing logical reasoning, pattern recognition, and problem-solving, directly addressing weaknesses in numerical series and deductive reasoning. - Link: https://www.edx.org/course/introduction-to-algebra\n\n- **Introduction to Cybersecurity**: This course is directly relevant to enhancing your digital literacy, understanding crucial security protocols like HTTPS, and implementing best practices for password security. - Link: https://www.edx.org/course/introduction-to-cybersecurity\n\n- **Social Media: How Media Got Social**: Understanding social media platforms and their impact is an important aspect of broad digital literacy, helping you navigate the digital world more effectively. - Link: https://www.edx.org/course/social-media-how-media-got-social"
+    }
+  },
+  {
+    "run_id": "run_7192c3dd1e384c8eb5b278e132e40ac3",
+    "status": "ok",
+    "datetime": "2026-01-19T09:01:34+00:00",
+    "orchestrator_runtime": 7.8129,
+    "entries": [
+      {
+        "type": "api",
+        "name": "data_gathering_attempts",
+        "request_runtime": 1.9706
+      },
+      {
+        "type": "api",
+        "name": "data_gathering_questions",
+        "request_runtime": 1.0712
+      },
+      {
+        "type": "llm",
+        "name": "user_facing_response",
+        "input_token": 893,
+        "output_token": 163,
+        "llm_runtime": 4.7702
+      }
+    ],
+    "metadata": {
+      "student_id": "STUDENT_B",
+      "test_id": "01KCXGG0TM0001H0Q1FW2D8TXG",
+      "max_courses": 5,
+      "max_courses_per_weakness": 3,
+      "participant_ranking": 0.0,
+      "language": "EN"
+    },
+    "api_output": {
+      "test_analysis": {
+        "weaknesses": []
+      },
+      "course_recommendation": [],
+      "user_facing_response": "**Personal Development Quiz**\n\n**Current Performance:** Congratulations! You demonstrated an outstanding understanding of the material by achieving a perfect score of 32 out of 32 on the Personal Development Quiz. This reflects a strong grasp of the concepts covered, particularly within the Professional & Workplace domain.\n\n**Next Steps to Explore:** Given your excellent performance, consider exploring advanced topics in professional development, such as leadership strategies, conflict resolution, or mastering specific workplace communication techniques. Applying your strong foundational knowledge in real-world scenarios or mentorship roles could further enhance your skills."
+    }
   }
 ]
