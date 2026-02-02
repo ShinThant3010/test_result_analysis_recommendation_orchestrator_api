@@ -98,6 +98,7 @@ class OrchestratorService:
                 user_facing_output = user_response
                 return {
                     "status": "all_correct",
+                    "run_id": run_id,
                     "student_id": student_id,
                     "test_id": test_id,
                     "incorrect_summary": incorrect_summary,
@@ -136,6 +137,7 @@ class OrchestratorService:
 
             return {
                 "status": "ok",
+                "run_id": run_id,
                 "student_id": student_id,
                 "test_id": test_id,
                 "incorrect_summary": incorrect_summary,

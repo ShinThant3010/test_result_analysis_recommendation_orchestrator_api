@@ -4867,5 +4867,137 @@
       "course_recommendation": [],
       "user_facing_response": "**Personal Development Quiz**\n\n**Current Performance:** Congratulations! You demonstrated an outstanding understanding of the material by achieving a perfect score of 32 out of 32 on the Personal Development Quiz. This reflects a strong grasp of the concepts covered, particularly within the Professional & Workplace domain.\n\n**Next Steps to Explore:** Given your excellent performance, consider exploring advanced topics in professional development, such as leadership strategies, conflict resolution, or mastering specific workplace communication techniques. Applying your strong foundational knowledge in real-world scenarios or mentorship roles could further enhance your skills."
     }
+  },
+  {
+    "run_id": "run_73468776448d4f8daf4f8e090cee116a",
+    "status": "error",
+    "datetime": "2026-02-02T04:21:38+00:00",
+    "orchestrator_runtime": 5.7616,
+    "entries": [],
+    "metadata": {
+      "student_id": "string",
+      "test_id": "string",
+      "max_courses": 5,
+      "max_courses_per_weakness": 3,
+      "participant_ranking": 0.0,
+      "language": "EN"
+    },
+    "api_output": {
+      "test_analysis": {
+        "weaknesses": []
+      },
+      "course_recommendation": [],
+      "user_facing_response": ""
+    }
+  },
+  {
+    "run_id": "run_add96a153be54dd2beb18b512a37ff00",
+    "status": "error",
+    "datetime": "2026-02-02T04:25:14+00:00",
+    "orchestrator_runtime": 0.9972,
+    "entries": [],
+    "metadata": {
+      "student_id": "string",
+      "test_id": "string",
+      "max_courses": 5,
+      "max_courses_per_weakness": 3,
+      "participant_ranking": 0.0,
+      "language": "EN"
+    },
+    "api_output": {
+      "test_analysis": {
+        "weaknesses": []
+      },
+      "course_recommendation": [],
+      "user_facing_response": ""
+    }
+  },
+  {
+    "run_id": "run_78957109eb5d420fa0fdd02a229532e5",
+    "status": "error",
+    "datetime": "2026-02-02T04:26:30+00:00",
+    "orchestrator_runtime": 0.8569,
+    "entries": [],
+    "metadata": {
+      "student_id": "string",
+      "test_id": "string",
+      "max_courses": 5,
+      "max_courses_per_weakness": 3,
+      "participant_ranking": 0.0,
+      "language": "EN"
+    },
+    "api_output": {
+      "test_analysis": {
+        "weaknesses": []
+      },
+      "course_recommendation": [],
+      "user_facing_response": ""
+    }
+  },
+  {
+    "run_id": "run_c16dd5054354464aaeb169bc16988832",
+    "status": "error",
+    "datetime": "2026-02-02T04:28:11+00:00",
+    "orchestrator_runtime": 0.9448,
+    "entries": [],
+    "metadata": {
+      "student_id": "string",
+      "test_id": "string",
+      "max_courses": 5,
+      "max_courses_per_weakness": 3,
+      "participant_ranking": 0.0,
+      "language": "EN"
+    },
+    "api_output": {
+      "test_analysis": {
+        "weaknesses": []
+      },
+      "course_recommendation": [],
+      "user_facing_response": ""
+    }
+  },
+  {
+    "run_id": "run_b60e11f2589c4a469ee1181874395d9c",
+    "status": "error",
+    "datetime": "2026-02-02T04:29:14+00:00",
+    "orchestrator_runtime": 0.8428,
+    "entries": [],
+    "metadata": {
+      "student_id": "string",
+      "test_id": "string",
+      "max_courses": 5,
+      "max_courses_per_weakness": 3,
+      "participant_ranking": 0.0,
+      "language": "EN"
+    },
+    "api_output": {
+      "test_analysis": {
+        "weaknesses": []
+      },
+      "course_recommendation": [],
+      "user_facing_response": ""
+    }
+  },
+  {
+    "run_id": "run_1a7e1945e35c46af947d30c65b5c2933",
+    "status": "error",
+    "datetime": "2026-02-02T04:36:18+00:00",
+    "orchestrator_runtime": 0.9187,
+    "entries": [],
+    "metadata": {
+      "student_id": "string",
+      "test_id": "string",
+      "max_courses": 5,
+      "max_courses_per_weakness": 3,
+      "participant_ranking": 0.0,
+      "language": "EN"
+    },
+    "api_output": {
+      "test_analysis": {
+        "weaknesses": []
+      },
+      "course_recommendation": [],
+      "user_facing_response": ""
+    }
   }
 ]

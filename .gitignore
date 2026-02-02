@@ -11,3 +11,6 @@ wheels/
 
 # key files
 .env
+
+# Logs
+log/

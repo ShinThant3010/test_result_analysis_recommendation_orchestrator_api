@@ -31,3 +31,4 @@ USER_FACING_RESPONSE_LOG_PATH = os.getenv(
     "USER_FACING_RESPONSE_LOG_PATH",
     "log/user_facing_response_log.md",
 )
+API_RESPONSE_LOG_PATH = os.getenv("API_RESPONSE_LOG_PATH", "log/api_response.json")

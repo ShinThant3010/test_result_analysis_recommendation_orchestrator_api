@@ -1,18 +1,22 @@
 from __future__ import annotations
 
+import json
 import os
 import time
 import threading
 import uuid
 import warnings
+from pathlib import Path
 
 import httpx
 from dotenv import load_dotenv
-from fastapi import APIRouter, Depends, FastAPI, Header, HTTPException, Response
+from fastapi import APIRouter, Depends, FastAPI, Header, HTTPException, Request, Response
+from fastapi.responses import JSONResponse
 from pydantic.warnings import UnsupportedFieldAttributeWarning
 
 from functions.models import OrchestrateRequest
 from functions.service import OrchestratorService
+from functions.config import API_RESPONSE_LOG_PATH
 
 warnings.filterwarnings("ignore", category=UnsupportedFieldAttributeWarning)
 
@@ -33,6 +37,103 @@ API_BEARER_TOKEN = os.getenv("API_BEARER_TOKEN")
 CORRELATION_HEADER = "X-Correlation-Id"
 API_VERSION_HEADER = "X-API-Version"
 SUPPORTED_API_VERSIONS = {"1"}
+
+
+def _write_api_response_log(
+    *,
+    api_status: int,
+    api_headers: dict[str, str],
+    body: object,
+    metadata: dict[str, object] | None = None,
+    run_id: str | None = None,
+) -> None:
+    log_payload = {
+        "run_id": run_id or f"run_{uuid.uuid4().hex}",
+        "api_status": api_status,
+        "api_headers": api_headers,
+        "body": body,
+        "metadata": metadata or {},
+    }
+    path = Path(API_RESPONSE_LOG_PATH)
+    existing: list[dict[str, object]]
+    if path.exists():
+        try:
+            existing_data = json.loads(path.read_text())
+            if isinstance(existing_data, list):
+                existing = existing_data
+            else:
+                existing = []
+        except Exception:  # noqa: BLE001
+            existing = []
+    else:
+        existing = []
+    existing.append(log_payload)
+    path.write_text(json.dumps(existing, ensure_ascii=True, indent=2) + "\n")
+
+
+def _request_metadata(request: Request, payload: object | None = None) -> dict[str, object]:
+    return {
+        "method": request.method,
+        "url": str(request.url),
+        "query_params": dict(request.query_params),
+        "body": payload,
+    }
+
+
+async def _request_metadata_from_request(request: Request) -> dict[str, object]:
+    payload: object | None = None
+    try:
+        payload = await request.json()
+    except Exception:  # noqa: BLE001
+        try:
+            raw = await request.body()
+            if raw:
+                payload = raw.decode("utf-8", errors="replace")
+        except Exception:  # noqa: BLE001
+            payload = None
+    return _request_metadata(request, payload=payload)
+
+
+@app.exception_handler(HTTPException)
+async def http_exception_handler(request: Request, exc: HTTPException) -> JSONResponse:
+    correlation_id = (
+        (exc.headers or {}).get(CORRELATION_HEADER)
+        or request.headers.get(CORRELATION_HEADER)
+        or f"corr_{uuid.uuid4()}"
+    )
+    api_version = (
+        (exc.headers or {}).get(API_VERSION_HEADER)
+        or request.headers.get(API_VERSION_HEADER)
+        or "1"
+    )
+    headers = {CORRELATION_HEADER: correlation_id, API_VERSION_HEADER: api_version}
+    try:
+        _write_api_response_log(
+            api_status=exc.status_code,
+            api_headers=headers,
+            body={"detail": exc.detail},
+            metadata={"request": await _request_metadata_from_request(request)},
+        )
+    except Exception as log_exc:  # noqa: BLE001
+        warnings.warn(f"Failed to write API response log: {log_exc}")
+    return JSONResponse(status_code=exc.status_code, content={"detail": exc.detail}, headers=headers)
+
+
+@app.exception_handler(Exception)
+async def unhandled_exception_handler(request: Request, exc: Exception) -> JSONResponse:
+    correlation_id = request.headers.get(CORRELATION_HEADER) or f"corr_{uuid.uuid4()}"
+    api_version = request.headers.get(API_VERSION_HEADER) or "1"
+    headers = {CORRELATION_HEADER: correlation_id, API_VERSION_HEADER: api_version}
+    try:
+        _write_api_response_log(
+            api_status=500,
+            api_headers=headers,
+            body={"detail": str(exc)},
+            metadata={"request": await _request_metadata_from_request(request)},
+        )
+    except Exception as log_exc:  # noqa: BLE001
+        warnings.warn(f"Failed to write API response log: {log_exc}")
+    return JSONResponse(status_code=500, content={"detail": "Internal Server Error"}, headers=headers)
 
 
 def require_headers(
@@ -116,6 +217,7 @@ def health() -> dict:
 )
 async def orchestrate(
     body: OrchestrateRequest,
+    request: Request,
     response: Response,
     context: dict[str, str] = Depends(require_headers),
 ) -> Response:
@@ -181,11 +283,22 @@ async def orchestrate(
             _active_correlation_ids.discard(correlation_id)
 
     response.status_code = 200
+    response_headers = {
+        CORRELATION_HEADER: correlation_id,
+        API_VERSION_HEADER: context["api_version"],
+    }
+    try:
+        _write_api_response_log(
+            api_status=response.status_code,
+            api_headers=response_headers,
+            body=payload.get("user_facing_paragraph", ""),
+            metadata={"request": _request_metadata(request, payload=body.model_dump())},
+            run_id=payload.get("run_id"),
+        )
+    except Exception as exc:  # noqa: BLE001
+        warnings.warn(f"Failed to write API response log: {exc}")
     return Response(
         content=payload["user_facing_paragraph"],
         media_type="text/markdown",
-        headers={
-            CORRELATION_HEADER: correlation_id,
-            API_VERSION_HEADER: context["api_version"],
-        },
+        headers=response_headers,
     )
