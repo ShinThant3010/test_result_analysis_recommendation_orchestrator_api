@@ -1,12 +1,10 @@
 from __future__ import annotations
 
-import json
 import os
 import time
 import threading
 import uuid
 import warnings
-from pathlib import Path
 
 import httpx
 from dotenv import load_dotenv
@@ -16,7 +14,6 @@ from pydantic.warnings import UnsupportedFieldAttributeWarning
 
 from functions.models import OrchestrateRequest
 from functions.service import OrchestratorService
-from functions.config import API_RESPONSE_LOG_PATH
 
 warnings.filterwarnings("ignore", category=UnsupportedFieldAttributeWarning)
 
@@ -39,38 +36,6 @@ API_VERSION_HEADER = "X-API-Version"
 SUPPORTED_API_VERSIONS = {"1"}
 
 
-def _write_api_response_log(
-    *,
-    api_status: int,
-    api_headers: dict[str, str],
-    body: object,
-    metadata: dict[str, object] | None = None,
-    run_id: str | None = None,
-) -> None:
-    log_payload = {
-        "run_id": run_id or f"run_{uuid.uuid4().hex}",
-        "api_status": api_status,
-        "api_headers": api_headers,
-        "body": body,
-        "metadata": metadata or {},
-    }
-    path = Path(API_RESPONSE_LOG_PATH)
-    existing: list[dict[str, object]]
-    if path.exists():
-        try:
-            existing_data = json.loads(path.read_text())
-            if isinstance(existing_data, list):
-                existing = existing_data
-            else:
-                existing = []
-        except Exception:  # noqa: BLE001
-            existing = []
-    else:
-        existing = []
-    existing.append(log_payload)
-    path.write_text(json.dumps(existing, ensure_ascii=True, indent=2) + "\n")
-
-
 def _request_metadata(request: Request, payload: object | None = None) -> dict[str, object]:
     return {
         "method": request.method,
@@ -84,12 +49,12 @@ async def _request_metadata_from_request(request: Request) -> dict[str, object]:
     payload: object | None = None
     try:
         payload = await request.json()
-    except Exception:  # noqa: BLE001
+    except Exception: 
         try:
             raw = await request.body()
             if raw:
                 payload = raw.decode("utf-8", errors="replace")
-        except Exception:  # noqa: BLE001
+        except Exception: 
             payload = None
     return _request_metadata(request, payload=payload)
 
@@ -107,15 +72,6 @@ async def http_exception_handler(request: Request, exc: HTTPException) -> JSONRe
         or "1"
     )
     headers = {CORRELATION_HEADER: correlation_id, API_VERSION_HEADER: api_version}
-    try:
-        _write_api_response_log(
-            api_status=exc.status_code,
-            api_headers=headers,
-            body={"detail": exc.detail},
-            metadata={"request": await _request_metadata_from_request(request)},
-        )
-    except Exception as log_exc:  # noqa: BLE001
-        warnings.warn(f"Failed to write API response log: {log_exc}")
     return JSONResponse(status_code=exc.status_code, content={"detail": exc.detail}, headers=headers)
 
 
@@ -124,15 +80,6 @@ async def unhandled_exception_handler(request: Request, exc: Exception) -> JSONR
     correlation_id = request.headers.get(CORRELATION_HEADER) or f"corr_{uuid.uuid4()}"
     api_version = request.headers.get(API_VERSION_HEADER) or "1"
     headers = {CORRELATION_HEADER: correlation_id, API_VERSION_HEADER: api_version}
-    try:
-        _write_api_response_log(
-            api_status=500,
-            api_headers=headers,
-            body={"detail": str(exc)},
-            metadata={"request": await _request_metadata_from_request(request)},
-        )
-    except Exception as log_exc:  # noqa: BLE001
-        warnings.warn(f"Failed to write API response log: {log_exc}")
     return JSONResponse(status_code=500, content={"detail": "Internal Server Error"}, headers=headers)
 
 
@@ -267,7 +214,7 @@ async def orchestrate(
             headers={CORRELATION_HEADER: correlation_id, API_VERSION_HEADER: context["api_version"]},
         )
     
-    except Exception as exc:  # noqa: BLE001
+    except Exception as exc: 
         raise HTTPException(
             status_code=500,
             detail={
@@ -287,16 +234,6 @@ async def orchestrate(
         CORRELATION_HEADER: correlation_id,
         API_VERSION_HEADER: context["api_version"],
     }
-    try:
-        _write_api_response_log(
-            api_status=response.status_code,
-            api_headers=response_headers,
-            body=payload.get("user_facing_paragraph", ""),
-            metadata={"request": _request_metadata(request, payload=body.model_dump())},
-            run_id=payload.get("run_id"),
-        )
-    except Exception as exc:  # noqa: BLE001
-        warnings.warn(f"Failed to write API response log: {exc}")
     return Response(
         content=payload["user_facing_paragraph"],
         media_type="text/markdown",

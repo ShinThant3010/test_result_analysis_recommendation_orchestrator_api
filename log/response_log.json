@@ -4999,5 +4999,38 @@
       "course_recommendation": [],
       "user_facing_response": ""
     }
+  },
+  {
+    "run_id": "run_23ba4651e1c9436890b77145eaed7723",
+    "status": "error",
+    "datetime": "2026-02-02T05:15:45+00:00",
+    "orchestrator_runtime": 66.9107,
+    "entries": [
+      {
+        "type": "api",
+        "name": "data_gathering_attempts",
+        "request_runtime": 5.2508
+      },
+      {
+        "type": "api",
+        "name": "data_gathering_questions",
+        "request_runtime": 1.5791
+      }
+    ],
+    "metadata": {
+      "student_id": "STUDENT_A",
+      "test_id": "01KCXGG0SS0001H0Q1FW1K4S0G",
+      "max_courses": 5,
+      "max_courses_per_weakness": 3,
+      "participant_ranking": 0.1,
+      "language": "EN"
+    },
+    "api_output": {
+      "test_analysis": {
+        "weaknesses": []
+      },
+      "course_recommendation": [],
+      "user_facing_response": ""
+    }
   }
 ]
