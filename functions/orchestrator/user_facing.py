@@ -189,7 +189,7 @@ def generate_user_facing_response(
         if not summary_json.get("Progress Compared to Previous Test"):
             summary_json["Progress Compared to Previous Test"] = progress_heading_text
 
-        domain_lines = _domain_improvement_summaries(domain_performance)
+        domain_lines = _domain_improvement_summaries(domain_performance, language_code=language_code)
         if domain_lines:
             summary_json["Domain Comparison"] = domain_lines
 
@@ -337,7 +337,9 @@ def _progress_heading(
 
 
 def _domain_improvement_summaries(
-    domain_performance: Optional[Dict[str, Any]]
+    domain_performance: Optional[Dict[str, Any]],
+    *,
+    language_code: str,
 ) -> List[str]:
     if not domain_performance:
         return []
@@ -361,6 +363,18 @@ def _domain_improvement_summaries(
         delta = (curr_acc - hist_acc) * 100
         curr_pct = curr_acc * 100
         hist_pct = hist_acc * 100
+
+        if language_code == "TH":
+            if abs(delta) < 0.5:
+                summaries.append(
+                    f"{domain}: รักษาความแม่นยำ {curr_pct:.0f}% แสดงถึงความเข้าใจที่สม่ำเสมอในเนื้อหานี้."
+                )
+                continue
+            direction = "ดีขึ้น" if delta > 0 else "ลดลง"
+            summaries.append(
+                f"{domain}: {direction} {delta:+.0f}% (จาก {hist_pct:.0f}% เป็น {curr_pct:.0f}%)."
+            )
+            continue
 
         if abs(delta) < 0.5:
             summaries.append(
