@@ -42,7 +42,7 @@ Analyze a student’s test results, extract weaknesses via Gemini, recommend cou
 
 ---
 
-## Authentication & Authorization
+## Authentication & Authorization [TBD]
 
 Bearer auth is optional. When `API_BEARER_TOKEN` is set, requests must include:  
 `Authorization: Bearer <API_BEARER_TOKEN>`
@@ -108,14 +108,63 @@ Runs the orchestrator pipeline. Correlation IDs in-flight are rejected with `409
 }
 ```
 
+```
+curl -i -X 'POST' \
+  'https://test-result-orchestrator-api-810737581373.asia-southeast1.run.app/v1/orchestrator/test-result-analysis-and-recommendations' \
+  -H 'accept: application/json' \
+  -H 'Content-Type: application/json' \
+  -d '{
+  "studentId": "STUDENT_A",
+  "testId": "01KCXGG0SS0001H0Q1FW1K4S0G",
+  "maxCourses": 5,
+  "maxCoursesPerWeakness": 3,
+  "participantRanking": 0,
+  "language": "EN"
+}'
+```
+
 #### Responses
 Headers always echo `X-Correlation-Id`, `X-API-Version` and `x-response-time-seconds`.
 
 **200 OK — success**
-```text
+```
+text
+HTTP/2 200 
+x-correlation-id: corr_f5a5e236-f0fa-4390-be9e-1667c9d5faa1
+x-api-version: 1
+content-type: text/markdown; charset=utf-8
+x-response-time-seconds: 23.0280
+x-cloud-trace-context: d90a57f613c5caaad5a777bd06230613;o=1
+date: Wed, 04 Feb 2026 04:03:49 GMT
+server: Google Frontend
+content-length: 2102
+alt-svc: h3=":443"; ma=2592000,h3-29=":443"; ma=2592000
+
 **Computer Science 101**
 
-**Current Performance:** ...
+**Current Performance:** You achieved an excellent score of 19 out of 20 (95%) on the Computer Science 101 test, successfully passing. Your strong performance demonstrates a solid grasp of the subject matter, with only one question answered incorrectly. This indicates a high level of understanding across most areas of the test.
+
+**Area to be Improved:** Your primary area for refinement is Python String Slicing, specifically understanding the exclusive nature of the stop index. Mastering this concept will ensure precise manipulation of strings and eliminate subtle errors in your Python code. Consistent practice with various slicing scenarios will help solidify this skill.
+
+**Progress Compared to Previous Test (Computer Science 101)**
+
+**Domain Comparison:**
+
+- **Python**: Maintained 80% accuracy, demonstrating consistent mastery of the subject.
+
+- **Algebra**: Improved by +20% (from 80% to 100% accuracy).
+
+- **Database**: Improved by +60% (from 40% to 100% accuracy).
+
+- **Data Visualization**: Maintained 100% accuracy, demonstrating consistent mastery of the subject.
+
+**Recommended Course:**
+
+- **Programming for Everybody (Getting Started with Python)**: This course is ideal for strengthening your foundational Python concepts, which is crucial for mastering areas like string manipulation and ensuring robust programming skills. - Link: https://www.edx.org/course/programming-for-everybody-getting-started-with-pyt
+
+- **Computing in Python I: Fundamentals and Procedural Programming**: This course will deepen your understanding of Python fundamentals and procedural programming, providing a comprehensive review that can help clarify intricate topics such as string slicing. - Link: https://www.edx.org/course/computing-in-python-i-fundamentals-and-procedural
+
+- **Python Basics for Data Science**: While focused on data science, this course revisits Python basics, offering a solid review of string operations and other core programming skills, reinforcing your overall Python proficiency. - Link: https://www.edx.org/course/python-basics-for-data-science
 ```
 
 **Other status codes**
