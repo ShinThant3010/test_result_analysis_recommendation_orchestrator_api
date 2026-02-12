@@ -1,249 +1,98 @@
 [
   {
-    "run_id": "run_6197ef3fdd0e419ead4270c96ad82f96",
+    "run_id": "run_3c4aa9a96af2448985455d32f6e261bc",
     "status": "ok",
-    "datetime": "2026-02-03T06:08:25+00:00",
-    "orchestrator_runtime": 22.21,
+    "datetime": "2026-02-11T11:08:43+00:00",
+    "orchestrator_runtime": 30.4189,
     "entries": [
       {
         "type": "api",
         "name": "data_gathering_attempts",
-        "request_runtime": 2.5913
+        "request_runtime": 2.1591
       },
       {
         "type": "api",
         "name": "data_gathering_questions",
-        "request_runtime": 1.184
+        "request_runtime": 1.226
       },
       {
         "type": "api",
         "name": "test_analysis",
-        "request_runtime": 5.0183,
+        "request_runtime": 11.6527,
         "api_runtime": [
           {
             "usage": "extract_weaknesses",
-            "input_token": 487,
-            "output_token": 146,
-            "runtime": 4.8268
+            "input_token": 1162,
+            "output_token": 556,
+            "runtime": 11.5627
           }
         ],
-        "input_token": 487,
-        "output_token": 146
+        "input_token": 1162,
+        "output_token": 556
       },
       {
         "type": "api",
         "name": "course_recommendation",
-        "request_runtime": 7.0655,
+        "request_runtime": 8.6365,
         "api_runtime": [
           {
-            "usage": "vector_search: 3f593ac4-adf6-41a0-a3bf-0b7d34f0af32",
+            "usage": "vector_search: 321d7fa8-c469-4b1c-b6f9-8e9d81598ec9",
             "input_token": 0,
             "output_token": 0,
-            "runtime": 0.3979
+            "runtime": 0.3916
           },
           {
-            "usage": "agent4: rerank weakness 415e3366-1b2e-46b2-92ff-6592d9826b16",
-            "input_token": 264,
-            "output_token": 209,
-            "runtime": 4.9027
-          },
-          {
-            "usage": "agent4: rerank weakness 3f593ac4-adf6-41a0-a3bf-0b7d34f0af32",
-            "input_token": 296,
-            "output_token": 238,
-            "runtime": 5.1231
-          }
-        ],
-        "input_token": 560,
-        "output_token": 447
-      },
-      {
-        "type": "llm",
-        "name": "user_facing_response",
-        "input_token": 1386,
-        "output_token": 299,
-        "llm_runtime": 6.3501
-      }
-    ],
-    "metadata": {
-      "student_id": "STUDENT_A",
-      "test_id": "01KCXGG0SS0001H0Q1FW1K4S0G",
-      "max_courses": 5,
-      "max_courses_per_weakness": 3,
-      "participant_ranking": 0.0,
-      "language": "EN"
-    },
-    "api_output": {
-      "test_analysis": {
-        "weaknesses": [
-          {
-            "id": "3f593ac4-adf6-41a0-a3bf-0b7d34f0af32",
-            "weakness": "Misinterpretation of exclusive stop index in Python slicing.",
-            "description": "The student correctly identified the starting index and step value for string slicing in Python. However, they misunderstood that the 'stop' index in Python slices is exclusive (up to, but not including, the element at the stop index). This error pattern leads to including an extra element at the end of the sliced sequence.",
-            "frequency": 1,
-            "evidenceQuestionIds": [
-              "01KCXGG0SS0001H0Q1FW1K93P0"
-            ]
-          }
-        ]
-      },
-      "course_recommendation": [
-        {
-          "weakness": {
-            "id": "3f593ac4-adf6-41a0-a3bf-0b7d34f0af32",
-            "text": "Misinterpretation of exclusive stop index in Python slicing.",
-            "description": "The student correctly identified the starting index and step value for string slicing in Python. However, they misunderstood that the 'stop' index in Python slices is exclusive (up to, but not including, the element at the stop index). This error pattern leads to including an extra element at the end of the sliced sequence."
-          },
-          "recommendedCourses": [
-            {
-              "courseId": "01KAWP740GSMXXTGD4WJ3Q811Y",
-              "lessonTitle": "Computing in Python I: Fundamentals and Procedural Programming",
-              "description": "This course starts from the beginning, covering the basics of how a computer interprets lines of code; how to write programs, evaluate their output, and revise the code itself; how to work with variables and their changing values; and how to use mathematical, boolean, and relational operators. By the end of this course, you'll be able to write small programs in Python that use variables, mathematical operators, and logical operators. For example, you could write programs that carry out complex mathematical operations, like calculating the interest rate necessary to reach a savings goal, recommending apparel options based on weather patterns, or calculating a grade based on multiple percentages. Structurally, the course is comprised of several parts. Instruction is delivered via a series of short (2-3 minute) videos. In between those videos, you'll complete both multiple choice questions and coding problems to demonstrate your knowledge of the material that was just covered. Computer Science",
-              "link": "https://www.edx.org/course/computing-in-python-i-fundamentals-and-procedural",
-              "score": 0.98,
-              "reason": "Focuses on Python fundamentals, where understanding slicing and its inclusive/exclusive nature is a core concept.",
-              "weaknessId": "3f593ac4-adf6-41a0-a3bf-0b7d34f0af32"
-            },
-            {
-              "courseId": "01KAWP7409ZH98683BM8SRW2C1",
-              "lessonTitle": "Programming for Everybody (Getting Started with Python)",
-              "description": "This course aims to teach everyone the basics of programming computers using Python. We cover the basics of how one constructs a program from a series of simple instructions in Python. The course has no pre-requisites and avoids all but the simplest mathematics. Anyone with moderate computer experience should be able to master the materials in this course. This course will cover Chapters 1-5 of the textbook \"Python for Everybody\". Once a student completes this course, they will be ready to take more advanced programming courses. This course covers Python 3. Computer Science",
-              "link": "https://www.edx.org/course/programming-for-everybody-getting-started-with-pyt",
-              "score": 0.95,
-              "reason": "Introduces fundamental Python concepts, including string and list slicing, directly addressing the weakness.",
-              "weaknessId": "3f593ac4-adf6-41a0-a3bf-0b7d34f0af32"
-            },
-            {
-              "courseId": "01KAWP740BY7G74JPB1DPRK1AA",
-              "lessonTitle": "Python Basics for Data Science",
-              "description": "Kickstart your learning of Python for data science, as well as programming in general with this introduction to Python course. This beginner-friendly Python course will quickly take you from zero to programming in Python in a matter of hours and give you a taste of how to start working with data in Python. ~~~~Upon its completion, you'll be able to write your own Python scripts and perform basic hands-on data analysis using our Jupyter-based lab environment. If you want to learn Python from scratch, this course is for you.You can start creating your own data science projects and collaborating with other data scientists using IBM Watson Studio. When you sign up, you will receive free access to Watson Studio. Start now and take advantage of this platform and learn the basics of programming, machine learning, and data visualization with this Beginner course.The objectives of this course is to get you started with Python as the programming language and give you a taste of how to start working with data in Python.In this course you will learn about: Data Analysis & Statistics",
-              "link": "https://www.edx.org/course/python-basics-for-data-science",
-              "score": 0.9,
-              "reason": "Covers core Python syntax and operations, including slicing, which is essential for data manipulation and understanding the exclusive stop index.",
-              "weaknessId": "3f593ac4-adf6-41a0-a3bf-0b7d34f0af32"
-            }
-          ]
-        }
-      ],
-      "user_facing_response": "**Computer Science 101**\n\n**Current Performance:** You achieved an excellent score of 19 out of 20, successfully passing the Computer Science 101 test. This demonstrates a strong grasp of the fundamental concepts, with only one question answered incorrectly.\n\n**Area to be Improved:** Your primary area for improvement is a slight misunderstanding of the exclusive stop index in Python slicing. Focusing on this specific concept will help you achieve even higher accuracy in your programming tasks.\n\n**Progress Compared to Previous Test (Computer Science 101)**\n\n**Domain Comparison:**\n\n- **Python**: Maintained 80% accuracy, demonstrating consistent mastery of the subject.\n\n- **Algebra**: Improved by +20% (from 80% to 100% accuracy).\n\n- **Database**: Improved by +60% (from 40% to 100% accuracy).\n\n- **Data Visualization**: Maintained 100% accuracy, demonstrating consistent mastery of the subject.\n\n**Recommended Course:**\n\n- **Computing in Python I: Fundamentals and Procedural Programming**: This course will help solidify your understanding of core Python concepts, including how slicing works with indices, ensuring more precise code. - Link: https://www.edx.org/course/computing-in-python-i-fundamentals-and-procedural\n\n- **Programming for Everybody (Getting Started with Python)**: Ideal for reinforcing foundational Python concepts, this course can clarify common intricacies like the behavior of stop indices in slicing operations. - Link: https://www.edx.org/course/programming-for-everybody-getting-started-with-pyt\n\n- **Python Basics for Data Science**: While focusing on data science, this course revisits Python basics, providing a robust understanding of data manipulation techniques that involve correct slicing. - Link: https://www.edx.org/course/python-basics-for-data-science"
-    }
-  },
-  {
-    "run_id": "run_ea3e6b5556504c61b49c7b22f25d5554",
-    "status": "ok",
-    "datetime": "2026-02-03T06:08:32+00:00",
-    "orchestrator_runtime": 59.2807,
-    "entries": [
-      {
-        "type": "api",
-        "name": "data_gathering_attempts",
-        "request_runtime": 2.5913
-      },
-      {
-        "type": "api",
-        "name": "data_gathering_questions",
-        "request_runtime": 1.184
-      },
-      {
-        "type": "api",
-        "name": "test_analysis",
-        "request_runtime": 5.0183,
-        "api_runtime": [
-          {
-            "usage": "extract_weaknesses",
-            "input_token": 487,
-            "output_token": 146,
-            "runtime": 4.8268
-          }
-        ],
-        "input_token": 487,
-        "output_token": 146
-      },
-      {
-        "type": "api",
-        "name": "course_recommendation",
-        "request_runtime": 7.0655,
-        "api_runtime": [
-          {
-            "usage": "vector_search: 3f593ac4-adf6-41a0-a3bf-0b7d34f0af32",
+            "usage": "vector_search: fe95fcaa-6de6-43f4-bfd5-b93a3d656586",
             "input_token": 0,
             "output_token": 0,
-            "runtime": 0.3979
+            "runtime": 0.4152
           },
           {
-            "usage": "agent4: rerank weakness 415e3366-1b2e-46b2-92ff-6592d9826b16",
-            "input_token": 264,
-            "output_token": 209,
-            "runtime": 4.9027
-          },
-          {
-            "usage": "agent4: rerank weakness 3f593ac4-adf6-41a0-a3bf-0b7d34f0af32",
-            "input_token": 296,
-            "output_token": 238,
-            "runtime": 5.1231
-          }
-        ],
-        "input_token": 560,
-        "output_token": 447
-      },
-      {
-        "type": "llm",
-        "name": "user_facing_response",
-        "input_token": 1386,
-        "output_token": 299,
-        "llm_runtime": 6.3501
-      },
-      {
-        "type": "api",
-        "name": "course_recommendation",
-        "request_runtime": 28.1639,
-        "api_runtime": [
-          {
-            "usage": "vector_search: 3f593ac4-adf6-41a0-a3bf-0b7d34f0af32",
+            "usage": "vector_search: 0d26be35-71d0-4c1f-9d6e-4530e3e2a414",
             "input_token": 0,
             "output_token": 0,
-            "runtime": 0.3979
+            "runtime": 0.4257
           },
           {
-            "usage": "agent4: rerank weakness 415e3366-1b2e-46b2-92ff-6592d9826b16",
-            "input_token": 264,
-            "output_token": 209,
-            "runtime": 4.9027
+            "usage": "vector_search: e895cbe1-ec68-4488-a508-e4da461dc88d",
+            "input_token": 0,
+            "output_token": 0,
+            "runtime": 0.4296
           },
           {
-            "usage": "agent4: rerank weakness 3f593ac4-adf6-41a0-a3bf-0b7d34f0af32",
-            "input_token": 296,
-            "output_token": 238,
-            "runtime": 5.1231
+            "usage": "agent4: rerank weakness fe95fcaa-6de6-43f4-bfd5-b93a3d656586",
+            "input_token": 278,
+            "output_token": 205,
+            "runtime": 4.8406
           },
           {
-            "usage": "agent4: rerank weakness 999b3d5b-2036-4968-a5f6-f80bd1a0dfba",
-            "input_token": 253,
-            "output_token": 194,
-            "runtime": 5.8213
-          },
-          {
-            "usage": "agent4: rerank weakness 7d899f00-d1ac-4c0b-9e32-a47137b2c4a7",
+            "usage": "agent4: rerank weakness e895cbe1-ec68-4488-a508-e4da461dc88d",
             "input_token": 257,
-            "output_token": 200,
-            "runtime": 5.6524
+            "output_token": 195,
+            "runtime": 5.5261
           },
           {
-            "usage": "agent4: rerank weakness 77dcf958-c101-4d78-8342-3e84e0366d55",
-            "input_token": 255,
+            "usage": "agent4: rerank weakness 0d26be35-71d0-4c1f-9d6e-4530e3e2a414",
+            "input_token": 258,
             "output_token": 215,
-            "runtime": 9.139
+            "runtime": 6.1755
+          },
+          {
+            "usage": "agent4: rerank weakness 321d7fa8-c469-4b1c-b6f9-8e9d81598ec9",
+            "input_token": 256,
+            "output_token": 192,
+            "runtime": 5.96
           }
         ],
-        "input_token": 1325,
-        "output_token": 1056
+        "input_token": 1049,
+        "output_token": 807
       },
       {
         "type": "llm",
         "name": "user_facing_response",
-        "input_token": 979,
-        "output_token": 395,
-        "llm_runtime": 7.0653
+        "input_token": 997,
+        "output_token": 349,
+        "llm_runtime": 6.7395
       }
     ],
     "metadata": {
@@ -258,9 +107,9 @@
       "test_analysis": {
         "weaknesses": [
           {
-            "id": "77dcf958-c101-4d78-8342-3e84e0366d55",
-            "weakness": "Misinterpreting logical relationships between clauses (Connectors)",
-            "description": "The student frequently selects transitional words or phrases that express an incorrect logical relationship between independent clauses. This indicates a misunderstanding of the specific functions of connectors like 'therefore' (result), 'however' (contrast), and 'otherwise' (alternative condition).",
+            "id": "0d26be35-71d0-4c1f-9d6e-4530e3e2a414",
+            "weakness": "Misuse of transitional words and conjunctive adverbs for logical connections.",
+            "description": "The student struggles to select the appropriate transitional words or conjunctive adverbs (e.g., however, therefore, otherwise) to accurately express logical relationships such as contrast, cause-and-effect, or additional information between clauses or sentences. This leads to an incorrect interpretation of the intended relationship between ideas.",
             "frequency": 2,
             "evidenceQuestionIds": [
               "01KCXGG0SP0001H0Q1FW1GQ9GR",
@@ -268,27 +117,27 @@
             ]
           },
           {
-            "id": "7d899f00-d1ac-4c0b-9e32-a47137b2c4a7",
-            "weakness": "Errors in forming passive voice verb structures",
-            "description": "The student struggles to correctly form passive voice constructions, particularly when an infinitive form is required. They tend to use active or incorrect verb tenses instead of the appropriate 'to be + past participle' structure for actions received by the subject.",
+            "id": "e895cbe1-ec68-4488-a508-e4da461dc88d",
+            "weakness": "Difficulty forming correct passive voice verb structures.",
+            "description": "The student incorrectly forms passive voice constructions, often choosing an active voice verb form when the grammatical context clearly requires a passive structure. This indicates a misunderstanding of how to correctly conjugate verbs to show that the subject is receiving an action, rather than performing it.",
             "frequency": 1,
             "evidenceQuestionIds": [
               "01KCXGG0SQ0001H0Q1FW1H797R"
             ]
           },
           {
-            "id": "999b3d5b-2036-4968-a5f6-f80bd1a0dfba",
-            "weakness": "Confusion between subject and possessive relative pronouns",
-            "description": "The student confuses the roles of relative pronouns, specifically using 'whose' (possessive) when 'who' (subject) is required to introduce a clause that describes the person performing an action. This points to a lack of clarity regarding pronoun function in relative clauses.",
+            "id": "321d7fa8-c469-4b1c-b6f9-8e9d81598ec9",
+            "weakness": "Confusion in using relative pronouns based on their grammatical function.",
+            "description": "The student struggles to differentiate between relative pronouns (e.g., who, whose) and their correct usage based on whether they function as a subject, object, or possessive within a relative clause. This results in selecting the wrong pronoun for the intended grammatical role in the sentence.",
             "frequency": 1,
             "evidenceQuestionIds": [
               "01KCXGG0SQ0001H0Q1FW1HE7WR"
             ]
           },
           {
-            "id": "415e3366-1b2e-46b2-92ff-6592d9826b16",
-            "weakness": "Incorrect singular vs. plural usage for abstract nouns",
-            "description": "The student incorrectly chooses the plural form of an abstract noun when the singular, general concept is grammatically appropriate, especially in compound noun structures. This indicates a misunderstanding of noun countability and correct word form for abstract ideas.",
+            "id": "fe95fcaa-6de6-43f4-bfd5-b93a3d656586",
+            "weakness": "Inappropriate use of noun number and form, especially for abstract nouns.",
+            "description": "The student misuses noun forms, specifically confusing singular abstract nouns with their plural counterparts in contexts requiring a general concept or quality rather than specific instances. This indicates a lack of understanding regarding the appropriate noun number and form based on the precise meaning conveyed in the sentence.",
             "frequency": 1,
             "evidenceQuestionIds": [
               "01KCXGG0SR0001H0Q1FW1HWC1G"
@@ -299,9 +148,9 @@
       "course_recommendation": [
         {
           "weakness": {
-            "id": "77dcf958-c101-4d78-8342-3e84e0366d55",
-            "text": "Misinterpreting logical relationships between clauses (Connectors)",
-            "description": "The student frequently selects transitional words or phrases that express an incorrect logical relationship between independent clauses. This indicates a misunderstanding of the specific functions of connectors like 'therefore' (result), 'however' (contrast), and 'otherwise' (alternative condition)."
+            "id": "0d26be35-71d0-4c1f-9d6e-4530e3e2a414",
+            "text": "Misuse of transitional words and conjunctive adverbs for logical connections.",
+            "description": "The student struggles to select the appropriate transitional words or conjunctive adverbs (e.g., however, therefore, otherwise) to accurately express logical relationships such as contrast, cause-and-effect, or additional information between clauses or sentences. This leads to an incorrect interpretation of the intended relationship between ideas."
           },
           "recommendedCourses": [
             {
@@ -310,25 +159,25 @@
               "description": "Students learn logical connectors (however, therefore, although, meanwhile) and practice TOEIC-style questions testing sentence cohesion.",
               "link": "https://example.com/toeic-connectors",
               "score": 1.0,
-              "reason": "Directly addresses 'Connectors' and 'Transition Signals,' which are crucial for interpreting logical relationships between clauses.",
-              "weaknessId": "77dcf958-c101-4d78-8342-3e84e0366d55"
+              "reason": "Directly addresses 'transitional words' and 'logical connections' through 'Connectors & Transition Signals'.",
+              "weaknessId": "0d26be35-71d0-4c1f-9d6e-4530e3e2a414"
             },
             {
               "courseId": "01TOEICG007",
               "lessonTitle": "Conjunctions & Sentence Structure",
               "description": "Learn FANBOYS, subordinating conjunctions, and how conjunction choice changes sentence meaning in TOEIC questions.",
               "link": "https://example.com/toeic-conjunctions",
-              "score": 0.95,
-              "reason": "Focuses on 'Conjunctions' (key connectors) and 'Sentence Structure,' which is vital for understanding how clauses are logically related.",
-              "weaknessId": "77dcf958-c101-4d78-8342-3e84e0366d55"
+              "score": 0.9,
+              "reason": "Directly covers 'Conjunctions', including 'conjunctive adverbs', and their role in 'Sentence Structure' and logical flow.",
+              "weaknessId": "0d26be35-71d0-4c1f-9d6e-4530e3e2a414"
             }
           ]
         },
         {
           "weakness": {
-            "id": "7d899f00-d1ac-4c0b-9e32-a47137b2c4a7",
-            "text": "Errors in forming passive voice verb structures",
-            "description": "The student struggles to correctly form passive voice constructions, particularly when an infinitive form is required. They tend to use active or incorrect verb tenses instead of the appropriate 'to be + past participle' structure for actions received by the subject."
+            "id": "e895cbe1-ec68-4488-a508-e4da461dc88d",
+            "text": "Difficulty forming correct passive voice verb structures.",
+            "description": "The student incorrectly forms passive voice constructions, often choosing an active voice verb form when the grammatical context clearly requires a passive structure. This indicates a misunderstanding of how to correctly conjugate verbs to show that the subject is receiving an action, rather than performing it."
           },
           "recommendedCourses": [
             {
@@ -336,371 +185,17 @@
               "lessonTitle": "Verbs & Tenses for TOEIC Part 5",
               "description": "Focus on simple vs. progressive forms, perfect tenses, modal verbs, subject–verb agreement, and tense logic used in business contexts.",
               "link": "https://example.com/toeic-verbs-tenses",
-              "score": 0.95,
-              "reason": "Directly covers verbs and tenses, which are fundamental to understanding and forming passive voice structures.",
-              "weaknessId": "7d899f00-d1ac-4c0b-9e32-a47137b2c4a7"
-            },
-            {
-              "courseId": "01TOEICG001",
-              "lessonTitle": "TOEIC Grammar Essentials",
-              "description": "Covers verb forms, modifiers, connectors, clauses, and common error patterns. Students practice sentence-completion questions aligned with TOEIC exam logic.",
-              "link": "https://example.com/toeic-grammar-essentials",
               "score": 0.9,
-              "reason": "A comprehensive grammar essentials course is highly likely to cover passive voice verb structures as a core topic.",
-              "weaknessId": "7d899f00-d1ac-4c0b-9e32-a47137b2c4a7"
+              "reason": "Directly addresses verbs and tenses, crucial for understanding and forming passive voice structures.",
+              "weaknessId": "e895cbe1-ec68-4488-a508-e4da461dc88d"
             }
           ]
         },
         {
           "weakness": {
-            "id": "999b3d5b-2036-4968-a5f6-f80bd1a0dfba",
-            "text": "Confusion between subject and possessive relative pronouns",
-            "description": "The student confuses the roles of relative pronouns, specifically using 'whose' (possessive) when 'who' (subject) is required to introduce a clause that describes the person performing an action. This points to a lack of clarity regarding pronoun function in relative clauses."
-          },
-          "recommendedCourses": [
-            {
-              "courseId": "01TOEICG006",
-              "lessonTitle": "Noun Clauses & Relative Pronouns",
-              "description": "Practice who/whom/which/that, embedded clauses, subject/object clause identification, and typical distractors.",
-              "link": "https://example.com/toeic-relative-clauses",
-              "score": 0.95,
-              "reason": "Directly addresses 'relative pronouns' which is the core of the weakness.",
-              "weaknessId": "999b3d5b-2036-4968-a5f6-f80bd1a0dfba"
-            }
-          ]
-        },
-        {
-          "weakness": {
-            "id": "415e3366-1b2e-46b2-92ff-6592d9826b16",
-            "text": "Incorrect singular vs. plural usage for abstract nouns",
-            "description": "The student incorrectly chooses the plural form of an abstract noun when the singular, general concept is grammatically appropriate, especially in compound noun structures. This indicates a misunderstanding of noun countability and correct word form for abstract ideas."
-          },
-          "recommendedCourses": []
-        }
-      ],
-      "user_facing_response": "**TOEIC Part5 Sample Test**\n\n**Current Performance:** You achieved a solid score of 15 out of 20 (75% accuracy) on the TOEIC Part5 Sample Test, correctly answering 15 questions. This is a good foundation, and there's a clear path to boosting your overall score. Focusing on specific grammar points, such as sentence connectors and verb forms, will be key to your improvement.\n\n**Area to be Improved:** Your performance highlights key areas for growth. You encountered difficulties with interpreting logical relationships between clauses, specifically with connectors. Errors in passive voice verb structures, confusion between subject and possessive relative pronouns, and incorrect singular/plural usage for abstract nouns were also identified. Addressing these specific points will significantly enhance your grammar accuracy.\n\n**Recommended Course:**\n\n- **Connectors & Transition Signals**: This course is designed to help you master the logical relationships between clauses, improving your ability to correctly use various connectors and transition signals. - Link: https://example.com/toeic-connectors\n\n- **Conjunctions & Sentence Structure**: Strengthen your understanding of how conjunctions work within sentence structures, directly addressing your challenges with logical relationships and sentence coherence. - Link: https://example.com/toeic-conjunctions\n\n- **Verbs & Tenses for TOEIC Part 5**: Focus specifically on verb forms and tenses, including a deep dive into the correct application of passive voice, which was a identified area for improvement. - Link: https://example.com/toeic-verbs-tenses\n\n- **TOEIC Grammar Essentials**: A comprehensive course that will solidify your foundational grammar rules, offering a holistic review that can reinforce understanding across multiple identified weaknesses. - Link: https://example.com/toeic-grammar-essentials\n\n- **Noun Clauses & Relative Pronouns**: This course will clarify the distinctions between different types of relative pronouns and noun clauses, helping you confidently differentiate between subject and possessive forms. - Link: https://example.com/toeic-relative-clauses"
-    }
-  },
-  {
-    "run_id": "run_48d5aaa8450f4906a374f74fc6202a44",
-    "status": "ok",
-    "datetime": "2026-02-03T06:09:20+00:00",
-    "orchestrator_runtime": 20.8025,
-    "entries": [
-      {
-        "type": "api",
-        "name": "data_gathering_attempts",
-        "request_runtime": 1.7574
-      },
-      {
-        "type": "api",
-        "name": "data_gathering_questions",
-        "request_runtime": 1.1243
-      },
-      {
-        "type": "api",
-        "name": "test_analysis",
-        "request_runtime": 5.8299,
-        "api_runtime": [
-          {
-            "usage": "extract_weaknesses",
-            "input_token": 487,
-            "output_token": 165,
-            "runtime": 5.6741
-          }
-        ],
-        "input_token": 487,
-        "output_token": 165
-      },
-      {
-        "type": "api",
-        "name": "course_recommendation",
-        "request_runtime": 4.2768,
-        "api_runtime": [
-          {
-            "usage": "vector_search: cd97080f-09a1-4df3-ac6e-3ef52cc051c5",
-            "input_token": 0,
-            "output_token": 0,
-            "runtime": 0.3908
-          },
-          {
-            "usage": "agent4: rerank weakness cd97080f-09a1-4df3-ac6e-3ef52cc051c5",
-            "input_token": 299,
-            "output_token": 221,
-            "runtime": 3.765
-          }
-        ],
-        "input_token": 299,
-        "output_token": 221
-      },
-      {
-        "type": "llm",
-        "name": "user_facing_response",
-        "input_token": 1388,
-        "output_token": 371,
-        "llm_runtime": 7.8076
-      }
-    ],
-    "metadata": {
-      "student_id": "STUDENT_A",
-      "test_id": "01KCXGG0SS0001H0Q1FW1K4S0G",
-      "max_courses": 5,
-      "max_courses_per_weakness": 3,
-      "participant_ranking": 0.0,
-      "language": "EN"
-    },
-    "api_output": {
-      "test_analysis": {
-        "weaknesses": [
-          {
-            "id": "cd97080f-09a1-4df3-ac6e-3ef52cc051c5",
-            "weakness": "Python string slicing: Misunderstanding of exclusive stop index with step",
-            "description": "The student struggles with Python string slicing when a step value is provided, specifically misinterpreting the 'stop' parameter. They incorrectly include characters at or beyond the 'stop' index, failing to apply the fundamental rule that the 'stop' index is always exclusive, regardless of the step increment. This leads to an 'off-by-one' error in the slice's ending boundary.",
-            "frequency": 1,
-            "evidenceQuestionIds": [
-              "01KCXGG0SS0001H0Q1FW1K93P0"
-            ]
-          }
-        ]
-      },
-      "course_recommendation": [
-        {
-          "weakness": {
-            "id": "cd97080f-09a1-4df3-ac6e-3ef52cc051c5",
-            "text": "Python string slicing: Misunderstanding of exclusive stop index with step",
-            "description": "The student struggles with Python string slicing when a step value is provided, specifically misinterpreting the 'stop' parameter. They incorrectly include characters at or beyond the 'stop' index, failing to apply the fundamental rule that the 'stop' index is always exclusive, regardless of the step increment. This leads to an 'off-by-one' error in the slice's ending boundary."
-          },
-          "recommendedCourses": [
-            {
-              "courseId": "01KAWP740GSMXXTGD4WJ3Q811Y",
-              "lessonTitle": "Computing in Python I: Fundamentals and Procedural Programming",
-              "description": "This course starts from the beginning, covering the basics of how a computer interprets lines of code; how to write programs, evaluate their output, and revise the code itself; how to work with variables and their changing values; and how to use mathematical, boolean, and relational operators. By the end of this course, you'll be able to write small programs in Python that use variables, mathematical operators, and logical operators. For example, you could write programs that carry out complex mathematical operations, like calculating the interest rate necessary to reach a savings goal, recommending apparel options based on weather patterns, or calculating a grade based on multiple percentages. Structurally, the course is comprised of several parts. Instruction is delivered via a series of short (2-3 minute) videos. In between those videos, you'll complete both multiple choice questions and coding problems to demonstrate your knowledge of the material that was just covered. Computer Science",
-              "link": "https://www.edx.org/course/computing-in-python-i-fundamentals-and-procedural",
-              "score": 0.98,
-              "reason": "Focuses on Python fundamentals, directly addressing core concepts like string manipulation.",
-              "weaknessId": "cd97080f-09a1-4df3-ac6e-3ef52cc051c5"
-            },
-            {
-              "courseId": "01KAWP7409ZH98683BM8SRW2C1",
-              "lessonTitle": "Programming for Everybody (Getting Started with Python)",
-              "description": "This course aims to teach everyone the basics of programming computers using Python. We cover the basics of how one constructs a program from a series of simple instructions in Python. The course has no pre-requisites and avoids all but the simplest mathematics. Anyone with moderate computer experience should be able to master the materials in this course. This course will cover Chapters 1-5 of the textbook \"Python for Everybody\". Once a student completes this course, they will be ready to take more advanced programming courses. This course covers Python 3. Computer Science",
-              "link": "https://www.edx.org/course/programming-for-everybody-getting-started-with-pyt",
-              "score": 0.95,
-              "reason": "Covers Python fundamentals, highly likely to include string operations and slicing basics.",
-              "weaknessId": "cd97080f-09a1-4df3-ac6e-3ef52cc051c5"
-            },
-            {
-              "courseId": "01KAWP740BY7G74JPB1DPRK1AA",
-              "lessonTitle": "Python Basics for Data Science",
-              "description": "Kickstart your learning of Python for data science, as well as programming in general with this introduction to Python course. This beginner-friendly Python course will quickly take you from zero to programming in Python in a matter of hours and give you a taste of how to start working with data in Python. ~~~~Upon its completion, you'll be able to write your own Python scripts and perform basic hands-on data analysis using our Jupyter-based lab environment. If you want to learn Python from scratch, this course is for you.You can start creating your own data science projects and collaborating with other data scientists using IBM Watson Studio. When you sign up, you will receive free access to Watson Studio. Start now and take advantage of this platform and learn the basics of programming, machine learning, and data visualization with this Beginner course.The objectives of this course is to get you started with Python as the programming language and give you a taste of how to start working with data in Python.In this course you will learn about: Data Analysis & Statistics",
-              "link": "https://www.edx.org/course/python-basics-for-data-science",
-              "score": 0.9,
-              "reason": "Covers Python basics, which includes string operations, relevant for data manipulation.",
-              "weaknessId": "cd97080f-09a1-4df3-ac6e-3ef52cc051c5"
-            }
-          ]
-        }
-      ],
-      "user_facing_response": "**Computer Science 101**\n\n**Current Performance:** You achieved an excellent score of 19 out of 20 in Computer Science 101, demonstrating a strong grasp of the test material with only one incorrect question. This outstanding performance highlights your solid understanding of computer science fundamentals. To achieve a perfect score, focus on refining your understanding of Python string slicing.\n\n**Area to be Improved:** Your primary area for improvement is Python string slicing, specifically understanding the exclusive stop index when using a step. Mastering this concept will enhance your precision and confidence in manipulating sequences within Python programs.\n\n**Progress Compared to Previous Test (Computer Science 101)**\n\n**Domain Comparison:**\n\n- **Python**: Maintained 80% accuracy, demonstrating consistent mastery of the subject.\n\n- **Algebra**: Improved by +20% (from 80% to 100% accuracy).\n\n- **Database**: Improved by +60% (from 40% to 100% accuracy).\n\n- **Data Visualization**: Maintained 100% accuracy, demonstrating consistent mastery of the subject.\n\n**Recommended Course:**\n\n- **Computing in Python I: Fundamentals and Procedural Programming**: This course will solidify your foundational Python skills, which are crucial for advanced topics like string manipulation and ensuring a deeper understanding. - Link: https://www.edx.org/course/computing-in-python-i-fundamentals-and-procedural\n\n- **Programming for Everybody (Getting Started with Python)**: An excellent resource for reinforcing core Python concepts, ensuring a robust understanding of fundamental programming constructs and their applications. - Link: https://www.edx.org/course/programming-for-everybody-getting-started-with-pyt\n\n- **Python Basics for Data Science**: This course applies Python fundamentals to data science, which will further deepen your understanding of Python string operations in practical, real-world contexts. - Link: https://www.edx.org/course/python-basics-for-data-science"
-    }
-  },
-  {
-    "run_id": "run_d062f5c5aa744435b1c1c5f6f6028d1e",
-    "status": "ok",
-    "datetime": "2026-02-03T06:10:14+00:00",
-    "orchestrator_runtime": 26.1562,
-    "entries": [
-      {
-        "type": "api",
-        "name": "data_gathering_attempts",
-        "request_runtime": 1.7762
-      },
-      {
-        "type": "api",
-        "name": "data_gathering_questions",
-        "request_runtime": 1.024
-      },
-      {
-        "type": "api",
-        "name": "test_analysis",
-        "request_runtime": 11.0705,
-        "api_runtime": [
-          {
-            "usage": "extract_weaknesses",
-            "input_token": 1162,
-            "output_token": 514,
-            "runtime": 10.9615
-          }
-        ],
-        "input_token": 1162,
-        "output_token": 514
-      },
-      {
-        "type": "api",
-        "name": "course_recommendation",
-        "request_runtime": 6.4458,
-        "api_runtime": [
-          {
-            "usage": "vector_search: e281fa41-ed22-4eee-ac7b-6d01defe263d",
-            "input_token": 0,
-            "output_token": 0,
-            "runtime": 0.4192
-          },
-          {
-            "usage": "vector_search: 8c668dde-f087-499f-90dd-0e4800de63e3",
-            "input_token": 0,
-            "output_token": 0,
-            "runtime": 0.4286
-          },
-          {
-            "usage": "vector_search: cf9df2da-94f0-4117-a73e-1cf3c47ddaec",
-            "input_token": 0,
-            "output_token": 0,
-            "runtime": 0.4494
-          },
-          {
-            "usage": "vector_search: ef3d8bd2-6378-494f-bed0-aa497822ce0f",
-            "input_token": 0,
-            "output_token": 0,
-            "runtime": 0.4564
-          },
-          {
-            "usage": "agent4: rerank weakness cf9df2da-94f0-4117-a73e-1cf3c47ddaec",
-            "input_token": 254,
-            "output_token": 192,
-            "runtime": 4.3178
-          },
-          {
-            "usage": "agent4: rerank weakness e281fa41-ed22-4eee-ac7b-6d01defe263d",
-            "input_token": 251,
-            "output_token": 180,
-            "runtime": 4.8004
-          },
-          {
-            "usage": "agent4: rerank weakness ef3d8bd2-6378-494f-bed0-aa497822ce0f",
-            "input_token": 251,
-            "output_token": 212,
-            "runtime": 4.8801
-          },
-          {
-            "usage": "agent4: rerank weakness 8c668dde-f087-499f-90dd-0e4800de63e3",
-            "input_token": 269,
-            "output_token": 203,
-            "runtime": 5.3476
-          }
-        ],
-        "input_token": 1025,
-        "output_token": 787
-      },
-      {
-        "type": "llm",
-        "name": "user_facing_response",
-        "input_token": 974,
-        "output_token": 310,
-        "llm_runtime": 5.8375
-      }
-    ],
-    "metadata": {
-      "student_id": "STUDENT_A",
-      "test_id": "01KCXGG0SP0001H0Q1FW1GGERR",
-      "max_courses": 5,
-      "max_courses_per_weakness": 3,
-      "participant_ranking": 0.0,
-      "language": "EN"
-    },
-    "api_output": {
-      "test_analysis": {
-        "weaknesses": [
-          {
-            "id": "ef3d8bd2-6378-494f-bed0-aa497822ce0f",
-            "weakness": "Misuse of Discourse Connectors",
-            "description": "The student struggles to choose the appropriate connecting adverbs (e.g., however, therefore, otherwise) to accurately convey the logical relationship (e.g., contrast, result, condition) between independent clauses. Errors occur when the intended logical link between sentences or clauses is misunderstood, leading to an incorrect transition.",
-            "frequency": 2,
-            "evidenceQuestionIds": [
-              "01KCXGG0SP0001H0Q1FW1GQ9GR",
-              "01KCXGG0SR0001H0Q1FW1J2Q5G"
-            ]
-          },
-          {
-            "id": "cf9df2da-94f0-4117-a73e-1cf3c47ddaec",
-            "weakness": "Incorrect Passive Voice Construction",
-            "description": "The student demonstrates difficulty in correctly forming and applying passive voice structures, particularly with infinitive verb forms. This indicates confusion about when to use the passive voice and how to construct sentences where the subject is the recipient of the action.",
-            "frequency": 1,
-            "evidenceQuestionIds": [
-              "01KCXGG0SQ0001H0Q1FW1H797R"
-            ]
-          },
-          {
-            "id": "e281fa41-ed22-4eee-ac7b-6d01defe263d",
-            "weakness": "Confusion of Relative Pronouns",
-            "description": "The student struggles to differentiate between relative pronouns based on their grammatical function within a clause. This error specifically highlights confusion between subject relative pronouns (e.g., 'who') and possessive relative pronouns (e.g., 'whose').",
-            "frequency": 1,
-            "evidenceQuestionIds": [
-              "01KCXGG0SQ0001H0Q1FW1HE7WR"
-            ]
-          },
-          {
-            "id": "8c668dde-f087-499f-90dd-0e4800de63e3",
-            "weakness": "Noun Form (Singular vs. Plural)",
-            "description": "The student has difficulty selecting the correct singular or plural form of nouns. This is particularly evident with abstract nouns, where confusion arises between using the singular form for a general concept and the plural for specific countable instances.",
-            "frequency": 1,
-            "evidenceQuestionIds": [
-              "01KCXGG0SR0001H0Q1FW1HWC1G"
-            ]
-          }
-        ]
-      },
-      "course_recommendation": [
-        {
-          "weakness": {
-            "id": "ef3d8bd2-6378-494f-bed0-aa497822ce0f",
-            "text": "Misuse of Discourse Connectors",
-            "description": "The student struggles to choose the appropriate connecting adverbs (e.g., however, therefore, otherwise) to accurately convey the logical relationship (e.g., contrast, result, condition) between independent clauses. Errors occur when the intended logical link between sentences or clauses is misunderstood, leading to an incorrect transition."
-          },
-          "recommendedCourses": [
-            {
-              "courseId": "01TOEICG005",
-              "lessonTitle": "Connectors & Transition Signals",
-              "description": "Students learn logical connectors (however, therefore, although, meanwhile) and practice TOEIC-style questions testing sentence cohesion.",
-              "link": "https://example.com/toeic-connectors",
-              "score": 0.95,
-              "reason": "Directly addresses 'Connectors' which are synonymous with 'Discourse Connectors'.",
-              "weaknessId": "ef3d8bd2-6378-494f-bed0-aa497822ce0f"
-            }
-          ]
-        },
-        {
-          "weakness": {
-            "id": "cf9df2da-94f0-4117-a73e-1cf3c47ddaec",
-            "text": "Incorrect Passive Voice Construction",
-            "description": "The student demonstrates difficulty in correctly forming and applying passive voice structures, particularly with infinitive verb forms. This indicates confusion about when to use the passive voice and how to construct sentences where the subject is the recipient of the action."
-          },
-          "recommendedCourses": [
-            {
-              "courseId": "01TOEICG002",
-              "lessonTitle": "Verbs & Tenses for TOEIC Part 5",
-              "description": "Focus on simple vs. progressive forms, perfect tenses, modal verbs, subject–verb agreement, and tense logic used in business contexts.",
-              "link": "https://example.com/toeic-verbs-tenses",
-              "score": 0.95,
-              "reason": "Directly addresses verbs and tenses, which are core components of correctly forming the passive voice.",
-              "weaknessId": "cf9df2da-94f0-4117-a73e-1cf3c47ddaec"
-            },
-            {
-              "courseId": "01TOEICG001",
-              "lessonTitle": "TOEIC Grammar Essentials",
-              "description": "Covers verb forms, modifiers, connectors, clauses, and common error patterns. Students practice sentence-completion questions aligned with TOEIC exam logic.",
-              "link": "https://example.com/toeic-grammar-essentials",
-              "score": 0.9,
-              "reason": "A comprehensive grammar course is highly likely to cover passive voice rules and usage.",
-              "weaknessId": "cf9df2da-94f0-4117-a73e-1cf3c47ddaec"
-            }
-          ]
-        },
-        {
-          "weakness": {
-            "id": "e281fa41-ed22-4eee-ac7b-6d01defe263d",
-            "text": "Confusion of Relative Pronouns",
-            "description": "The student struggles to differentiate between relative pronouns based on their grammatical function within a clause. This error specifically highlights confusion between subject relative pronouns (e.g., 'who') and possessive relative pronouns (e.g., 'whose')."
+            "id": "321d7fa8-c469-4b1c-b6f9-8e9d81598ec9",
+            "text": "Confusion in using relative pronouns based on their grammatical function.",
+            "description": "The student struggles to differentiate between relative pronouns (e.g., who, whose) and their correct usage based on whether they function as a subject, object, or possessive within a relative clause. This results in selecting the wrong pronoun for the intended grammatical role in the sentence."
           },
           "recommendedCourses": [
             {
@@ -709,16 +204,16 @@
               "description": "Practice who/whom/which/that, embedded clauses, subject/object clause identification, and typical distractors.",
               "link": "https://example.com/toeic-relative-clauses",
               "score": 1.0,
-              "reason": "Explicitly covers relative pronouns, directly addressing the weakness.",
-              "weaknessId": "e281fa41-ed22-4eee-ac7b-6d01defe263d"
+              "reason": "Directly addresses 'relative pronouns,' the core of the weakness.",
+              "weaknessId": "321d7fa8-c469-4b1c-b6f9-8e9d81598ec9"
             }
           ]
         },
         {
           "weakness": {
-            "id": "8c668dde-f087-499f-90dd-0e4800de63e3",
-            "text": "Noun Form (Singular vs. Plural)",
-            "description": "The student has difficulty selecting the correct singular or plural form of nouns. This is particularly evident with abstract nouns, where confusion arises between using the singular form for a general concept and the plural for specific countable instances."
+            "id": "fe95fcaa-6de6-43f4-bfd5-b93a3d656586",
+            "text": "Inappropriate use of noun number and form, especially for abstract nouns.",
+            "description": "The student misuses noun forms, specifically confusing singular abstract nouns with their plural counterparts in contexts requiring a general concept or quality rather than specific instances. This indicates a lack of understanding regarding the appropriate noun number and form based on the precise meaning conveyed in the sentence."
           },
           "recommendedCourses": [
             {
@@ -726,74 +221,74 @@
               "lessonTitle": "Countable & Uncountable Nouns for TOEIC",
               "description": "Practice phrases like 'make progress', 'give advice', 'conduct research', and understand quantifiers such as much/many/less/fewer.",
               "link": "https://example.com/toeic-nouns",
-              "score": 0.95,
-              "reason": "Directly covers noun types (countable/uncountable) which are fundamental to understanding singular vs. plural forms.",
-              "weaknessId": "8c668dde-f087-499f-90dd-0e4800de63e3"
+              "score": 1.0,
+              "reason": "Directly addresses noun number (countable/uncountable) and form, matching the weakness perfectly.",
+              "weaknessId": "fe95fcaa-6de6-43f4-bfd5-b93a3d656586"
             }
           ]
         }
       ],
-      "user_facing_response": "**TOEIC Part5 Sample Test**\n\n**Current Performance:** You achieved a good score of 15 out of 20, successfully passing this TOEIC Part5 Sample Test. This indicates a solid understanding of many grammatical concepts. To elevate your score further, focusing on the specific areas where you made mistakes will be highly beneficial.\n\n**Area to be Improved:** To sharpen your English proficiency, concentrate on mastering discourse connectors for smoother transitions and correctly applying passive voice constructions. Additionally, clarifying the usage of relative pronouns and distinguishing between singular and plural noun forms are crucial for achieving a higher score.\n\n**Recommended Course:**\n\n- **Connectors & Transition Signals**: This course will help you master the various types of connectors and transition words, ensuring your sentences flow logically and cohesively. - Link: https://example.com/toeic-connectors\n\n- **Verbs & Tenses for TOEIC Part 5**: Improve your understanding and application of verb forms, tenses, and passive voice structures, which are vital for TOEIC Part 5 success. - Link: https://example.com/toeic-verbs-tenses\n\n- **TOEIC Grammar Essentials**: This comprehensive course covers fundamental grammatical rules essential for the TOEIC exam, providing a solid foundation for all question types. - Link: https://example.com/toeic-grammar-essentials\n\n- **Noun Clauses & Relative Pronouns**: Strengthen your ability to correctly use noun clauses and relative pronouns, avoiding common errors in complex sentence structures. - Link: https://example.com/toeic-relative-clauses\n\n- **Countable & Uncountable Nouns for TOEIC**: Enhance your precision in using nouns by understanding the rules for countable and uncountable nouns, including their singular and plural forms. - Link: https://example.com/toeic-nouns"
+      "user_facing_response": "**TOEIC Part5 Sample Test**\n\n**Current Performance:** You achieved a solid score of 15 out of 20 on your TOEIC Part 5 Sample Test, demonstrating a good grasp of the material and a passing performance. To further enhance your accuracy, focusing on areas like logical connections between sentences and correct verb structures will be beneficial. Keep up the great work!\n\n**Area to be Improved:** Your current focus areas include refining the use of transitional words and conjunctive adverbs for clearer logical connections. Additionally, strengthening your understanding of passive voice verb structures and the appropriate application of relative pronouns will significantly boost your grammatical precision. Paying attention to noun number and form, particularly for abstract nouns, will also be key to improvement.\n\n**Recommended Course:**\n\n- **Connectors & Transition Signals**: This course will help you master various connectors and transition signals to improve sentence flow and logical coherence in your writing and speaking. - Link: https://example.com/toeic-connectors\n\n- **Conjunctions & Sentence Structure**: Delve into the correct usage of conjunctions and learn how to construct complex sentences accurately, crucial for TOEIC success. - Link: https://example.com/toeic-conjunctions\n\n- **Verbs & Tenses for TOEIC Part 5**: Enhance your understanding and application of verbs and tenses, specifically tailored for the challenges presented in TOEIC Part 5. - Link: https://example.com/toeic-verbs-tenses\n\n- **Noun Clauses & Relative Pronouns**: Gain clarity on noun clauses and relative pronouns, enabling you to use them correctly based on their grammatical function and avoid common errors. - Link: https://example.com/toeic-relative-clauses\n\n- **Countable & Uncountable Nouns for TOEIC**: Strengthen your knowledge of countable and uncountable nouns, ensuring proper noun number and form usage, especially for abstract concepts, a frequent area of confusion in TOEIC. - Link: https://example.com/toeic-nouns"
     }
   },
   {
-    "run_id": "run_f63019029fbe49c9bb2d66903a4c55e6",
+    "run_id": "run_2279a9b869f6433aa2dd2cea71db3358",
     "status": "ok",
-    "datetime": "2026-02-03T06:10:44+00:00",
-    "orchestrator_runtime": 22.3241,
+    "datetime": "2026-02-11T11:09:00+00:00",
+    "orchestrator_runtime": 17.9811,
     "entries": [
       {
         "type": "api",
         "name": "data_gathering_attempts",
-        "request_runtime": 1.6365
+        "request_runtime": 1.6355
       },
       {
         "type": "api",
         "name": "data_gathering_questions",
-        "request_runtime": 1.2279
+        "request_runtime": 1.1322
       },
       {
         "type": "api",
         "name": "test_analysis",
-        "request_runtime": 4.0993,
+        "request_runtime": 4.9095,
         "api_runtime": [
           {
             "usage": "extract_weaknesses",
             "input_token": 487,
-            "output_token": 160,
-            "runtime": 3.9654
+            "output_token": 153,
+            "runtime": 4.7666
           }
         ],
         "input_token": 487,
-        "output_token": 160
+        "output_token": 153
       },
       {
         "type": "api",
         "name": "course_recommendation",
-        "request_runtime": 6.4523,
+        "request_runtime": 5.2986,
         "api_runtime": [
           {
-            "usage": "vector_search: 81319587-72c5-49c4-abae-302ba1eeb053",
+            "usage": "vector_search: e7b16354-aaed-4f56-a00b-5131d17de1fe",
             "input_token": 0,
             "output_token": 0,
-            "runtime": 0.3807
+            "runtime": 0.4104
           },
           {
-            "usage": "agent4: rerank weakness 81319587-72c5-49c4-abae-302ba1eeb053",
+            "usage": "agent4: rerank weakness e7b16354-aaed-4f56-a00b-5131d17de1fe",
             "input_token": 297,
-            "output_token": 221,
-            "runtime": 5.95
+            "output_token": 215,
+            "runtime": 4.7845
           }
         ],
         "input_token": 297,
-        "output_token": 221
+        "output_token": 215
       },
       {
         "type": "llm",
         "name": "user_facing_response",
-        "input_token": 1386,
-        "output_token": 542,
-        "llm_runtime": 8.9063
+        "input_token": 1049,
+        "output_token": 295,
+        "llm_runtime": 5.0045
       }
     ],
     "metadata": {
@@ -802,15 +297,15 @@
       "max_courses": 5,
       "max_courses_per_weakness": 3,
       "participant_ranking": 0.0,
-      "language": "TH"
+      "language": "EN"
     },
     "api_output": {
       "test_analysis": {
         "weaknesses": [
           {
-            "id": "81319587-72c5-49c4-abae-302ba1eeb053",
-            "weakness": "Misinterpretation of exclusive end index in Python string slicing",
-            "description": "The student incorrectly includes the character at the 'end' index in string slices. Python string slicing `s[start:end:step]` specifies an exclusive 'end' index, meaning the character at `s[end]` is not included in the slice. The student's answer indicates they treated the 'end' index as inclusive, leading to an extra character being included.",
+            "id": "e7b16354-aaed-4f56-a00b-5131d17de1fe",
+            "weakness": "Confusion with exclusive 'stop' index in Python slicing",
+            "description": "The student struggles with the Python slicing syntax `[start:stop:step]`, specifically misunderstanding the 'stop' parameter. They appear to treat the 'stop' index as inclusive rather than exclusive, leading to the inclusion of elements that should be outside the slice range. This pattern suggests a fundamental misunderstanding of how Python handles slice boundaries.",
             "frequency": 1,
             "evidenceQuestionIds": [
               "01KCXGG0SS0001H0Q1FW1K93P0"
@@ -821,258 +316,146 @@
       "course_recommendation": [
         {
           "weakness": {
-            "id": "81319587-72c5-49c4-abae-302ba1eeb053",
-            "text": "Misinterpretation of exclusive end index in Python string slicing",
-            "description": "The student incorrectly includes the character at the 'end' index in string slices. Python string slicing `s[start:end:step]` specifies an exclusive 'end' index, meaning the character at `s[end]` is not included in the slice. The student's answer indicates they treated the 'end' index as inclusive, leading to an extra character being included."
+            "id": "e7b16354-aaed-4f56-a00b-5131d17de1fe",
+            "text": "Confusion with exclusive 'stop' index in Python slicing",
+            "description": "The student struggles with the Python slicing syntax `[start:stop:step]`, specifically misunderstanding the 'stop' parameter. They appear to treat the 'stop' index as inclusive rather than exclusive, leading to the inclusion of elements that should be outside the slice range. This pattern suggests a fundamental misunderstanding of how Python handles slice boundaries."
           },
           "recommendedCourses": [
+            {
+              "courseId": "01KAWP740GSMXXTGD4WJ3Q811Y",
+              "lessonTitle": "Computing in Python I: Fundamentals and Procedural Programming",
+              "description": "This course starts from the beginning, covering the basics of how a computer interprets lines of code; how to write programs, evaluate their output, and revise the code itself; how to work with variables and their changing values; and how to use mathematical, boolean, and relational operators. By the end of this course, you'll be able to write small programs in Python that use variables, mathematical operators, and logical operators. For example, you could write programs that carry out complex mathematical operations, like calculating the interest rate necessary to reach a savings goal, recommending apparel options based on weather patterns, or calculating a grade based on multiple percentages. Structurally, the course is comprised of several parts. Instruction is delivered via a series of short (2-3 minute) videos. In between those videos, you'll complete both multiple choice questions and coding problems to demonstrate your knowledge of the material that was just covered. Computer Science",
+              "link": "https://www.edx.org/course/computing-in-python-i-fundamentals-and-procedural",
+              "score": 0.99,
+              "reason": "Focuses on Python fundamentals, directly addressing core concepts like slicing.",
+              "weaknessId": "e7b16354-aaed-4f56-a00b-5131d17de1fe"
+            },
             {
               "courseId": "01KAWP7409ZH98683BM8SRW2C1",
               "lessonTitle": "Programming for Everybody (Getting Started with Python)",
               "description": "This course aims to teach everyone the basics of programming computers using Python. We cover the basics of how one constructs a program from a series of simple instructions in Python. The course has no pre-requisites and avoids all but the simplest mathematics. Anyone with moderate computer experience should be able to master the materials in this course. This course will cover Chapters 1-5 of the textbook \"Python for Everybody\". Once a student completes this course, they will be ready to take more advanced programming courses. This course covers Python 3. Computer Science",
               "link": "https://www.edx.org/course/programming-for-everybody-getting-started-with-pyt",
-              "score": 0.95,
-              "reason": "Directly addresses Python fundamentals, including string manipulation and indexing.",
-              "weaknessId": "81319587-72c5-49c4-abae-302ba1eeb053"
-            },
-            {
-              "courseId": "01KAWP740GSMXXTGD4WJ3Q811Y",
-              "lessonTitle": "Computing in Python I: Fundamentals and Procedural Programming",
-              "description": "This course starts from the beginning, covering the basics of how a computer interprets lines of code; how to write programs, evaluate their output, and revise the code itself; how to work with variables and their changing values; and how to use mathematical, boolean, and relational operators. By the end of this course, you'll be able to write small programs in Python that use variables, mathematical operators, and logical operators. For example, you could write programs that carry out complex mathematical operations, like calculating the interest rate necessary to reach a savings goal, recommending apparel options based on weather patterns, or calculating a grade based on multiple percentages. Structurally, the course is comprised of several parts. Instruction is delivered via a series of short (2-3 minute) videos. In between those videos, you'll complete both multiple choice questions and coding problems to demonstrate your knowledge of the material that was just covered. Computer Science",
-              "link": "https://www.edx.org/course/computing-in-python-i-fundamentals-and-procedural",
-              "score": 0.95,
-              "reason": "Covers fundamental Python concepts essential for understanding string indexing and slicing.",
-              "weaknessId": "81319587-72c5-49c4-abae-302ba1eeb053"
+              "score": 0.98,
+              "reason": "Covers foundational Python concepts including slicing and indexing.",
+              "weaknessId": "e7b16354-aaed-4f56-a00b-5131d17de1fe"
             },
             {
               "courseId": "01KAWP740BY7G74JPB1DPRK1AA",
               "lessonTitle": "Python Basics for Data Science",
               "description": "Kickstart your learning of Python for data science, as well as programming in general with this introduction to Python course. This beginner-friendly Python course will quickly take you from zero to programming in Python in a matter of hours and give you a taste of how to start working with data in Python. ~~~~Upon its completion, you'll be able to write your own Python scripts and perform basic hands-on data analysis using our Jupyter-based lab environment. If you want to learn Python from scratch, this course is for you.You can start creating your own data science projects and collaborating with other data scientists using IBM Watson Studio. When you sign up, you will receive free access to Watson Studio. Start now and take advantage of this platform and learn the basics of programming, machine learning, and data visualization with this Beginner course.The objectives of this course is to get you started with Python as the programming language and give you a taste of how to start working with data in Python.In this course you will learn about: Data Analysis & Statistics",
               "link": "https://www.edx.org/course/python-basics-for-data-science",
-              "score": 0.9,
-              "reason": "Covers foundational Python concepts, which include string slicing, relevant to correcting the specific misunderstanding.",
-              "weaknessId": "81319587-72c5-49c4-abae-302ba1eeb053"
+              "score": 0.97,
+              "reason": "Covers Python basics essential for data manipulation, including array/list slicing.",
+              "weaknessId": "e7b16354-aaed-4f56-a00b-5131d17de1fe"
             }
           ]
         }
       ],
-      "user_facing_response": "**Computer Science 101**\n\n**Current Performance:** คุณทำผลงานได้อย่างยอดเยี่ยมในการสอบ Computer Science 101 ครั้งนี้ โดยได้คะแนน 19 เต็ม 20 ซึ่งถือเป็นคะแนนที่สูงมากและแสดงให้เห็นถึงความเข้าใจเนื้อหาที่แข็งแกร่งของคุณ คุณสอบผ่านและตอบผิดเพียง 1 ข้อจากทั้งหมด ซึ่งเป็นเครื่องยืนยันถึงความมุ่งมั่นและความสามารถของคุณ\n\n**Area to be Improved:** เพื่อให้ได้ผลลัพธ์ที่สมบูรณ์แบบ คุณควรเน้นย้ำและทบทวนแนวคิดเกี่ยวกับการตีความดัชนีสิ้นสุดแบบ exclusive ในการสไลซ์สตริงของ Python การทำความเข้าใจจุดนี้อย่างถ่องแท้จะช่วยเสริมความแม่นยำในการเขียนโค้ด Python ของคุณให้สมบูรณ์แบบยิ่งขึ้น\n\n**ความก้าวหน้าเมื่อเทียบกับการสอบครั้งก่อน (Computer Science 101)**\n\n**Domain Comparison:**\n\n- **Python**: รักษาความแม่นยำ 80% แสดงถึงความเข้าใจที่สม่ำเสมอในเนื้อหานี้.\n\n- **Algebra**: ดีขึ้น +20% (จาก 80% เป็น 100%).\n\n- **Database**: ดีขึ้น +60% (จาก 40% เป็น 100%).\n\n- **Data Visualization**: รักษาความแม่นยำ 100% แสดงถึงความเข้าใจที่สม่ำเสมอในเนื้อหานี้.\n\n**Recommended Course:**\n\n- **Programming for Everybody (Getting Started with Python)**: หลักสูตรนี้จะช่วยเสริมสร้างพื้นฐานภาษา Python ของคุณให้แน่นแฟ้นขึ้น โดยเฉพาะอย่างยิ่งในเรื่องของการเริ่มต้นใช้งานและแนวคิดพื้นฐาน ซึ่งเป็นรากฐานสำคัญในการเขียนโปรแกรม - Link: https://www.edx.org/course/programming-for-everybody-getting-started-with-pyt\n\n- **Computing in Python I: Fundamentals and Procedural Programming**: เป็นหลักสูตรที่ยอดเยี่ยมในการพัฒนาทักษะการเขียนโปรแกรม Python ของคุณให้ก้าวหน้าไปอีกขั้น โดยเน้นไปที่หลักการพื้นฐานและการเขียนโปรแกรมเชิงกระบวนการ ซึ่งเป็นสิ่งจำเป็นสำหรับนักพัฒนา - Link: https://www.edx.org/course/computing-in-python-i-fundamentals-and-procedural\n\n- **Python Basics for Data Science**: หากคุณมีความสนใจในการนำ Python ไปใช้ในด้านวิทยาศาสตร์ข้อมูล หลักสูตรนี้จะปูพื้นฐาน Python ที่สำคัญและจำเป็นสำหรับการวิเคราะห์ข้อมูล ช่วยให้คุณเริ่มต้นเส้นทางในสาขาวิทยาศาสตร์ข้อมูลได้อย่างมั่นใจ - Link: https://www.edx.org/course/python-basics-for-data-science"
+      "user_facing_response": "**Computer Science 101**\n\n**Current Performance:** You performed exceptionally well on your Computer Science 101 test, achieving a score of 19 out of 20 and passing! You answered 19 out of 20 questions correctly, demonstrating a strong grasp of the material. To achieve a perfect score next time, pay close attention to the specifics of Python slicing, especially the exclusive 'stop' index.\n\n**Area to be Improved:** Your main area for improvement is a common challenge for many learners: understanding the exclusive 'stop' index in Python slicing. Mastering this concept will ensure more precise and error-free code, particularly when working with sequences.\n\n**Recommended Course:**\n\n- **Computing in Python I: Fundamentals and Procedural Programming**: This course will help solidify your foundational understanding of Python, including critical concepts like slicing. - Link: https://www.edx.org/course/computing-in-python-i-fundamentals-and-procedural\n\n- **Programming for Everybody (Getting Started with Python)**: This is an excellent starting point to reinforce core Python programming principles, ensuring a strong base for more advanced topics. - Link: https://www.edx.org/course/programming-for-everybody-getting-started-with-pyt\n\n- **Python Basics for Data Science**: While focusing on data science, this course will review and apply Python basics, offering practical scenarios to cement your understanding of data manipulation and indexing. - Link: https://www.edx.org/course/python-basics-for-data-science"
     }
   },
   {
-    "run_id": "run_3fdb7e2e146240789736bf74a2ae9bff",
+    "run_id": "run_d6d20a6f79e94c0696f2c36e9c42fc2e",
     "status": "ok",
-    "datetime": "2026-02-03T06:11:26+00:00",
-    "orchestrator_runtime": 26.0075,
+    "datetime": "2026-02-11T11:09:35+00:00",
+    "orchestrator_runtime": 34.7507,
     "entries": [
       {
         "type": "api",
         "name": "data_gathering_attempts",
-        "request_runtime": 1.6091
+        "request_runtime": 1.7742
       },
       {
         "type": "api",
         "name": "data_gathering_questions",
-        "request_runtime": 0.9009
-      },
-      {
-        "type": "api",
-        "name": "course_recommendation",
-        "request_runtime": 6.3232,
-        "api_runtime": [
-          {
-            "usage": "vector_search: ef4ef693-1e75-489a-9511-32613cbb8223",
-            "input_token": 0,
-            "output_token": 0,
-            "runtime": 0.3905
-          },
-          {
-            "usage": "agent4: rerank weakness ef4ef693-1e75-489a-9511-32613cbb8223",
-            "input_token": 297,
-            "output_token": 227,
-            "runtime": 5.7649
-          }
-        ],
-        "input_token": 297,
-        "output_token": 227
-      },
-      {
-        "type": "llm",
-        "name": "user_facing_response",
-        "input_token": 1386,
-        "output_token": 422,
-        "llm_runtime": 10.1588
-      }
-    ],
-    "metadata": {
-      "student_id": "STUDENT_A",
-      "test_id": "01KCXGG0SS0001H0Q1FW1K4S0G",
-      "max_courses": 5,
-      "max_courses_per_weakness": 3,
-      "participant_ranking": 0.0,
-      "language": "TH"
-    },
-    "api_output": {
-      "test_analysis": {
-        "weaknesses": [
-          {
-            "id": "ef4ef693-1e75-489a-9511-32613cbb8223",
-            "weakness": "Misunderstanding of Python slice 'stop' index exclusivity",
-            "description": "The student incorrectly assumes the 'stop' index in Python string slicing (s[start:stop:step]) is inclusive, rather than exclusive. This leads them to include the character at the 'stop' index when it falls within the sequence generated by the 'step', resulting in an off-by-one error at the end of the slice.",
-            "frequency": 1,
-            "evidenceQuestionIds": [
-              "01KCXGG0SS0001H0Q1FW1K93P0"
-            ]
-          }
-        ]
-      },
-      "course_recommendation": [
-        {
-          "weakness": {
-            "id": "ef4ef693-1e75-489a-9511-32613cbb8223",
-            "text": "Misunderstanding of Python slice 'stop' index exclusivity",
-            "description": "The student incorrectly assumes the 'stop' index in Python string slicing (s[start:stop:step]) is inclusive, rather than exclusive. This leads them to include the character at the 'stop' index when it falls within the sequence generated by the 'step', resulting in an off-by-one error at the end of the slice."
-          },
-          "recommendedCourses": [
-            {
-              "courseId": "01KAWP7409ZH98683BM8SRW2C1",
-              "lessonTitle": "Programming for Everybody (Getting Started with Python)",
-              "description": "This course aims to teach everyone the basics of programming computers using Python. We cover the basics of how one constructs a program from a series of simple instructions in Python. The course has no pre-requisites and avoids all but the simplest mathematics. Anyone with moderate computer experience should be able to master the materials in this course. This course will cover Chapters 1-5 of the textbook \"Python for Everybody\". Once a student completes this course, they will be ready to take more advanced programming courses. This course covers Python 3. Computer Science",
-              "link": "https://www.edx.org/course/programming-for-everybody-getting-started-with-pyt",
-              "score": 0.95,
-              "reason": "Covers Python fundamentals, including basic slicing, which is highly relevant to the weakness.",
-              "weaknessId": "ef4ef693-1e75-489a-9511-32613cbb8223"
-            },
-            {
-              "courseId": "01KAWP740GSMXXTGD4WJ3Q811Y",
-              "lessonTitle": "Computing in Python I: Fundamentals and Procedural Programming",
-              "description": "This course starts from the beginning, covering the basics of how a computer interprets lines of code; how to write programs, evaluate their output, and revise the code itself; how to work with variables and their changing values; and how to use mathematical, boolean, and relational operators. By the end of this course, you'll be able to write small programs in Python that use variables, mathematical operators, and logical operators. For example, you could write programs that carry out complex mathematical operations, like calculating the interest rate necessary to reach a savings goal, recommending apparel options based on weather patterns, or calculating a grade based on multiple percentages. Structurally, the course is comprised of several parts. Instruction is delivered via a series of short (2-3 minute) videos. In between those videos, you'll complete both multiple choice questions and coding problems to demonstrate your knowledge of the material that was just covered. Computer Science",
-              "link": "https://www.edx.org/course/computing-in-python-i-fundamentals-and-procedural",
-              "score": 0.95,
-              "reason": "Focuses on Python fundamentals where understanding slicing and index exclusivity is a core concept.",
-              "weaknessId": "ef4ef693-1e75-489a-9511-32613cbb8223"
-            },
-            {
-              "courseId": "01KAWP740BY7G74JPB1DPRK1AA",
-              "lessonTitle": "Python Basics for Data Science",
-              "description": "Kickstart your learning of Python for data science, as well as programming in general with this introduction to Python course. This beginner-friendly Python course will quickly take you from zero to programming in Python in a matter of hours and give you a taste of how to start working with data in Python. ~~~~Upon its completion, you'll be able to write your own Python scripts and perform basic hands-on data analysis using our Jupyter-based lab environment. If you want to learn Python from scratch, this course is for you.You can start creating your own data science projects and collaborating with other data scientists using IBM Watson Studio. When you sign up, you will receive free access to Watson Studio. Start now and take advantage of this platform and learn the basics of programming, machine learning, and data visualization with this Beginner course.The objectives of this course is to get you started with Python as the programming language and give you a taste of how to start working with data in Python.In this course you will learn about: Data Analysis & Statistics",
-              "link": "https://www.edx.org/course/python-basics-for-data-science",
-              "score": 0.9,
-              "reason": "Covers Python basics crucial for data manipulation, which relies heavily on understanding slicing behavior.",
-              "weaknessId": "ef4ef693-1e75-489a-9511-32613cbb8223"
-            }
-          ]
-        }
-      ],
-      "user_facing_response": "**Computer Science 101**\n\n**Current Performance:** คุณทำคะแนนได้ยอดเยี่ยมถึง 19 เต็ม 20 คะแนนในวิชา Computer Science 101 ถือเป็นผลงานที่น่าประทับใจมาก แม้จะมีข้อผิดพลาดเพียง 1 ข้อ แต่โดยรวมแล้วคุณมีความเข้าใจในเนื้อหาได้ดีเยี่ยมและผ่านเกณฑ์การทดสอบนี้\n\n**Area to be Improved:** จุดที่ควรปรับปรุงคือความเข้าใจที่คลาดเคลื่อนเกี่ยวกับการทำงานของ Python slice โดยเฉพาะอย่างยิ่งเรื่อง index สุดท้ายที่ไม่ถูกรวมในการเลือกช่วงข้อมูล การทบทวนแนวคิดพื้นฐานนี้จะช่วยให้คุณใช้งาน Python ได้อย่างแม่นยำและมีประสิทธิภาพมากยิ่งขึ้น\n\n**Progress Compared to Previous Test (Computer Science 101)**\n\n**Domain Comparison:**\n\n- **Python**: รักษาความแม่นยำ 80% แสดงถึงความเข้าใจที่สม่ำเสมอในเนื้อหานี้.\n\n- **Algebra**: ดีขึ้น +20% (จาก 80% เป็น 100%).\n\n- **Database**: ดีขึ้น +60% (จาก 40% เป็น 100%).\n\n- **Data Visualization**: รักษาความแม่นยำ 100% แสดงถึงความเข้าใจที่สม่ำเสมอในเนื้อหานี้.\n\n**Recommended Course:**\n\n- **Programming for Everybody (Getting Started with Python)**: หลักสูตรนี้จะช่วยเสริมสร้างความเข้าใจพื้นฐานเกี่ยวกับภาษา Python รวมถึงแนวคิดที่สำคัญเช่นการจัดการข้อมูลและการใช้งาน slice ซึ่งจะช่วยแก้ไขจุดอ่อนที่คุณมี - Link: https://www.edx.org/course/programming-for-everybody-getting-started-with-pyt\n\n- **Computing in Python I: Fundamentals and Procedural Programming**: หลักสูตรนี้จะพาคุณเจาะลึกไปในหลักการพื้นฐานและการเขียนโปรแกรมเชิงโครงสร้างใน Python ซึ่งจะช่วยให้คุณมีความเข้าใจที่มั่นคงและละเอียดขึ้นในทุกแง่มุมของการเขียนโค้ด - Link: https://www.edx.org/course/computing-in-python-i-fundamentals-and-procedural\n\n- **Python Basics for Data Science**: สำหรับผู้ที่สนใจด้านวิทยาการข้อมูล หลักสูตรนี้จะปูพื้นฐาน Python ที่จำเป็นสำหรับงานด้าน Data Science ซึ่งรวมถึงการใช้งานโครงสร้างข้อมูลและการเลือกช่วงข้อมูลที่ถูกต้อง - Link: https://www.edx.org/course/python-basics-for-data-science"
-    }
-  },
-  {
-    "run_id": "run_6fa15a7747254d589ae22200e6c15e2b",
-    "status": "ok",
-    "datetime": "2026-02-03T06:11:41+00:00",
-    "orchestrator_runtime": 28.4947,
-    "entries": [
-      {
-        "type": "api",
-        "name": "data_gathering_attempts",
-        "request_runtime": 1.6091
-      },
-      {
-        "type": "api",
-        "name": "data_gathering_questions",
-        "request_runtime": 0.9009
-      },
-      {
-        "type": "api",
-        "name": "course_recommendation",
-        "request_runtime": 6.3232,
-        "api_runtime": [
-          {
-            "usage": "vector_search: ef4ef693-1e75-489a-9511-32613cbb8223",
-            "input_token": 0,
-            "output_token": 0,
-            "runtime": 0.3905
-          },
-          {
-            "usage": "agent4: rerank weakness ef4ef693-1e75-489a-9511-32613cbb8223",
-            "input_token": 297,
-            "output_token": 227,
-            "runtime": 5.7649
-          }
-        ],
-        "input_token": 297,
-        "output_token": 227
-      },
-      {
-        "type": "llm",
-        "name": "user_facing_response",
-        "input_token": 1386,
-        "output_token": 422,
-        "llm_runtime": 10.1588
+        "request_runtime": 1.229
       },
       {
         "type": "api",
         "name": "test_analysis",
-        "request_runtime": 11.3654,
+        "request_runtime": 15.658,
         "api_runtime": [
           {
             "usage": "extract_weaknesses",
-            "input_token": 487,
-            "output_token": 149,
-            "runtime": 4.4368
+            "input_token": 1737,
+            "output_token": 392,
+            "runtime": 15.5593
           }
         ],
-        "input_token": 487,
-        "output_token": 149
+        "input_token": 1737,
+        "output_token": 392
       },
       {
         "type": "api",
         "name": "course_recommendation",
-        "request_runtime": 4.4766,
+        "request_runtime": 9.3898,
         "api_runtime": [
           {
-            "usage": "vector_search: ae1a78d7-ae82-4a50-8a69-2015308cd79f",
+            "usage": "vector_search: 4bc56a03-0f7f-4198-9c17-2113772deb65",
             "input_token": 0,
             "output_token": 0,
-            "runtime": 0.3757
+            "runtime": 0.4144
           },
           {
-            "usage": "agent4: rerank weakness ae1a78d7-ae82-4a50-8a69-2015308cd79f",
-            "input_token": 295,
-            "output_token": 213,
-            "runtime": 3.9414
+            "usage": "vector_search: e93e041a-c70f-4210-bbd0-1f8ee026d5be",
+            "input_token": 0,
+            "output_token": 0,
+            "runtime": 0.4446
+          },
+          {
+            "usage": "agent4: rerank weakness e93e041a-c70f-4210-bbd0-1f8ee026d5be",
+            "input_token": 273,
+            "output_token": 207,
+            "runtime": 5.2831
+          },
+          {
+            "usage": "agent4: rerank weakness 4bc56a03-0f7f-4198-9c17-2113772deb65",
+            "input_token": 288,
+            "output_token": 239,
+            "runtime": 7.7272
           }
         ],
-        "input_token": 295,
-        "output_token": 213
+        "input_token": 561,
+        "output_token": 446
       },
       {
         "type": "llm",
         "name": "user_facing_response",
-        "input_token": 1373,
-        "output_token": 344,
-        "llm_runtime": 10.1414
+        "input_token": 930,
+        "output_token": 299,
+        "llm_runtime": 6.699
       }
     ],
     "metadata": {
       "student_id": "STUDENT_A",
-      "test_id": "01KCXGG0SS0001H0Q1FW1K4S0G",
+      "test_id": "01KCXGG0SW0001H0Q1FW1P83Q8",
       "max_courses": 5,
       "max_courses_per_weakness": 3,
       "participant_ranking": 0.0,
-      "language": "TH"
+      "language": "EN"
     },
     "api_output": {
       "test_analysis": {
         "weaknesses": [
           {
-            "id": "ae1a78d7-ae82-4a50-8a69-2015308cd79f",
-            "weakness": "Misunderstanding of Python slice stop index exclusivity",
-            "description": "The student incorrectly interprets the 'stop' index in Python string slicing (e.g., `s[start:stop:step]`) as inclusive rather than exclusive. This leads them to include the character at the 'stop' index or beyond in the resulting slice, when the slicing operation should stop *before* reaching that index.",
+            "id": "e93e041a-c70f-4210-bbd0-1f8ee026d5be",
+            "weakness": "Identifying Core Argument Components and Relevant Evidence",
+            "description": "The student struggles to pinpoint the unstated assumptions critical to an argument's conclusion or to identify information that directly strengthens its claims. They frequently select answer choices that are either irrelevant background facts or tangential details, failing to grasp the specific logical connection required by the question type (e.g., necessary assumption, strengthening evidence). This indicates difficulty in analyzing how premises, conclusions, assumptions, and evidence interact in a causal or propositional argument.",
+            "frequency": 4,
+            "evidenceQuestionIds": [
+              "01KCXGG0SW0001H0Q1FW1PEJR8",
+              "01KCXGG0SX0001H0Q1FW1PY5S0",
+              "01KCXGG0SX0001H0Q1FW1Q5YSR",
+              "01KCXGG0SX0001H0Q1FW1QB7R0"
+            ]
+          },
+          {
+            "id": "4bc56a03-0f7f-4198-9c17-2113772deb65",
+            "weakness": "Understanding and Applying Basic Problem Constraints",
+            "description": "In rule-based logic problems, the student misinterprets or overlooks fundamental instructions and constraints governing valid choices. This leads to selecting options that violate the basic setup of the problem (e.g., 'choose two tours' implies distinct tours), rather than making deductions based on the explicit rules provided. This suggests a lack of attention to detail in initial problem comprehension and in adhering to implicit requirements for valid selections.",
             "frequency": 1,
             "evidenceQuestionIds": [
-              "01KCXGG0SS0001H0Q1FW1K93P0"
+              "01KCXGG0SX0001H0Q1FW1QCZD8"
             ]
           }
         ]
@@ -1080,33 +463,1142 @@
       "course_recommendation": [
         {
           "weakness": {
-            "id": "ae1a78d7-ae82-4a50-8a69-2015308cd79f",
-            "text": "Misunderstanding of Python slice stop index exclusivity",
-            "description": "The student incorrectly interprets the 'stop' index in Python string slicing (e.g., `s[start:stop:step]`) as inclusive rather than exclusive. This leads them to include the character at the 'stop' index or beyond in the resulting slice, when the slicing operation should stop *before* reaching that index."
+            "id": "e93e041a-c70f-4210-bbd0-1f8ee026d5be",
+            "text": "Identifying Core Argument Components and Relevant Evidence",
+            "description": "The student struggles to pinpoint the unstated assumptions critical to an argument's conclusion or to identify information that directly strengthens its claims. They frequently select answer choices that are either irrelevant background facts or tangential details, failing to grasp the specific logical connection required by the question type (e.g., necessary assumption, strengthening evidence). This indicates difficulty in analyzing how premises, conclusions, assumptions, and evidence interact in a causal or propositional argument."
           },
           "recommendedCourses": [
             {
-              "courseId": "01KAWP740GSMXXTGD4WJ3Q811Y",
-              "lessonTitle": "Computing in Python I: Fundamentals and Procedural Programming",
-              "description": "This course starts from the beginning, covering the basics of how a computer interprets lines of code; how to write programs, evaluate their output, and revise the code itself; how to work with variables and their changing values; and how to use mathematical, boolean, and relational operators. By the end of this course, you'll be able to write small programs in Python that use variables, mathematical operators, and logical operators. For example, you could write programs that carry out complex mathematical operations, like calculating the interest rate necessary to reach a savings goal, recommending apparel options based on weather patterns, or calculating a grade based on multiple percentages. Structurally, the course is comprised of several parts. Instruction is delivered via a series of short (2-3 minute) videos. In between those videos, you'll complete both multiple choice questions and coding problems to demonstrate your knowledge of the material that was just covered. Computer Science",
-              "link": "https://www.edx.org/course/computing-in-python-i-fundamentals-and-procedural",
+              "courseId": "01KAWP742VEWSSG8KQPENFS2K5",
+              "lessonTitle": "Health Law, Policy, and Advocacy",
+              "description": "This course is part of the Healthcare Administration MicroMasters program which consists of 7 courses and a capstone exam. After completing the program, you can also apply to Doane University to complete your MBA online for approximately $10,500 (learn more about the program here). To be an effective agent of change, a healthcare administrator must have a foundational understanding of healthcare advocacy, law, and regulatory issues, as well as compliance. This course will focus on a wide range of important issues in health law, health policy and the factors at play when developing a strategic advocacy platform such as bioethics and informed consent. At the conclusion of this course, learners will be able toidentify health policies that promote quality, advocacy and system changewithin a healthcare organization. Law",
+              "link": "https://www.edx.org/course/health-law-policy-and-advocacy",
               "score": 0.9,
-              "reason": "A course on Python fundamentals would cover essential operations including slicing.",
-              "weaknessId": "ae1a78d7-ae82-4a50-8a69-2015308cd79f"
+              "reason": "Involves analyzing complex arguments, policies, and evidence inherent in law and advocacy.",
+              "weaknessId": "e93e041a-c70f-4210-bbd0-1f8ee026d5be"
+            }
+          ]
+        },
+        {
+          "weakness": {
+            "id": "4bc56a03-0f7f-4198-9c17-2113772deb65",
+            "text": "Understanding and Applying Basic Problem Constraints",
+            "description": "In rule-based logic problems, the student misinterprets or overlooks fundamental instructions and constraints governing valid choices. This leads to selecting options that violate the basic setup of the problem (e.g., 'choose two tours' implies distinct tours), rather than making deductions based on the explicit rules provided. This suggests a lack of attention to detail in initial problem comprehension and in adhering to implicit requirements for valid selections."
+          },
+          "recommendedCourses": [
+            {
+              "courseId": "01KAWP742040WW0JCNW670SNFM",
+              "lessonTitle": "Algorithm Design and Analysis",
+              "description": "How do you optimally encode a text file? How do you find shortest paths in a map? How do you design a communication network? How do you route data in a network? What are the limits of efficient computation?This course, part of the Computer Science Essentials for Software Development Professional Certificate program, is an introduction to design and analysis of algorithms, and answers along the way these and many other interesting computational questions.You will learn about algorithms that operate on common data structures, for instance sorting and searching; advanced design and analysis techniques such as dynamic programming and greedy algorithms; advanced graph algorithms such as minimum spanning trees and shortest paths; NP-completeness theory; and approximation algorithms.After completing this course you will be able to design efficient and correct algorithms using sophisticated data structures for complex computational tasks. Computer Science",
+              "link": "https://www.edx.org/course/algorithm-design-and-analysis",
+              "score": 0.95,
+              "reason": "Algorithm design inherently involves understanding and applying various problem constraints (time, space, input parameters).",
+              "weaknessId": "4bc56a03-0f7f-4198-9c17-2113772deb65"
             },
             {
-              "courseId": "01KAWP740BY7G74JPB1DPRK1AA",
-              "lessonTitle": "Python Basics for Data Science",
-              "description": "Kickstart your learning of Python for data science, as well as programming in general with this introduction to Python course. This beginner-friendly Python course will quickly take you from zero to programming in Python in a matter of hours and give you a taste of how to start working with data in Python. ~~~~Upon its completion, you'll be able to write your own Python scripts and perform basic hands-on data analysis using our Jupyter-based lab environment. If you want to learn Python from scratch, this course is for you.You can start creating your own data science projects and collaborating with other data scientists using IBM Watson Studio. When you sign up, you will receive free access to Watson Studio. Start now and take advantage of this platform and learn the basics of programming, machine learning, and data visualization with this Beginner course.The objectives of this course is to get you started with Python as the programming language and give you a taste of how to start working with data in Python.In this course you will learn about: Data Analysis & Statistics",
-              "link": "https://www.edx.org/course/python-basics-for-data-science",
+              "courseId": "01KAWP741H96QKA99PFCY9ZW88",
+              "lessonTitle": "Maths Essentials",
+              "description": "Planning to study for an MBA but unsure of your basic maths skills? All MBA programs, and in business generally require some maths, particularly on quantitative subjects such as Accounting, Economics and Finance.In this mathematics course, you will learn the fundamental business math skills needed to succeed in your MBA study and in the field of business. These math skills will also give you an edge in the workplace enabling you to apply greater analytical skill to your decision making.You will learn how to evaluate and manipulate the types of formulae that appear in an accounting syllabus, how to perform the calculus required to solve optimization problems in economics and how to apply the concept of geometric series to solving finance-related problems such as calculating compound interest payments.This course assumes no prior knowledge of business maths, concepts are explained clearly and regular activities give you the opportunity to practice your skills and improve your confidence. Business & Management",
+              "link": "https://www.edx.org/course/maths-essentials",
+              "score": 0.9,
+              "reason": "Mathematics is foundational for recognizing, formulating, and applying constraints in diverse problem-solving contexts.",
+              "weaknessId": "4bc56a03-0f7f-4198-9c17-2113772deb65"
+            }
+          ]
+        }
+      ],
+      "user_facing_response": "**Logic and Reasoning Sample Test I**\n\n**Current Performance:** You successfully passed the Logic and Reasoning Sample Test I with a score of 15 out of 20, demonstrating a good grasp of the subject matter. To further strengthen your performance, focusing on identifying core argument components and applying basic problem constraints effectively will be beneficial.\n\n**Area to be Improved:** Your performance indicates opportunities to enhance your skills in identifying core argument components and relevant evidence, as well as refining your understanding and application of basic problem constraints. Concentrating on these areas will help you approach complex logical challenges with greater precision.\n\n**Recommended Course:**\n\n- **Health Law, Policy, and Advocacy**: This course will help you develop advanced analytical skills crucial for dissecting complex arguments and identifying relevant evidence within detailed scenarios, directly addressing your identified weakness in argument analysis. - Link: https://www.edx.org/course/health-law-policy-and-advocacy\n\n- **Algorithm Design and Analysis**: By focusing on structured problem-solving and systematic constraint application, this course can significantly sharpen your ability to understand and apply basic problem constraints, improving your overall logical reasoning efficiency. - Link: https://www.edx.org/course/algorithm-design-and-analysis\n\n- **Maths Essentials**: Strengthening your foundational mathematical concepts will enhance your ability to identify patterns, apply rules, and understand fundamental constraints, which are transferable skills vital for both logical and quantitative reasoning. - Link: https://www.edx.org/course/maths-essentials"
+    }
+  },
+  {
+    "run_id": "run_cbb7ca1706fc4d1a9d9aa1a136520894",
+    "status": "ok",
+    "datetime": "2026-02-11T11:10:14+00:00",
+    "orchestrator_runtime": 27.5804,
+    "entries": [
+      {
+        "type": "api",
+        "name": "data_gathering_attempts",
+        "request_runtime": 1.5801
+      },
+      {
+        "type": "api",
+        "name": "data_gathering_questions",
+        "request_runtime": 1.2343
+      },
+      {
+        "type": "api",
+        "name": "course_recommendation",
+        "request_runtime": 7.1649,
+        "api_runtime": [
+          {
+            "usage": "vector_search: 5bc48420-028e-49f5-a897-79a8ff49c9ac",
+            "input_token": 0,
+            "output_token": 0,
+            "runtime": 0.4032
+          },
+          {
+            "usage": "vector_search: 4563858d-392a-4a88-b055-c20fd177914a",
+            "input_token": 0,
+            "output_token": 0,
+            "runtime": 0.4184
+          },
+          {
+            "usage": "vector_search: cf7c4c67-df41-48ec-bd5d-e94ad0bbaf26",
+            "input_token": 0,
+            "output_token": 0,
+            "runtime": 0.4335
+          },
+          {
+            "usage": "vector_search: e3b66000-21c4-4f92-b054-d2ea41a03c7c",
+            "input_token": 0,
+            "output_token": 0,
+            "runtime": 0.4405
+          },
+          {
+            "usage": "agent4: rerank weakness 5bc48420-028e-49f5-a897-79a8ff49c9ac",
+            "input_token": 260,
+            "output_token": 208,
+            "runtime": 3.6644
+          },
+          {
+            "usage": "agent4: rerank weakness cf7c4c67-df41-48ec-bd5d-e94ad0bbaf26",
+            "input_token": 266,
+            "output_token": 188,
+            "runtime": 6.3601
+          },
+          {
+            "usage": "agent4: rerank weakness 4563858d-392a-4a88-b055-c20fd177914a",
+            "input_token": 253,
+            "output_token": 169,
+            "runtime": 5.8363
+          },
+          {
+            "usage": "agent4: rerank weakness e3b66000-21c4-4f92-b054-d2ea41a03c7c",
+            "input_token": 256,
+            "output_token": 193,
+            "runtime": 6.5741
+          }
+        ],
+        "input_token": 1035,
+        "output_token": 758
+      },
+      {
+        "type": "llm",
+        "name": "user_facing_response",
+        "input_token": 989,
+        "output_token": 393,
+        "llm_runtime": 7.9935
+      }
+    ],
+    "metadata": {
+      "student_id": "STUDENT_A",
+      "test_id": "01KCXGG0SP0001H0Q1FW1GGERR",
+      "max_courses": 5,
+      "max_courses_per_weakness": 3,
+      "participant_ranking": 0.0,
+      "language": "EN"
+    },
+    "api_output": {
+      "test_analysis": {
+        "weaknesses": [
+          {
+            "id": "5bc48420-028e-49f5-a897-79a8ff49c9ac",
+            "weakness": "Misinterpreting logical relationships between clauses, leading to incorrect conjunctive adverb choice.",
+            "description": "The student struggles to identify the precise logical connection (e.g., contrast, result, condition) between two independent clauses. This leads to the misuse of conjunctive adverbs like 'however', 'therefore', and 'otherwise', selecting words that do not accurately convey the intended relationship between the ideas presented.",
+            "frequency": 2,
+            "evidenceQuestionIds": [
+              "01KCXGG0SP0001H0Q1FW1GQ9GR",
+              "01KCXGG0SR0001H0Q1FW1J2Q5G"
+            ]
+          },
+          {
+            "id": "e3b66000-21c4-4f92-b054-d2ea41a03c7c",
+            "weakness": "Incorrect formation of the passive voice.",
+            "description": "The student demonstrates difficulty in constructing grammatically correct passive voice sentences. Specifically, there is confusion in using the 'be + past participle' structure, especially when combined with modal verbs. This indicates a gap in understanding when and how to correctly form verbs for actions received by the subject.",
+            "frequency": 1,
+            "evidenceQuestionIds": [
+              "01KCXGG0SQ0001H0Q1FW1H797R"
+            ]
+          },
+          {
+            "id": "4563858d-392a-4a88-b055-c20fd177914a",
+            "weakness": "Confusion between subject and possessive relative pronouns.",
+            "description": "The student struggles to differentiate between 'who' (subject pronoun) and 'whose' (possessive pronoun) when introducing relative clauses. This suggests a lack of clarity regarding the grammatical role the pronoun plays within the dependent clause, specifically whether it acts as the subject performing an action or indicates possession.",
+            "frequency": 1,
+            "evidenceQuestionIds": [
+              "01KCXGG0SQ0001H0Q1FW1HE7WR"
+            ]
+          },
+          {
+            "id": "cf7c4c67-df41-48ec-bd5d-e94ad0bbaf26",
+            "weakness": "Incorrect use of singular vs. plural abstract nouns in context.",
+            "description": "The student used a plural form ('efficiencies') when the singular abstract noun ('efficiency') was required to complete a compound noun phrase. This indicates confusion in distinguishing between the general concept of an abstract quality and specific instances or measures of that quality, leading to errors in noun agreement and meaning in context.",
+            "frequency": 1,
+            "evidenceQuestionIds": [
+              "01KCXGG0SR0001H0Q1FW1HWC1G"
+            ]
+          }
+        ]
+      },
+      "course_recommendation": [
+        {
+          "weakness": {
+            "id": "5bc48420-028e-49f5-a897-79a8ff49c9ac",
+            "text": "Misinterpreting logical relationships between clauses, leading to incorrect conjunctive adverb choice.",
+            "description": "The student struggles to identify the precise logical connection (e.g., contrast, result, condition) between two independent clauses. This leads to the misuse of conjunctive adverbs like 'however', 'therefore', and 'otherwise', selecting words that do not accurately convey the intended relationship between the ideas presented."
+          },
+          "recommendedCourses": [
+            {
+              "courseId": "01TOEICG005",
+              "lessonTitle": "Connectors & Transition Signals",
+              "description": "Students learn logical connectors (however, therefore, although, meanwhile) and practice TOEIC-style questions testing sentence cohesion.",
+              "link": "https://example.com/toeic-connectors",
+              "score": 0.98,
+              "reason": "Covers 'connectors' (including conjunctive adverbs) and 'transition signals,' essential for expressing logical relationships.",
+              "weaknessId": "5bc48420-028e-49f5-a897-79a8ff49c9ac"
+            },
+            {
+              "courseId": "01TOEICG007",
+              "lessonTitle": "Conjunctions & Sentence Structure",
+              "description": "Learn FANBOYS, subordinating conjunctions, and how conjunction choice changes sentence meaning in TOEIC questions.",
+              "link": "https://example.com/toeic-conjunctions",
+              "score": 0.95,
+              "reason": "Directly addresses 'conjunctions' and 'sentence structure,' which are key to understanding logical relationships between clauses.",
+              "weaknessId": "5bc48420-028e-49f5-a897-79a8ff49c9ac"
+            },
+            {
+              "courseId": "01TOEICG004",
+              "lessonTitle": "Modifiers & Sentence Logic",
+              "description": "Covers adjective/adverb choice, participial phrases, reduced clauses, and common modifier errors frequently tested in Part 5.",
+              "link": "https://example.com/toeic-modifiers",
+              "score": 0.92,
+              "reason": "Focuses on 'sentence logic,' directly addressing the misinterpretation of logical relationships, with modifiers often playing a role.",
+              "weaknessId": "5bc48420-028e-49f5-a897-79a8ff49c9ac"
+            }
+          ]
+        },
+        {
+          "weakness": {
+            "id": "e3b66000-21c4-4f92-b054-d2ea41a03c7c",
+            "text": "Incorrect formation of the passive voice.",
+            "description": "The student demonstrates difficulty in constructing grammatically correct passive voice sentences. Specifically, there is confusion in using the 'be + past participle' structure, especially when combined with modal verbs. This indicates a gap in understanding when and how to correctly form verbs for actions received by the subject."
+          },
+          "recommendedCourses": [
+            {
+              "courseId": "01TOEICG002",
+              "lessonTitle": "Verbs & Tenses for TOEIC Part 5",
+              "description": "Focus on simple vs. progressive forms, perfect tenses, modal verbs, subject–verb agreement, and tense logic used in business contexts.",
+              "link": "https://example.com/toeic-verbs-tenses",
+              "score": 0.95,
+              "reason": "Passive voice formation heavily relies on understanding verb forms and tenses.",
+              "weaknessId": "e3b66000-21c4-4f92-b054-d2ea41a03c7c"
+            }
+          ]
+        },
+        {
+          "weakness": {
+            "id": "4563858d-392a-4a88-b055-c20fd177914a",
+            "text": "Confusion between subject and possessive relative pronouns.",
+            "description": "The student struggles to differentiate between 'who' (subject pronoun) and 'whose' (possessive pronoun) when introducing relative clauses. This suggests a lack of clarity regarding the grammatical role the pronoun plays within the dependent clause, specifically whether it acts as the subject performing an action or indicates possession."
+          },
+          "recommendedCourses": [
+            {
+              "courseId": "01TOEICG006",
+              "lessonTitle": "Noun Clauses & Relative Pronouns",
+              "description": "Practice who/whom/which/that, embedded clauses, subject/object clause identification, and typical distractors.",
+              "link": "https://example.com/toeic-relative-clauses",
+              "score": 0.95,
+              "reason": "Directly covers relative pronouns, central to the weakness.",
+              "weaknessId": "4563858d-392a-4a88-b055-c20fd177914a"
+            }
+          ]
+        },
+        {
+          "weakness": {
+            "id": "cf7c4c67-df41-48ec-bd5d-e94ad0bbaf26",
+            "text": "Incorrect use of singular vs. plural abstract nouns in context.",
+            "description": "The student used a plural form ('efficiencies') when the singular abstract noun ('efficiency') was required to complete a compound noun phrase. This indicates confusion in distinguishing between the general concept of an abstract quality and specific instances or measures of that quality, leading to errors in noun agreement and meaning in context."
+          },
+          "recommendedCourses": []
+        }
+      ],
+      "user_facing_response": "**TOEIC Part5 Sample Test**\n\n**Current Performance:** You achieved a good score of 15 out of 20, passing the TOEIC Part5 Sample Test on your first attempt. While this is a solid start, there's a clear opportunity to enhance your understanding of complex sentence structures and grammatical nuances. Focusing on these areas will help you improve your accuracy further and tackle challenging questions with more confidence.\n\n**Area to be Improved:** Your primary areas for improvement involve understanding the logical connections between clauses, mastering the correct formation of passive voice, and distinguishing between different types of relative pronouns. Additionally, pay close attention to noun agreement, especially with abstract nouns, to ensure grammatical precision.\n\n**Recommended Course:**\n\n- **Connectors & Transition Signals**: This course will help you understand the logical relationships between clauses and make appropriate choices for conjunctive adverbs, addressing your difficulty in interpreting sentence connections. - Link: https://example.com/toeic-connectors\n\n- **Conjunctions & Sentence Structure**: Strengthen your ability to form grammatically correct sentences by mastering conjunctions and understanding various sentence structures, which is crucial for TOEIC Part 5. - Link: https://example.com/toeic-conjunctions\n\n- **Modifiers & Sentence Logic**: This course will refine your understanding of how modifiers function within sentences and improve your ability to discern the overall logical flow, enhancing clarity and accuracy. - Link: https://example.com/toeic-modifiers\n\n- **Verbs & Tenses for TOEIC Part 5**: Focus on mastering verb forms, including the passive voice, and understanding correct tense usage, which are key areas for improving your grammatical accuracy in the test. - Link: https://example.com/toeic-verbs-tenses\n\n- **Noun Clauses & Relative Pronouns**: This course is essential for clarifying the distinctions between subject and possessive relative pronouns, as well as understanding how noun clauses function to build complex sentences. - Link: https://example.com/toeic-relative-clauses"
+    }
+  },
+  {
+    "run_id": "run_07302baf7eb34564917f126807fb60b7",
+    "status": "ok",
+    "datetime": "2026-02-11T11:10:25+00:00",
+    "orchestrator_runtime": 49.3018,
+    "entries": [
+      {
+        "type": "api",
+        "name": "data_gathering_attempts",
+        "request_runtime": 1.5801
+      },
+      {
+        "type": "api",
+        "name": "data_gathering_questions",
+        "request_runtime": 1.2343
+      },
+      {
+        "type": "api",
+        "name": "course_recommendation",
+        "request_runtime": 7.1649,
+        "api_runtime": [
+          {
+            "usage": "vector_search: 5bc48420-028e-49f5-a897-79a8ff49c9ac",
+            "input_token": 0,
+            "output_token": 0,
+            "runtime": 0.4032
+          },
+          {
+            "usage": "vector_search: 4563858d-392a-4a88-b055-c20fd177914a",
+            "input_token": 0,
+            "output_token": 0,
+            "runtime": 0.4184
+          },
+          {
+            "usage": "vector_search: cf7c4c67-df41-48ec-bd5d-e94ad0bbaf26",
+            "input_token": 0,
+            "output_token": 0,
+            "runtime": 0.4335
+          },
+          {
+            "usage": "vector_search: e3b66000-21c4-4f92-b054-d2ea41a03c7c",
+            "input_token": 0,
+            "output_token": 0,
+            "runtime": 0.4405
+          },
+          {
+            "usage": "agent4: rerank weakness 5bc48420-028e-49f5-a897-79a8ff49c9ac",
+            "input_token": 260,
+            "output_token": 208,
+            "runtime": 3.6644
+          },
+          {
+            "usage": "agent4: rerank weakness cf7c4c67-df41-48ec-bd5d-e94ad0bbaf26",
+            "input_token": 266,
+            "output_token": 188,
+            "runtime": 6.3601
+          },
+          {
+            "usage": "agent4: rerank weakness 4563858d-392a-4a88-b055-c20fd177914a",
+            "input_token": 253,
+            "output_token": 169,
+            "runtime": 5.8363
+          },
+          {
+            "usage": "agent4: rerank weakness e3b66000-21c4-4f92-b054-d2ea41a03c7c",
+            "input_token": 256,
+            "output_token": 193,
+            "runtime": 6.5741
+          }
+        ],
+        "input_token": 1035,
+        "output_token": 758
+      },
+      {
+        "type": "llm",
+        "name": "user_facing_response",
+        "input_token": 989,
+        "output_token": 393,
+        "llm_runtime": 7.9935
+      },
+      {
+        "type": "api",
+        "name": "test_analysis",
+        "request_runtime": 11.0603,
+        "api_runtime": [
+          {
+            "usage": "extract_weaknesses",
+            "input_token": 1135,
+            "output_token": 522,
+            "runtime": 9.9265
+          }
+        ],
+        "input_token": 1135,
+        "output_token": 522
+      },
+      {
+        "type": "api",
+        "name": "course_recommendation",
+        "request_runtime": 20.496,
+        "api_runtime": [
+          {
+            "usage": "vector_search: 5bc48420-028e-49f5-a897-79a8ff49c9ac",
+            "input_token": 0,
+            "output_token": 0,
+            "runtime": 0.4032
+          },
+          {
+            "usage": "vector_search: 4563858d-392a-4a88-b055-c20fd177914a",
+            "input_token": 0,
+            "output_token": 0,
+            "runtime": 0.4184
+          },
+          {
+            "usage": "vector_search: cf7c4c67-df41-48ec-bd5d-e94ad0bbaf26",
+            "input_token": 0,
+            "output_token": 0,
+            "runtime": 0.4335
+          },
+          {
+            "usage": "vector_search: e3b66000-21c4-4f92-b054-d2ea41a03c7c",
+            "input_token": 0,
+            "output_token": 0,
+            "runtime": 0.4405
+          },
+          {
+            "usage": "agent4: rerank weakness 5bc48420-028e-49f5-a897-79a8ff49c9ac",
+            "input_token": 260,
+            "output_token": 208,
+            "runtime": 3.6644
+          },
+          {
+            "usage": "agent4: rerank weakness cf7c4c67-df41-48ec-bd5d-e94ad0bbaf26",
+            "input_token": 266,
+            "output_token": 188,
+            "runtime": 6.3601
+          },
+          {
+            "usage": "agent4: rerank weakness 4563858d-392a-4a88-b055-c20fd177914a",
+            "input_token": 253,
+            "output_token": 169,
+            "runtime": 5.8363
+          },
+          {
+            "usage": "agent4: rerank weakness e3b66000-21c4-4f92-b054-d2ea41a03c7c",
+            "input_token": 256,
+            "output_token": 193,
+            "runtime": 6.5741
+          },
+          {
+            "usage": "agent4: rerank weakness 91a09186-beb6-4c48-a680-bc6f819f388f",
+            "input_token": 291,
+            "output_token": 210,
+            "runtime": 12.4152
+          }
+        ],
+        "input_token": 1326,
+        "output_token": 968
+      },
+      {
+        "type": "llm",
+        "name": "user_facing_response",
+        "input_token": 941,
+        "output_token": 202,
+        "llm_runtime": 10.1777
+      }
+    ],
+    "metadata": {
+      "student_id": "STUDENT_A",
+      "test_id": "01KCXGG0SY0001H0Q1FW1RCVXG",
+      "max_courses": 5,
+      "max_courses_per_weakness": 3,
+      "participant_ranking": 0.0,
+      "language": "EN"
+    },
+    "api_output": {
+      "test_analysis": {
+        "weaknesses": [
+          {
+            "id": "91a09186-beb6-4c48-a680-bc6f819f388f",
+            "weakness": "Lack of precise understanding of domain-specific concepts and their applications.",
+            "description": "The student consistently misidentifies specific concepts, metrics, or primary influencing factors within various domains. They tend to confuse closely related but distinct terms or applications, indicating a gap in detailed, precise knowledge rather than a complete unfamiliarity with the broader topic. This pattern suggests difficulty in discerning the most accurate or directly relevant option when presented with plausible distractors.",
+            "frequency": 3,
+            "evidenceQuestionIds": [
+              "01KCXGG0SZ0001H0Q1FW1RR950",
+              "01KCXGG0SZ0001H0Q1FW1S14BG",
+              "01KCXGG0SZ0001H0Q1FW1SCVBG"
+            ]
+          }
+        ]
+      },
+      "course_recommendation": [
+        {
+          "weakness": {
+            "id": "91a09186-beb6-4c48-a680-bc6f819f388f",
+            "text": "Lack of precise understanding of domain-specific concepts and their applications.",
+            "description": "The student consistently misidentifies specific concepts, metrics, or primary influencing factors within various domains. They tend to confuse closely related but distinct terms or applications, indicating a gap in detailed, precise knowledge rather than a complete unfamiliarity with the broader topic. This pattern suggests difficulty in discerning the most accurate or directly relevant option when presented with plausible distractors."
+          },
+          "recommendedCourses": [
+            {
+              "courseId": "01KAWP741RB65AN068AV9T4BTH",
+              "lessonTitle": "Blockchain and FinTech: Basics, Applications, and Limitations",
+              "description": "Blockchain is a core technology in FinTech. The original design of blockchain focused on the cryptocurrency \"Bitcoin\". Due to its specific characteristics, many companies and users now find blockchain very useful for applications in many areas, not limited to cybercurrencies, including finance, logistics, insurance, medicine and even music. However, the design of blockchain involves cryptographic technology, which cannot be easily understood by those who are not professionals in the area of IT and security. In order to better understand what kinds of applications best fit blockchain and other forms of distributed ledger technology and the potentials of these emerging technologies, it is important to understand the design rationale, the basic technology, the underlying cryptographic fundamentals, and its limitations. This 6-week online coursewill walk you through the following: The course aims at targeting a wide audience: This course will provide learners a good understanding of the technological, applicability, limitations and \"illegal\" usage of the blockchain technology. Computer Science",
+              "link": "https://www.edx.org/course/blockchain-and-fintech-basics-applications-and-lim",
+              "score": 0.95,
+              "reason": "Directly addresses understanding complex domain concepts and their applications within FinTech.",
+              "weaknessId": "91a09186-beb6-4c48-a680-bc6f819f388f"
+            },
+            {
+              "courseId": "01KAWP741FQC9X1WGPQX2R6J1B",
+              "lessonTitle": "AI Chatbots without Programming",
+              "description": "Special Offer : This course includes a great offer from IBM: One year of Watson Assistant services to power 10 chatbots at no charge. The perfect way to kickstart your chatbot building business!Chatbots are one of the most exciting and in-demand topics in tech. Businesses around the world are increasingly showing an interest in their potential for cost-saving and improving customer service availability.In this course, you'll learn how to build chatbots powered by Watson and how to approach making money by selling chatbots to clients. We'll coverways to sell chatbots to prospective clients online and offline. We'll explore how to plan and build chatbots using a visual tool provided by IBM. We'll offer methods for testing, analyzing, and improving your chatbots. And we'll teach you how to deploy your chatbots to websites via a handy WordPress plugin.Leveraging the AI power of Watson Assistant, you will be able toaccomplish all this without the need to write any code! Computer Science",
+              "link": "https://www.edx.org/course/AI-chatbots-without-programming",
+              "score": 0.95,
+              "reason": "Focuses on gaining precise conceptual understanding and application within the AI Chatbot domain.",
+              "weaknessId": "91a09186-beb6-4c48-a680-bc6f819f388f"
+            },
+            {
+              "courseId": "01TOEICV002",
+              "lessonTitle": "Countable & Uncountable Nouns for TOEIC",
+              "description": "Practice phrases like 'make progress', 'give advice', 'conduct research', and understand quantifiers such as much/many/less/fewer.",
+              "link": "https://example.com/toeic-nouns",
               "score": 0.85,
-              "reason": "Python basics, even for data science, require understanding fundamental operations like slicing.",
-              "weaknessId": "ae1a78d7-ae82-4a50-8a69-2015308cd79f"
+              "reason": "Provides precise understanding of specific linguistic concepts (nouns) and their application.",
+              "weaknessId": "91a09186-beb6-4c48-a680-bc6f819f388f"
             }
           ]
         }
       ],
-      "user_facing_response": "**Computer Science 101**\n\n**Current Performance:** คุณได้คะแนน 19 เต็ม 20 ในการทดสอบ Computer Science 101 ซึ่งแสดงให้เห็นถึงความเข้าใจที่ยอดเยี่ยมในเนื้อหา คุณทำผิดเพียงข้อเดียวเท่านั้น คุณเกือบจะเชี่ยวชาญทุกหัวข้อแล้ว\n\n**Area to be Improved:** จุดหลักที่ต้องปรับปรุงคือความเข้าใจเล็กน้อยเกี่ยวกับข้อยกเว้นของดัชนีหยุด (stop index) ในการสไลซ์ของ Python การทบทวนแนวคิดนี้โดยเฉพาะจะช่วยให้คุณได้คะแนนเต็มในการทดสอบครั้งต่อไป\n\n**Progress Compared to Previous Test (Computer Science 101)**\n\n**Domain Comparison:**\n\n- **Python**: รักษาความแม่นยำ 80% แสดงถึงความเข้าใจที่สม่ำเสมอในเนื้อหานี้.\n\n- **Algebra**: ดีขึ้น +20% (จาก 80% เป็น 100%).\n\n- **Database**: ดีขึ้น +60% (จาก 40% เป็น 100%).\n\n- **Data Visualization**: รักษาความแม่นยำ 100% แสดงถึงความเข้าใจที่สม่ำเสมอในเนื้อหานี้.\n\n**Recommended Course:**\n\n- **Computing in Python I: Fundamentals and Procedural Programming**: หลักสูตรนี้จะช่วยเสริมสร้างความเข้าใจพื้นฐานเกี่ยวกับการเขียนโปรแกรม Python รวมถึงแนวคิดเรื่องการสไลซ์ เพื่อให้คุณมีความเชี่ยวชาญมากขึ้น - Link: https://www.edx.org/course/computing-in-python-i-fundamentals-and-procedural\n\n- **Python Basics for Data Science**: แม้ว่าคุณจะมีความรู้พื้นฐานที่ดีแล้ว หลักสูตรนี้จะช่วยทบทวนและเน้นย้ำแนวคิดสำคัญของ Python ที่จำเป็นสำหรับวิทยาการข้อมูล รวมถึงการจัดการข้อมูลด้วยการสไลซ์ที่แม่นยำ - Link: https://www.edx.org/course/python-basics-for-data-science"
+      "user_facing_response": "**Logic and Reasoning Sample Test II**\n\n**Current Performance:** You achieved a strong score of 17 out of 20 (85%) on the Logic and Reasoning Sample Test II, successfully passing this attempt. To further solidify your knowledge, focus on reviewing foundational domain-specific concepts and practicing their real-world application.\n\n**Area to be Improved:** To enhance your performance further, concentrate on deepening your understanding of domain-specific concepts. Mastering these intricate details and consistently practicing their application will help you tackle complex problems with greater precision.\n\n**Recommended Course:**\n\n- **Blockchain and FinTech: Basics, Applications, and Limitations**: Blockchain and FinTech: Basics, Applications, and Limitations - Link: https://www.edx.org/course/blockchain-and-fintech-basics-applications-and-lim\n\n- **AI Chatbots without Programming**: AI Chatbots without Programming - Link: https://www.edx.org/course/AI-chatbots-without-programming\n\n- **Countable & Uncountable Nouns for TOEIC**: Countable & Uncountable Nouns for TOEIC - Link: https://example.com/toeic-nouns"
+    }
+  },
+  {
+    "run_id": "run_e44eb5cbf96748f1864c17f6b5328c48",
+    "status": "ok",
+    "datetime": "2026-02-11T11:10:42+00:00",
+    "orchestrator_runtime": 41.4048,
+    "entries": [
+      {
+        "type": "api",
+        "name": "data_gathering_attempts",
+        "request_runtime": 1.9805
+      },
+      {
+        "type": "api",
+        "name": "data_gathering_questions",
+        "request_runtime": 1.0568
+      },
+      {
+        "type": "api",
+        "name": "course_recommendation",
+        "request_runtime": 20.5653,
+        "api_runtime": [
+          {
+            "usage": "vector_search: 90dae545-e07c-4882-9aca-c33d3a2f2410",
+            "input_token": 0,
+            "output_token": 0,
+            "runtime": 0.3961
+          },
+          {
+            "usage": "vector_search: d77fb787-5ead-4553-8538-ff7b8149477f",
+            "input_token": 0,
+            "output_token": 0,
+            "runtime": 0.4098
+          },
+          {
+            "usage": "vector_search: f7063940-d19e-4984-b498-80c3ee3b93df",
+            "input_token": 0,
+            "output_token": 0,
+            "runtime": 0.4562
+          },
+          {
+            "usage": "vector_search: 7164b8b7-18af-4ad9-8c92-f56c9bd1049f",
+            "input_token": 0,
+            "output_token": 0,
+            "runtime": 0.4633
+          },
+          {
+            "usage": "agent4: rerank weakness 90dae545-e07c-4882-9aca-c33d3a2f2410",
+            "input_token": 288,
+            "output_token": 216,
+            "runtime": 3.7181
+          },
+          {
+            "usage": "agent4: rerank weakness 7164b8b7-18af-4ad9-8c92-f56c9bd1049f",
+            "input_token": 285,
+            "output_token": 213,
+            "runtime": 7.2
+          },
+          {
+            "usage": "agent4: rerank weakness f7063940-d19e-4984-b498-80c3ee3b93df",
+            "input_token": 287,
+            "output_token": 250,
+            "runtime": 7.8424
+          },
+          {
+            "usage": "agent4: rerank weakness d77fb787-5ead-4553-8538-ff7b8149477f",
+            "input_token": 278,
+            "output_token": 226,
+            "runtime": 8.6707
+          }
+        ],
+        "input_token": 1138,
+        "output_token": 905
+      },
+      {
+        "type": "llm",
+        "name": "user_facing_response",
+        "input_token": 975,
+        "output_token": 348,
+        "llm_runtime": 6.9629
+      }
+    ],
+    "metadata": {
+      "student_id": "STUDENT_A",
+      "test_id": "01KCXGG0T10001H0Q1FW1TFQJ8",
+      "max_courses": 5,
+      "max_courses_per_weakness": 3,
+      "participant_ranking": 0.0,
+      "language": "EN"
+    },
+    "api_output": {
+      "test_analysis": {
+        "weaknesses": [
+          {
+            "id": "7164b8b7-18af-4ad9-8c92-f56c9bd1049f",
+            "weakness": "Confusion between core management functions (Planning vs. Controlling)",
+            "description": "The student consistently confuses the 'Planning' function of management, which involves setting objectives, with the 'Controlling' function, which focuses on monitoring performance and taking corrective action. This indicates a lack of clear distinction between these foundational management activities.",
+            "frequency": 2,
+            "evidenceQuestionIds": [
+              "01KCXGG0T10001H0Q1FW1TFZC8",
+              "01KCXGG0T10001H0Q1FW1V5FVG"
+            ]
+          },
+          {
+            "id": "d77fb787-5ead-4553-8538-ff7b8149477f",
+            "weakness": "Misclassification of controllable costs",
+            "description": "The student struggles to correctly identify examples of controllable costs, specifically selecting a fixed, less directly controllable expense like 'Interest expense' over 'Direct labor' which can be adjusted. This suggests a gap in understanding how cost behavior relates to management's ability to influence expenses.",
+            "frequency": 1,
+            "evidenceQuestionIds": [
+              "01KCXGG0T10001H0Q1FW1V9700"
+            ]
+          },
+          {
+            "id": "90dae545-e07c-4882-9aca-c33d3a2f2410",
+            "weakness": "Misconception of leadership style characteristics",
+            "description": "The student incorrectly associates 'Bureaucratic' leadership with encouraging participation, instead of the correct 'Democratic' style. This indicates a misunderstanding of the defining characteristics and key behaviors associated with different leadership approaches.",
+            "frequency": 1,
+            "evidenceQuestionIds": [
+              "01KCXGG0T20001H0Q1FW1W8KW8"
+            ]
+          },
+          {
+            "id": "f7063940-d19e-4984-b498-80c3ee3b93df",
+            "weakness": "Confusion regarding the purpose of a mission statement",
+            "description": "The student misunderstands the fundamental purpose of a mission statement, incorrectly believing it defines an organization's 'Legal form' instead of its 'Long-term purpose'. This points to a gap in basic strategic management definitions and the role of foundational business statements.",
+            "frequency": 1,
+            "evidenceQuestionIds": [
+              "01KCXGG0T30001H0Q1FW1WG530"
+            ]
+          }
+        ]
+      },
+      "course_recommendation": [
+        {
+          "weakness": {
+            "id": "7164b8b7-18af-4ad9-8c92-f56c9bd1049f",
+            "text": "Confusion between core management functions (Planning vs. Controlling)",
+            "description": "The student consistently confuses the 'Planning' function of management, which involves setting objectives, with the 'Controlling' function, which focuses on monitoring performance and taking corrective action. This indicates a lack of clear distinction between these foundational management activities."
+          },
+          "recommendedCourses": [
+            {
+              "courseId": "01KAWP7412YBV991H15H14CKJV",
+              "lessonTitle": "Project Management Life Cycle",
+              "description": "Learn about project management from a multidisciplinary perspective, as we cover fundamental tools and techniques for managing a broad range of projects.You will learn about the project management life cycle from initiation to closing. We will address the behavioral and quantitative facets of project management, as well as the use of methods, tools and techniques for the initiation, planning, execution and closing of projects. The course will be divided by the project life cycle phases.First, we will cover project initiation. We will review projects in organizations, project selection models, the project manager role and project organization structures to better understand how a project is initiated. You will also learn how to create a key project management deliverable, the project charter.Second, we will cover the project-planning phase. You will learn how to build a comprehensive project management plan covering the key aspects of risk, quality, scope, schedule, cost, time, resource and communications.Third, we will cover the project execution phase. We will explore the monitoring and control of a project including earned value analysis and project reporting. Case studies and examples will be used to help you understand the correct actions for a project manager to take to keep a project in control.",
+              "link": "https://www.edx.org/course/project-management-life-cycle",
+              "score": 0.95,
+              "reason": "Directly addresses planning and controlling within a project management context.",
+              "weaknessId": "7164b8b7-18af-4ad9-8c92-f56c9bd1049f"
+            }
+          ]
+        },
+        {
+          "weakness": {
+            "id": "d77fb787-5ead-4553-8538-ff7b8149477f",
+            "text": "Misclassification of controllable costs",
+            "description": "The student struggles to correctly identify examples of controllable costs, specifically selecting a fixed, less directly controllable expense like 'Interest expense' over 'Direct labor' which can be adjusted. This suggests a gap in understanding how cost behavior relates to management's ability to influence expenses."
+          },
+          "recommendedCourses": [
+            {
+              "courseId": "01KAWP740GSMXXTGD4WJ3Q811V",
+              "lessonTitle": "Accounting and Finance",
+              "description": "This business course helps you to read and understand financial statements to evaluate how business performance is affected by four fundamental drivers of profitability viz., asset management, cost management, leverage management and tax management. It will also help you to identify areas for improvement.The second part of this finance course deals with managing costs. You will learn how to prepare cost sheets, budget and make cost-based decisions.The third part of the course provides an overview of financial markets to raise capital of different types. You will develop the ability to prepare and evaluate finances for your business plan and manage working capital.The overall objective of the course is to build financial acumen to make you a successful entrepreneur or manager. Business & Management",
+              "link": "https://www.edx.org/course/accounting-and-finance",
+              "score": 0.9,
+              "reason": "Weakness is specific to cost classification in accounting; this course is highly correlated to that domain.",
+              "weaknessId": "d77fb787-5ead-4553-8538-ff7b8149477f"
+            }
+          ]
+        },
+        {
+          "weakness": {
+            "id": "90dae545-e07c-4882-9aca-c33d3a2f2410",
+            "text": "Misconception of leadership style characteristics",
+            "description": "The student incorrectly associates 'Bureaucratic' leadership with encouraging participation, instead of the correct 'Democratic' style. This indicates a misunderstanding of the defining characteristics and key behaviors associated with different leadership approaches."
+          },
+          "recommendedCourses": []
+        },
+        {
+          "weakness": {
+            "id": "f7063940-d19e-4984-b498-80c3ee3b93df",
+            "text": "Confusion regarding the purpose of a mission statement",
+            "description": "The student misunderstands the fundamental purpose of a mission statement, incorrectly believing it defines an organization's 'Legal form' instead of its 'Long-term purpose'. This points to a gap in basic strategic management definitions and the role of foundational business statements."
+          },
+          "recommendedCourses": [
+            {
+              "courseId": "01KAWP742ZA7D6VGXZYEE40CA7",
+              "lessonTitle": "Innovation Strategies for Electric Mobility: The StreetScooter Case",
+              "description": "Learn about the tools and methods that can be employed to understand and identify customer needs as well as the processes that companies can set in place to foster and launch successful technological innovations. A special emphasis will be placed on analyzing how companies can benefit from entrepreneurial thinking to innovate more successfully and on understanding how they can build entire ecosystems around their products and services. The theoretical knowledge will be transferred and applied to a recent, highly successful technological innovation from Germany: The StreetScooter, an electric delivery vehicle of Deutsche Post DHL. This self-paced course consists of eight consecutive parts: The course will provide you with an in-depth understanding of the process of technology and innovation management. Specifically, the course will familiarize you with state-of-the-art tools, methods, and theories and help you understand how these may be used to solve and organize complex innovation challenges, placing a special emphasis on interdisciplinary thinking at the intersection of management and technology. After completing this course, you will improve your career qualifications as Business Development Manager , Change Manager or Innovation Manager. ",
+              "link": "https://www.edx.org/course/innovation-strategies-for-electric-mobility-the-st",
+              "score": 0.9,
+              "reason": "Focuses on 'Strategies' within a business context, which inherently involves understanding organizational purpose and direction, directly aligning with the function of a mission statement.",
+              "weaknessId": "f7063940-d19e-4984-b498-80c3ee3b93df"
+            },
+            {
+              "courseId": "01KAWP740AE6BT7EA128X7EBVJ",
+              "lessonTitle": "Ethics in Action",
+              "description": "The challenges of sustainable development are more than technical or political--they are also moral, calling on us to examine who we are as human beings, and who we want to be going forward. This examination of what makes a \"good person\"--called virtue ethics--has long been the purview of philosophers and theologians. So what do the world's great religious and secular philosophies have to say about ethical conduct? Which virtues are common across creeds and cultures? And what role do ethics, spirituality, and religious communities have to play in sustainable development? In 2016, distinguished leaders from the world's major religious traditions, philosophers, scholars, and scientists were invited by Pope Francis to the Vatican for a series of meetings. Known as the Ethics in Action initiative, these meetings sought to promote dialogue and find consensus about the values needed to advance transformative action for our common home and the human family. This course features Ethics in Action meeting participants, as well as other leading voices, and discusses the perspectives of some of the world's great traditions and their role in addressing our world's most pressing challenges, including poverty, corruption, and climate change. ",
+              "link": "https://www.edx.org/course/ethics-in-action",
+              "score": 0.8,
+              "reason": "Understanding ethics is crucial for defining the values and purpose often encapsulated in a mission statement, fitting the business domain.",
+              "weaknessId": "f7063940-d19e-4984-b498-80c3ee3b93df"
+            }
+          ]
+        }
+      ],
+      "user_facing_response": "**Business Administration 101**\n\n**Current Performance:** You achieved a great score of 25 out of 30 in your Business Administration 101 test, demonstrating a strong grasp of many core concepts. While this is an excellent result, there are still a few areas where you can refine your understanding to achieve an even higher level of mastery. Focusing on these specific topics will further solidify your foundational business knowledge.\n\n**Area to be Improved:** To further enhance your understanding, it would be beneficial to review the distinctions between core management functions like Planning and Controlling. Additionally, focusing on the accurate classification of controllable costs, understanding various leadership style characteristics, and clarifying the fundamental purpose of a mission statement will help address the identified misconceptions and strengthen your overall comprehension of business administration principles.\n\n**Recommended Course:**\n\n- **Project Management Life Cycle**: This course will provide a comprehensive understanding of the different phases of a project, reinforcing the crucial distinctions between management functions such as planning, execution, and control. - Link: https://www.edx.org/course/project-management-life-cycle\n\n- **Accounting and Finance**: Delving into accounting and finance principles will help clarify the identification and classification of various costs, enhancing your ability to make informed financial decisions within a business context. - Link: https://www.edx.org/course/accounting-and-finance\n\n- **Innovation Strategies for Electric Mobility: The StreetScooter Case**: Explore real-world case studies to understand how strategic innovation is managed, helping you apply foundational business principles to dynamic, contemporary challenges and broaden your leadership perspective. - Link: https://www.edx.org/course/innovation-strategies-for-electric-mobility-the-st\n\n- **Ethics in Action**: This course focuses on developing a strong ethical framework, which is essential for responsible decision-making in any business role and complements an understanding of leadership characteristics. - Link: https://www.edx.org/course/ethics-in-action"
+    }
+  },
+  {
+    "run_id": "run_25d934c026054cdcb73f8248f7ec15eb",
+    "status": "ok",
+    "datetime": "2026-02-11T11:11:00+00:00",
+    "orchestrator_runtime": 29.9369,
+    "entries": [
+      {
+        "type": "api",
+        "name": "data_gathering_attempts",
+        "request_runtime": 1.9805
+      },
+      {
+        "type": "api",
+        "name": "data_gathering_questions",
+        "request_runtime": 1.0568
+      },
+      {
+        "type": "api",
+        "name": "course_recommendation",
+        "request_runtime": 20.5653,
+        "api_runtime": [
+          {
+            "usage": "vector_search: 90dae545-e07c-4882-9aca-c33d3a2f2410",
+            "input_token": 0,
+            "output_token": 0,
+            "runtime": 0.3961
+          },
+          {
+            "usage": "vector_search: d77fb787-5ead-4553-8538-ff7b8149477f",
+            "input_token": 0,
+            "output_token": 0,
+            "runtime": 0.4098
+          },
+          {
+            "usage": "vector_search: f7063940-d19e-4984-b498-80c3ee3b93df",
+            "input_token": 0,
+            "output_token": 0,
+            "runtime": 0.4562
+          },
+          {
+            "usage": "vector_search: 7164b8b7-18af-4ad9-8c92-f56c9bd1049f",
+            "input_token": 0,
+            "output_token": 0,
+            "runtime": 0.4633
+          },
+          {
+            "usage": "agent4: rerank weakness 90dae545-e07c-4882-9aca-c33d3a2f2410",
+            "input_token": 288,
+            "output_token": 216,
+            "runtime": 3.7181
+          },
+          {
+            "usage": "agent4: rerank weakness 7164b8b7-18af-4ad9-8c92-f56c9bd1049f",
+            "input_token": 285,
+            "output_token": 213,
+            "runtime": 7.2
+          },
+          {
+            "usage": "agent4: rerank weakness f7063940-d19e-4984-b498-80c3ee3b93df",
+            "input_token": 287,
+            "output_token": 250,
+            "runtime": 7.8424
+          },
+          {
+            "usage": "agent4: rerank weakness d77fb787-5ead-4553-8538-ff7b8149477f",
+            "input_token": 278,
+            "output_token": 226,
+            "runtime": 8.6707
+          }
+        ],
+        "input_token": 1138,
+        "output_token": 905
+      },
+      {
+        "type": "llm",
+        "name": "user_facing_response",
+        "input_token": 975,
+        "output_token": 348,
+        "llm_runtime": 6.9629
+      },
+      {
+        "type": "api",
+        "name": "test_analysis",
+        "request_runtime": 10.5378,
+        "api_runtime": [
+          {
+            "usage": "extract_weaknesses",
+            "input_token": 1649,
+            "output_token": 512,
+            "runtime": 10.4419
+          }
+        ],
+        "input_token": 1649,
+        "output_token": 512
+      },
+      {
+        "type": "api",
+        "name": "course_recommendation",
+        "request_runtime": 9.0935,
+        "api_runtime": [
+          {
+            "usage": "vector_search: 6f5ae430-cf3b-4202-9b73-632cf0f17b74",
+            "input_token": 0,
+            "output_token": 0,
+            "runtime": 0.409
+          },
+          {
+            "usage": "vector_search: 269563fb-950c-4ee1-ad9e-c3a5675a84e9",
+            "input_token": 0,
+            "output_token": 0,
+            "runtime": 0.4376
+          },
+          {
+            "usage": "vector_search: c52d76b7-f78f-4a5d-817a-794483ddd495",
+            "input_token": 0,
+            "output_token": 0,
+            "runtime": 0.4437
+          },
+          {
+            "usage": "agent4: rerank weakness 269563fb-950c-4ee1-ad9e-c3a5675a84e9",
+            "input_token": 276,
+            "output_token": 209,
+            "runtime": 5.004
+          },
+          {
+            "usage": "agent4: rerank weakness c52d76b7-f78f-4a5d-817a-794483ddd495",
+            "input_token": 287,
+            "output_token": 206,
+            "runtime": 5.4482
+          },
+          {
+            "usage": "agent4: rerank weakness 6f5ae430-cf3b-4202-9b73-632cf0f17b74",
+            "input_token": 272,
+            "output_token": 210,
+            "runtime": 7.5445
+          }
+        ],
+        "input_token": 835,
+        "output_token": 625
+      },
+      {
+        "type": "llm",
+        "name": "user_facing_response",
+        "input_token": 953,
+        "output_token": 274,
+        "llm_runtime": 7.2674
+      }
+    ],
+    "metadata": {
+      "student_id": "STUDENT_A",
+      "test_id": "01KCXGG0T30001H0Q1FW1WKFH8",
+      "max_courses": 5,
+      "max_courses_per_weakness": 3,
+      "participant_ranking": 0.0,
+      "language": "EN"
+    },
+    "api_output": {
+      "test_analysis": {
+        "weaknesses": [
+          {
+            "id": "6f5ae430-cf3b-4202-9b73-632cf0f17b74",
+            "weakness": "Misunderstanding Core Business Concept Definitions and Purposes",
+            "description": "The student struggles with the fundamental definitions, primary goals, or correct applications of various foundational business and management concepts. This indicates a gap in understanding 'what' these concepts are or 'what they are designed to achieve,' leading to confusion with related but incorrect ideas or functions.",
+            "frequency": 5,
+            "evidenceQuestionIds": [
+              "01KCXGG0T30001H0Q1FW1WWBQ0",
+              "01KCXGG0T30001H0Q1FW1X3D9R",
+              "01KCXGG0T30001H0Q1FW1X6VN0",
+              "01KCXGG0T40001H0Q1FW1XAFVR",
+              "01KCXGG0T40001H0Q1FW1XC9FG"
+            ]
+          },
+          {
+            "id": "c52d76b7-f78f-4a5d-817a-794483ddd495",
+            "weakness": "Confusion Regarding Maslow's Hierarchy of Needs",
+            "description": "The student repeatedly misidentifies the core domain and focus of Maslow's Hierarchy of Needs. They incorrectly associate this prominent motivation theory with unrelated business functions like finance or operations, indicating a specific conceptual misunderstanding of its central theme.",
+            "frequency": 2,
+            "evidenceQuestionIds": [
+              "01KCXGG0T30001H0Q1FW1WY6A0",
+              "01KCXGG0T40001H0Q1FW1Y3CQR"
+            ]
+          },
+          {
+            "id": "269563fb-950c-4ee1-ad9e-c3a5675a84e9",
+            "weakness": "Difficulty Differentiating Cost Types in Accounting",
+            "description": "The student shows a lack of understanding in classifying different types of costs, specifically struggling to distinguish between controllable and uncontrollable costs. This suggests a need to reinforce basic principles of cost accounting and how various expenses are categorized based on management's ability to influence them.",
+            "frequency": 1,
+            "evidenceQuestionIds": [
+              "01KCXGG0T40001H0Q1FW1XW0D8"
+            ]
+          }
+        ]
+      },
+      "course_recommendation": [
+        {
+          "weakness": {
+            "id": "6f5ae430-cf3b-4202-9b73-632cf0f17b74",
+            "text": "Misunderstanding Core Business Concept Definitions and Purposes",
+            "description": "The student struggles with the fundamental definitions, primary goals, or correct applications of various foundational business and management concepts. This indicates a gap in understanding 'what' these concepts are or 'what they are designed to achieve,' leading to confusion with related but incorrect ideas or functions."
+          },
+          "recommendedCourses": [
+            {
+              "courseId": "01TOEICV001",
+              "lessonTitle": "Business Vocabulary & Collocations",
+              "description": "Focus on phrases used in meetings, schedules, logistics, finance, customer service, and HR. Includes MCQ-style fill-in-the-blank tasks.",
+              "link": "https://example.com/toeic-collocations",
+              "score": 0.95,
+              "reason": "Directly addresses understanding of business terms, their definitions, and correct usage.",
+              "weaknessId": "6f5ae430-cf3b-4202-9b73-632cf0f17b74"
+            },
+            {
+              "courseId": "01KAWP740JJT1RT3BVPCR2YVSD",
+              "lessonTitle": "Introduction to Corporate Finance",
+              "description": "In this course, you will gain an understanding of time-honored financial concepts and rules, and how these can be applied to value firms, bonds, and stocks.We will cover the time value of money, cost of capital and capital budgeting. You will be using Excel for many process including valuing bonds and stocks, computing NPV and finding IRR.An Beginner finance course that is required for all first-year MBA students at Columbia Business School, the course is taught by a world-class instructor, actively training the next generation of market leaders on Wall Street.Participants from all backgrounds will be prepared to participate on the ever-evolving financial playing field. Business & Management",
+              "link": "https://www.edx.org/course/introduction-to-corporate-finance",
+              "score": 0.9,
+              "reason": "Covers fundamental definitions and purposes within a core business domain (corporate finance).",
+              "weaknessId": "6f5ae430-cf3b-4202-9b73-632cf0f17b74"
+            }
+          ]
+        },
+        {
+          "weakness": {
+            "id": "c52d76b7-f78f-4a5d-817a-794483ddd495",
+            "text": "Confusion Regarding Maslow's Hierarchy of Needs",
+            "description": "The student repeatedly misidentifies the core domain and focus of Maslow's Hierarchy of Needs. They incorrectly associate this prominent motivation theory with unrelated business functions like finance or operations, indicating a specific conceptual misunderstanding of its central theme."
+          },
+          "recommendedCourses": []
+        },
+        {
+          "weakness": {
+            "id": "269563fb-950c-4ee1-ad9e-c3a5675a84e9",
+            "text": "Difficulty Differentiating Cost Types in Accounting",
+            "description": "The student shows a lack of understanding in classifying different types of costs, specifically struggling to distinguish between controllable and uncontrollable costs. This suggests a need to reinforce basic principles of cost accounting and how various expenses are categorized based on management's ability to influence them."
+          },
+          "recommendedCourses": [
+            {
+              "courseId": "01KAWP740GSMXXTGD4WJ3Q811V",
+              "lessonTitle": "Accounting and Finance",
+              "description": "This business course helps you to read and understand financial statements to evaluate how business performance is affected by four fundamental drivers of profitability viz., asset management, cost management, leverage management and tax management. It will also help you to identify areas for improvement.The second part of this finance course deals with managing costs. You will learn how to prepare cost sheets, budget and make cost-based decisions.The third part of the course provides an overview of financial markets to raise capital of different types. You will develop the ability to prepare and evaluate finances for your business plan and manage working capital.The overall objective of the course is to build financial acumen to make you a successful entrepreneur or manager. Business & Management",
+              "link": "https://www.edx.org/course/accounting-and-finance",
+              "score": 0.9,
+              "reason": "Highly relevant as it directly covers the accounting domain where the weakness lies.",
+              "weaknessId": "269563fb-950c-4ee1-ad9e-c3a5675a84e9"
+            }
+          ]
+        }
+      ],
+      "user_facing_response": "**Business Administration Sample Test I**\n\n**Current Performance:** You achieved a score of 22 out of 30 (73.33%) on the Business Administration Sample Test I, successfully passing this attempt. This is a solid start, and with a bit more focused review, you can further enhance your understanding and accuracy in key areas.\n\n**Area to be Improved:** To build upon your current strengths, concentrate on refining your grasp of core business concept definitions and purposes. Revisit foundational theories like Maslow's Hierarchy of Needs and focus on clearly differentiating various cost types in accounting to solidify your knowledge.\n\n**Recommended Course:**\n\n- **Business Vocabulary & Collocations**: This course is ideal for strengthening your foundational understanding of core business terminology and concepts, directly addressing areas where definitions and purposes might be unclear. - Link: https://example.com/toeic-collocations\n\n- **Introduction to Corporate Finance**: Exploring this course will provide essential insights into corporate financial principles, helping you build a stronger financial literacy crucial for a deeper understanding of business operations. - Link: https://www.edx.org/course/introduction-to-corporate-finance\n\n- **Accounting and Finance**: This course is specifically designed to deepen your knowledge of accounting principles, including a clear differentiation of cost types, which will significantly improve your accuracy in this area. - Link: https://www.edx.org/course/accounting-and-finance"
+    }
+  },
+  {
+    "run_id": "run_24e0f5e8e12d49618a38a7af7c5f17c1",
+    "status": "ok",
+    "datetime": "2026-02-12T02:25:09+00:00",
+    "orchestrator_runtime": 44.674,
+    "entries": [
+      {
+        "type": "api",
+        "name": "data_gathering_attempts",
+        "request_runtime": 1.8665
+      },
+      {
+        "type": "api",
+        "name": "data_gathering_questions",
+        "request_runtime": 1.4674
+      },
+      {
+        "type": "api",
+        "name": "test_analysis",
+        "request_runtime": 15.0599,
+        "api_runtime": [
+          {
+            "usage": "extract_weaknesses",
+            "input_token": 1746,
+            "output_token": 570,
+            "runtime": 11.7265
+          }
+        ],
+        "input_token": 1746,
+        "output_token": 570
+      },
+      {
+        "type": "api",
+        "name": "course_recommendation",
+        "request_runtime": 17.2252,
+        "api_runtime": [
+          {
+            "usage": "vector_search: 6aa3a136-a70b-4a00-8f7f-16edfe570569",
+            "input_token": 0,
+            "output_token": 0,
+            "runtime": 0.721
+          },
+          {
+            "usage": "vector_search: 4af4be67-76f9-45a5-ac54-24df3840b4fe",
+            "input_token": 0,
+            "output_token": 0,
+            "runtime": 0.7229
+          },
+          {
+            "usage": "vector_search: 323aabd5-f485-429e-9628-2289feebc4c7",
+            "input_token": 0,
+            "output_token": 0,
+            "runtime": 0.7246
+          },
+          {
+            "usage": "vector_search: d477d50b-765f-45d1-a667-5112eae70436",
+            "input_token": 0,
+            "output_token": 0,
+            "runtime": 0.7249
+          },
+          {
+            "usage": "agent4: rerank weakness 4af4be67-76f9-45a5-ac54-24df3840b4fe",
+            "input_token": 281,
+            "output_token": 202,
+            "runtime": 3.3128
+          },
+          {
+            "usage": "agent4: rerank weakness d477d50b-765f-45d1-a667-5112eae70436",
+            "input_token": 277,
+            "output_token": 203,
+            "runtime": 4.12
+          },
+          {
+            "usage": "agent4: rerank weakness 323aabd5-f485-429e-9628-2289feebc4c7",
+            "input_token": 259,
+            "output_token": 178,
+            "runtime": 3.1236
+          },
+          {
+            "usage": "agent4: rerank weakness 6aa3a136-a70b-4a00-8f7f-16edfe570569",
+            "input_token": 284,
+            "output_token": 221,
+            "runtime": 3.5628
+          }
+        ],
+        "input_token": 1101,
+        "output_token": 804
+      },
+      {
+        "type": "llm",
+        "name": "user_facing_response",
+        "input_token": 926,
+        "output_token": 159,
+        "llm_runtime": 9.0494
+      }
+    ],
+    "metadata": {
+      "student_id": "STUDENT_E",
+      "test_id": "01KEY5TSTDRV8CT25ABPCC485R",
+      "max_courses": 5,
+      "max_courses_per_weakness": 3,
+      "participant_ranking": 0.0,
+      "language": "EN"
+    },
+    "api_output": {
+      "test_analysis": {
+        "weaknesses": [
+          {
+            "id": "323aabd5-f485-429e-9628-2289feebc4c7",
+            "weakness": "Misunderstanding of Musical Terminology for Performance Instruction",
+            "description": "The student struggles to correctly interpret Italian musical terms related to performance dynamics (loudness) and expression. They often confuse these terms with other performance aspects like tempo (speed) or articulation (smoothness). This indicates a need to review common dynamic and expressive markings.",
+            "frequency": 2,
+            "evidenceQuestionIds": [
+              "01KEY5TSTDCA3WNFKA1RQQC3R9",
+              "01KEY5TSTEDZ0ZN69CR3SKR675"
+            ]
+          },
+          {
+            "id": "6aa3a136-a70b-4a00-8f7f-16edfe570569",
+            "weakness": "Confusion with Basic Musical Notation Symbols",
+            "description": "The student demonstrates confusion regarding the meaning and function of fundamental symbols used in sheet music. They tend to misinterpret or confuse common notation elements, such as rests and key signatures, with unrelated structural or performance instructions like repeat signs.",
+            "frequency": 2,
+            "evidenceQuestionIds": [
+              "01KEY5TSTEQ8DKS9HGYMSB4FKA",
+              "01KEY5TSTEH0JZ4Q3YQRMHHW22"
+            ]
+          },
+          {
+            "id": "d477d50b-765f-45d1-a667-5112eae70436",
+            "weakness": "Gaps in Core Musical Theory Concepts",
+            "description": "The student shows a lack of foundational understanding in basic music theory concepts. This includes difficulty defining key musical elements like harmony and identifying fundamental components of a key, such as the tonic. These errors suggest a need to reinforce the building blocks of music theory.",
+            "frequency": 2,
+            "evidenceQuestionIds": [
+              "01KEY5TSTE5S6EC5Q99EKYWKJ8",
+              "01KEY5TSTEY8605PZV45BB05VC"
+            ]
+          },
+          {
+            "id": "4af4be67-76f9-45a5-ac54-24df3840b4fe",
+            "weakness": "Insufficient General Musical Knowledge and Factual Recall",
+            "description": "The student exhibits specific gaps in general musical knowledge, particularly concerning common classifications and standard practices. This includes misidentifying instrument families or failing to recall widely accepted musical standards like concert pitch. These errors point to a need for broader exposure to musical facts.",
+            "frequency": 2,
+            "evidenceQuestionIds": [
+              "01KEY5TSTDXKXJ6JYGQKRBRQH7",
+              "01KEY5TSTEA0TV7M7V3C9MAKM0"
+            ]
+          }
+        ]
+      },
+      "course_recommendation": [
+        {
+          "weakness": {
+            "id": "323aabd5-f485-429e-9628-2289feebc4c7",
+            "text": "Misunderstanding of Musical Terminology for Performance Instruction",
+            "description": "The student struggles to correctly interpret Italian musical terms related to performance dynamics (loudness) and expression. They often confuse these terms with other performance aspects like tempo (speed) or articulation (smoothness). This indicates a need to review common dynamic and expressive markings."
+          },
+          "recommendedCourses": []
+        },
+        {
+          "weakness": {
+            "id": "6aa3a136-a70b-4a00-8f7f-16edfe570569",
+            "text": "Confusion with Basic Musical Notation Symbols",
+            "description": "The student demonstrates confusion regarding the meaning and function of fundamental symbols used in sheet music. They tend to misinterpret or confuse common notation elements, such as rests and key signatures, with unrelated structural or performance instructions like repeat signs."
+          },
+          "recommendedCourses": []
+        },
+        {
+          "weakness": {
+            "id": "d477d50b-765f-45d1-a667-5112eae70436",
+            "text": "Gaps in Core Musical Theory Concepts",
+            "description": "The student shows a lack of foundational understanding in basic music theory concepts. This includes difficulty defining key musical elements like harmony and identifying fundamental components of a key, such as the tonic. These errors suggest a need to reinforce the building blocks of music theory."
+          },
+          "recommendedCourses": []
+        },
+        {
+          "weakness": {
+            "id": "4af4be67-76f9-45a5-ac54-24df3840b4fe",
+            "text": "Insufficient General Musical Knowledge and Factual Recall",
+            "description": "The student exhibits specific gaps in general musical knowledge, particularly concerning common classifications and standard practices. This includes misidentifying instrument families or failing to recall widely accepted musical standards like concert pitch. These errors point to a need for broader exposure to musical facts."
+          },
+          "recommendedCourses": []
+        }
+      ],
+      "user_facing_response": "**Music Knowledge 101**\n\n**Current Performance:** You passed the 'Music Knowledge 101' test with a score of 12 out of 20, answering 8 questions incorrectly. To strengthen your foundation, focus on reviewing core concepts and practicing areas you found challenging.\n\n**Area to be Improved:** Your performance indicates areas needing attention, particularly in understanding musical terminology for performance, basic notation symbols, and core theory concepts. Expanding your general musical knowledge and factual recall will significantly help improve your overall grasp."
     }
   }
 ]

@@ -12,6 +12,7 @@ FastAPI orchestrator that calls:
 Example request (camelCase):
 ```json
 {
+  "examResultId":"01KCXK1Q4N3VWVXEEYRXMJ6GP8",
   "studentId": "STUDENT_A",
   "testId": "01KCXGG0SS0001H0Q1FW1K4S0G",
   "maxCourses": 5,

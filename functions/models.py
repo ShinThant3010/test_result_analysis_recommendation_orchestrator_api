@@ -1,7 +1,4 @@
 from __future__ import annotations
-
-from typing import Any, Dict, List, Optional
-
 from pydantic import BaseModel, ConfigDict, Field
 
 from functions.config import (
@@ -13,6 +10,11 @@ from functions.config import (
 
 class OrchestrateRequest(BaseModel):
     model_config = ConfigDict(populate_by_name=True)
+    exam_result_id: str = Field(
+        ...,
+        alias="examResultId",
+        description="Exam result identifier.",
+    )
     student_id: str = Field(
         ...,
         alias="studentId",

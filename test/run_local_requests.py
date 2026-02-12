@@ -36,7 +36,7 @@ def main() -> int:
     parser.add_argument(
         "--csv",
         default="test/test_input.csv",
-        help="CSV file containing user_id and test_id columns.",
+        help="CSV file containing exam_result_id, user_id and test_id columns.",
     )
     parser.add_argument("--language", default="EN", help="Output language (EN or TH).")
     parser.add_argument("--max-courses", type=int, default=5, help="Max courses overall.")
@@ -73,13 +73,15 @@ def main() -> int:
 
     limit = args.limit if args.limit and args.limit > 0 else len(rows)
     for idx, row in enumerate(rows[:limit], start=1):
+        exam_result_id = (row.get("exam_result_id") or "").strip()
         user_id = (row.get("user_id") or "").strip()
         test_id = (row.get("test_id") or "").strip()
-        if not user_id or not test_id:
-            print(f"[{idx}] Skipping row with missing user_id/test_id.")
+        if not exam_result_id or not user_id or not test_id:
+            print(f"[{idx}] Skipping row with missing exam_result_id/user_id/test_id.")
             continue
 
         payload = {
+            "examResultId": exam_result_id,
             "studentId": user_id,
             "testId": test_id,
             "maxCourses": args.max_courses,
@@ -93,7 +95,7 @@ def main() -> int:
         preview = body.replace("\n", " ").strip()
         if len(preview) > 180:
             preview = f"{preview[:177]}..."
-        print(f"[{idx}] {user_id} {test_id} -> {status} ({outcome}) {preview}")
+        print(f"[{idx}] {exam_result_id} {user_id} {test_id} -> {status} ({outcome}) {preview}")
 
     return 0
 

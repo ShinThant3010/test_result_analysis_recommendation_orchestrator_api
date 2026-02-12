@@ -8,7 +8,7 @@ import warnings
 
 import httpx
 from dotenv import load_dotenv
-from fastapi import APIRouter, Depends, FastAPI, Header, HTTPException, Request, Response
+from fastapi import Depends, FastAPI, Header, HTTPException, Request, Response
 from fastapi.responses import JSONResponse
 from pydantic.warnings import UnsupportedFieldAttributeWarning
 
@@ -43,20 +43,6 @@ def _request_metadata(request: Request, payload: object | None = None) -> dict[s
         "query_params": dict(request.query_params),
         "body": payload,
     }
-
-
-async def _request_metadata_from_request(request: Request) -> dict[str, object]:
-    payload: object | None = None
-    try:
-        payload = await request.json()
-    except Exception: 
-        try:
-            raw = await request.body()
-            if raw:
-                payload = raw.decode("utf-8", errors="replace")
-        except Exception: 
-            payload = None
-    return _request_metadata(request, payload=payload)
 
 
 @app.exception_handler(HTTPException)
@@ -184,6 +170,7 @@ async def orchestrate(
 
     try:
         payload = await service.orchestrate(
+            exam_result_id=body.exam_result_id,
             student_id=body.student_id,
             test_id=body.test_id,
             max_courses=body.max_courses,

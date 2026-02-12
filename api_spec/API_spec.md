@@ -89,6 +89,7 @@ Runs the orchestrator pipeline. Correlation IDs in-flight are rejected with `409
 
 | Field       | Type   | Required | Notes |
 | ----------- | ------ | -------: | ----- |
+| examResultId   | string | ✅ | Exam result identifier. |
 | studentId   | string | ✅ | Student identifier. |
 | testId      | string | ✅ | Assessment/test identifier. |
 | maxCourses  | int    | ❌ | Max courses overall (default 5, min 1). |

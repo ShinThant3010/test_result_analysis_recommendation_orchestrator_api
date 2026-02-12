@@ -15,7 +15,7 @@ COURSE_RECOMMENDATION_API_BASE_URL = os.getenv(
     "https://course-recommendation-api-" + project_location + ".run.app",
 )
 
-DATA_GATHERING_ATTEMPTS_PATH = "/v1/test-results/students/{student_id}/tests/{test_id}"
+DATA_GATHERING_ATTEMPTS_PATH = "/v1/test-results/{exam_result_id}/students/{student_id}/tests/{test_id}"
 DATA_GATHERING_QUESTIONS_PATH = "/v1/test-questions/{test_id}"
 TEST_ANALYSIS_PATH = "/v1/test-analysis"
 COURSE_RECOMMENDATION_PATH = "/v1/course-recommendations"

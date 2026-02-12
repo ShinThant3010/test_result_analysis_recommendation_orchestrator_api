@@ -41,6 +41,7 @@ class OrchestratorService:
     async def orchestrate(
         self,
         *,
+        exam_result_id: str,
         student_id: str,
         test_id: str,
         max_courses: int,
@@ -56,7 +57,7 @@ class OrchestratorService:
         course_recommendation_output: Optional[List[Dict[str, Any]]] = None
         user_facing_output: Optional[str] = None
         try:
-            attempts = await self._fetch_attempts(student_id=student_id, test_id=test_id)
+            attempts = await self._fetch_attempts(exam_result_id=exam_result_id, student_id=student_id, test_id=test_id)
             current, history = _split_attempts(attempts)
             if not current:
                 raise ValueError("No exam attempts found for student/test.")
@@ -177,10 +178,10 @@ class OrchestratorService:
                     response=user_facing_output,
                 )
 
-    async def _fetch_attempts(self, *, student_id: str, test_id: str) -> List[Dict[str, Any]]:
+    async def _fetch_attempts(self, *, exam_result_id: str, student_id: str, test_id: str) -> List[Dict[str, Any]]:
         url = (
             f"{DATA_GATHERING_API_BASE_URL}"
-            + DATA_GATHERING_ATTEMPTS_PATH.format(student_id=student_id, test_id=test_id)
+            + DATA_GATHERING_ATTEMPTS_PATH.format(exam_result_id=exam_result_id, student_id=student_id, test_id=test_id)
         )
         start = time.time()
         try:
