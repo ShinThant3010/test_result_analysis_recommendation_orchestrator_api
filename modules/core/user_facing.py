@@ -7,8 +7,11 @@ from typing import Any, Dict, List, Optional
 
 from google import genai
 
-from modules.utils.load_config import DEFAULT_LANGUAGE, GENERATION_MODEL
+from modules.utils.load_config import SETTINGS
 from modules.utils.run_logging import extract_token_counts, log_llm_call
+
+DEFAULT_LANGUAGE = SETTINGS.defaults.language
+GENERATION_MODEL = SETTINGS.service.generation_model
 
 
 def _get_genai_client() -> genai.Client:

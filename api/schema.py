@@ -2,10 +2,10 @@ from __future__ import annotations
 
 from pydantic import BaseModel, ConfigDict, Field
 
-from modules.utils.load_config import (
-    DEFAULT_LANGUAGE,
-    DEFAULT_MAX_COURSES,
-)
+from modules.utils.load_config import SETTINGS
+
+DEFAULT_LANGUAGE = SETTINGS.defaults.language
+DEFAULT_MAX_COURSES = SETTINGS.defaults.max_courses
 
 
 class AnswerItem(BaseModel):

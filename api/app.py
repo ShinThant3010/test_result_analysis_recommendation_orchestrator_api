@@ -13,8 +13,8 @@ from fastapi.responses import JSONResponse
 from pydantic.warnings import UnsupportedFieldAttributeWarning
 
 from api.schema import OrchestrateRequest
-from modules.utils.load_config import DEFAULT_MAX_COURSES_PER_WEAKNESS
-from modules.core.orchestrator import OrchestratorService
+from modules.core.orchestrator import OrchestrateInput, OrchestratorService
+from modules.utils.load_config import SETTINGS
 
 warnings.filterwarnings("ignore", category=UnsupportedFieldAttributeWarning)
 
@@ -35,6 +35,7 @@ API_BEARER_TOKEN = os.getenv("API_BEARER_TOKEN")
 CORRELATION_HEADER = "X-Correlation-Id"
 API_VERSION_HEADER = "X-API-Version"
 SUPPORTED_API_VERSIONS = {"1"}
+DEFAULT_MAX_COURSES_PER_WEAKNESS = SETTINGS.defaults.max_courses_per_weakness
 
 
 # ---------------------------------------------------------------------------------------------
@@ -66,18 +67,13 @@ async def unhandled_exception_handler(request: Request, exc: Exception) -> JSONR
 # ---------------------------------------------------------------------------------------------
 # API Header
 # ---------------------------------------------------------------------------------------------
-def require_headers(
-    response: Response,
-    x_api_version: str | None = Header(None, alias=API_VERSION_HEADER, include_in_schema=False),
-    x_correlation_id: str | None = Header(None, alias=CORRELATION_HEADER, include_in_schema=False),
-    content_type: str | None = Header(None, alias="Content-Type", include_in_schema=False),
-    authorization: str | None = Header(None, alias="Authorization", include_in_schema=False),
-) -> dict[str, str]:
-    correlation_id = x_correlation_id or f"corr_{uuid.uuid4()}"
-    response.headers[CORRELATION_HEADER] = correlation_id
-    version = (x_api_version or "1").strip() or "1"
-    response.headers[API_VERSION_HEADER] = version
-
+def _validate_request_headers(
+    *,
+    correlation_id: str,
+    version: str,
+    content_type: str | None,
+    authorization: str | None,
+) -> None:
     if version not in SUPPORTED_API_VERSIONS:
         detail = {
             "code": "INVALID_FIELD_VALUE",
@@ -115,6 +111,27 @@ def require_headers(
                 detail=detail,
                 headers={CORRELATION_HEADER: correlation_id, API_VERSION_HEADER: version},
             )
+
+
+def require_headers(
+    response: Response,
+    x_api_version: str | None = Header(None, alias=API_VERSION_HEADER, include_in_schema=False),
+    x_correlation_id: str | None = Header(None, alias=CORRELATION_HEADER, include_in_schema=False),
+    content_type: str | None = Header(None, alias="Content-Type", include_in_schema=False),
+    authorization: str | None = Header(None, alias="Authorization", include_in_schema=False),
+) -> dict[str, str]:
+    
+    correlation_id = x_correlation_id or f"corr_{uuid.uuid4()}"
+    response.headers[CORRELATION_HEADER] = correlation_id
+    version = (x_api_version or "1").strip() or "1"
+    response.headers[API_VERSION_HEADER] = version
+
+    _validate_request_headers(
+        correlation_id=correlation_id,
+        version=version,
+        content_type=content_type,
+        authorization=authorization,
+    )
 
     return {"correlation_id": correlation_id, "api_version": version}
 
@@ -173,7 +190,7 @@ async def orchestrate(
 
     ### --------- core function call for test result analysis & recommendations --------- ###
     try:
-        orchestrator_result = await service.orchestrate(
+        orchestrate_input = OrchestrateInput(
             student_id=payload.student_id,
             test_id=payload.test_id,
             test_title=payload.test_title,
@@ -188,6 +205,7 @@ async def orchestrate(
                 else None
             ),
         )
+        orchestrator_result = await service.orchestrate(orchestrate_input)
 
     ### --------------------------------- Error Control --------------------------------- ###
     except ValueError as exc:

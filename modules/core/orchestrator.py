@@ -1,21 +1,13 @@
 from __future__ import annotations
 
+from dataclasses import dataclass
 import time
 import uuid
 from typing import Any, Dict, List, Optional, Tuple
 
 import httpx
 
-from modules.utils.load_config import (
-    COURSE_RECOMMENDATION_API_BASE_URL,
-    COURSE_RECOMMENDATION_PATH,
-    GENERATION_MODEL,
-    HTTP_TIMEOUT_SECONDS,
-    RESPONSE_LOG_PATH,
-    USER_FACING_RESPONSE_LOG_PATH,
-    TEST_ANALYSIS_API_BASE_URL,
-    TEST_ANALYSIS_PATH,
-)
+from modules.utils.load_config import SETTINGS
 from modules.core.user_facing import generate_user_facing_response
 from modules.utils.run_logging import (
     extract_runtime_log,
@@ -26,38 +18,45 @@ from modules.utils.run_logging import (
     write_user_facing_log,
 )
 
+SERVICE_CONFIG = SETTINGS.service
+LOGGING_CONFIG = SETTINGS.logging
+
+
+@dataclass(frozen=True)
+class OrchestrateInput:
+    student_id: str
+    test_id: str
+    test_title: str
+    max_courses: int
+    max_courses_per_weakness: int
+    participant_ranking: Optional[float]
+    language: Optional[str]
+    current_attempt: Dict[str, Any]
+    previous_attempt: Optional[Dict[str, Any]]
+
 
 class OrchestratorService:
     def __init__(self) -> None:
-        timeout = httpx.Timeout(HTTP_TIMEOUT_SECONDS)
+        timeout = httpx.Timeout(SERVICE_CONFIG.http_timeout_seconds)
         self._client = httpx.AsyncClient(timeout=timeout)
 
     async def close(self) -> None:
         await self._client.aclose()
 
-    async def orchestrate(
-        self,
-        *,
-        student_id: str,
-        test_id: str,
-        test_title: str,
-        max_courses: int,
-        max_courses_per_weakness: int,
-        participant_ranking: Optional[float] = None,
-        language: Optional[str],
-        current_attempt: Dict[str, Any],
-        previous_attempt: Optional[Dict[str, Any]] = None,
-    ) -> Dict[str, Any]:
+    async def orchestrate(self, data: OrchestrateInput) -> Dict[str, Any]:
+
         run_id = f"run_{uuid.uuid4().hex}"
         reset_run_log()
         start = time.time()
         status = "ok"
+
         test_analysis_output: Optional[Dict[str, Any]] = None
         course_recommendation_output: Optional[List[Dict[str, Any]]] = None
         user_facing_output: Optional[str] = None
+        
         try:
-            current = current_attempt
-            history = previous_attempt
+            current = data.current_attempt
+            history = data.previous_attempt
             if not current:
                 raise ValueError("currentAttempt is required.")
 
@@ -71,27 +70,27 @@ class OrchestratorService:
 
             if incorrect_summary["total_incorrect_questions"] == 0:
                 participant_ranking_value = (
-                    participant_ranking
-                    if participant_ranking and participant_ranking > 0
+                    data.participant_ranking
+                    if data.participant_ranking and data.participant_ranking > 0
                     else 0.0
                 )
                 user_response = generate_user_facing_response(
                     weaknesses=[],
                     recommendations=[],
-                    test_result=_build_exam_result_payload(current, test_title),
-                    history_result=_build_exam_result_payload(history, test_title) if history else None,
+                    test_result=_build_exam_result_payload(current, data.test_title),
+                    history_result=_build_exam_result_payload(history, data.test_title) if history else None,
                     incorrect_summary=incorrect_summary,
                     all_correct=True,
                     participant_ranking=participant_ranking_value,
                     domain_performance=domain_performance,
-                    language=language,
+                    language=data.language,
                 )
                 user_facing_output = user_response
                 return {
                     "status": "all_correct",
                     "run_id": run_id,
-                    "student_id": student_id,
-                    "test_id": test_id,
+                    "student_id": data.student_id,
+                    "test_id": data.test_id,
                     "incorrect_summary": incorrect_summary,
                     "weaknesses": [],
                     "recommendations": [],
@@ -103,34 +102,34 @@ class OrchestratorService:
             limited_weaknesses = weaknesses[:5]
             recommendations = await self._fetch_recommendations(
                 weaknesses=limited_weaknesses,
-                max_courses=max_courses,
-                max_courses_per_weakness=max_courses_per_weakness,
+                max_courses=data.max_courses,
+                max_courses_per_weakness=data.max_courses_per_weakness,
             )
             course_recommendation_output = _summarize_recommendations(recommendations)
 
             participant_ranking_value = (
-                participant_ranking
-                if participant_ranking and participant_ranking > 0
+                data.participant_ranking
+                if data.participant_ranking and data.participant_ranking > 0
                 else 0.0
             )
             user_response = generate_user_facing_response(
                 weaknesses=limited_weaknesses,
                 recommendations=recommendations,
-                test_result=_build_exam_result_payload(current, test_title),
-                history_result=_build_exam_result_payload(history, test_title) if history else None,
+                test_result=_build_exam_result_payload(current, data.test_title),
+                history_result=_build_exam_result_payload(history, data.test_title) if history else None,
                 incorrect_summary=incorrect_summary,
                 all_correct=False,
                 participant_ranking=participant_ranking_value,
                 domain_performance=domain_performance,
-                language=language,
+                language=data.language,
             )
             user_facing_output = user_response
 
             return {
                 "status": "ok",
                 "run_id": run_id,
-                "student_id": student_id,
-                "test_id": test_id,
+                "student_id": data.student_id,
+                "test_id": data.test_id,
                 "incorrect_summary": incorrect_summary,
                 "weaknesses": weaknesses,
                 "recommendations": recommendations,
@@ -147,24 +146,24 @@ class OrchestratorService:
                 "user_facing_response": user_facing_output or "",
             }
             write_response_log(
-                path=RESPONSE_LOG_PATH,
+                path=LOGGING_CONFIG.response_log_path,
                 run_id=run_id,
                 status=status,
                 runtime_seconds=runtime,
                 api_output=api_output,
                 metadata={
-                    "student_id": student_id,
-                    "test_id": test_id,
-                    "test_title": test_title,
-                    "max_courses": max_courses,
-                    "max_courses_per_weakness": max_courses_per_weakness,
-                    "participant_ranking": participant_ranking,
-                    "language": language,
+                    "student_id": data.student_id,
+                    "test_id": data.test_id,
+                    "test_title": data.test_title,
+                    "max_courses": data.max_courses,
+                    "max_courses_per_weakness": data.max_courses_per_weakness,
+                    "participant_ranking": data.participant_ranking,
+                    "language": data.language,
                 },
             )
             if user_facing_output:
                 write_user_facing_log(
-                    path=USER_FACING_RESPONSE_LOG_PATH,
+                    path=LOGGING_CONFIG.user_facing_response_log_path,
                     run_id=run_id,
                     response=user_facing_output,
                 )
@@ -172,10 +171,10 @@ class OrchestratorService:
     async def _fetch_weaknesses(
         self, incorrect_cases: List[Dict[str, Any]]
     ) -> List[Dict[str, Any]]:
-        url = f"{TEST_ANALYSIS_API_BASE_URL}{TEST_ANALYSIS_PATH}"
+        url = f"{SERVICE_CONFIG.test_analysis_api_base_url}{SERVICE_CONFIG.test_analysis_path}"
         payload = {
             "incorrect_cases": incorrect_cases,
-            "model_name": GENERATION_MODEL,
+            "model_name": SERVICE_CONFIG.generation_model,
         }
 
         start = time.time()
@@ -192,7 +191,7 @@ class OrchestratorService:
                 f"test_analysis_api error: status={response.status_code} body={response_text}"
             )
 
-        data = _remove_importance(response.json())
+        data = response.json()
         weaknesses = data.get("weaknesses", []) if isinstance(data, dict) else []
         runtime_log = extract_runtime_log(data)
         runtime_metrics = parse_runtime_metrics(runtime_log)
@@ -215,7 +214,10 @@ class OrchestratorService:
         max_courses: int,
         max_courses_per_weakness: int,
     ) -> List[Dict[str, Any]]:
-        url = f"{COURSE_RECOMMENDATION_API_BASE_URL}{COURSE_RECOMMENDATION_PATH}"
+        url = (
+            f"{SERVICE_CONFIG.course_recommendation_api_base_url}"
+            f"{SERVICE_CONFIG.course_recommendation_path}"
+        )
         payload = {
             "weaknesses": weaknesses,
             "max_course": max_courses,
@@ -230,7 +232,7 @@ class OrchestratorService:
             raise RuntimeError(
                 f"course_recommendation error: status={response.status_code} body={response.text}"
             )
-        data = _remove_importance(response.json())
+        data = response.json()
         if isinstance(data, dict):
             data = {
                 **data,
@@ -252,19 +254,6 @@ class OrchestratorService:
             llm_runtime=runtime_metrics.get("llm_runtime"),
         )
         return data.get("recommendations", [])
-
-
-def _remove_importance(value: Any) -> Any:
-    if isinstance(value, dict):
-        return {
-            key: _remove_importance(val)
-            for key, val in value.items()
-            if key not in ("importance", "patternType", "pattern_type")
-        }
-    if isinstance(value, list):
-        return [_remove_importance(item) for item in value]
-    return value
-
 
 def _summarize_weaknesses(weaknesses: List[Dict[str, Any]]) -> Dict[str, Any]:
     keys = [
