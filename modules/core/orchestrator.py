@@ -6,12 +6,9 @@ from typing import Any, Dict, List, Optional, Tuple
 
 import httpx
 
-from functions.config import (
+from modules.utils.load_config import (
     COURSE_RECOMMENDATION_API_BASE_URL,
     COURSE_RECOMMENDATION_PATH,
-    DATA_GATHERING_API_BASE_URL,
-    DATA_GATHERING_ATTEMPTS_PATH,
-    DATA_GATHERING_QUESTIONS_PATH,
     GENERATION_MODEL,
     HTTP_TIMEOUT_SECONDS,
     RESPONSE_LOG_PATH,
@@ -19,8 +16,8 @@ from functions.config import (
     TEST_ANALYSIS_API_BASE_URL,
     TEST_ANALYSIS_PATH,
 )
-from functions.orchestrator.user_facing import generate_user_facing_response
-from functions.utils.run_logging import (
+from modules.core.user_facing import generate_user_facing_response
+from modules.utils.run_logging import (
     extract_runtime_log,
     log_api_call,
     parse_runtime_metrics,
@@ -41,13 +38,15 @@ class OrchestratorService:
     async def orchestrate(
         self,
         *,
-        exam_result_id: str,
         student_id: str,
         test_id: str,
+        test_title: str,
         max_courses: int,
         max_courses_per_weakness: int,
-        participant_ranking: float = 0.0,
-        language: str,
+        participant_ranking: Optional[float] = None,
+        language: Optional[str],
+        current_attempt: Dict[str, Any],
+        previous_attempt: Optional[Dict[str, Any]] = None,
     ) -> Dict[str, Any]:
         run_id = f"run_{uuid.uuid4().hex}"
         reset_run_log()
@@ -57,39 +56,30 @@ class OrchestratorService:
         course_recommendation_output: Optional[List[Dict[str, Any]]] = None
         user_facing_output: Optional[str] = None
         try:
-            attempts = await self._fetch_attempts(exam_result_id=exam_result_id, student_id=student_id, test_id=test_id)
-            current, history = _split_attempts(attempts)
+            current = current_attempt
+            history = previous_attempt
             if not current:
-                raise ValueError("No exam attempts found for student/test.")
-
-            question_bank = await self._fetch_question_bank(test_id=test_id)
-            question_lookup = {
-                item.get("question", {}).get("id"): item
-                for item in question_bank
-                if item.get("question") and item.get("question", {}).get("id")
-            }
+                raise ValueError("currentAttempt is required.")
 
             incorrect_cases, incorrect_summary = _build_incorrect_cases(
                 current=current,
-                question_lookup=question_lookup,
             )
             domain_performance = _compute_domain_performance(
                 current=current,
                 history=history,
-                question_lookup=question_lookup,
             )
 
             if incorrect_summary["total_incorrect_questions"] == 0:
                 participant_ranking_value = (
                     participant_ranking
-                    if participant_ranking > 0
-                    else _extract_participant_ranking(current)
+                    if participant_ranking and participant_ranking > 0
+                    else 0.0
                 )
                 user_response = generate_user_facing_response(
                     weaknesses=[],
                     recommendations=[],
-                    test_result=_extract_exam_result(current),
-                    history_result=_extract_exam_result(history) if history else None,
+                    test_result=_build_exam_result_payload(current, test_title),
+                    history_result=_build_exam_result_payload(history, test_title) if history else None,
                     incorrect_summary=incorrect_summary,
                     all_correct=True,
                     participant_ranking=participant_ranking_value,
@@ -120,14 +110,14 @@ class OrchestratorService:
 
             participant_ranking_value = (
                 participant_ranking
-                if participant_ranking > 0
-                else _extract_participant_ranking(current)
+                if participant_ranking and participant_ranking > 0
+                else 0.0
             )
             user_response = generate_user_facing_response(
                 weaknesses=limited_weaknesses,
                 recommendations=recommendations,
-                test_result=_extract_exam_result(current),
-                history_result=_extract_exam_result(history) if history else None,
+                test_result=_build_exam_result_payload(current, test_title),
+                history_result=_build_exam_result_payload(history, test_title) if history else None,
                 incorrect_summary=incorrect_summary,
                 all_correct=False,
                 participant_ranking=participant_ranking_value,
@@ -165,6 +155,7 @@ class OrchestratorService:
                 metadata={
                     "student_id": student_id,
                     "test_id": test_id,
+                    "test_title": test_title,
                     "max_courses": max_courses,
                     "max_courses_per_weakness": max_courses_per_weakness,
                     "participant_ranking": participant_ranking,
@@ -177,50 +168,6 @@ class OrchestratorService:
                     run_id=run_id,
                     response=user_facing_output,
                 )
-
-    async def _fetch_attempts(self, *, exam_result_id: str, student_id: str, test_id: str) -> List[Dict[str, Any]]:
-        url = (
-            f"{DATA_GATHERING_API_BASE_URL}"
-            + DATA_GATHERING_ATTEMPTS_PATH.format(exam_result_id=exam_result_id, student_id=student_id, test_id=test_id)
-        )
-        start = time.time()
-        try:
-            response = await self._client.get(url, params={"limit": 2})
-        except Exception as exc:  # noqa: BLE001
-            raise RuntimeError(f"data_gathering_attempts request failed: {exc}") from exc
-        if response.status_code >= 400:
-            raise RuntimeError(
-                f"data_gathering_attempts error: status={response.status_code} body={response.text}"
-            )
-        payload = response.json()
-        request_runtime = time.time() - start
-        log_api_call(
-            name="data_gathering_attempts",
-            request_runtime=request_runtime,
-        )
-        return payload.get("attempts", [])
-
-    async def _fetch_question_bank(self, *, test_id: str) -> List[Dict[str, Any]]:
-        url = (
-            f"{DATA_GATHERING_API_BASE_URL}"
-            + DATA_GATHERING_QUESTIONS_PATH.format(test_id=test_id)
-        )
-        start = time.time()
-        try:
-            response = await self._client.get(url)
-        except Exception as exc:  # noqa: BLE001
-            raise RuntimeError(f"data_gathering_questions request failed: {exc}") from exc
-        if response.status_code >= 400:
-            raise RuntimeError(
-                f"data_gathering_questions error: status={response.status_code} body={response.text}"
-            )
-        payload = response.json()
-        request_runtime = time.time() - start
-        log_api_call(
-            name="data_gathering_questions",
-            request_runtime=request_runtime,
-        )
-        return payload.get("questions", [])
 
     async def _fetch_weaknesses(
         self, incorrect_cases: List[Dict[str, Any]]
@@ -305,16 +252,6 @@ class OrchestratorService:
             llm_runtime=runtime_metrics.get("llm_runtime"),
         )
         return data.get("recommendations", [])
-
-
-def _split_attempts(
-    attempts: List[Dict[str, Any]]
-) -> Tuple[Optional[Dict[str, Any]], Optional[Dict[str, Any]]]:
-    if not attempts:
-        return None, None
-    current = attempts[0]
-    history = attempts[1] if len(attempts) > 1 else None
-    return current, history
 
 
 def _remove_importance(value: Any) -> Any:
@@ -418,7 +355,6 @@ def _filter_recommendations(
 def _build_incorrect_cases(
     *,
     current: Dict[str, Any],
-    question_lookup: Dict[str, Dict[str, Any]],
 ) -> Tuple[List[Dict[str, Any]], Dict[str, Any]]:
     summary = {
         "total_questions_in_test": 0,
@@ -430,89 +366,50 @@ def _build_incorrect_cases(
     summary["total_questions_in_test"] = len(questions)
 
     for row in questions:
-        answers = row.get("_answers", [])
-        if not answers:
+        selected_answers = row.get("selected_answers", [])
+        correct_answers = row.get("correct_answers", [])
+        is_correct = _is_question_correct(row)
+        if is_correct:
             continue
-        any_incorrect = any(not ans.get("isCorrect", False) for ans in answers)
-        if not any_incorrect:
-            continue
-
-        question_id = row.get("questionId")
-        question_info = question_lookup.get(question_id, {}).get("question", {})
-        answer_info = question_lookup.get(question_id, {}).get("answers", [])
 
         student_answers = [
-            ans.get("answerValue") for ans in answers if ans.get("answerValue") is not None
+            ans.get("value") for ans in selected_answers if isinstance(ans, dict) and ans.get("value") is not None
         ]
-        correct_answers = [
-            ans.get("value") for ans in answer_info if ans.get("isCorrect") is True
+        correct_answer_values = [
+            ans.get("value") for ans in correct_answers if isinstance(ans, dict) and ans.get("value") is not None
         ]
-        all_answers = [
-            ans.get("value") for ans in answer_info if ans.get("value") is not None
-        ]
+        all_answers = list(dict.fromkeys([*correct_answer_values, *student_answers]))
 
         incorrect_cases.append(
             {
-                "questionId": question_id,
-                "testResultQuestionId": row.get("id"),
-                "questionText": question_info.get("question"),
-                "explanation": question_info.get("explanation"),
+                "questionId": row.get("question_id"),
+                "testResultQuestionId": row.get("test_result_question_id"),
+                "questionText": row.get("question_text"),
+                "explanation": row.get("explanation"),
                 "studentAnswers": student_answers,
-                "correctAnswers": correct_answers,
+                "correctAnswers": correct_answer_values,
                 "allAnswers": all_answers,
-                "difficulty": question_info.get("difficulty"),
-                "score": question_info.get("score"),
+                "difficulty": row.get("difficulty"),
+                "score": row.get("score"),
             }
         )
 
     summary["total_incorrect_questions"] = len(incorrect_cases)
     return incorrect_cases, summary
 
-
-def _extract_participant_ranking(source: Optional[Dict[str, Any]]) -> float:
-    if not source:
-        return 0.0
-    exam_result = source.get("exam_result") if isinstance(source, dict) else None
-    payload = exam_result if isinstance(exam_result, dict) else source
-    for key in (
-        "participantRanking",
-        "participant_ranking",
-        "participantRank",
-        "participant_rank",
-        "ranking",
-        "rank",
-    ):
-        if key in payload:
-            try:
-                return float(payload.get(key))
-            except (TypeError, ValueError):
-                return 0.0
-    return 0.0
-
-
-def _extract_exam_result(source: Optional[Dict[str, Any]]) -> Optional[Dict[str, Any]]:
-    if not source:
-        return None
-    if not isinstance(source, dict):
-        return None
-    return source.get("exam_result") or source.get("examResult")
-
-
 def _compute_domain_performance(
     *,
     current: Dict[str, Any],
     history: Optional[Dict[str, Any]],
-    question_lookup: Dict[str, Dict[str, Any]],
 ) -> Dict[str, Any]:
     return {
-        "current": _compute_domain_stats(current, question_lookup),
-        "history": _compute_domain_stats(history, question_lookup) if history else {},
+        "current": _compute_domain_stats(current),
+        "history": _compute_domain_stats(history) if history else {},
     }
 
 
 def _compute_domain_stats(
     attempt: Optional[Dict[str, Any]],
-    question_lookup: Dict[str, Dict[str, Any]],
 ) -> Dict[str, Any]:
     if not attempt:
         return {}
@@ -520,13 +417,8 @@ def _compute_domain_stats(
     corrects: Dict[str, int] = {}
 
     for row in attempt.get("questions", []):
-        question_id = row.get("questionId")
-        question_info = question_lookup.get(question_id, {}).get("question", {})
-        domain = question_info.get("domain") or "Unknown"
-        answers = row.get("_answers", [])
-        if not answers:
-            continue
-        is_correct = all(ans.get("isCorrect", False) for ans in answers)
+        domain = row.get("domain") or "Unknown"
+        is_correct = _is_question_correct(row)
         totals[domain] = totals.get(domain, 0) + 1
         if is_correct:
             corrects[domain] = corrects.get(domain, 0) + 1
@@ -546,3 +438,55 @@ def _compute_domain_stats(
         )
 
     return {"domains": domains}
+
+
+def _build_exam_result_payload(
+    attempt: Optional[Dict[str, Any]],
+    test_title: str,
+) -> Optional[Dict[str, Any]]:
+    if not attempt:
+        return None
+    payload: Dict[str, Any] = {"testTitle": test_title}
+    if "earned_score" in attempt:
+        payload["earnedScore"] = attempt.get("earned_score")
+    if "total_score" in attempt:
+        payload["totalScore"] = attempt.get("total_score")
+    if "status" in attempt:
+        payload["status"] = attempt.get("status")
+    return payload
+
+
+def _is_question_correct(question: Dict[str, Any]) -> bool:
+    provided = question.get("is_correct")
+    if isinstance(provided, bool):
+        return provided
+    selected = question.get("selected_answers", [])
+    correct = question.get("correct_answers", [])
+    return _answers_match(selected, correct)
+
+
+def _answers_match(selected: List[Dict[str, Any]], correct: List[Dict[str, Any]]) -> bool:
+    selected_ids = _answer_set(selected, key="answer_id")
+    correct_ids = _answer_set(correct, key="answer_id")
+    if selected_ids and correct_ids:
+        return selected_ids == correct_ids
+
+    selected_values = _answer_set(selected, key="value")
+    correct_values = _answer_set(correct, key="value")
+    if selected_values and correct_values:
+        return selected_values == correct_values
+    return False
+
+
+def _answer_set(answers: List[Dict[str, Any]], *, key: str) -> set[str]:
+    values = set()
+    for answer in answers:
+        if not isinstance(answer, dict):
+            continue
+        value = answer.get(key)
+        if value is None:
+            continue
+        normalized = str(value).strip()
+        if normalized:
+            values.add(normalized)
+    return values

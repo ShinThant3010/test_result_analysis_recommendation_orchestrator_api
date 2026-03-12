@@ -93,7 +93,6 @@ Runs the orchestrator pipeline. Correlation IDs in-flight are rejected with `409
 | studentId   | string | ✅ | Student identifier. |
 | testId      | string | ✅ | Assessment/test identifier. |
 | maxCourses  | int    | ❌ | Max courses overall (default 5, min 1). |
-| maxCoursesPerWeakness | int | ❌ | Max courses per weakness (default 3, min 1). |
 | participantRanking | float | ❌ | Optional fractional ranking (e.g., 0.317 => top 31.7%). Default `0`. |
 | language    | string | ❌ | `EN` or `TH` for the final summary (default `EN`). |
 
@@ -103,7 +102,6 @@ Runs the orchestrator pipeline. Correlation IDs in-flight are rejected with `409
   "studentId": "STUDENT_A",
   "testId": "01KCXGG0SS0001H0Q1FW1K4S0G",
   "maxCourses": 5,
-  "maxCoursesPerWeakness": 3,
   "participantRanking": 0,
   "language": "EN"
 }
@@ -118,7 +116,6 @@ curl -i -X 'POST' \
   "studentId": "STUDENT_A",
   "testId": "01KCXGG0SS0001H0Q1FW1K4S0G",
   "maxCourses": 5,
-  "maxCoursesPerWeakness": 3,
   "participantRanking": 0,
   "language": "EN"
 }'
@@ -196,9 +193,9 @@ Errors use camelCase keys:
 
 | Component | Purpose | Notes |
 | --------- | ------- | ----- |
-| data-gathering-api | Fetch exam attempts + question bank | Uses configured Cloud Run URL in `functions/config.py`. |
-| test_analysis_api | Extracts weaknesses from incorrect answers | Uses configured Cloud Run URL in `functions/config.py`. |
-| course_recommendation_api | Recommends courses from weaknesses | Uses configured Cloud Run URL in `functions/config.py`. |
+| data-gathering-api | Fetch exam attempts + question bank | Uses configured Cloud Run URL in `modules/utils/load_config.py`. |
+| test_analysis_api | Extracts weaknesses from incorrect answers | Uses configured Cloud Run URL in `modules/utils/load_config.py`. |
+| course_recommendation_api | Recommends courses from weaknesses | Uses configured Cloud Run URL in `modules/utils/load_config.py`. |
 | LLM response (service.py) | Generates user-facing summary | Uses Gemini model (`GENERATION_MODEL`). |
 
 ---

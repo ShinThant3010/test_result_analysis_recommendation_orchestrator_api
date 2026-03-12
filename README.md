@@ -1,29 +1,44 @@
 # Test Result Analysis Recommendation Orchestrator API
 
 FastAPI orchestrator that calls:
-- data-gathering-api
 - test_analysis_api
 - course_recommendation_api
 
 ## Endpoints
 - `GET /health`
-- `POST /api/v1/orchestrate`
+- `POST /v1/orchestrator/test-result-analysis-and-recommendations`
 
 Example request (camelCase):
 ```json
 {
-  "examResultId":"01KCXK1Q4N3VWVXEEYRXMJ6GP8",
   "studentId": "STUDENT_A",
-  "testId": "01KCXGG0SS0001H0Q1FW1K4S0G",
+  "testId": "TEST_CS_101",
+  "testTitle": "Computer Science 101",
+  "currentAttempt": {
+    "earnedScore": 7,
+    "totalScore": 10,
+    "status": "COMPLETED",
+    "questions": [
+      {
+        "testResultQuestionId": "TRQ_001",
+        "questionId": "Q_001",
+        "questionText": "What is the time complexity of binary search?",
+        "domain": "Algorithms",
+        "explanation": "Binary search halves the search space each step.",
+        "correctAnswers": [{ "answerId": "A_1", "value": "O(log n)" }],
+        "selectedAnswers": [{ "answerId": "A_2", "value": "O(n)" }],
+        "isCorrect": false
+      }
+    ]
+  },
+  "previousAttempt": null,
   "maxCourses": 5,
-  "maxCoursesPerWeakness": 3,
-  "participantRanking": 0,
+  "participantRanking": 0.317,
   "language": "EN"
 }
 ```
 
 Optional request fields:
-- `maxCoursesPerWeakness`: limit courses returned per weakness (default: 3).
 - `participantRanking`: optional fractional ranking (default: 0).
 
 Example response (plain text, Markdown):
@@ -32,18 +47,20 @@ Example response (plain text, Markdown):
 ```
 
 ## Environment Variables
-- `DATA_GATHERING_API_BASE_URL`
+Default values are loaded from `modules/parameters/config.yaml`. Any matching environment variable overrides YAML.
+
 - `TEST_ANALYSIS_API_BASE_URL`
 - `COURSE_RECOMMENDATION_API_BASE_URL`
 - `GOOGLE_API_KEY`
 - `GENERATION_MODEL` (default: `gemini-2.5-flash`)
+- `DEFAULT_MAX_COURSES_PER_WEAKNESS` (default: `3`)
 - `API_BEARER_TOKEN` (optional)
 - `RESPONSE_LOG_PATH` (optional, default: `log/response_log.json`)
 - `USER_FACING_RESPONSE_LOG_PATH` (optional, default: `log/user_facing_response_log.md`)
 
 ## Run Locally
 ```bash
-uvicorn api:app --host 0.0.0.0 --port 8080
+uvicorn api.app:app --host 0.0.0.0 --port 8080
 ```
 
 

@@ -1,0 +1,17 @@
+service:
+  project_location: "810737581373.asia-southeast1"
+  test_analysis_api_base_url: "https://test-analysis-api-810737581373.asia-southeast1.run.app"
+  course_recommendation_api_base_url: "https://course-recommendation-api-810737581373.asia-southeast1.run.app"
+  test_analysis_path: "/v1/test-analysis"
+  course_recommendation_path: "/v1/course-recommendations"
+  http_timeout_seconds: 60.0
+  generation_model: "gemini-2.5-flash"
+
+defaults:
+  max_courses: 5
+  max_courses_per_weakness: 3
+  language: "EN"
+
+logging:
+  response_log_path: "log/response_log.json"
+  user_facing_response_log_path: "log/user_facing_response_log.md"

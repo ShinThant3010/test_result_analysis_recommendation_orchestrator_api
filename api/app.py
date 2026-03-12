@@ -12,8 +12,9 @@ from fastapi import Depends, FastAPI, Header, HTTPException, Request, Response
 from fastapi.responses import JSONResponse
 from pydantic.warnings import UnsupportedFieldAttributeWarning
 
-from functions.models import OrchestrateRequest
-from functions.service import OrchestratorService
+from api.schema import OrchestrateRequest
+from modules.utils.load_config import DEFAULT_MAX_COURSES_PER_WEAKNESS
+from modules.core.orchestrator import OrchestratorService
 
 warnings.filterwarnings("ignore", category=UnsupportedFieldAttributeWarning)
 
@@ -22,7 +23,7 @@ load_dotenv()
 app = FastAPI(
     title="Test Analysis & Courses Recommendation Orchestrator API",
     version="0.1.0",
-    description="Orchestrates data gathering, test analysis, and course recommendation APIs.",
+    description="Orchestrates test analysis and course recommendation APIs from caller-provided payload data.",
 )
 
 service = OrchestratorService()
@@ -36,15 +37,9 @@ API_VERSION_HEADER = "X-API-Version"
 SUPPORTED_API_VERSIONS = {"1"}
 
 
-def _request_metadata(request: Request, payload: object | None = None) -> dict[str, object]:
-    return {
-        "method": request.method,
-        "url": str(request.url),
-        "query_params": dict(request.query_params),
-        "body": payload,
-    }
-
-
+# ---------------------------------------------------------------------------------------------
+# exception handlers
+# ---------------------------------------------------------------------------------------------
 @app.exception_handler(HTTPException)
 async def http_exception_handler(request: Request, exc: HTTPException) -> JSONResponse:
     correlation_id = (
@@ -60,7 +55,6 @@ async def http_exception_handler(request: Request, exc: HTTPException) -> JSONRe
     headers = {CORRELATION_HEADER: correlation_id, API_VERSION_HEADER: api_version}
     return JSONResponse(status_code=exc.status_code, content={"detail": exc.detail}, headers=headers)
 
-
 @app.exception_handler(Exception)
 async def unhandled_exception_handler(request: Request, exc: Exception) -> JSONResponse:
     correlation_id = request.headers.get(CORRELATION_HEADER) or f"corr_{uuid.uuid4()}"
@@ -69,6 +63,9 @@ async def unhandled_exception_handler(request: Request, exc: Exception) -> JSONR
     return JSONResponse(status_code=500, content={"detail": "Internal Server Error"}, headers=headers)
 
 
+# ---------------------------------------------------------------------------------------------
+# API Header
+# ---------------------------------------------------------------------------------------------
 def require_headers(
     response: Response,
     x_api_version: str | None = Header(None, alias=API_VERSION_HEADER, include_in_schema=False),
@@ -121,7 +118,6 @@ def require_headers(
 
     return {"correlation_id": correlation_id, "api_version": version}
 
-
 @app.middleware("http")
 async def response_time_header(request, call_next):
     start = time.perf_counter()
@@ -130,12 +126,14 @@ async def response_time_header(request, call_next):
     response.headers["X-Response-Time-Seconds"] = f"{elapsed:.4f}"
     return response
 
-
 @app.on_event("shutdown")
 async def shutdown_event() -> None:
     await service.close()
 
 
+# ---------------------------------------------------------------------------------------------
+# Endpoint 1: Health Check
+# ---------------------------------------------------------------------------------------------
 @app.get("/health")
 def health() -> dict:
     return {
@@ -144,17 +142,22 @@ def health() -> dict:
         "environment": "prod",
     }
 
+
+# ---------------------------------------------------------------------------------------------
+# Endpoint 2: Core API Endpoint - Test Result Analysis & Recommendations
+# ---------------------------------------------------------------------------------------------
 @app.post(
     "/v1/orchestrator/test-result-analysis-and-recommendations",
     summary="Execute test analysis and course recommendation orchestrator (v1)",
 )
 async def orchestrate(
-    body: OrchestrateRequest,
-    request: Request,
+    payload: OrchestrateRequest,
     response: Response,
     context: dict[str, str] = Depends(require_headers),
 ) -> Response:
     correlation_id = context["correlation_id"]
+
+    ### ----------------- correction id control for concurrent requests ----------------- ###
     with _corr_lock:
         if correlation_id in _active_correlation_ids:
             raise HTTPException(
@@ -168,17 +171,25 @@ async def orchestrate(
             )
         _active_correlation_ids.add(correlation_id)
 
+    ### --------- core function call for test result analysis & recommendations --------- ###
     try:
-        payload = await service.orchestrate(
-            exam_result_id=body.exam_result_id,
-            student_id=body.student_id,
-            test_id=body.test_id,
-            max_courses=body.max_courses,
-            max_courses_per_weakness=body.max_courses_per_weakness,
-            participant_ranking=body.participant_ranking,
-            language=body.language,
+        orchestrator_result = await service.orchestrate(
+            student_id=payload.student_id,
+            test_id=payload.test_id,
+            test_title=payload.test_title,
+            max_courses=payload.max_courses,
+            max_courses_per_weakness=DEFAULT_MAX_COURSES_PER_WEAKNESS,
+            participant_ranking=payload.participant_ranking,
+            language=payload.language,
+            current_attempt=payload.current_attempt.model_dump(by_alias=False),
+            previous_attempt=(
+                payload.previous_attempt.model_dump(by_alias=False)
+                if payload.previous_attempt is not None
+                else None
+            ),
         )
 
+    ### --------------------------------- Error Control --------------------------------- ###
     except ValueError as exc:
         raise HTTPException(
             status_code=404,
@@ -189,7 +200,7 @@ async def orchestrate(
             },
             headers={CORRELATION_HEADER: correlation_id, API_VERSION_HEADER: context["api_version"]},
         )
-    
+
     except httpx.HTTPStatusError as exc:
         raise HTTPException(
             status_code=502,
@@ -200,8 +211,8 @@ async def orchestrate(
             },
             headers={CORRELATION_HEADER: correlation_id, API_VERSION_HEADER: context["api_version"]},
         )
-    
-    except Exception as exc: 
+
+    except Exception as exc:
         raise HTTPException(
             status_code=500,
             detail={
@@ -211,18 +222,19 @@ async def orchestrate(
             },
             headers={CORRELATION_HEADER: correlation_id, API_VERSION_HEADER: context["api_version"]},
         )
-    
+
     finally:
         with _corr_lock:
             _active_correlation_ids.discard(correlation_id)
 
+    ### ------------------------------------ Reponse ------------------------------------ ###
     response.status_code = 200
     response_headers = {
         CORRELATION_HEADER: correlation_id,
         API_VERSION_HEADER: context["api_version"],
     }
     return Response(
-        content=payload["user_facing_paragraph"],
+        content=orchestrator_result["user_facing_paragraph"],
         media_type="text/markdown",
         headers=response_headers,
     )
