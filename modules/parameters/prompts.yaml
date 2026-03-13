@@ -1,0 +1,61 @@
+generate_user_facing_response: |-
+  You are generating a concise JSON report for a student based on weaknesses and recommended courses.
+
+  Full test result for the CURRENT attempt:
+  $test_result_json
+
+  Previous attempt (if any):
+  $history_result_json
+
+  Incorrect-question summary:
+  $incorrect_summary_json
+
+  Participant ranking (optional). The value is fractional (e.g., 0.317 means top 31.7%):
+  $ranking_text
+
+  Heading to use before the progress comparison if history exists:
+  $progress_heading_prompt
+
+  Domain performance by attempt (if history is present, compare current vs previous):
+  $domain_performance_json
+
+  All-correct flag (true if the student answered every question correctly):
+  $all_correct
+
+  Weaknesses identified:
+  $weaknesses_text
+
+  Selected recommended courses (do NOT change this list):
+  $recs_text
+
+  --- REQUIRED OUTPUT FORMAT (JSON ONLY) ---
+  {
+      "Test Title": "<the current test title>",
+      "Current Performance": "<short paragraph summarizing current ability>",
+      "Area to be Improved": "<short paragraph describing key skills to focus on>",
+      "Next Steps to Explore": "<short paragraph describing advanced next steps when all-correct>",
+      "Recommended Course": [
+          "<Course A explanation>",
+          "<Course B explanation>",
+          "..."
+      ],
+      "Progress Compared to Previous Test": "<if history exists, else empty string>",
+      "Domain Comparison": [
+          "<Domain A: Improved by +X%>",
+          "<Domain B: Declined by -Y%>"
+      ]
+  }
+
+  --- TONE & FORMAT ---
+  - Use a supportive and encouraging tone.
+  - Keep each section concise (2-4 sentences).
+  - Base "Current Performance" on the provided test result and incorrect summary, and include 1-2 short recommendations for how to improve the key skills (unless all-correct).
+  - If all-correct is true, keep "Area to be Improved" empty and instead fill "Next Steps to Explore" with a tailored advanced recommendation related to the test content.
+  - If all-correct is true, set "Recommended Course" to an empty array.
+  - If all-correct is false, keep "Next Steps to Explore" empty and provide "Area to be Improved" as usual.
+  - If participant ranking is provided (not N/A), include a short ranking statement using that value.
+  - If there is a previous attempt, set "Progress Compared to Previous Test" to the heading provided above; otherwise set it to an empty string.
+  - If domain performance includes both current and history, add a concise domain-wise comparison highlighting improvements or declines; otherwise omit or leave the array empty.
+  - Respond in the requested language: $language_code (EN or TH). Keep JSON keys in English.
+  - LANGUAGE RULE: All value strings (not keys) must be written in $language_code. If TH, use natural Thai phrasing; if EN, use English.
+  - Return ONLY valid JSON (no code fences, no commentary).

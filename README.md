@@ -31,7 +31,13 @@ Example request (camelCase):
       }
     ]
   },
-  "previousAttempt": null,
+  "previousAttempt": [
+    {
+      "domain": "Algorithms",
+      "correct_questions_count": 3,
+      "incorrect_questions_count": 4
+    }
+  ],
   "maxCourses": 5,
   "participantRanking": 0.317,
   "language": "EN"

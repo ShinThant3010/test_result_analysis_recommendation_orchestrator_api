@@ -1,24 +1,30 @@
 from __future__ import annotations
 
 import json
-import os
-import time
 from typing import Any, Dict, List, Optional
 
-from google import genai
-
 from modules.utils.load_config import SETTINGS
-from modules.utils.run_logging import extract_token_counts, log_llm_call
+from modules.utils.llm import generate_content_with_logging
+from modules.utils.load_prompt import render_prompt
 
 DEFAULT_LANGUAGE = SETTINGS.defaults.language
 GENERATION_MODEL = SETTINGS.service.generation_model
 
 
-def _get_genai_client() -> genai.Client:
-    api_key = os.getenv("GOOGLE_API_KEY")
-    if not api_key:
-        raise RuntimeError("GOOGLE_API_KEY is missing")
-    return genai.Client(api_key=api_key)
+def build_exam_result_payload(
+    attempt: Optional[Dict[str, Any]],
+    test_title: str,
+) -> Optional[Dict[str, Any]]:
+    if not attempt:
+        return None
+    payload: Dict[str, Any] = {"testTitle": test_title}
+    if "earned_score" in attempt:
+        payload["earnedScore"] = attempt.get("earned_score")
+    if "total_score" in attempt:
+        payload["totalScore"] = attempt.get("total_score")
+    if "status" in attempt:
+        payload["status"] = attempt.get("status")
+    return payload
 
 
 def generate_user_facing_response(
@@ -61,85 +67,56 @@ def generate_user_facing_response(
     )
     progress_heading_prompt = progress_heading_text or "N/A"
 
-    prompt = f"""
-        You are generating a concise JSON report for a student based on weaknesses and recommended courses.
-
-        Full test result for the CURRENT attempt:
-        {json.dumps(test_result or {}, ensure_ascii=False, indent=2)}
-
-        Previous attempt (if any):
-        {json.dumps(history_result or {}, ensure_ascii=False, indent=2)}
-
-        Incorrect-question summary:
-        {json.dumps(incorrect_summary or {}, ensure_ascii=False, indent=2)}
-
-        Participant ranking (optional). The value is fractional (e.g., 0.317 means top 31.7%):
-        {ranking_text}
-
-        Heading to use before the progress comparison if history exists:
-        {progress_heading_prompt}
-
-        Domain performance by attempt (if history is present, compare current vs previous):
-        {json.dumps(domain_performance or {}, ensure_ascii=False, indent=2)}
-
-        All-correct flag (true if the student answered every question correctly):
-        {all_correct}
-
-        Weaknesses identified:
-        {weaknesses_text}
-
-        Selected recommended courses (do NOT change this list):
-        {recs_text or "N/A"}
-
-        --- REQUIRED OUTPUT FORMAT (JSON ONLY) ---
-        {{
-            "Test Title": "<the current test title>",
-            "Current Performance": "<short paragraph summarizing current ability>",
-            "Area to be Improved": "<short paragraph describing key skills to focus on>",
-            "Next Steps to Explore": "<short paragraph describing advanced next steps when all-correct>",
-            "Recommended Course": [
-                "<Course A explanation>",
-                "<Course B explanation>",
-                "..."
-            ],
-            "Progress Compared to Previous Test": "<if history exists, else empty string>",
-            "Domain Comparison": [
-                "<Domain A: Improved by +X%>",
-                "<Domain B: Declined by -Y%>"
-            ]
-        }}
-
-        --- TONE & FORMAT ---
-        - Use a supportive and encouraging tone.
-        - Keep each section concise (2-4 sentences).
-        - Base "Current Performance" on the provided test result and incorrect summary, and include 1-2 short recommendations for how to improve the key skills (unless all-correct).
-        - If all-correct is true, keep "Area to be Improved" empty and instead fill "Next Steps to Explore" with a tailored advanced recommendation related to the test content.
-        - If all-correct is true, set "Recommended Course" to an empty array.
-        - If all-correct is false, keep "Next Steps to Explore" empty and provide "Area to be Improved" as usual.
-        - If participant ranking is provided (not N/A), include a short ranking statement using that value.
-        - If there is a previous attempt, set "Progress Compared to Previous Test" to the heading provided above; otherwise set it to an empty string.
-        - If domain performance includes both current and history, add a concise domain-wise comparison highlighting improvements or declines; otherwise omit or leave the array empty.
-        - Respond in the requested language: {language_code} (EN or TH). Keep JSON keys in English.
-        - LANGUAGE RULE: All value strings (not keys) must be written in {language_code}. If TH, use natural Thai phrasing; if EN, use English.
-        - Return ONLY valid JSON (no code fences, no commentary).
-        """
-
-    client = _get_genai_client()
-    start = time.time()
-    response = client.models.generate_content(
-        model=GENERATION_MODEL,
-        contents=[{"parts": [{"text": prompt}]}],
+    prompt = render_prompt(
+        "generate_user_facing_response",
+        {
+            "test_result_json": json.dumps(test_result or {}, ensure_ascii=False, indent=2),
+            "history_result_json": json.dumps(history_result or {}, ensure_ascii=False, indent=2),
+            "incorrect_summary_json": json.dumps(incorrect_summary or {}, ensure_ascii=False, indent=2),
+            "ranking_text": ranking_text,
+            "progress_heading_prompt": progress_heading_prompt,
+            "domain_performance_json": json.dumps(domain_performance or {}, ensure_ascii=False, indent=2),
+            "all_correct": all_correct,
+            "weaknesses_text": weaknesses_text,
+            "recs_text": recs_text or "N/A",
+            "language_code": language_code,
+        },
     )
-    raw_text = (response.text or "").strip()
-    input_tokens, output_tokens = extract_token_counts(response)
-    log_llm_call(
-        name="user_facing_response",
-        input_tokens=input_tokens,
-        output_tokens=output_tokens,
-        llm_runtime=time.time() - start,
+
+    raw_text = generate_content_with_logging(
+        model=GENERATION_MODEL,
+        prompt=prompt,
+        log_name="user_facing_response",
     )
     summary_json = _parse_llm_json(raw_text)
+    summary_json = non_llm_summary(
+        summary_json=summary_json,
+        all_correct=all_correct,
+        language_code=language_code,
+        ranking_sentence_text=ranking_sentence_text,
+        test_result=test_result,
+        progress_heading_text=progress_heading_text,
+        flat_recs=flat_recs,
+        history_result=history_result,
+        domain_performance=domain_performance,
+    )
 
+    paragraph = _summary_to_paragraph(summary_json, flat_recs)
+    return paragraph
+
+
+def non_llm_summary(
+    *,
+    summary_json: Dict[str, Any],
+    all_correct: bool,
+    language_code: str,
+    ranking_sentence_text: str,
+    test_result: Optional[Dict[str, Any]],
+    progress_heading_text: str,
+    flat_recs: List[Dict[str, Any]],
+    history_result: Optional[Dict[str, Any]],
+    domain_performance: Optional[Dict[str, Any]],
+) -> Dict[str, Any]:
     if not summary_json:
         if all_correct:
             if language_code == "TH":
@@ -199,8 +176,7 @@ def generate_user_facing_response(
     if all_correct:
         summary_json["Recommended Course"] = []
 
-    paragraph = _summary_to_paragraph(summary_json, flat_recs)
-    return paragraph
+    return summary_json
 
 
 def _parse_llm_json(raw_text: str) -> Dict[str, Any]:

@@ -95,12 +95,39 @@ Runs the orchestrator pipeline. Correlation IDs in-flight are rejected with `409
 | maxCourses  | int    | ❌ | Max courses overall (default 5, min 1). |
 | participantRanking | float | ❌ | Optional fractional ranking (e.g., 0.317 => top 31.7%). Default `0`. |
 | language    | string | ❌ | `EN` or `TH` for the final summary (default `EN`). |
+| currentAttempt | object | ✅ | Current attempt with question-level details. |
+| previousAttempt | array<object> or object | ❌ | Previous domain summary. Accepts either a direct array of domain aggregates or `{ "domains": [...] }`. |
 
 **Example**
 ```json
 {
   "studentId": "STUDENT_A",
   "testId": "01KCXGG0SS0001H0Q1FW1K4S0G",
+  "testTitle": "Computer Science 101",
+  "currentAttempt": {
+    "earnedScore": 7,
+    "totalScore": 10,
+    "status": "COMPLETED",
+    "questions": [
+      {
+        "testResultQuestionId": "TRQ_001",
+        "questionId": "Q_001",
+        "questionText": "What is the time complexity of binary search?",
+        "domain": "Algorithms",
+        "explanation": "Binary search halves the search space each step.",
+        "correctAnswers": [{ "answerId": "A_1", "value": "O(log n)" }],
+        "selectedAnswers": [{ "answerId": "A_2", "value": "O(n)" }],
+        "isCorrect": false
+      }
+    ]
+  },
+  "previousAttempt": [
+    {
+      "domain": "Algorithms",
+      "correct_questions_count": 3,
+      "incorrect_questions_count": 4
+    }
+  ],
   "maxCourses": 5,
   "participantRanking": 0,
   "language": "EN"
@@ -115,6 +142,31 @@ curl -i -X 'POST' \
   -d '{
   "studentId": "STUDENT_A",
   "testId": "01KCXGG0SS0001H0Q1FW1K4S0G",
+  "testTitle": "Computer Science 101",
+  "currentAttempt": {
+    "earnedScore": 7,
+    "totalScore": 10,
+    "status": "COMPLETED",
+    "questions": [
+      {
+        "testResultQuestionId": "TRQ_001",
+        "questionId": "Q_001",
+        "questionText": "What is the time complexity of binary search?",
+        "domain": "Algorithms",
+        "explanation": "Binary search halves the search space each step.",
+        "correctAnswers": [{ "answerId": "A_1", "value": "O(log n)" }],
+        "selectedAnswers": [{ "answerId": "A_2", "value": "O(n)" }],
+        "isCorrect": false
+      }
+    ]
+  },
+  "previousAttempt": [
+    {
+      "domain": "Algorithms",
+      "correct_questions_count": 3,
+      "incorrect_questions_count": 4
+    }
+  ],
   "maxCourses": 5,
   "participantRanking": 0,
   "language": "EN"

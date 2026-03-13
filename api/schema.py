@@ -6,6 +6,7 @@ from modules.utils.load_config import SETTINGS
 
 DEFAULT_LANGUAGE = SETTINGS.defaults.language
 DEFAULT_MAX_COURSES = SETTINGS.defaults.max_courses
+DEFAULT_MAX_COURSES_PER_WEAKNESS = SETTINGS.defaults.max_courses_per_weakness
 
 
 class AnswerItem(BaseModel):
@@ -93,6 +94,34 @@ class AttemptPayload(BaseModel):
     )
 
 
+class PreviousAttemptDomainStat(BaseModel):
+    model_config = ConfigDict(populate_by_name=True)
+    domain: str = Field(
+        ...,
+        description="Question domain/category.",
+    )
+    correct_questions_count: int = Field(
+        ...,
+        alias="correctQuestionsCount",
+        ge=0,
+        description="Number of correct questions in the previous attempt for this domain.",
+    )
+    incorrect_questions_count: int = Field(
+        ...,
+        alias="incorrectQuestionsCount",
+        ge=0,
+        description="Number of incorrect questions in the previous attempt for this domain.",
+    )
+
+
+class PreviousAttemptPayload(BaseModel):
+    model_config = ConfigDict(populate_by_name=True)
+    domains: list[PreviousAttemptDomainStat] = Field(
+        ...,
+        description="Domain-level score summary from the previous attempt.",
+    )
+
+
 class OrchestrateRequest(BaseModel):
     model_config = ConfigDict(populate_by_name=True)
     student_id: str = Field(
@@ -116,6 +145,12 @@ class OrchestrateRequest(BaseModel):
         ge=1,
         description="Maximum total courses returned.",
     )
+    max_courses_per_weakness: int = Field(
+        DEFAULT_MAX_COURSES_PER_WEAKNESS,
+        alias="maxCoursesPerWeakness",
+        ge=1,
+        description="Maximum courses returned per weakness.",
+    )
     participant_ranking: float | None = Field(
         default=None,
         alias="participantRanking",
@@ -131,8 +166,8 @@ class OrchestrateRequest(BaseModel):
         alias="currentAttempt",
         description="Current test attempt data.",
     )
-    previous_attempt: AttemptPayload | None = Field(
+    previous_attempt: PreviousAttemptPayload | list[PreviousAttemptDomainStat] | None = Field(
         default=None,
         alias="previousAttempt",
-        description="Previous test attempt data, if available.",
+        description="Previous attempt domain summary, either as {domains:[...]} or a direct array.",
     )

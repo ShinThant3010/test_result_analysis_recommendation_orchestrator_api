@@ -12,9 +12,8 @@ from fastapi import Depends, FastAPI, Header, HTTPException, Request, Response
 from fastapi.responses import JSONResponse
 from pydantic.warnings import UnsupportedFieldAttributeWarning
 
-from api.schema import OrchestrateRequest
+from api.schema import OrchestrateRequest, PreviousAttemptPayload, PreviousAttemptDomainStat
 from modules.core.orchestrator import OrchestrateInput, OrchestratorService
-from modules.utils.load_config import SETTINGS
 
 warnings.filterwarnings("ignore", category=UnsupportedFieldAttributeWarning)
 
@@ -35,9 +34,6 @@ API_BEARER_TOKEN = os.getenv("API_BEARER_TOKEN")
 CORRELATION_HEADER = "X-Correlation-Id"
 API_VERSION_HEADER = "X-API-Version"
 SUPPORTED_API_VERSIONS = {"1"}
-DEFAULT_MAX_COURSES_PER_WEAKNESS = SETTINGS.defaults.max_courses_per_weakness
-
-
 # ---------------------------------------------------------------------------------------------
 # exception handlers
 # ---------------------------------------------------------------------------------------------
@@ -74,6 +70,8 @@ def _validate_request_headers(
     content_type: str | None,
     authorization: str | None,
 ) -> None:
+    
+    ### ----------------------------- validate version ----------------------------- ###
     if version not in SUPPORTED_API_VERSIONS:
         detail = {
             "code": "INVALID_FIELD_VALUE",
@@ -86,6 +84,7 @@ def _validate_request_headers(
             headers={CORRELATION_HEADER: correlation_id, API_VERSION_HEADER: version},
         )
 
+    ### --------------------------- validate content_type --------------------------- ###
     if content_type and not content_type.lower().startswith("application/json"):
         detail = {
             "code": "INVALID_CONTENT_TYPE",
@@ -98,6 +97,7 @@ def _validate_request_headers(
             headers={CORRELATION_HEADER: correlation_id, API_VERSION_HEADER: version},
         )
 
+    ### --------------------------- validate authentication --------------------------- ###
     if API_BEARER_TOKEN:
         expected = f"Bearer {API_BEARER_TOKEN}"
         if authorization != expected:
@@ -195,14 +195,23 @@ async def orchestrate(
             test_id=payload.test_id,
             test_title=payload.test_title,
             max_courses=payload.max_courses,
-            max_courses_per_weakness=DEFAULT_MAX_COURSES_PER_WEAKNESS,
+            max_courses_per_weakness=payload.max_courses_per_weakness,
             participant_ranking=payload.participant_ranking,
             language=payload.language,
             current_attempt=payload.current_attempt.model_dump(by_alias=False),
             previous_attempt=(
-                payload.previous_attempt.model_dump(by_alias=False)
-                if payload.previous_attempt is not None
-                else None
+                None
+                if payload.previous_attempt is None
+                else {
+                    "domains": [
+                        item.model_dump(by_alias=False)
+                        if isinstance(item, PreviousAttemptDomainStat)
+                        else item
+                        for item in payload.previous_attempt
+                    ]
+                }
+                if isinstance(payload.previous_attempt, list)
+                else payload.previous_attempt.model_dump(by_alias=False)
             ),
         )
         orchestrator_result = await service.orchestrate(orchestrate_input)
