@@ -9,6 +9,9 @@ DEFAULT_MAX_COURSES = SETTINGS.defaults.max_courses
 DEFAULT_MAX_COURSES_PER_WEAKNESS = SETTINGS.defaults.max_courses_per_weakness
 
 
+# ---------------------------------------------------------------------------------------------
+# Request Payload Schema - Current Attempt
+# ---------------------------------------------------------------------------------------------
 class AnswerItem(BaseModel):
     model_config = ConfigDict(populate_by_name=True)
     answer_id: str = Field(
@@ -94,6 +97,9 @@ class AttemptPayload(BaseModel):
     )
 
 
+# ---------------------------------------------------------------------------------------------
+# Request Payload Schema - Previous Attempt
+# ---------------------------------------------------------------------------------------------
 class PreviousAttemptDomainStat(BaseModel):
     model_config = ConfigDict(populate_by_name=True)
     domain: str = Field(
@@ -122,6 +128,9 @@ class PreviousAttemptPayload(BaseModel):
     )
 
 
+# ---------------------------------------------------------------------------------------------
+# Request Payload Schema - Core
+# ---------------------------------------------------------------------------------------------
 class OrchestrateRequest(BaseModel):
     model_config = ConfigDict(populate_by_name=True)
     student_id: str = Field(

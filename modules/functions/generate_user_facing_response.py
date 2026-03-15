@@ -11,6 +11,9 @@ DEFAULT_LANGUAGE = SETTINGS.defaults.language
 GENERATION_MODEL = SETTINGS.service.generation_model
 
 
+# ---------------------------------------------------------------------------------------------
+# Helper function - Construct data for test_result, history_result for response text
+# ---------------------------------------------------------------------------------------------
 def build_exam_result_payload(
     attempt: Optional[Dict[str, Any]],
     test_title: str,
@@ -27,6 +30,9 @@ def build_exam_result_payload(
     return payload
 
 
+# ---------------------------------------------------------------------------------------------
+# Core function - format response
+# ---------------------------------------------------------------------------------------------
 def generate_user_facing_response(
     *,
     weaknesses: List[Dict[str, Any]],
@@ -39,14 +45,14 @@ def generate_user_facing_response(
     domain_performance: Optional[Dict[str, Any]] = None,
     language: str = DEFAULT_LANGUAGE,
 ) -> str:
-    """
-    LLM-based user-facing response, adapted from agent5_user_facing_response.py.
-    """
     language_code = (language or DEFAULT_LANGUAGE).strip().upper()
 
+    ### -------------------------- participant ranking -------------------------- ###
     ranking_sentence_text = _format_ranking(
         participant_ranking, language_code=language_code, mode="sentence"
     )
+
+    ### -------------------------- response header -------------------------- ###
     progress_heading_text = _progress_heading(test_result, history_result)
 
     weaknesses_text = "\n".join(
@@ -54,6 +60,7 @@ def generate_user_facing_response(
         for w in weaknesses
     )
 
+    ### ---------------------- prep recommendation list ---------------------- ###
     flat_recs = _flatten_recommendations(recommendations)
     if all_correct:
         flat_recs = []
@@ -190,6 +197,9 @@ def _parse_llm_json(raw_text: str) -> Dict[str, Any]:
     return {}
 
 
+# ---------------------------------------------------------------------------------------------
+# Helper function - prep recommendation list
+# ---------------------------------------------------------------------------------------------
 def _flatten_recommendations(recommendations: List[Dict[str, Any]]) -> List[Dict[str, Any]]:
     flat: List[Dict[str, Any]] = []
     for entry in recommendations:
@@ -283,6 +293,9 @@ def _summary_to_paragraph(summary_json: Dict[str, Any], recs: List[Dict[str, Any
     return "\n\n".join(lines)
 
 
+# ---------------------------------------------------------------------------------------------
+# Helper function - participant ranking
+# ---------------------------------------------------------------------------------------------
 def _format_ranking(
     participant_ranking: float,
     *,
@@ -303,6 +316,9 @@ def _format_ranking(
     return f"Ranked within the top {pct:.1f}% of participants."
 
 
+# ---------------------------------------------------------------------------------------------
+# Helper function - progress comparison header
+# ---------------------------------------------------------------------------------------------
 def _progress_heading(
     test_result: Optional[Dict[str, Any]],
     history_result: Optional[Dict[str, Any]],

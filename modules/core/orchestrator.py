@@ -26,6 +26,9 @@ SERVICE_CONFIG = SETTINGS.service
 LOGGING_CONFIG = SETTINGS.logging
 
 
+# ---------------------------------------------------------------------------------------------
+# Helper Class - Input Schema
+# ---------------------------------------------------------------------------------------------
 @dataclass(frozen=True)
 class OrchestrateInput:
     student_id: str
@@ -39,6 +42,9 @@ class OrchestrateInput:
     previous_attempt: Optional[Dict[str, Any]]
 
 
+# ---------------------------------------------------------------------------------------------
+# Core - Test Result Analysis & Recommendation
+# ---------------------------------------------------------------------------------------------
 class OrchestratorService:
     def __init__(self) -> None:
         timeout = httpx.Timeout(SERVICE_CONFIG.http_timeout_seconds)
@@ -64,14 +70,18 @@ class OrchestratorService:
             if not current:
                 raise ValueError("currentAttempt is required.")
 
+        ### -------------------------- prepare incorrect answers -------------------------- ###
             incorrect_cases, incorrect_summary = build_incorrect_cases(
                 current=current,
             )
+
+        ### --------------------- prepare for performance comparison --------------------- ###
             domain_performance = compute_domain_performance(
                 current=current,
                 history=history,
             )
 
+        ### --------------------------- if no incorrect answers --------------------------- ###
             if incorrect_summary["total_incorrect_questions"] == 0:
                 participant_ranking_value = (
                     data.participant_ranking
@@ -101,8 +111,10 @@ class OrchestratorService:
                     "user_facing_paragraph": user_response,
                 }
 
+        ### --------------------------- if no incorrect answers --------------------------- ###
             weaknesses = await fetch_weaknesses(self._client, incorrect_cases)
             test_analysis_output = summarize_weaknesses(weaknesses)
+
             limited_weaknesses = weaknesses[:5]
             recommendations = await fetch_recommendations(
                 self._client,
@@ -143,6 +155,8 @@ class OrchestratorService:
         except Exception:
             status = "error"
             raise
+
+        ### --------------------------- save result in log --------------------------- ###
         finally:
             runtime = time.time() - start
             api_output: Dict[str, Any] = {

@@ -3,6 +3,9 @@ from __future__ import annotations
 from typing import Any, Dict, List
 
 
+# ---------------------------------------------------------------------------------------------
+# Check if selected & correct answers are matched
+# ---------------------------------------------------------------------------------------------
 def is_question_correct(question: Dict[str, Any]) -> bool:
     provided = question.get("is_correct")
     if isinstance(provided, bool):

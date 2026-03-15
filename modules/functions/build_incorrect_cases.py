@@ -5,6 +5,9 @@ from typing import Any, Dict, List, Tuple
 from modules.functions.check_correct_answers import is_question_correct
 
 
+# ---------------------------------------------------------------------------------------------
+# Format incorrect questions for test analysis api input from core input payload
+# ---------------------------------------------------------------------------------------------
 def build_incorrect_cases(
     *,
     current: Dict[str, Any],

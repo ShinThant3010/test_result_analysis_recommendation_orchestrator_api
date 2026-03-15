@@ -12,7 +12,7 @@ from fastapi import Depends, FastAPI, Header, HTTPException, Request, Response
 from fastapi.responses import JSONResponse
 from pydantic.warnings import UnsupportedFieldAttributeWarning
 
-from api.schema import OrchestrateRequest, PreviousAttemptPayload, PreviousAttemptDomainStat
+from api.schema import OrchestrateRequest, PreviousAttemptDomainStat
 from modules.core.orchestrator import OrchestrateInput, OrchestratorService
 
 warnings.filterwarnings("ignore", category=UnsupportedFieldAttributeWarning)

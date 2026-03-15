@@ -15,6 +15,9 @@ from modules.utils.run_logging import (
 SERVICE_CONFIG = SETTINGS.service
 
 
+# ---------------------------------------------------------------------------------------------
+# Fetch weaknesses via internal api - test result analysis
+# ---------------------------------------------------------------------------------------------
 async def fetch_weaknesses(
     client: httpx.AsyncClient,
     incorrect_cases: List[Dict[str, Any]],
@@ -27,6 +30,7 @@ async def fetch_weaknesses(
 
     start = time.time()
 
+    ### --------------------------- [api call] test result analysis --------------------------- ###
     try:
         response = await client.post(url, json=payload, headers={"x-log": "true"})
     except Exception as exc:  # noqa: BLE001
@@ -41,6 +45,8 @@ async def fetch_weaknesses(
 
     data = response.json()
     weaknesses = data.get("weaknesses", []) if isinstance(data, dict) else []
+
+    ### --------------------------- extract log data --------------------------- ###
     runtime_log = extract_runtime_log(data)
     runtime_metrics = parse_runtime_metrics(runtime_log)
     request_runtime = time.time() - start
@@ -56,6 +62,9 @@ async def fetch_weaknesses(
     return weaknesses
 
 
+# ---------------------------------------------------------------------------------------------
+# Helper Class - Format weaknesses
+# ---------------------------------------------------------------------------------------------
 def summarize_weaknesses(weaknesses: List[Dict[str, Any]]) -> Dict[str, Any]:
     keys = [
         "id",

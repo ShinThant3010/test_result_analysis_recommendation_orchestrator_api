@@ -5,6 +5,9 @@ from typing import Any, Dict, Optional
 from modules.functions.check_correct_answers import is_question_correct
 
 
+# ---------------------------------------------------------------------------------------------
+# Performance Comparison of current & previous test
+# ---------------------------------------------------------------------------------------------
 def compute_domain_performance(
     *,
     current: Dict[str, Any],
@@ -16,33 +19,14 @@ def compute_domain_performance(
     }
 
 
+# ---------------------------------------------------------------------------------------------
+# Calculate statistics of a test result
+# ---------------------------------------------------------------------------------------------
 def compute_domain_stats(
     attempt: Optional[Dict[str, Any]],
 ) -> Dict[str, Any]:
     if not attempt:
         return {}
-
-    domains_payload = attempt.get("domains")
-    if isinstance(domains_payload, list):
-        domains = []
-        for row in domains_payload:
-            if not isinstance(row, dict):
-                continue
-            domain = row.get("domain") or "Unknown"
-            correct = coerce_nonnegative_int(row.get("correct_questions_count"))
-            incorrect = coerce_nonnegative_int(row.get("incorrect_questions_count"))
-            total = correct + incorrect
-            if total <= 0:
-                continue
-            domains.append(
-                {
-                    "domain": domain,
-                    "accuracy": correct / total,
-                    "total": total,
-                    "correct": correct,
-                }
-            )
-        return {"domains": domains}
 
     totals: Dict[str, int] = {}
     corrects: Dict[str, int] = {}
@@ -69,11 +53,3 @@ def compute_domain_stats(
         )
 
     return {"domains": domains}
-
-
-def coerce_nonnegative_int(value: Any) -> int:
-    try:
-        parsed = int(value)
-    except (TypeError, ValueError):
-        return 0
-    return max(parsed, 0)

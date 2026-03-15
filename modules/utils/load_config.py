@@ -165,18 +165,3 @@ def load_settings(config_path: str = "modules/parameters/config.yaml") -> Settin
 
 
 SETTINGS = load_settings()
-
-project_location = SETTINGS.service.project_location
-TEST_ANALYSIS_API_BASE_URL = SETTINGS.service.test_analysis_api_base_url
-COURSE_RECOMMENDATION_API_BASE_URL = SETTINGS.service.course_recommendation_api_base_url
-TEST_ANALYSIS_PATH = SETTINGS.service.test_analysis_path
-COURSE_RECOMMENDATION_PATH = SETTINGS.service.course_recommendation_path
-HTTP_TIMEOUT_SECONDS = SETTINGS.service.http_timeout_seconds
-GENERATION_MODEL = SETTINGS.service.generation_model
-
-DEFAULT_MAX_COURSES = SETTINGS.defaults.max_courses
-DEFAULT_MAX_COURSES_PER_WEAKNESS = SETTINGS.defaults.max_courses_per_weakness
-DEFAULT_LANGUAGE = SETTINGS.defaults.language
-
-RESPONSE_LOG_PATH = SETTINGS.logging.response_log_path
-USER_FACING_RESPONSE_LOG_PATH = SETTINGS.logging.user_facing_response_log_path

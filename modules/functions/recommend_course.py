@@ -22,6 +22,9 @@ async def fetch_recommendations(
     max_courses: int,
     max_courses_per_weakness: int,
 ) -> List[Dict[str, Any]]:
+    """Request course recommendations, filter low-score items, and log API metrics."""
+
+    ### ---------------------- Request course recommendations ---------------------- ###
     url = (
         f"{SERVICE_CONFIG.course_recommendation_api_base_url}"
         f"{SERVICE_CONFIG.course_recommendation_path}"
@@ -40,6 +43,8 @@ async def fetch_recommendations(
         raise RuntimeError(
             f"course_recommendation error: status={response.status_code} body={response.text}"
         )
+
+    ### ------------------------- filter low-score items ------------------------- ###
     data = response.json()
     if isinstance(data, dict):
         data = {
@@ -49,6 +54,8 @@ async def fetch_recommendations(
                 min_score=0.7,
             ),
         }
+
+    ### ----------------------------- log API metrics ----------------------------- ###
     runtime_log = extract_runtime_log(data)
     runtime_metrics = parse_runtime_metrics(runtime_log)
     request_runtime = time.time() - start
@@ -65,6 +72,7 @@ async def fetch_recommendations(
 
 
 def summarize_recommendations(recommendations: List[Dict[str, Any]]) -> List[Dict[str, Any]]:
+    """Keep only the user-facing recommendation fields needed downstream."""
     weakness_keys = ["id", "weakness", "text", "description"]
     course_keys = [
         "courseId",
@@ -111,6 +119,7 @@ def filter_recommendations(
     *,
     min_score: float,
 ) -> List[Dict[str, Any]]:
+    """Remove recommended courses whose numeric score is at or below the threshold."""
     filtered: List[Dict[str, Any]] = []
     for rec in recommendations:
         if not isinstance(rec, dict):
