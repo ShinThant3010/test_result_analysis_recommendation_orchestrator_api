@@ -4,18 +4,15 @@ import os
 import time
 import threading
 import uuid
-import warnings
 
 import httpx
 from dotenv import load_dotenv
 from fastapi import Depends, FastAPI, Header, HTTPException, Request, Response
 from fastapi.responses import JSONResponse
-from pydantic.warnings import UnsupportedFieldAttributeWarning
 
 from api.schema import OrchestrateRequest, PreviousAttemptDomainStat
 from modules.core.orchestrator import OrchestrateInput, OrchestratorService
 
-warnings.filterwarnings("ignore", category=UnsupportedFieldAttributeWarning)
 
 load_dotenv()
 
