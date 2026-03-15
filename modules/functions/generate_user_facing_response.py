@@ -91,6 +91,9 @@ def generate_user_facing_response(
     return paragraph
 
 
+# ---------------------------------------------------------------------------------------------
+# Step 1: Build the response context with all necessary information
+# ---------------------------------------------------------------------------------------------
 def _build_response_context(
     *,
     weaknesses: List[Dict[str, Any]],
@@ -141,7 +144,61 @@ def _build_response_context(
         progress_heading_text=_progress_heading(test_result, history_result),
     )
 
+# sub-helper function to flatten the list of recommendations and extract the relevant course information
+def _extract_recommended_courses(recommendations: List[Dict[str, Any]]) -> List[Dict[str, Any]]:
+    flat: List[Dict[str, Any]] = []
+    for entry in recommendations:
+        recs = entry.get("recommendedCourses") or entry.get("recommended_courses") or []
+        for rec in recs:
+            flat.append(rec)
+    return flat
 
+# sub-helper function to format the participant ranking into a user-friendly string
+def _format_ranking(
+    participant_ranking: float,
+    *,
+    language_code: str,
+    mode: str,
+) -> str:
+    """Formats the participant ranking into a user-friendly string."""
+
+    # For participant_ranking, we expect a float between 0 and 1 representing the percentile (e.g., 0.05 for top 5%).
+    if participant_ranking <= 0:
+        return "N/A" if mode == "prompt" else ""
+    
+    # If the value is greater than 1, we assume it's already a percentage (e.g., 5 for top 5%) and use it directly.
+    try:
+        pct = participant_ranking * 100 if participant_ranking <= 1 else participant_ranking
+    except (TypeError, ValueError):
+        return "N/A" if mode == "prompt" else ""
+
+    # Format the string based on the mode and language
+
+    if mode == "prompt":
+        # For prompt mode, we want a concise format that can be easily included in the LLM prompt.
+        return f"{participant_ranking} (approx. top {pct:.1f}% of participants)"
+    
+    # For sentence mode, we want a more natural language format that can be included in the final response.
+    if language_code == "TH":
+        return f"อยู่ในกลุ่มบน {pct:.1f}% ของผู้เข้าสอบ."
+    return f"Ranked within the top {pct:.1f}% of participants."
+
+# sub-helper function to generate a heading for the progress comparison section
+def _progress_heading(
+    test_result: Optional[Dict[str, Any]],
+    history_result: Optional[Dict[str, Any]],
+) -> str:
+    if not history_result:
+        return ""
+    title = (test_result or {}).get("testTitle") or (history_result or {}).get("testTitle")
+    if title:
+        return f"Progress Compared to Previous Test ({title})"
+    return "Progress Compared to Previous Test"
+
+
+# ---------------------------------------------------------------------------------------------
+# Step 2: Build the prompt for summary generation using the context
+# ---------------------------------------------------------------------------------------------
 def _build_summary_prompt(context: ResponseContext) -> str:
     """Builds the prompt for summary generation by rendering a template with the response context data."""
 
@@ -167,6 +224,9 @@ def _build_summary_prompt(context: ResponseContext) -> str:
     )
 
 
+# ---------------------------------------------------------------------------------------------
+# Step 3: Generate the summary JSON using the LLM and finalize it with any necessary enrichments
+# ---------------------------------------------------------------------------------------------
 def _generate_summary_json(prompt: str) -> Dict[str, Any]:
     """Generates the summary JSON by sending the prompt to the LLM and parsing the output."""
 
@@ -177,7 +237,21 @@ def _generate_summary_json(prompt: str) -> Dict[str, Any]:
     )
     return _parse_llm_json(raw_text)
 
+# sub-helper function to parse the raw text output from the LLM into a JSON dictionary, handling potential formatting issues
+def _parse_llm_json(raw_text: str) -> Dict[str, Any]:
+    cleaned = raw_text.replace("```json", "").replace("```", "").strip()
+    try:
+        data = json.loads(cleaned)
+        if isinstance(data, dict):
+            return data
+    except json.JSONDecodeError:
+        return {}
+    return {}
 
+
+# ---------------------------------------------------------------------------------------------
+# Step 4: Finalize the summary JSON with any necessary enrichments
+# ---------------------------------------------------------------------------------------------
 def _finalize_summary(
     *,
     summary_json: Dict[str, Any],
@@ -190,7 +264,7 @@ def _finalize_summary(
     summary = summary_json or _build_fallback_summary(context)
     return _enrich_summary(summary_json=summary, context=context)
 
-
+# sub-helper function to build a fallback summary JSON in case the LLM output is incomplete or missing
 def _build_fallback_summary(context: ResponseContext) -> Dict[str, Any]:
     """Builds a fallback summary JSON in case the LLM output is incomplete or missing."""
     
@@ -245,7 +319,7 @@ def _build_fallback_summary(context: ResponseContext) -> Dict[str, Any]:
         "Domain Comparison": [],
     }
 
-
+# sub-helper function to enrich the summary JSON with additional insights based on the response context
 def _enrich_summary(
     *,
     summary_json: Dict[str, Any],
@@ -270,33 +344,65 @@ def _enrich_summary(
 
     return summary_json
 
+# sub-helper function to generate summaries of domain performance improvements or declines based on current and historical data
+def _domain_improvement_summaries(
+    domain_performance: Optional[Dict[str, Any]],
+    *,
+    language_code: str,
+) -> List[str]:
+    """Generates summaries of domain performance improvements or declines based on current and historical data."""
+    
+    if not domain_performance:
+        return []
+
+    current = (domain_performance or {}).get("current") or {}
+    history = (domain_performance or {}).get("history") or {}
+
+    curr_domains = {d["domain"]: d for d in (current.get("domains") or []) if "domain" in d}
+    hist_domains = {d["domain"]: d for d in (history.get("domains") or []) if "domain" in d}
+
+    summaries: List[str] = []
+    for domain, curr in curr_domains.items():
+        if domain not in hist_domains:
+            continue
+        hist = hist_domains[domain]
+        curr_acc = curr.get("accuracy")
+        hist_acc = hist.get("accuracy")
+        if curr_acc is None or hist_acc is None:
+            continue
+
+        delta = (curr_acc - hist_acc) * 100
+        curr_pct = curr_acc * 100
+        hist_pct = hist_acc * 100
+
+        if language_code == "TH":
+            if abs(delta) < 0.5:
+                summaries.append(
+                    f"{domain}: รักษาความแม่นยำ {curr_pct:.0f}% แสดงถึงความเข้าใจที่สม่ำเสมอในเนื้อหานี้."
+                )
+                continue
+            direction = "ดีขึ้น" if delta > 0 else "ลดลง"
+            summaries.append(
+                f"{domain}: {direction} {delta:+.0f}% (จาก {hist_pct:.0f}% เป็น {curr_pct:.0f}%)."
+            )
+            continue
+
+        if abs(delta) < 0.5:
+            summaries.append(
+                f"{domain}: Maintained {curr_pct:.0f}% accuracy, demonstrating consistent mastery of the subject."
+            )
+            continue
+
+        direction = "Improved" if delta > 0 else "Declined"
+        summaries.append(
+            f"{domain}: {direction} by {delta:+.0f}% (from {hist_pct:.0f}% to {curr_pct:.0f}% accuracy)."
+        )
+    return summaries
+
 
 # ---------------------------------------------------------------------------------------------
-# Helper function - parse llm output into json (if possible)
+# Step 5: Convert the finalized summary JSON into a user-friendly paragraph format for display
 # ---------------------------------------------------------------------------------------------
-def _parse_llm_json(raw_text: str) -> Dict[str, Any]:
-    cleaned = raw_text.replace("```json", "").replace("```", "").strip()
-    try:
-        data = json.loads(cleaned)
-        if isinstance(data, dict):
-            return data
-    except json.JSONDecodeError:
-        return {}
-    return {}
-
-
-# ---------------------------------------------------------------------------------------------
-# Helper function - prep recommendation list
-# ---------------------------------------------------------------------------------------------
-def _extract_recommended_courses(recommendations: List[Dict[str, Any]]) -> List[Dict[str, Any]]:
-    flat: List[Dict[str, Any]] = []
-    for entry in recommendations:
-        recs = entry.get("recommendedCourses") or entry.get("recommended_courses") or []
-        for rec in recs:
-            flat.append(rec)
-    return flat
-
-
 def _summary_to_paragraph(summary_json: Dict[str, Any], recs: List[Dict[str, Any]]) -> str:
     lines: List[str] = []
 
@@ -379,109 +485,3 @@ def _summary_to_paragraph(summary_json: Dict[str, Any], recs: List[Dict[str, Any
             lines.append(f"- {line}")
 
     return "\n\n".join(lines)
-
-
-# ---------------------------------------------------------------------------------------------
-# Helper function - participant ranking
-# ---------------------------------------------------------------------------------------------
-def _format_ranking(
-    participant_ranking: float,
-    *,
-    language_code: str,
-    mode: str,
-) -> str:
-    """Formats the participant ranking into a user-friendly string."""
-
-    # For participant_ranking, we expect a float between 0 and 1 representing the percentile (e.g., 0.05 for top 5%).
-    if participant_ranking <= 0:
-        return "N/A" if mode == "prompt" else ""
-    
-    # If the value is greater than 1, we assume it's already a percentage (e.g., 5 for top 5%) and use it directly.
-    try:
-        pct = participant_ranking * 100 if participant_ranking <= 1 else participant_ranking
-    except (TypeError, ValueError):
-        return "N/A" if mode == "prompt" else ""
-
-    # Format the string based on the mode and language
-
-    if mode == "prompt":
-        # For prompt mode, we want a concise format that can be easily included in the LLM prompt.
-        return f"{participant_ranking} (approx. top {pct:.1f}% of participants)"
-    
-    # For sentence mode, we want a more natural language format that can be included in the final response.
-    if language_code == "TH":
-        return f"อยู่ในกลุ่มบน {pct:.1f}% ของผู้เข้าสอบ."
-    return f"Ranked within the top {pct:.1f}% of participants."
-
-
-# ---------------------------------------------------------------------------------------------
-# Helper function - progress comparison header
-# ---------------------------------------------------------------------------------------------
-def _progress_heading(
-    test_result: Optional[Dict[str, Any]],
-    history_result: Optional[Dict[str, Any]],
-) -> str:
-    if not history_result:
-        return ""
-    title = (test_result or {}).get("testTitle") or (history_result or {}).get("testTitle")
-    if title:
-        return f"Progress Compared to Previous Test ({title})"
-    return "Progress Compared to Previous Test"
-
-
-# ---------------------------------------------------------------------------------------------
-# Helper function - domain improvement summaries
-# ---------------------------------------------------------------------------------------------
-def _domain_improvement_summaries(
-    domain_performance: Optional[Dict[str, Any]],
-    *,
-    language_code: str,
-) -> List[str]:
-    """Generates summaries of domain performance improvements or declines based on current and historical data."""
-    
-    if not domain_performance:
-        return []
-
-    current = (domain_performance or {}).get("current") or {}
-    history = (domain_performance or {}).get("history") or {}
-
-    curr_domains = {d["domain"]: d for d in (current.get("domains") or []) if "domain" in d}
-    hist_domains = {d["domain"]: d for d in (history.get("domains") or []) if "domain" in d}
-
-    summaries: List[str] = []
-    for domain, curr in curr_domains.items():
-        if domain not in hist_domains:
-            continue
-        hist = hist_domains[domain]
-        curr_acc = curr.get("accuracy")
-        hist_acc = hist.get("accuracy")
-        if curr_acc is None or hist_acc is None:
-            continue
-
-        delta = (curr_acc - hist_acc) * 100
-        curr_pct = curr_acc * 100
-        hist_pct = hist_acc * 100
-
-        if language_code == "TH":
-            if abs(delta) < 0.5:
-                summaries.append(
-                    f"{domain}: รักษาความแม่นยำ {curr_pct:.0f}% แสดงถึงความเข้าใจที่สม่ำเสมอในเนื้อหานี้."
-                )
-                continue
-            direction = "ดีขึ้น" if delta > 0 else "ลดลง"
-            summaries.append(
-                f"{domain}: {direction} {delta:+.0f}% (จาก {hist_pct:.0f}% เป็น {curr_pct:.0f}%)."
-            )
-            continue
-
-        if abs(delta) < 0.5:
-            summaries.append(
-                f"{domain}: Maintained {curr_pct:.0f}% accuracy, demonstrating consistent mastery of the subject."
-            )
-            continue
-
-        direction = "Improved" if delta > 0 else "Declined"
-        summaries.append(
-            f"{domain}: {direction} by {delta:+.0f}% (from {hist_pct:.0f}% to {curr_pct:.0f}% accuracy)."
-        )
-    return summaries
