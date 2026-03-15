@@ -10,7 +10,7 @@ Analyze a student’s test results, extract weaknesses via Gemini, recommend cou
 2. Extract incorrect answers for the current attempt. [Orchestrator API]
 3. If incorrect answers exist, call test analysis API to derive weaknesses. [Test Analysis API]
 4. Call course recommendation API using weaknesses. [Course Recommendation API]
-5. Generate a user-facing response via LLM. [Orchestrator API]
+5. Generate a structured summary via LLM, apply deterministic fallback/enrichment, and return markdown text. [Orchestrator API]
 
 ---
 
@@ -216,6 +216,27 @@ alt-svc: h3=":443"; ma=2592000,h3-29=":443"; ma=2592000
 
 - **Python Basics for Data Science**: While focused on data science, this course revisits Python basics, offering a solid review of string operations and other core programming skills, reinforcing your overall Python proficiency. - Link: https://www.edx.org/course/python-basics-for-data-science
 ```
+
+#### User-Facing Response Notes
+
+The success response is returned as `text/markdown`, not JSON. The response generator follows this pipeline:
+
+1. Normalize test result, weakness, recommendation, ranking, and historical data.
+2. Render the `generate_user_facing_response` prompt template.
+3. Ask the configured generation model for a JSON summary.
+4. Parse the model output and fall back to deterministic summary text if parsing fails or the payload is empty.
+5. Enrich the summary with:
+   - a historical progress heading when previous results exist
+   - domain-level improvement/decline lines when current and historical domain accuracy are both available
+   - removal of recommended courses when the learner answered every question correctly
+6. Render the final markdown paragraph/section output.
+
+Typical markdown sections are:
+- `Current Performance`
+- `Area to be Improved` or `Next Steps to Explore`
+- `Progress Compared to Previous Test (...)`
+- `Domain Comparison`
+- `Recommended Course`
 
 **Other status codes**
 - `401` unauthorized (when bearer token is configured)

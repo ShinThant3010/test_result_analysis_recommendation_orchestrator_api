@@ -4,6 +4,13 @@ FastAPI orchestrator that calls:
 - test_analysis_api
 - course_recommendation_api
 
+The orchestrator returns a plain-text markdown summary for the learner. That summary is produced by `modules/functions/generate_user_facing_response.py`, which:
+- normalizes test, weakness, recommendation, ranking, and history data
+- renders an LLM prompt from that context
+- parses the LLM JSON response
+- falls back to deterministic summary text if the LLM output is missing or invalid
+- enriches the response with historical progress and domain-comparison lines when prior results exist
+
 ## Endpoints
 - `GET /health`
 - `POST /v1/orchestrator/test-result-analysis-and-recommendations`
@@ -51,6 +58,13 @@ Example response (plain text, Markdown):
 ```json
 "**Computer Science 101**\n\n**Current Performance:** ..."
 ```
+
+The user-facing markdown may include:
+- `Current Performance`
+- `Area to be Improved` or `Next Steps to Explore`
+- `Progress Compared to Previous Test (...)`
+- `Domain Comparison`
+- `Recommended Course`
 
 ## Environment Variables
 Default values are loaded from `modules/parameters/config.yaml`. Any matching environment variable overrides YAML.

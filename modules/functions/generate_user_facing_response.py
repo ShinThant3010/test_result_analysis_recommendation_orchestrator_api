@@ -34,6 +34,8 @@ def build_exam_result_payload(
     attempt: Optional[Dict[str, Any]],
     test_title: str,
 ) -> Optional[Dict[str, Any]]:
+    """Convert a raw attempt payload into the response module's exam-result shape."""
+
     if not attempt:
         return None
     payload: Dict[str, Any] = {"testTitle": test_title}
@@ -144,8 +146,9 @@ def _build_response_context(
         progress_heading_text=_progress_heading(test_result, history_result),
     )
 
-# sub-helper function to flatten the list of recommendations and extract the relevant course information
 def _extract_recommended_courses(recommendations: List[Dict[str, Any]]) -> List[Dict[str, Any]]:
+    """Flatten nested recommendation groups into a single course list."""
+
     flat: List[Dict[str, Any]] = []
     for entry in recommendations:
         recs = entry.get("recommendedCourses") or entry.get("recommended_courses") or []
@@ -153,41 +156,33 @@ def _extract_recommended_courses(recommendations: List[Dict[str, Any]]) -> List[
             flat.append(rec)
     return flat
 
-# sub-helper function to format the participant ranking into a user-friendly string
 def _format_ranking(
     participant_ranking: float,
     *,
     language_code: str,
     mode: str,
 ) -> str:
-    """Formats the participant ranking into a user-friendly string."""
-
-    # For participant_ranking, we expect a float between 0 and 1 representing the percentile (e.g., 0.05 for top 5%).
+    """Return ranking text for either prompt usage or user-facing prose."""
     if participant_ranking <= 0:
         return "N/A" if mode == "prompt" else ""
-    
-    # If the value is greater than 1, we assume it's already a percentage (e.g., 5 for top 5%) and use it directly.
     try:
         pct = participant_ranking * 100 if participant_ranking <= 1 else participant_ranking
     except (TypeError, ValueError):
         return "N/A" if mode == "prompt" else ""
-
-    # Format the string based on the mode and language
-
-    if mode == "prompt":
-        # For prompt mode, we want a concise format that can be easily included in the LLM prompt.
-        return f"{participant_ranking} (approx. top {pct:.1f}% of participants)"
     
+    # For prompt mode, we want a concise format that can be easily included in the LLM prompt.
+    if mode == "prompt":
+        return f"{participant_ranking} (approx. top {pct:.1f}% of participants)"
     # For sentence mode, we want a more natural language format that can be included in the final response.
     if language_code == "TH":
         return f"อยู่ในกลุ่มบน {pct:.1f}% ของผู้เข้าสอบ."
     return f"Ranked within the top {pct:.1f}% of participants."
 
-# sub-helper function to generate a heading for the progress comparison section
 def _progress_heading(
     test_result: Optional[Dict[str, Any]],
     history_result: Optional[Dict[str, Any]],
 ) -> str:
+    """Build the heading used for the historical progress section."""
     if not history_result:
         return ""
     title = (test_result or {}).get("testTitle") or (history_result or {}).get("testTitle")
@@ -237,8 +232,8 @@ def _generate_summary_json(prompt: str) -> Dict[str, Any]:
     )
     return _parse_llm_json(raw_text)
 
-# sub-helper function to parse the raw text output from the LLM into a JSON dictionary, handling potential formatting issues
 def _parse_llm_json(raw_text: str) -> Dict[str, Any]:
+    """Parse the LLM response as JSON, tolerating fenced code blocks."""
     cleaned = raw_text.replace("```json", "").replace("```", "").strip()
     try:
         data = json.loads(cleaned)
@@ -257,14 +252,11 @@ def _finalize_summary(
     summary_json: Dict[str, Any],
     context: ResponseContext,
 ) -> Dict[str, Any]:
-    """Finalizes the summary JSON 
-        by filling in any missing fields with fallback logic and 
-        enriching it with additional insights based on the response context."""
-    
+    """Apply fallback generation and deterministic enrichment to the summary JSON."""
     summary = summary_json or _build_fallback_summary(context)
     return _enrich_summary(summary_json=summary, context=context)
 
-# sub-helper function to build a fallback summary JSON in case the LLM output is incomplete or missing
+
 def _build_fallback_summary(context: ResponseContext) -> Dict[str, Any]:
     """Builds a fallback summary JSON in case the LLM output is incomplete or missing."""
     
@@ -319,15 +311,12 @@ def _build_fallback_summary(context: ResponseContext) -> Dict[str, Any]:
         "Domain Comparison": [],
     }
 
-# sub-helper function to enrich the summary JSON with additional insights based on the response context
 def _enrich_summary(
     *,
     summary_json: Dict[str, Any],
     context: ResponseContext,
 ) -> Dict[str, Any]:
-    """Enriches the summary JSON with additional insights based on the response context, 
-        such as progress comparison and domain performance summaries."""
-    
+    """Inject deterministic history and recommendation rules into the summary."""
     if context.history_result:
         if not summary_json.get("Progress Compared to Previous Test"):
             summary_json["Progress Compared to Previous Test"] = context.progress_heading_text
@@ -344,7 +333,6 @@ def _enrich_summary(
 
     return summary_json
 
-# sub-helper function to generate summaries of domain performance improvements or declines based on current and historical data
 def _domain_improvement_summaries(
     domain_performance: Optional[Dict[str, Any]],
     *,
@@ -404,6 +392,8 @@ def _domain_improvement_summaries(
 # Step 5: Convert the finalized summary JSON into a user-friendly paragraph format for display
 # ---------------------------------------------------------------------------------------------
 def _summary_to_paragraph(summary_json: Dict[str, Any], recs: List[Dict[str, Any]]) -> str:
+    """Render the structured summary JSON into the final markdown response."""
+
     lines: List[str] = []
 
     def add_line(label: str, value: str) -> None:
