@@ -276,3 +276,4 @@ Errors use camelCase keys:
 ## 5) Change Log
 
 * **2025-02-01**: Initial specification drafted.
+* **2025-03-13**: Revised request payload to take all test result data.
