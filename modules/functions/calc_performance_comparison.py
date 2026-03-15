@@ -28,6 +28,33 @@ def compute_domain_stats(
     if not attempt:
         return {}
 
+    domain_rows = attempt.get("domains", [])
+    if isinstance(domain_rows, list) and domain_rows:
+        domains = []
+        for row in domain_rows:
+            if not isinstance(row, dict):
+                continue
+            domain = row.get("domain") or "Unknown"
+            correct = row.get("correct") or row.get("correct_questions_count") or 0
+            incorrect = row.get("incorrect") or row.get("incorrect_questions_count") or 0
+            try:
+                correct_count = int(correct)
+                incorrect_count = int(incorrect)
+            except (TypeError, ValueError):
+                continue
+            total = correct_count + incorrect_count
+            if total <= 0:
+                continue
+            domains.append(
+                {
+                    "domain": domain,
+                    "accuracy": correct_count / total,
+                    "total": total,
+                    "correct": correct_count,
+                }
+            )
+        return {"domains": domains}
+
     totals: Dict[str, int] = {}
     corrects: Dict[str, int] = {}
 

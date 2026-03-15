@@ -203,6 +203,37 @@ def _dedupe_answers(answers: Iterable[dict[str, Any]]) -> list[dict[str, Any]]:
     return deduped
 
 
+def _normalized_answer_set(answers: Iterable[dict[str, Any]], key: str) -> set[str]:
+    values: set[str] = set()
+    for answer in answers:
+        value = answer.get(key)
+        if value is None:
+            continue
+        normalized = str(value).strip()
+        if normalized:
+            values.add(normalized)
+    return values
+
+
+def _question_is_correct(
+    selected_answers: list[dict[str, Any]],
+    correct_answers: list[dict[str, Any]],
+) -> bool:
+    # Prefer answer text/value because this dataset can contain inconsistent
+    # answer IDs between stored answer results and the answer master table.
+    selected_values = _normalized_answer_set(selected_answers, "value")
+    correct_values = _normalized_answer_set(correct_answers, "value")
+    if selected_values and correct_values:
+        return selected_values == correct_values
+
+    selected_ids = _normalized_answer_set(selected_answers, "answerId")
+    correct_ids = _normalized_answer_set(correct_answers, "answerId")
+    if selected_ids and correct_ids:
+        return selected_ids == correct_ids
+
+    return False
+
+
 def build_current_attempt(rows: list[dict[str, Any]], exam_result: dict[str, Any]) -> dict[str, Any]:
     grouped: dict[str, dict[str, Any]] = {}
 
@@ -242,11 +273,9 @@ def build_current_attempt(rows: list[dict[str, Any]], exam_result: dict[str, Any
     for question_payload in grouped.values():
         selected_answers = _dedupe_answers(question_payload.pop("_selectedAnswers"))
         correct_answers = _dedupe_answers(question_payload.pop("_correctAnswers"))
-        selected_ids = {answer["answerId"] for answer in selected_answers if answer.get("answerId")}
-        correct_ids = {answer["answerId"] for answer in correct_answers if answer.get("answerId")}
         question_payload["selectedAnswers"] = selected_answers
         question_payload["correctAnswers"] = correct_answers
-        question_payload["isCorrect"] = bool(correct_ids) and selected_ids == correct_ids
+        question_payload["isCorrect"] = _question_is_correct(selected_answers, correct_answers)
         questions.append(question_payload)
 
     return {

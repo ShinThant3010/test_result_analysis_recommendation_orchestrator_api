@@ -691,7 +691,7 @@
             "value": "True"
           }
         ],
-        "isCorrect": false
+        "isCorrect": true
       },
       {
         "testResultQuestionId": "01KCXK1QG3FNWESV2NS5Z7CHCX",
@@ -713,7 +713,7 @@
             "value": "Adding second verification step"
           }
         ],
-        "isCorrect": false
+        "isCorrect": true
       }
     ]
   },
