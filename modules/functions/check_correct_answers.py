@@ -7,6 +7,9 @@ from typing import Any, Dict, List
 # Check if selected & correct answers are matched
 # ---------------------------------------------------------------------------------------------
 def is_question_correct(question: Dict[str, Any]) -> bool:
+    """Determine if a question was answered correctly based on the provided question data, 
+    checking for explicit correctness or matching selected and correct answers."""
+    
     provided = question.get("is_correct")
     if isinstance(provided, bool):
         return provided
@@ -16,6 +19,8 @@ def is_question_correct(question: Dict[str, Any]) -> bool:
 
 
 def answers_match(selected: List[Dict[str, Any]], correct: List[Dict[str, Any]]) -> bool:
+    """Check if the selected answers match the correct answers based on IDs or values.""" 
+
     selected_ids = answer_set(selected, key="answer_id")
     correct_ids = answer_set(correct, key="answer_id")
     if selected_ids and correct_ids:
@@ -29,6 +34,8 @@ def answers_match(selected: List[Dict[str, Any]], correct: List[Dict[str, Any]])
 
 
 def answer_set(answers: List[Dict[str, Any]], *, key: str) -> set[str]:
+    """Extract a set of normalized values from a list of answer dictionaries based on the specified key."""
+
     values = set()
     for answer in answers:
         if not isinstance(answer, dict):

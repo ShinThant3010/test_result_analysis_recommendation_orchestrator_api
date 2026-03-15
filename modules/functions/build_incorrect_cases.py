@@ -12,6 +12,7 @@ def build_incorrect_cases(
     *,
     current: Dict[str, Any],
 ) -> Tuple[List[Dict[str, Any]], Dict[str, Any]]:
+    """Build a list of incorrectly answered questions formatted for the test analysis API, along with a summary of incorrect cases."""
     summary = {
         "total_questions_in_test": 0,
         "total_incorrect_questions": 0,

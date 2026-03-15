@@ -22,6 +22,8 @@ async def fetch_weaknesses(
     client: httpx.AsyncClient,
     incorrect_cases: List[Dict[str, Any]],
 ) -> List[Dict[str, Any]]:
+    """Fetch weaknesses from the test analysis API based on the provided incorrect cases."""
+
     url = f"{SERVICE_CONFIG.test_analysis_api_base_url}{SERVICE_CONFIG.test_analysis_path}"
     payload = {
         "incorrect_cases": incorrect_cases,
@@ -33,7 +35,7 @@ async def fetch_weaknesses(
     ### --------------------------- [api call] test result analysis --------------------------- ###
     try:
         response = await client.post(url, json=payload, headers={"x-log": "true"})
-    except Exception as exc:  # noqa: BLE001
+    except Exception as exc: 
         raise RuntimeError(
             f"test_analysis_api request failed: {type(exc).__name__}: {exc!r}"
         ) from exc
@@ -66,6 +68,8 @@ async def fetch_weaknesses(
 # Helper Class - Format weaknesses
 # ---------------------------------------------------------------------------------------------
 def summarize_weaknesses(weaknesses: List[Dict[str, Any]]) -> Dict[str, Any]:
+    """Summarize the weaknesses by extracting relevant fields."""
+
     keys = [
         "id",
         "weakness",

@@ -54,7 +54,8 @@ class OrchestratorService:
         await self._client.aclose()
 
     async def orchestrate(self, data: OrchestrateInput) -> Dict[str, Any]:
-
+        """Orchestrate the entire process of test result analysis and course recommendation."""
+        
         run_id = f"run_{uuid.uuid4().hex}"
         reset_run_log()
         start = time.time()
@@ -112,7 +113,7 @@ class OrchestratorService:
                     "user_facing_paragraph": user_response,
                 }
 
-        ### --------------------------- if no incorrect answers --------------------------- ###
+        ### --------------------- if there is any incorrect answer --------------------- ###
             weaknesses = await fetch_weaknesses(self._client, incorrect_cases)
             test_analysis_output = summarize_weaknesses(weaknesses)
             print("weakness extraction success.")

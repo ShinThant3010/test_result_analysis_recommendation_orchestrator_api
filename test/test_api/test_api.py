@@ -23,7 +23,7 @@ API_BEARER_TOKEN = ""
 TIMEOUT_SECONDS = float(os.getenv("TEST_API_TIMEOUT_SECONDS", "120"))
 
 # Set specific student IDs here when you want to limit which payloads are sent.
-TARGET_STUDENT_IDS: list[str] = []
+TARGET_STUDENT_IDS: list[str] = ["STUDENT_A", "STUDENT_B", "STUDENT_C", "STUDENT_D", "STUDENT_E"]
 
 
 def load_payload(path: Path) -> dict[str, Any]:

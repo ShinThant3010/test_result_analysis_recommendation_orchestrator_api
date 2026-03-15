@@ -12,6 +12,8 @@ def generate_content_with_logging(
     prompt: str,
     log_name: str,
 ) -> str:
+    """Generate content using the GenAI client while logging input/output tokens and runtime."""
+    
     client = get_genai_client()
     start = time.time()
     response = client.models.generate_content(

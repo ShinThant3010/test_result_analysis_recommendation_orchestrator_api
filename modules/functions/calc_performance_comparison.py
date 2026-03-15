@@ -13,6 +13,8 @@ def compute_domain_performance(
     current: Dict[str, Any],
     history: Optional[Dict[str, Any]],
 ) -> Dict[str, Any]:
+    """Compute domain-level performance comparison between current and previous test attempts."""
+    
     return {
         "current": compute_domain_stats(current),
         "history": compute_domain_stats(history) if history else {},
@@ -20,14 +22,17 @@ def compute_domain_performance(
 
 
 # ---------------------------------------------------------------------------------------------
-# Calculate statistics of a test result
+# Performance Comparison of each test
 # ---------------------------------------------------------------------------------------------
 def compute_domain_stats(
     attempt: Optional[Dict[str, Any]],
 ) -> Dict[str, Any]:
+    """Compute domain-level performance statistics from a test attempt, including accuracy and total questions per domain."""
+    
     if not attempt:
         return {}
 
+    # catch for history data with domain-level stats
     domain_rows = attempt.get("domains", [])
     if isinstance(domain_rows, list) and domain_rows:
         domains = []
@@ -55,9 +60,9 @@ def compute_domain_stats(
             )
         return {"domains": domains}
 
+    # catch for data without domain-level stats (compute from question-level data)
     totals: Dict[str, int] = {}
     corrects: Dict[str, int] = {}
-
     for row in attempt.get("questions", []):
         domain = row.get("domain") or "Unknown"
         is_correct = is_question_correct(row)
