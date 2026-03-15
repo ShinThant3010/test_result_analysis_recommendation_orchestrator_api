@@ -1,0 +1,721 @@
+{
+  "studentId": "STUDENT_A",
+  "testId": "01KCXGG0TH0001H0Q1FW29T6W8",
+  "testTitle": "English Sample Test II",
+  "maxCourses": 5,
+  "maxCoursesPerWeakness": 3,
+  "participantRanking": null,
+  "language": "EN",
+  "currentAttempt": {
+    "earnedScore": 27,
+    "totalScore": 32,
+    "status": "pass",
+    "questions": [
+      {
+        "testResultQuestionId": "01KCXK1QADTFCM2Y53VPTPDPQQ",
+        "questionId": "01KCXGG0TH0001H0Q1FW29TDQ0",
+        "questionText": "Choose the correct sentence.",
+        "domain": "Language & Communication",
+        "explanation": "Adverbs modify verbs.",
+        "difficulty": null,
+        "score": 1,
+        "selectedAnswers": [
+          {
+            "answerId": "01KCXGG0WP0001H0Q1FW4BTMH8",
+            "value": "She runs quickly."
+          }
+        ],
+        "correctAnswers": [
+          {
+            "answerId": "01KCXGG0WP0001H0Q1FW4BTMH8",
+            "value": "She runs quickly."
+          }
+        ],
+        "isCorrect": true
+      },
+      {
+        "testResultQuestionId": "01KCXK1QAED34N0XFWTZ2DQPV0",
+        "questionId": "01KCXGG0TH0001H0Q1FW29W3DR",
+        "questionText": "Which word is a noun?",
+        "domain": "Language & Communication",
+        "explanation": "Happiness is a noun.",
+        "difficulty": null,
+        "score": 1,
+        "selectedAnswers": [
+          {
+            "answerId": "01KCXGG0WP0001H0Q1FW4BZWG8",
+            "value": "Happiness"
+          }
+        ],
+        "correctAnswers": [
+          {
+            "answerId": "01KCXGG0WP0001H0Q1FW4BZWG8",
+            "value": "Happiness"
+          }
+        ],
+        "isCorrect": true
+      },
+      {
+        "testResultQuestionId": "01KCXK1QAEPGZCJYGY65X1JT93",
+        "questionId": "01KCXGG0TH0001H0Q1FW29XR58",
+        "questionText": "Select the correct preposition.",
+        "domain": "Language & Communication",
+        "explanation": "Correct collocation.",
+        "difficulty": null,
+        "score": 1,
+        "selectedAnswers": [
+          {
+            "answerId": "01KCXGG0WP0001H0Q1FW4C4WN8",
+            "value": "He is good at math."
+          }
+        ],
+        "correctAnswers": [
+          {
+            "answerId": "01KCXGG0WP0001H0Q1FW4C4WN8",
+            "value": "He is good at math."
+          }
+        ],
+        "isCorrect": true
+      },
+      {
+        "testResultQuestionId": "01KCXK1QAFGAYPZPFWVFW6H4ZM",
+        "questionId": "01KCXGG0TH0001H0Q1FW2A12KG",
+        "questionText": "Main idea of a paragraph is:",
+        "domain": "Language & Communication",
+        "explanation": "Main idea.",
+        "difficulty": null,
+        "score": 1,
+        "selectedAnswers": [
+          {
+            "answerId": "01KCXGG0WQ0001H0Q1FW4CEW00",
+            "value": "Central point"
+          }
+        ],
+        "correctAnswers": [
+          {
+            "answerId": "01KCXGG0WQ0001H0Q1FW4CEW00",
+            "value": "Central point"
+          }
+        ],
+        "isCorrect": true
+      },
+      {
+        "testResultQuestionId": "01KCXK1QAFPAVVHCPPPCX0BDDH",
+        "questionId": "01KCXGG0TH0001H0Q1FW29ZDW0",
+        "questionText": "Which sentence is grammatically correct?",
+        "domain": "Language & Communication",
+        "explanation": "Neither is singular.",
+        "difficulty": null,
+        "score": 1,
+        "selectedAnswers": [
+          {
+            "answerId": "01KCXGG0WP0001H0Q1FW4C9ZR0",
+            "value": "Neither of the answers is correct."
+          }
+        ],
+        "correctAnswers": [
+          {
+            "answerId": "01KCXGG0WP0001H0Q1FW4C9ZR0",
+            "value": "Neither of the answers is correct."
+          }
+        ],
+        "isCorrect": true
+      },
+      {
+        "testResultQuestionId": "01KCXK1QAGTZA2TD7AG3H3P716",
+        "questionId": "01KCXGG0TH0001H0Q1FW2A2QB0",
+        "questionText": "An inference is:",
+        "domain": "Language & Communication",
+        "explanation": "Inference uses evidence.",
+        "difficulty": null,
+        "score": 1,
+        "selectedAnswers": [
+          {
+            "answerId": "01KCXGG0WQ0001H0Q1FW4CN64R",
+            "value": "A conclusion based on evidence"
+          }
+        ],
+        "correctAnswers": [
+          {
+            "answerId": "01KCXGG0WQ0001H0Q1FW4CN64R",
+            "value": "A conclusion based on evidence"
+          }
+        ],
+        "isCorrect": true
+      },
+      {
+        "testResultQuestionId": "01KCXK1QAGW2R568YEWKGEB3A1",
+        "questionId": "01KCXGG0TH0001H0Q1FW2A4C2G",
+        "questionText": "Which improves clarity?",
+        "domain": "Language & Communication",
+        "explanation": "Avoid redundancy.",
+        "difficulty": null,
+        "score": 1,
+        "selectedAnswers": [
+          {
+            "answerId": "01KCXGG0WQ0001H0Q1FW4CRWA0",
+            "value": "Good enough"
+          }
+        ],
+        "correctAnswers": [
+          {
+            "answerId": "01KCXGG0WQ0001H0Q1FW4CRWA0",
+            "value": "Good enough"
+          }
+        ],
+        "isCorrect": true
+      },
+      {
+        "testResultQuestionId": "01KCXK1QAHWRHF8EDCEXDV9VRT",
+        "questionId": "01KCXGG0TH0001H0Q1FW2A60T0",
+        "questionText": "Formal tone is best for:",
+        "domain": "Language & Communication",
+        "explanation": "Formal writing.",
+        "difficulty": null,
+        "score": 1,
+        "selectedAnswers": [
+          {
+            "answerId": "01KCXGG0WQ0001H0Q1FW4CZ5FG",
+            "value": "Casual chats"
+          }
+        ],
+        "correctAnswers": [
+          {
+            "answerId": "01KCXGG0WQ0001H0Q1FW4CXSH8",
+            "value": "Official reports"
+          }
+        ],
+        "isCorrect": false
+      },
+      {
+        "testResultQuestionId": "01KCXK1QAJ62NM48FPJWA6X4YN",
+        "questionId": "01KCXGG0TH0001H0Q1FW2A7NHG",
+        "questionText": "Choose the correct sentence.",
+        "domain": "Language & Communication",
+        "explanation": "Adverbs modify verbs.",
+        "difficulty": null,
+        "score": 1,
+        "selectedAnswers": [
+          {
+            "answerId": "01KCXGG0WQ0001H0Q1FW4D2TNG",
+            "value": "She runs quickly."
+          }
+        ],
+        "correctAnswers": [
+          {
+            "answerId": "01KCXGG0WQ0001H0Q1FW4D2TNG",
+            "value": "She runs quickly."
+          }
+        ],
+        "isCorrect": true
+      },
+      {
+        "testResultQuestionId": "01KCXK1QAJQ43ATMZ7CSJ64396",
+        "questionId": "01KCXGG0TH0001H0Q1FW2A9A90",
+        "questionText": "Which word is a noun?",
+        "domain": "Language & Communication",
+        "explanation": "Happiness is a noun.",
+        "difficulty": null,
+        "score": 1,
+        "selectedAnswers": [
+          {
+            "answerId": "01KCXGG0WQ0001H0Q1FW4D7NY8",
+            "value": "Happiness"
+          }
+        ],
+        "correctAnswers": [
+          {
+            "answerId": "01KCXGG0WQ0001H0Q1FW4D7NY8",
+            "value": "Happiness"
+          }
+        ],
+        "isCorrect": true
+      },
+      {
+        "testResultQuestionId": "01KCXK1QAK2SG4AH4J81HY932G",
+        "questionId": "01KCXGG0TH0001H0Q1FW2ACJRR",
+        "questionText": "Which sentence is grammatically correct?",
+        "domain": "Language & Communication",
+        "explanation": "Neither is singular.",
+        "difficulty": null,
+        "score": 1,
+        "selectedAnswers": [
+          {
+            "answerId": "01KCXGG0WR0001H0Q1FW4DJMH0",
+            "value": "Neither answers is correct."
+          }
+        ],
+        "correctAnswers": [
+          {
+            "answerId": "01KCXGG0WR0001H0Q1FW4DHDF0",
+            "value": "Neither of the answers is correct."
+          }
+        ],
+        "isCorrect": false
+      },
+      {
+        "testResultQuestionId": "01KCXK1QAKXSW91CEHD1XCPSNS",
+        "questionId": "01KCXGG0TH0001H0Q1FW2AAY18",
+        "questionText": "Select the correct preposition.",
+        "domain": "Language & Communication",
+        "explanation": "Correct collocation.",
+        "difficulty": null,
+        "score": 1,
+        "selectedAnswers": [
+          {
+            "answerId": "01KCXGG0WR0001H0Q1FW4DCH70",
+            "value": "He is good at math."
+          }
+        ],
+        "correctAnswers": [
+          {
+            "answerId": "01KCXGG0WR0001H0Q1FW4DCH70",
+            "value": "He is good at math."
+          }
+        ],
+        "isCorrect": true
+      },
+      {
+        "testResultQuestionId": "01KCXK1QAMJ55VTZAA6D8V19ZB",
+        "questionId": "01KCXGG0TH0001H0Q1FW2AG140",
+        "questionText": "An inference is:",
+        "domain": "Language & Communication",
+        "explanation": "Inference uses evidence.",
+        "difficulty": null,
+        "score": 1,
+        "selectedAnswers": [
+          {
+            "answerId": "01KCXGG0WR0001H0Q1FW4DWGY0",
+            "value": "A conclusion based on evidence"
+          }
+        ],
+        "correctAnswers": [
+          {
+            "answerId": "01KCXGG0WR0001H0Q1FW4DWGY0",
+            "value": "A conclusion based on evidence"
+          }
+        ],
+        "isCorrect": true
+      },
+      {
+        "testResultQuestionId": "01KCXK1QAMRKPSKR4RREV9VP2R",
+        "questionId": "01KCXGG0TH0001H0Q1FW2AECCG",
+        "questionText": "Main idea of a paragraph is:",
+        "domain": "Language & Communication",
+        "explanation": "Main idea.",
+        "difficulty": null,
+        "score": 1,
+        "selectedAnswers": [
+          {
+            "answerId": "01KCXGG0WR0001H0Q1FW4DP9Q0",
+            "value": "Central point"
+          }
+        ],
+        "correctAnswers": [
+          {
+            "answerId": "01KCXGG0WR0001H0Q1FW4DP9Q0",
+            "value": "Central point"
+          }
+        ],
+        "isCorrect": true
+      },
+      {
+        "testResultQuestionId": "01KCXK1QANCG109XKM60RG56S6",
+        "questionId": "01KCXGG0TH0001H0Q1FW2AHNVG",
+        "questionText": "Which improves clarity?",
+        "domain": "Language & Communication",
+        "explanation": "Avoid redundancy.",
+        "difficulty": null,
+        "score": 1,
+        "selectedAnswers": [
+          {
+            "answerId": "01KCXGG0WR0001H0Q1FW4E054R",
+            "value": "Good enough"
+          }
+        ],
+        "correctAnswers": [
+          {
+            "answerId": "01KCXGG0WR0001H0Q1FW4E054R",
+            "value": "Good enough"
+          }
+        ],
+        "isCorrect": true
+      },
+      {
+        "testResultQuestionId": "01KCXK1QANRK49HCK1E7MNMB1W",
+        "questionId": "01KCXGG0TH0001H0Q1FW2AKAK0",
+        "questionText": "Formal tone is best for:",
+        "domain": "Language & Communication",
+        "explanation": "Formal writing.",
+        "difficulty": null,
+        "score": 1,
+        "selectedAnswers": [
+          {
+            "answerId": "01KCXGG0WR0001H0Q1FW4E4ZE8",
+            "value": "Official reports"
+          }
+        ],
+        "correctAnswers": [
+          {
+            "answerId": "01KCXGG0WR0001H0Q1FW4E4ZE8",
+            "value": "Official reports"
+          }
+        ],
+        "isCorrect": true
+      },
+      {
+        "testResultQuestionId": "01KCXK1QAP26KV7SMCFXQBQQ3B",
+        "questionId": "01KCXGG0TJ0001H0Q1FW2APP0G",
+        "questionText": "Which word is a noun?",
+        "domain": "Language & Communication",
+        "explanation": "Happiness is a noun.",
+        "difficulty": null,
+        "score": 1,
+        "selectedAnswers": [
+          {
+            "answerId": "01KCXGG0WS0001H0Q1FW4EH530",
+            "value": "Run"
+          }
+        ],
+        "correctAnswers": [
+          {
+            "answerId": "01KCXGG0WS0001H0Q1FW4EEPZ0",
+            "value": "Happiness"
+          }
+        ],
+        "isCorrect": false
+      },
+      {
+        "testResultQuestionId": "01KCXK1QAPCZN5CMRFM3Y9F4MN",
+        "questionId": "01KCXGG0TJ0001H0Q1FW2AMYB8",
+        "questionText": "Choose the correct sentence.",
+        "domain": "Language & Communication",
+        "explanation": "Adverbs modify verbs.",
+        "difficulty": null,
+        "score": 1,
+        "selectedAnswers": [
+          {
+            "answerId": "01KCXGG0WR0001H0Q1FW4E9VP8",
+            "value": "She runs quickly."
+          }
+        ],
+        "correctAnswers": [
+          {
+            "answerId": "01KCXGG0WR0001H0Q1FW4E9VP8",
+            "value": "She runs quickly."
+          }
+        ],
+        "isCorrect": true
+      },
+      {
+        "testResultQuestionId": "01KCXK1QAQ6GEYXN6BJKSA2JG7",
+        "questionId": "01KCXGG0TJ0001H0Q1FW2ARBQ8",
+        "questionText": "Select the correct preposition.",
+        "domain": "Language & Communication",
+        "explanation": "Correct collocation.",
+        "difficulty": null,
+        "score": 1,
+        "selectedAnswers": [
+          {
+            "answerId": "01KCXGG0WS0001H0Q1FW4EP580",
+            "value": "He is good with math."
+          }
+        ],
+        "correctAnswers": [
+          {
+            "answerId": "01KCXGG0WS0001H0Q1FW4EKR38",
+            "value": "He is good at math."
+          }
+        ],
+        "isCorrect": false
+      },
+      {
+        "testResultQuestionId": "01KCXK1QAR0VSEVD9FSSSPNYMF",
+        "questionId": "01KCXGG0TJ0001H0Q1FW2AVM70",
+        "questionText": "Main idea of a paragraph is:",
+        "domain": "Language & Communication",
+        "explanation": "Main idea.",
+        "difficulty": null,
+        "score": 1,
+        "selectedAnswers": [
+          {
+            "answerId": "01KCXGG0WS0001H0Q1FW4EXEMR",
+            "value": "Central point"
+          }
+        ],
+        "correctAnswers": [
+          {
+            "answerId": "01KCXGG0WS0001H0Q1FW4EXEMR",
+            "value": "Central point"
+          }
+        ],
+        "isCorrect": true
+      },
+      {
+        "testResultQuestionId": "01KCXK1QAR1PYT6K2REVM6G1BA",
+        "questionId": "01KCXGG0TJ0001H0Q1FW2ASZFG",
+        "questionText": "Which sentence is grammatically correct?",
+        "domain": "Language & Communication",
+        "explanation": "Neither is singular.",
+        "difficulty": null,
+        "score": 1,
+        "selectedAnswers": [
+          {
+            "answerId": "01KCXGG0WS0001H0Q1FW4ERKC0",
+            "value": "Neither of the answers is correct."
+          }
+        ],
+        "correctAnswers": [
+          {
+            "answerId": "01KCXGG0WS0001H0Q1FW4ERKC0",
+            "value": "Neither of the answers is correct."
+          }
+        ],
+        "isCorrect": true
+      },
+      {
+        "testResultQuestionId": "01KCXK1QAS10QHPP5V1TNEFNBN",
+        "questionId": "01KCXGG0TJ0001H0Q1FW2B20A8",
+        "questionText": "Which improves clarity?",
+        "domain": "Language & Communication",
+        "explanation": "Avoid redundancy.",
+        "difficulty": null,
+        "score": 1,
+        "selectedAnswers": [
+          {
+            "answerId": "01KCXGG0WS0001H0Q1FW4F7568",
+            "value": "Good enough"
+          }
+        ],
+        "correctAnswers": [
+          {
+            "answerId": "01KCXGG0WS0001H0Q1FW4F7568",
+            "value": "Good enough"
+          }
+        ],
+        "isCorrect": true
+      },
+      {
+        "testResultQuestionId": "01KCXK1QASQFWM7PN0558872F0",
+        "questionId": "01KCXGG0TJ0001H0Q1FW2AX7Z8",
+        "questionText": "An inference is:",
+        "domain": "Language & Communication",
+        "explanation": "Inference uses evidence.",
+        "difficulty": null,
+        "score": 1,
+        "selectedAnswers": [
+          {
+            "answerId": "01KCXGG0WS0001H0Q1FW4F3GZG",
+            "value": "A conclusion based on evidence"
+          }
+        ],
+        "correctAnswers": [
+          {
+            "answerId": "01KCXGG0WS0001H0Q1FW4F3GZG",
+            "value": "A conclusion based on evidence"
+          }
+        ],
+        "isCorrect": true
+      },
+      {
+        "testResultQuestionId": "01KCXK1QAT9W12K9PC1PS67P33",
+        "questionId": "01KCXGG0TJ0001H0Q1FW2B42Q8",
+        "questionText": "Formal tone is best for:",
+        "domain": "Language & Communication",
+        "explanation": "Formal writing.",
+        "difficulty": null,
+        "score": 1,
+        "selectedAnswers": [
+          {
+            "answerId": "01KCXGG0WT0001H0Q1FW4FC79R",
+            "value": "Official reports"
+          }
+        ],
+        "correctAnswers": [
+          {
+            "answerId": "01KCXGG0WT0001H0Q1FW4FC79R",
+            "value": "Official reports"
+          }
+        ],
+        "isCorrect": true
+      },
+      {
+        "testResultQuestionId": "01KCXK1QATQAY4MHNJ139S7T6A",
+        "questionId": "01KCXGG0TJ0001H0Q1FW2B5TCG",
+        "questionText": "Choose the correct sentence.",
+        "domain": "Language & Communication",
+        "explanation": "Adverbs modify verbs.",
+        "difficulty": null,
+        "score": 1,
+        "selectedAnswers": [
+          {
+            "answerId": "01KCXGG0WT0001H0Q1FW4FJDHG",
+            "value": "She run quickly."
+          }
+        ],
+        "correctAnswers": [
+          {
+            "answerId": "01KCXGG0WT0001H0Q1FW4FH6FG",
+            "value": "She runs quickly."
+          }
+        ],
+        "isCorrect": false
+      },
+      {
+        "testResultQuestionId": "01KCXK1QAVPRB2KCV3VQ4G28TW",
+        "questionId": "01KCXGG0TJ0001H0Q1FW2B7F40",
+        "questionText": "Which word is a noun?",
+        "domain": "Language & Communication",
+        "explanation": "Happiness is a noun.",
+        "difficulty": null,
+        "score": 1,
+        "selectedAnswers": [
+          {
+            "answerId": "01KCXGG0WT0001H0Q1FW4FP1R8",
+            "value": "Happiness"
+          }
+        ],
+        "correctAnswers": [
+          {
+            "answerId": "01KCXGG0WT0001H0Q1FW4FP1R8",
+            "value": "Happiness"
+          }
+        ],
+        "isCorrect": true
+      },
+      {
+        "testResultQuestionId": "01KCXK1QAWM7K5CVKKD074QNAG",
+        "questionId": "01KCXGG0TJ0001H0Q1FW2BAYEG",
+        "questionText": "Which sentence is grammatically correct?",
+        "domain": "Language & Communication",
+        "explanation": "Neither is singular.",
+        "difficulty": null,
+        "score": 1,
+        "selectedAnswers": [
+          {
+            "answerId": "01KCXGG0WT0001H0Q1FW4FZS90",
+            "value": "Neither of the answers is correct."
+          }
+        ],
+        "correctAnswers": [
+          {
+            "answerId": "01KCXGG0WT0001H0Q1FW4FZS90",
+            "value": "Neither of the answers is correct."
+          }
+        ],
+        "isCorrect": true
+      },
+      {
+        "testResultQuestionId": "01KCXK1QAWN9QMDSGYDZRCAHK5",
+        "questionId": "01KCXGG0TJ0001H0Q1FW2B94TR",
+        "questionText": "Select the correct preposition.",
+        "domain": "Language & Communication",
+        "explanation": "Correct collocation.",
+        "difficulty": null,
+        "score": 1,
+        "selectedAnswers": [
+          {
+            "answerId": "01KCXGG0WT0001H0Q1FW4FTY08",
+            "value": "He is good at math."
+          }
+        ],
+        "correctAnswers": [
+          {
+            "answerId": "01KCXGG0WT0001H0Q1FW4FTY08",
+            "value": "He is good at math."
+          }
+        ],
+        "isCorrect": true
+      },
+      {
+        "testResultQuestionId": "01KCXK1QAWQ8H91FRB6DKZ1P20",
+        "questionId": "01KCXGG0TJ0001H0Q1FW2BCN4G",
+        "questionText": "Main idea of a paragraph is:",
+        "domain": "Language & Communication",
+        "explanation": "Main idea.",
+        "difficulty": null,
+        "score": 1,
+        "selectedAnswers": [
+          {
+            "answerId": "01KCXGG0WT0001H0Q1FW4G4KJG",
+            "value": "Central point"
+          }
+        ],
+        "correctAnswers": [
+          {
+            "answerId": "01KCXGG0WT0001H0Q1FW4G4KJG",
+            "value": "Central point"
+          }
+        ],
+        "isCorrect": true
+      },
+      {
+        "testResultQuestionId": "01KCXK1QAX6AT6J661JPK3TNV4",
+        "questionId": "01KCXGG0TJ0001H0Q1FW2BECSR",
+        "questionText": "An inference is:",
+        "domain": "Language & Communication",
+        "explanation": "Inference uses evidence.",
+        "difficulty": null,
+        "score": 1,
+        "selectedAnswers": [
+          {
+            "answerId": "01KCXGG0WV0001H0Q1FW4GB5H8",
+            "value": "A conclusion based on evidence"
+          }
+        ],
+        "correctAnswers": [
+          {
+            "answerId": "01KCXGG0WV0001H0Q1FW4GB5H8",
+            "value": "A conclusion based on evidence"
+          }
+        ],
+        "isCorrect": true
+      },
+      {
+        "testResultQuestionId": "01KCXK1QAXWYHNMNFPZYZ3PNBB",
+        "questionId": "01KCXGG0TJ0001H0Q1FW2BG1H8",
+        "questionText": "Which improves clarity?",
+        "domain": "Language & Communication",
+        "explanation": "Avoid redundancy.",
+        "difficulty": null,
+        "score": 1,
+        "selectedAnswers": [
+          {
+            "answerId": "01KCXGG0WV0001H0Q1FW4GESR0",
+            "value": "Good enough"
+          }
+        ],
+        "correctAnswers": [
+          {
+            "answerId": "01KCXGG0WV0001H0Q1FW4GESR0",
+            "value": "Good enough"
+          }
+        ],
+        "isCorrect": true
+      },
+      {
+        "testResultQuestionId": "01KCXK1QAY3AMZ6BZ5RC7EN586",
+        "questionId": "01KCXGG0TJ0001H0Q1FW2BHN9G",
+        "questionText": "Formal tone is best for:",
+        "domain": "Language & Communication",
+        "explanation": "Formal writing.",
+        "difficulty": null,
+        "score": 1,
+        "selectedAnswers": [
+          {
+            "answerId": "01KCXGG0WV0001H0Q1FW4GM3NG",
+            "value": "Official reports"
+          }
+        ],
+        "correctAnswers": [
+          {
+            "answerId": "01KCXGG0WV0001H0Q1FW4GM3NG",
+            "value": "Official reports"
+          }
+        ],
+        "isCorrect": true
+      }
+    ]
+  },
+  "previousAttempt": null
+}

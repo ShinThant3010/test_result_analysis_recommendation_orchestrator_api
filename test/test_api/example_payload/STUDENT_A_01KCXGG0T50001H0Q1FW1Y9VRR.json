@@ -1,0 +1,677 @@
+{
+  "studentId": "STUDENT_A",
+  "testId": "01KCXGG0T50001H0Q1FW1Y9VRR",
+  "testTitle": "Accounting 101",
+  "maxCourses": 5,
+  "maxCoursesPerWeakness": 3,
+  "participantRanking": null,
+  "language": "EN",
+  "currentAttempt": {
+    "earnedScore": 24,
+    "totalScore": 30,
+    "status": "pass",
+    "questions": [
+      {
+        "testResultQuestionId": "01KCXK1Q7NKKQX26ZYZTFJRW01",
+        "questionId": "01KCXGG0T50001H0Q1FW1YA2KG",
+        "questionText": "The accounting equation is:",
+        "domain": "Accounting",
+        "explanation": "Accounting equation.",
+        "difficulty": null,
+        "score": 1,
+        "selectedAnswers": [
+          {
+            "answerId": "01KCXGG0VT0001H0Q1FW3H0KG8",
+            "value": "Equity = Assets − Revenue"
+          }
+        ],
+        "correctAnswers": [
+          {
+            "answerId": "01KCXGG0VT0001H0Q1FW3GWYA8",
+            "value": "Assets = Liabilities + Equity"
+          }
+        ],
+        "isCorrect": false
+      },
+      {
+        "testResultQuestionId": "01KCXK1Q7Q4RC3SRR1AS5CCF1W",
+        "questionId": "01KCXGG0T50001H0Q1FW1YDD1R",
+        "questionText": "Depreciation is used to:",
+        "domain": "Accounting",
+        "explanation": "Depreciation purpose.",
+        "difficulty": null,
+        "score": 1,
+        "selectedAnswers": [
+          {
+            "answerId": "01KCXGG0VT0001H0Q1FW3H7WX0",
+            "value": "Allocate cost over time"
+          }
+        ],
+        "correctAnswers": [
+          {
+            "answerId": "01KCXGG0VT0001H0Q1FW3H7WX0",
+            "value": "Allocate cost over time"
+          }
+        ],
+        "isCorrect": true
+      },
+      {
+        "testResultQuestionId": "01KCXK1Q7QVRKHF3HR1RF06QSZ",
+        "questionId": "01KCXGG0T50001H0Q1FW1YBRA8",
+        "questionText": "Which account increases with a debit?",
+        "domain": "Accounting",
+        "explanation": "Assets increase with debit.",
+        "difficulty": null,
+        "score": 1,
+        "selectedAnswers": [
+          {
+            "answerId": "01KCXGG0VT0001H0Q1FW3H5ES0",
+            "value": "Asset"
+          }
+        ],
+        "correctAnswers": [
+          {
+            "answerId": "01KCXGG0VT0001H0Q1FW3H5ES0",
+            "value": "Asset"
+          }
+        ],
+        "isCorrect": true
+      },
+      {
+        "testResultQuestionId": "01KCXK1Q7R4KVWPK69S951AE7J",
+        "questionId": "01KCXGG0T50001H0Q1FW1YF2RG",
+        "questionText": "Which statement shows financial position?",
+        "domain": "Accounting",
+        "explanation": "Balance sheet.",
+        "difficulty": null,
+        "score": 1,
+        "selectedAnswers": [
+          {
+            "answerId": "01KCXGG0VT0001H0Q1FW3HDZ7R",
+            "value": "Balance sheet"
+          }
+        ],
+        "correctAnswers": [
+          {
+            "answerId": "01KCXGG0VT0001H0Q1FW3HDZ7R",
+            "value": "Balance sheet"
+          }
+        ],
+        "isCorrect": true
+      },
+      {
+        "testResultQuestionId": "01KCXK1Q7S49CQ88F1GZT6VGV5",
+        "questionId": "01KCXGG0T50001H0Q1FW1YGSEG",
+        "questionText": "Accounts receivable represents:",
+        "domain": "Accounting",
+        "explanation": "Receivables.",
+        "difficulty": null,
+        "score": 1,
+        "selectedAnswers": [
+          {
+            "answerId": "01KCXGG0VT0001H0Q1FW3HHKEG",
+            "value": "Money owed by customers"
+          }
+        ],
+        "correctAnswers": [
+          {
+            "answerId": "01KCXGG0VT0001H0Q1FW3HHKEG",
+            "value": "Money owed by customers"
+          }
+        ],
+        "isCorrect": true
+      },
+      {
+        "testResultQuestionId": "01KCXK1Q7SMYC8K4MA1W58S4HX",
+        "questionId": "01KCXGG0T50001H0Q1FW1YJF58",
+        "questionText": "Which is a current asset?",
+        "domain": "Accounting",
+        "explanation": "Current asset.",
+        "difficulty": null,
+        "score": 1,
+        "selectedAnswers": [
+          {
+            "answerId": "01KCXGG0VV0001H0Q1FW3HS2PR",
+            "value": "Goodwill"
+          }
+        ],
+        "correctAnswers": [
+          {
+            "answerId": "01KCXGG0VV0001H0Q1FW3HQVMR",
+            "value": "Inventory"
+          }
+        ],
+        "isCorrect": false
+      },
+      {
+        "testResultQuestionId": "01KCXK1Q7TWNV7M20TNYKAC5YW",
+        "questionId": "01KCXGG0T50001H0Q1FW1YM4W0",
+        "questionText": "Accrual accounting recognizes revenue when:",
+        "domain": "Accounting",
+        "explanation": "Accrual principle.",
+        "difficulty": null,
+        "score": 1,
+        "selectedAnswers": [
+          {
+            "answerId": "01KCXGG0VV0001H0Q1FW3HVGTR",
+            "value": "Earned"
+          }
+        ],
+        "correctAnswers": [
+          {
+            "answerId": "01KCXGG0VV0001H0Q1FW3HVGTR",
+            "value": "Earned"
+          }
+        ],
+        "isCorrect": true
+      },
+      {
+        "testResultQuestionId": "01KCXK1Q7VG0R3TFQBY91EG7QX",
+        "questionId": "01KCXGG0T50001H0Q1FW1YQFA8",
+        "questionText": "Which account is closed at period end?",
+        "domain": "Accounting",
+        "explanation": "Temporary account.",
+        "difficulty": null,
+        "score": 1,
+        "selectedAnswers": [
+          {
+            "answerId": "01KCXGG0VV0001H0Q1FW3J6FDG",
+            "value": "Revenue"
+          }
+        ],
+        "correctAnswers": [
+          {
+            "answerId": "01KCXGG0VV0001H0Q1FW3J6FDG",
+            "value": "Revenue"
+          }
+        ],
+        "isCorrect": true
+      },
+      {
+        "testResultQuestionId": "01KCXK1Q7VPCT9A267JKQRR95E",
+        "questionId": "01KCXGG0T50001H0Q1FW1YNSKG",
+        "questionText": "Gross profit equals:",
+        "domain": "Accounting",
+        "explanation": "Gross profit.",
+        "difficulty": null,
+        "score": 1,
+        "selectedAnswers": [
+          {
+            "answerId": "01KCXGG0VV0001H0Q1FW3J0B48",
+            "value": "Revenue − COGS"
+          }
+        ],
+        "correctAnswers": [
+          {
+            "answerId": "01KCXGG0VV0001H0Q1FW3J0B48",
+            "value": "Revenue − COGS"
+          }
+        ],
+        "isCorrect": true
+      },
+      {
+        "testResultQuestionId": "01KCXK1Q7WG52V6MZE8DXN8D3T",
+        "questionId": "01KCXGG0T50001H0Q1FW1YS510",
+        "questionText": "Audit objective ensures:",
+        "domain": "Accounting",
+        "explanation": "Audit purpose.",
+        "difficulty": null,
+        "score": 1,
+        "selectedAnswers": [
+          {
+            "answerId": "01KCXGG0VV0001H0Q1FW3J92DR",
+            "value": "Profitability"
+          }
+        ],
+        "correctAnswers": [
+          {
+            "answerId": "01KCXGG0VV0001H0Q1FW3JA9FR",
+            "value": "Accuracy and fairness"
+          }
+        ],
+        "isCorrect": false
+      },
+      {
+        "testResultQuestionId": "01KCXK1Q7WVXVZ1YXM485AHE45",
+        "questionId": "01KCXGG0T50001H0Q1FW1YTTQR",
+        "questionText": "The accounting equation is:",
+        "domain": "Accounting",
+        "explanation": "Accounting equation.",
+        "difficulty": null,
+        "score": 1,
+        "selectedAnswers": [
+          {
+            "answerId": "01KCXGG0VV0001H0Q1FW3JE3J0",
+            "value": "Assets = Liabilities + Equity"
+          }
+        ],
+        "correctAnswers": [
+          {
+            "answerId": "01KCXGG0VV0001H0Q1FW3JE3J0",
+            "value": "Assets = Liabilities + Equity"
+          }
+        ],
+        "isCorrect": true
+      },
+      {
+        "testResultQuestionId": "01KCXK1Q7XKNQFGTTQYQVMR834",
+        "questionId": "01KCXGG0T50001H0Q1FW1Z0R68",
+        "questionText": "Which account increases with a debit?",
+        "domain": "Accounting",
+        "explanation": "Assets increase with debit.",
+        "difficulty": null,
+        "score": 1,
+        "selectedAnswers": [
+          {
+            "answerId": "01KCXGG0VW0001H0Q1FW3JPM0R",
+            "value": "Asset"
+          }
+        ],
+        "correctAnswers": [
+          {
+            "answerId": "01KCXGG0VW0001H0Q1FW3JPM0R",
+            "value": "Asset"
+          }
+        ],
+        "isCorrect": true
+      },
+      {
+        "testResultQuestionId": "01KCXK1Q7XVSNM1HAYC03A3Y8Y",
+        "questionId": "01KCXGG0T50001H0Q1FW1Z388R",
+        "questionText": "Depreciation is used to:",
+        "domain": "Accounting",
+        "explanation": "Depreciation purpose.",
+        "difficulty": null,
+        "score": 1,
+        "selectedAnswers": [
+          {
+            "answerId": "01KCXGG0VW0001H0Q1FW3JS24R",
+            "value": "Allocate cost over time"
+          }
+        ],
+        "correctAnswers": [
+          {
+            "answerId": "01KCXGG0VW0001H0Q1FW3JS24R",
+            "value": "Allocate cost over time"
+          }
+        ],
+        "isCorrect": true
+      },
+      {
+        "testResultQuestionId": "01KCXK1Q7Y4DJ3HT7FGWNT2336",
+        "questionId": "01KCXGG0T50001H0Q1FW1Z59PG",
+        "questionText": "Which statement shows financial position?",
+        "domain": "Accounting",
+        "explanation": "Balance sheet.",
+        "difficulty": null,
+        "score": 1,
+        "selectedAnswers": [
+          {
+            "answerId": "01KCXGG0VW0001H0Q1FW3JZ6E0",
+            "value": "Balance sheet"
+          }
+        ],
+        "correctAnswers": [
+          {
+            "answerId": "01KCXGG0VW0001H0Q1FW3JZ6E0",
+            "value": "Balance sheet"
+          }
+        ],
+        "isCorrect": true
+      },
+      {
+        "testResultQuestionId": "01KCXK1Q7YR1PBB6QAETRJ5Z9G",
+        "questionId": "01KCXGG0T60001H0Q1FW1Z7778",
+        "questionText": "Accounts receivable represents:",
+        "domain": "Accounting",
+        "explanation": "Receivables.",
+        "difficulty": null,
+        "score": 1,
+        "selectedAnswers": [
+          {
+            "answerId": "01KCXGG0VW0001H0Q1FW3K2VM0",
+            "value": "Money owed by customers"
+          }
+        ],
+        "correctAnswers": [
+          {
+            "answerId": "01KCXGG0VW0001H0Q1FW3K2VM0",
+            "value": "Money owed by customers"
+          }
+        ],
+        "isCorrect": true
+      },
+      {
+        "testResultQuestionId": "01KCXK1Q7Z4QNY02AYXKH2A3NM",
+        "questionId": "01KCXGG0T60001H0Q1FW1Z90V0",
+        "questionText": "Which is a current asset?",
+        "domain": "Accounting",
+        "explanation": "Current asset.",
+        "difficulty": null,
+        "score": 1,
+        "selectedAnswers": [
+          {
+            "answerId": "01KCXGG0VW0001H0Q1FW3K95RR",
+            "value": "Inventory"
+          }
+        ],
+        "correctAnswers": [
+          {
+            "answerId": "01KCXGG0VW0001H0Q1FW3K95RR",
+            "value": "Inventory"
+          }
+        ],
+        "isCorrect": true
+      },
+      {
+        "testResultQuestionId": "01KCXK1Q7Z6S2ED2N8Q3ME0T84",
+        "questionId": "01KCXGG0T60001H0Q1FW1ZATER",
+        "questionText": "Accrual accounting recognizes revenue when:",
+        "domain": "Accounting",
+        "explanation": "Accrual principle.",
+        "difficulty": null,
+        "score": 1,
+        "selectedAnswers": [
+          {
+            "answerId": "01KCXGG0VW0001H0Q1FW3KCTYR",
+            "value": "Earned"
+          }
+        ],
+        "correctAnswers": [
+          {
+            "answerId": "01KCXGG0VW0001H0Q1FW3KCTYR",
+            "value": "Earned"
+          }
+        ],
+        "isCorrect": true
+      },
+      {
+        "testResultQuestionId": "01KCXK1Q80APN0Q3D8B5D3B288",
+        "questionId": "01KCXGG0T60001H0Q1FW1ZEPFG",
+        "questionText": "Which account is closed at period end?",
+        "domain": "Accounting",
+        "explanation": "Temporary account.",
+        "difficulty": null,
+        "score": 1,
+        "selectedAnswers": [
+          {
+            "answerId": "01KCXGG0VX0001H0Q1FW3KNR3R",
+            "value": "Cash"
+          }
+        ],
+        "correctAnswers": [
+          {
+            "answerId": "01KCXGG0VX0001H0Q1FW3KR868",
+            "value": "Revenue"
+          }
+        ],
+        "isCorrect": false
+      },
+      {
+        "testResultQuestionId": "01KCXK1Q80JR83KY6WW0X2D3VQ",
+        "questionId": "01KCXGG0T60001H0Q1FW1ZCTX8",
+        "questionText": "Gross profit equals:",
+        "domain": "Accounting",
+        "explanation": "Gross profit.",
+        "difficulty": null,
+        "score": 1,
+        "selectedAnswers": [
+          {
+            "answerId": "01KCXGG0VW0001H0Q1FW3KHY1G",
+            "value": "Revenue − COGS"
+          }
+        ],
+        "correctAnswers": [
+          {
+            "answerId": "01KCXGG0VW0001H0Q1FW3KHY1G",
+            "value": "Revenue − COGS"
+          }
+        ],
+        "isCorrect": true
+      },
+      {
+        "testResultQuestionId": "01KCXK1Q81GMM1Q1P0PWCV89JY",
+        "questionId": "01KCXGG0T60001H0Q1FW1ZGF40",
+        "questionText": "Audit objective ensures:",
+        "domain": "Accounting",
+        "explanation": "Audit purpose.",
+        "difficulty": null,
+        "score": 1,
+        "selectedAnswers": [
+          {
+            "answerId": "01KCXGG0VX0001H0Q1FW3KTPA8",
+            "value": "Profitability"
+          }
+        ],
+        "correctAnswers": [
+          {
+            "answerId": "01KCXGG0VX0001H0Q1FW3KVXC8",
+            "value": "Accuracy and fairness"
+          }
+        ],
+        "isCorrect": false
+      },
+      {
+        "testResultQuestionId": "01KCXK1Q827P7A5CG0PX48Y8W4",
+        "questionId": "01KCXGG0T60001H0Q1FW1ZJ6S8",
+        "questionText": "The accounting equation is:",
+        "domain": "Accounting",
+        "explanation": "Accounting equation.",
+        "difficulty": null,
+        "score": 1,
+        "selectedAnswers": [
+          {
+            "answerId": "01KCXGG0VX0001H0Q1FW3KZJJ8",
+            "value": "Assets = Liabilities + Equity"
+          }
+        ],
+        "correctAnswers": [
+          {
+            "answerId": "01KCXGG0VX0001H0Q1FW3KZJJ8",
+            "value": "Assets = Liabilities + Equity"
+          }
+        ],
+        "isCorrect": true
+      },
+      {
+        "testResultQuestionId": "01KCXK1Q82H0K1H0AVVTBBK1DA",
+        "questionId": "01KCXGG0T60001H0Q1FW1ZKYEG",
+        "questionText": "Which account increases with a debit?",
+        "domain": "Accounting",
+        "explanation": "Assets increase with debit.",
+        "difficulty": null,
+        "score": 1,
+        "selectedAnswers": [
+          {
+            "answerId": "01KCXGG0VX0001H0Q1FW3M8DRR",
+            "value": "Asset"
+          }
+        ],
+        "correctAnswers": [
+          {
+            "answerId": "01KCXGG0VX0001H0Q1FW3M8DRR",
+            "value": "Asset"
+          }
+        ],
+        "isCorrect": true
+      },
+      {
+        "testResultQuestionId": "01KCXK1Q8322VBCPAKVJJF0EZM",
+        "questionId": "01KCXGG0T60001H0Q1FW1ZQCSR",
+        "questionText": "Which statement shows financial position?",
+        "domain": "Accounting",
+        "explanation": "Balance sheet.",
+        "difficulty": null,
+        "score": 1,
+        "selectedAnswers": [
+          {
+            "answerId": "01KCXGG0VX0001H0Q1FW3MGX88",
+            "value": "Balance sheet"
+          }
+        ],
+        "correctAnswers": [
+          {
+            "answerId": "01KCXGG0VX0001H0Q1FW3MGX88",
+            "value": "Balance sheet"
+          }
+        ],
+        "isCorrect": true
+      },
+      {
+        "testResultQuestionId": "01KCXK1Q83M622D3VPZWMRYH7M",
+        "questionId": "01KCXGG0T60001H0Q1FW1ZNM58",
+        "questionText": "Depreciation is used to:",
+        "domain": "Accounting",
+        "explanation": "Depreciation purpose.",
+        "difficulty": null,
+        "score": 1,
+        "selectedAnswers": [
+          {
+            "answerId": "01KCXGG0VX0001H0Q1FW3MAVWR",
+            "value": "Allocate cost over time"
+          }
+        ],
+        "correctAnswers": [
+          {
+            "answerId": "01KCXGG0VX0001H0Q1FW3MAVWR",
+            "value": "Allocate cost over time"
+          }
+        ],
+        "isCorrect": true
+      },
+      {
+        "testResultQuestionId": "01KCXK1Q84EA1KEKQFBPZ3G54Q",
+        "questionId": "01KCXGG0T60001H0Q1FW1ZTX3G",
+        "questionText": "Which is a current asset?",
+        "domain": "Accounting",
+        "explanation": "Current asset.",
+        "difficulty": null,
+        "score": 1,
+        "selectedAnswers": [
+          {
+            "answerId": "01KCXGG0VY0001H0Q1FW3MTTMG",
+            "value": "Inventory"
+          }
+        ],
+        "correctAnswers": [
+          {
+            "answerId": "01KCXGG0VY0001H0Q1FW3MTTMG",
+            "value": "Inventory"
+          }
+        ],
+        "isCorrect": true
+      },
+      {
+        "testResultQuestionId": "01KCXK1Q84P7PAGZ9TW2AT12VS",
+        "questionId": "01KCXGG0T60001H0Q1FW1ZS6DG",
+        "questionText": "Accounts receivable represents:",
+        "domain": "Accounting",
+        "explanation": "Receivables.",
+        "difficulty": null,
+        "score": 1,
+        "selectedAnswers": [
+          {
+            "answerId": "01KCXGG0VY0001H0Q1FW3MMPB8",
+            "value": "Money owed by customers"
+          }
+        ],
+        "correctAnswers": [
+          {
+            "answerId": "01KCXGG0VY0001H0Q1FW3MMPB8",
+            "value": "Money owed by customers"
+          }
+        ],
+        "isCorrect": true
+      },
+      {
+        "testResultQuestionId": "01KCXK1Q84RXBZMNSTSBY95PC7",
+        "questionId": "01KCXGG0T60001H0Q1FW1ZWJT8",
+        "questionText": "Accrual accounting recognizes revenue when:",
+        "domain": "Accounting",
+        "explanation": "Accrual principle.",
+        "difficulty": null,
+        "score": 1,
+        "selectedAnswers": [
+          {
+            "answerId": "01KCXGG0VY0001H0Q1FW3MYJR8",
+            "value": "Earned"
+          }
+        ],
+        "correctAnswers": [
+          {
+            "answerId": "01KCXGG0VY0001H0Q1FW3MYJR8",
+            "value": "Earned"
+          }
+        ],
+        "isCorrect": true
+      },
+      {
+        "testResultQuestionId": "01KCXK1Q852JDAW6MTT4S5WN8K",
+        "questionId": "01KCXGG0T60001H0Q1FW1ZYAFG",
+        "questionText": "Gross profit equals:",
+        "domain": "Accounting",
+        "explanation": "Gross profit.",
+        "difficulty": null,
+        "score": 1,
+        "selectedAnswers": [
+          {
+            "answerId": "01KCXGG0VY0001H0Q1FW3N3GYR",
+            "value": "Revenue − COGS"
+          }
+        ],
+        "correctAnswers": [
+          {
+            "answerId": "01KCXGG0VY0001H0Q1FW3N3GYR",
+            "value": "Revenue − COGS"
+          }
+        ],
+        "isCorrect": true
+      },
+      {
+        "testResultQuestionId": "01KCXK1Q8533HGVPNGJA3DSM0X",
+        "questionId": "01KCXGG0T60001H0Q1FW20015G",
+        "questionText": "Which account is closed at period end?",
+        "domain": "Accounting",
+        "explanation": "Temporary account.",
+        "difficulty": null,
+        "score": 1,
+        "selectedAnswers": [
+          {
+            "answerId": "01KCXGG0VY0001H0Q1FW3N9Y18",
+            "value": "Revenue"
+          }
+        ],
+        "correctAnswers": [
+          {
+            "answerId": "01KCXGG0VY0001H0Q1FW3N9Y18",
+            "value": "Revenue"
+          }
+        ],
+        "isCorrect": true
+      },
+      {
+        "testResultQuestionId": "01KCXK1Q86KJQHVFK00DFGXNFZ",
+        "questionId": "01KCXGG0T60001H0Q1FW201QVG",
+        "questionText": "Audit objective ensures:",
+        "domain": "Accounting",
+        "explanation": "Audit purpose.",
+        "difficulty": null,
+        "score": 1,
+        "selectedAnswers": [
+          {
+            "answerId": "01KCXGG0VY0001H0Q1FW3NCC58",
+            "value": "Profitability"
+          }
+        ],
+        "correctAnswers": [
+          {
+            "answerId": "01KCXGG0VY0001H0Q1FW3NDJ80",
+            "value": "Accuracy and fairness"
+          }
+        ],
+        "isCorrect": false
+      }
+    ]
+  },
+  "previousAttempt": null
+}

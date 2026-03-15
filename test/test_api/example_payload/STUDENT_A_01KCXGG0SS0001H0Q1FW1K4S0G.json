@@ -1,0 +1,480 @@
+{
+  "studentId": "STUDENT_A",
+  "testId": "01KCXGG0SS0001H0Q1FW1K4S0G",
+  "testTitle": "Computer Science 101",
+  "maxCourses": 5,
+  "maxCoursesPerWeakness": 3,
+  "participantRanking": null,
+  "language": "EN",
+  "currentAttempt": {
+    "earnedScore": 19,
+    "totalScore": 20,
+    "status": "pass",
+    "questions": [
+      {
+        "testResultQuestionId": "01KCXK1Q4NRJEXTMFPFF8PP2BS",
+        "questionId": "01KCXGG0SS0001H0Q1FW1K50TG",
+        "questionText": "In Python, what is the value of sum([i for i in range(5) if i % 2 == 0])?",
+        "domain": "Python",
+        "explanation": "range(5) gives 0,1,2,3,4. The even numbers are 0,2,4, and 0+2+4 = 6.",
+        "difficulty": null,
+        "score": 1,
+        "selectedAnswers": [
+          {
+            "answerId": "01KCXGG0V30001H0Q1FW2TWN6R",
+            "value": "6"
+          }
+        ],
+        "correctAnswers": [
+          {
+            "answerId": "01KCXGG0V30001H0Q1FW2TWN6R",
+            "value": "6"
+          }
+        ],
+        "isCorrect": true
+      },
+      {
+        "testResultQuestionId": "01KCXK1Q4P8PC1X79AF878458C",
+        "questionId": "01KCXGG0SS0001H0Q1FW1K746R",
+        "questionText": "In Python, what is the value of len(set([1, 2, 2, 3, 3, 3]))?",
+        "domain": "Python",
+        "explanation": "set([1,2,2,3,3,3]) is {1,2,3}, which has length 3.",
+        "difficulty": null,
+        "score": 1,
+        "selectedAnswers": [
+          {
+            "answerId": "01KCXGG0V30001H0Q1FW2V0R28",
+            "value": "3"
+          }
+        ],
+        "correctAnswers": [
+          {
+            "answerId": "01KCXGG0V30001H0Q1FW2V0R28",
+            "value": "3"
+          }
+        ],
+        "isCorrect": true
+      },
+      {
+        "testResultQuestionId": "01KCXK1Q4P92QDVXKT7VHHG68K",
+        "questionId": "01KCXGG0SS0001H0Q1FW1KAZ88",
+        "questionText": "In JavaScript, what does the following print? let a = 1; console.log(a++ + ++a);",
+        "domain": "Python",
+        "explanation": "a++ returns 1 then a becomes 2; ++a makes a 3, so 1 + 3 = 4.",
+        "difficulty": null,
+        "score": 1,
+        "selectedAnswers": [
+          {
+            "answerId": "01KCXGG0V30001H0Q1FW2VCRTR",
+            "value": "4"
+          }
+        ],
+        "correctAnswers": [
+          {
+            "answerId": "01KCXGG0V30001H0Q1FW2VCRTR",
+            "value": "4"
+          }
+        ],
+        "isCorrect": true
+      },
+      {
+        "testResultQuestionId": "01KCXK1Q4PAGSMRQA0PT1H944X",
+        "questionId": "01KCXGG0SS0001H0Q1FW1K93P0",
+        "questionText": "Given s = 'abcdef' in Python, what is the value of s[1:5:2]?",
+        "domain": "Python",
+        "explanation": "Indices used are 1 and 3, so characters are 'b' and 'd', giving 'bd'.",
+        "difficulty": null,
+        "score": 1,
+        "selectedAnswers": [
+          {
+            "answerId": "01KCXGG0V30001H0Q1FW2V68TG",
+            "value": "bdf"
+          }
+        ],
+        "correctAnswers": [
+          {
+            "answerId": "01KCXGG0V30001H0Q1FW2V68TG",
+            "value": "bd"
+          }
+        ],
+        "isCorrect": true
+      },
+      {
+        "testResultQuestionId": "01KCXK1Q4QPHD00762DT8KBNKR",
+        "questionId": "01KCXGG0SS0001H0Q1FW1KCSV8",
+        "questionText": "In Python, with a = [1, 2] and b = [1, 2], what does print(a == b, a is b) output?",
+        "domain": "Python",
+        "explanation": "a and b have the same contents, so a == b is True, but they are different objects in memory so a is b is False.",
+        "difficulty": null,
+        "score": 1,
+        "selectedAnswers": [
+          {
+            "answerId": "01KCXGG0V30001H0Q1FW2VGKW8",
+            "value": "True False"
+          }
+        ],
+        "correctAnswers": [
+          {
+            "answerId": "01KCXGG0V30001H0Q1FW2VGKW8",
+            "value": "True False"
+          }
+        ],
+        "isCorrect": true
+      },
+      {
+        "testResultQuestionId": "01KCXK1Q4QTD2JZQC28H9PF15S",
+        "questionId": "01KCXGG0SS0001H0Q1FW1KEME8",
+        "questionText": "Solve for x: 3x − 5 = 2x + 7.",
+        "domain": "Algebra",
+        "explanation": "3x − 5 = 2x + 7 ⇒ 3x − 2x = 7 + 5 ⇒ x = 12.",
+        "difficulty": null,
+        "score": 1,
+        "selectedAnswers": [
+          {
+            "answerId": "01KCXGG0V30001H0Q1FW2VRTJG",
+            "value": "12"
+          }
+        ],
+        "correctAnswers": [
+          {
+            "answerId": "01KCXGG0V30001H0Q1FW2VRTJG",
+            "value": "12"
+          }
+        ],
+        "isCorrect": true
+      },
+      {
+        "testResultQuestionId": "01KCXK1Q4RB56D40S56DEX9HAS",
+        "questionId": "01KCXGG0SS0001H0Q1FW1KJY4G",
+        "questionText": "What is the domain of f(x) = √(x − 2)?",
+        "domain": "Algebra",
+        "explanation": "The expression under the square root must be ≥ 0, so x − 2 ≥ 0 ⇒ x ≥ 2.",
+        "difficulty": null,
+        "score": 1,
+        "selectedAnswers": [
+          {
+            "answerId": "01KCXGG0V40001H0Q1FW2W21G0",
+            "value": "x ≥ 2"
+          }
+        ],
+        "correctAnswers": [
+          {
+            "answerId": "01KCXGG0V40001H0Q1FW2W21G0",
+            "value": "x ≥ 2"
+          }
+        ],
+        "isCorrect": true
+      },
+      {
+        "testResultQuestionId": "01KCXK1Q4RH7B98WMPGWE1M2BA",
+        "questionId": "01KCXGG0SS0001H0Q1FW1KMQR8",
+        "questionText": "Solve for x: 2(x − 3) = 3(x + 1).",
+        "domain": "Algebra",
+        "explanation": "2x − 6 = 3x + 3 ⇒ -6 − 3 = 3x − 2x ⇒ -9 = x.",
+        "difficulty": null,
+        "score": 1,
+        "selectedAnswers": [
+          {
+            "answerId": "01KCXGG0V40001H0Q1FW2W4KH0",
+            "value": "-9"
+          }
+        ],
+        "correctAnswers": [
+          {
+            "answerId": "01KCXGG0V40001H0Q1FW2W4KH0",
+            "value": "-9"
+          }
+        ],
+        "isCorrect": true
+      },
+      {
+        "testResultQuestionId": "01KCXK1Q4RMH8YZ78NNECS7EW8",
+        "questionId": "01KCXGG0SS0001H0Q1FW1KH5G0",
+        "questionText": "Which is the correct factorization of x² − 5x + 6?",
+        "domain": "Algebra",
+        "explanation": "The numbers -2 and -3 multiply to 6 and add to -5, so (x − 2)(x − 3).",
+        "difficulty": null,
+        "score": 1,
+        "selectedAnswers": [
+          {
+            "answerId": "01KCXGG0V40001H0Q1FW2VVCKG",
+            "value": "(x − 2)(x − 3)"
+          }
+        ],
+        "correctAnswers": [
+          {
+            "answerId": "01KCXGG0V40001H0Q1FW2VVCKG",
+            "value": "(x − 2)(x − 3)"
+          }
+        ],
+        "isCorrect": true
+      },
+      {
+        "testResultQuestionId": "01KCXK1Q4ST6EMS7DQJRE92BX6",
+        "questionId": "01KCXGG0SS0001H0Q1FW1KPHC0",
+        "questionText": "Consider the sequence 2, 5, 8, 11, .... Which description is correct?",
+        "domain": "Algebra",
+        "explanation": "Each term increases by 3, so it is an arithmetic sequence with common difference 3.",
+        "difficulty": null,
+        "score": 1,
+        "selectedAnswers": [
+          {
+            "answerId": "01KCXGG0V40001H0Q1FW2WAZM8",
+            "value": "Arithmetic sequence with common difference 3"
+          }
+        ],
+        "correctAnswers": [
+          {
+            "answerId": "01KCXGG0V40001H0Q1FW2WAZM8",
+            "value": "Arithmetic sequence with common difference 3"
+          }
+        ],
+        "isCorrect": true
+      },
+      {
+        "testResultQuestionId": "01KCXK1Q4SVCQMSJZP81Z7HVHE",
+        "questionId": "01KCXGG0ST0001H0Q1FW1KR918",
+        "questionText": "Which SQL query correctly returns the number of orders per customer?",
+        "domain": "Database",
+        "explanation": "We need to group by customer_id and count rows: SELECT customer_id, COUNT(*) AS order_count FROM orders GROUP BY customer_id;",
+        "difficulty": null,
+        "score": 1,
+        "selectedAnswers": [
+          {
+            "answerId": "01KCXGG0V40001H0Q1FW2WG6M0",
+            "value": "SELECT customer_id, COUNT(*) AS order_count FROM orders GROUP BY customer_id;"
+          }
+        ],
+        "correctAnswers": [
+          {
+            "answerId": "01KCXGG0V40001H0Q1FW2WG6M0",
+            "value": "SELECT customer_id, COUNT(*) AS order_count FROM orders GROUP BY customer_id;"
+          }
+        ],
+        "isCorrect": true
+      },
+      {
+        "testResultQuestionId": "01KCXK1Q4T5QPQ8MFPSDKS7E5S",
+        "questionId": "01KCXGG0ST0001H0Q1FW1M04ZR",
+        "questionText": "In SQL, what is the main difference between COUNT(*) and COUNT(column_name)?",
+        "domain": "Database",
+        "explanation": "COUNT(*) counts all rows, while COUNT(column_name) counts only rows where that column is not NULL.",
+        "difficulty": null,
+        "score": 1,
+        "selectedAnswers": [
+          {
+            "answerId": "01KCXGG0V50001H0Q1FW2X1BEG",
+            "value": "COUNT(*) counts all rows; COUNT(column_name) ignores NULLs"
+          }
+        ],
+        "correctAnswers": [
+          {
+            "answerId": "01KCXGG0V50001H0Q1FW2X1BEG",
+            "value": "COUNT(*) counts all rows; COUNT(column_name) ignores NULLs"
+          }
+        ],
+        "isCorrect": true
+      },
+      {
+        "testResultQuestionId": "01KCXK1Q4T80BVG6BMAV5Q4B86",
+        "questionId": "01KCXGG0ST0001H0Q1FW1KT1NR",
+        "questionText": "Which JOIN keeps all rows from the left table and matches rows from the right table when possible?",
+        "domain": "Database",
+        "explanation": "LEFT JOIN returns all rows from the left table and matching rows from the right table, with NULLs when there is no match.",
+        "difficulty": null,
+        "score": 1,
+        "selectedAnswers": [
+          {
+            "answerId": "01KCXGG0V40001H0Q1FW2WNNDR",
+            "value": "LEFT JOIN"
+          }
+        ],
+        "correctAnswers": [
+          {
+            "answerId": "01KCXGG0V40001H0Q1FW2WNNDR",
+            "value": "LEFT JOIN"
+          }
+        ],
+        "isCorrect": true
+      },
+      {
+        "testResultQuestionId": "01KCXK1Q4TFPWTV1Z3WP1XF6JH",
+        "questionId": "01KCXGG0ST0001H0Q1FW1KVTA8",
+        "questionText": "Which SQL WHERE clause correctly selects rows with order_date on or after 2025-01-01?",
+        "domain": "Database",
+        "explanation": "The correct comparison is order_date >= '2025-01-01'.",
+        "difficulty": null,
+        "score": 1,
+        "selectedAnswers": [
+          {
+            "answerId": "01KCXGG0V50001H0Q1FW2WTZB8",
+            "value": "WHERE order_date >= '2025-01-01'"
+          }
+        ],
+        "correctAnswers": [
+          {
+            "answerId": "01KCXGG0V50001H0Q1FW2WTZB8",
+            "value": "WHERE order_date >= '2025-01-01'"
+          }
+        ],
+        "isCorrect": true
+      },
+      {
+        "testResultQuestionId": "01KCXK1Q4VMA5WDJYEP73AS8FZ",
+        "questionId": "01KCXGG0ST0001H0Q1FW1M6TVG",
+        "questionText": "Which SQL expression calculates a running total of amount ordered by order_date?",
+        "domain": "Database",
+        "explanation": "SUM(amount) OVER (ORDER BY order_date) creates a cumulative sum in order of order_date.",
+        "difficulty": null,
+        "score": 1,
+        "selectedAnswers": [
+          {
+            "answerId": "01KCXGG0V50001H0Q1FW2X6DJ0",
+            "value": "SUM(amount) OVER (ORDER BY order_date)"
+          }
+        ],
+        "correctAnswers": [
+          {
+            "answerId": "01KCXGG0V50001H0Q1FW2X6DJ0",
+            "value": "SUM(amount) OVER (ORDER BY order_date)"
+          }
+        ],
+        "isCorrect": true
+      },
+      {
+        "testResultQuestionId": "01KCXK1Q4W56DJJQT9Q5BREEND",
+        "questionId": "01KCXGG0ST0001H0Q1FW1MGY38",
+        "questionText": "In a box plot, which part represents the median of the data?",
+        "domain": "Data Visualization",
+        "explanation": "The median is shown by the line inside the box.",
+        "difficulty": null,
+        "score": 1,
+        "selectedAnswers": [
+          {
+            "answerId": "01KCXGG0V50001H0Q1FW2XGVHG",
+            "value": "The line inside the box"
+          }
+        ],
+        "correctAnswers": [
+          {
+            "answerId": "01KCXGG0V50001H0Q1FW2XGVHG",
+            "value": "The line inside the box"
+          }
+        ],
+        "isCorrect": true
+      },
+      {
+        "testResultQuestionId": "01KCXK1Q4WT3TZEQ40AHRQ7AXW",
+        "questionId": "01KCXGG0ST0001H0Q1FW1MCAMG",
+        "questionText": "Which chart is most suitable for showing the frequency of values across intervals for a numeric variable?",
+        "domain": "Data Visualization",
+        "explanation": "A histogram is designed to show the distribution of a numeric variable.",
+        "difficulty": null,
+        "score": 1,
+        "selectedAnswers": [
+          {
+            "answerId": "01KCXGG0V50001H0Q1FW2XA8KG",
+            "value": "Histogram"
+          }
+        ],
+        "correctAnswers": [
+          {
+            "answerId": "01KCXGG0V50001H0Q1FW2XA8KG",
+            "value": "Histogram"
+          }
+        ],
+        "isCorrect": true
+      },
+      {
+        "testResultQuestionId": "01KCXK1Q4XCCV0S0NT84BCG7NB",
+        "questionId": "01KCXGG0SV0001H0Q1FW1MPTJG",
+        "questionText": "To make a chart more colorblind-friendly, which approach is best?",
+        "domain": "Data Visualization",
+        "explanation": "Using high-contrast patterns or a colorblind-safe palette instead of relying only on red and green improves accessibility.",
+        "difficulty": null,
+        "score": 1,
+        "selectedAnswers": [
+          {
+            "answerId": "01KCXGG0V60001H0Q1FW2Y0JF8",
+            "value": "Use patterns or a colorblind-safe palette instead of only red and green"
+          }
+        ],
+        "correctAnswers": [
+          {
+            "answerId": "01KCXGG0V60001H0Q1FW2Y0JF8",
+            "value": "Use patterns or a colorblind-safe palette instead of only red and green"
+          }
+        ],
+        "isCorrect": true
+      },
+      {
+        "testResultQuestionId": "01KCXK1Q4XEB2TB03B8Q3KKKRS",
+        "questionId": "01KCXGG0ST0001H0Q1FW1MN0YR",
+        "questionText": "Which chart type is generally NOT recommended when comparing many small categories?",
+        "domain": "Data Visualization",
+        "explanation": "Pie charts become hard to read when there are many small slices, so they are not recommended.",
+        "difficulty": null,
+        "score": 1,
+        "selectedAnswers": [
+          {
+            "answerId": "01KCXGG0V60001H0Q1FW2XVFCG",
+            "value": "Pie chart"
+          }
+        ],
+        "correctAnswers": [
+          {
+            "answerId": "01KCXGG0V60001H0Q1FW2XVFCG",
+            "value": "Pie chart"
+          }
+        ],
+        "isCorrect": true
+      },
+      {
+        "testResultQuestionId": "01KCXK1Q4XV3ZD330WK2RGPVJC",
+        "questionId": "01KCXGG0ST0001H0Q1FW1MK7B0",
+        "questionText": "A scatter plot shows points roughly forming an upward-sloping line. What does this suggest?",
+        "domain": "Data Visualization",
+        "explanation": "An upward-sloping pattern suggests a positive correlation between the two variables.",
+        "difficulty": null,
+        "score": 1,
+        "selectedAnswers": [
+          {
+            "answerId": "01KCXGG0V50001H0Q1FW2XNZKG",
+            "value": "There is a positive correlation between the variables"
+          }
+        ],
+        "correctAnswers": [
+          {
+            "answerId": "01KCXGG0V50001H0Q1FW2XNZKG",
+            "value": "There is a positive correlation between the variables"
+          }
+        ],
+        "isCorrect": true
+      }
+    ]
+  },
+  "previousAttempt": {
+    "domains": [
+      {
+        "domain": "Algebra",
+        "correctQuestionsCount": 4,
+        "incorrectQuestionsCount": 1
+      },
+      {
+        "domain": "Data Visualization",
+        "correctQuestionsCount": 5,
+        "incorrectQuestionsCount": 0
+      },
+      {
+        "domain": "Database",
+        "correctQuestionsCount": 2,
+        "incorrectQuestionsCount": 3
+      },
+      {
+        "domain": "Python",
+        "correctQuestionsCount": 4,
+        "incorrectQuestionsCount": 1
+      }
+    ]
+  }
+}

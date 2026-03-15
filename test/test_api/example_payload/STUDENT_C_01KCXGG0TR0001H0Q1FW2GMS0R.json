@@ -1,0 +1,721 @@
+{
+  "studentId": "STUDENT_C",
+  "testId": "01KCXGG0TR0001H0Q1FW2GMS0R",
+  "testTitle": "IT & Infrastructure Sample Test I",
+  "maxCourses": 5,
+  "maxCoursesPerWeakness": 3,
+  "participantRanking": null,
+  "language": "EN",
+  "currentAttempt": {
+    "earnedScore": 29,
+    "totalScore": 32,
+    "status": "pass",
+    "questions": [
+      {
+        "testResultQuestionId": "01KCXK1QD3XS7VP9BGDZ3WZ31E",
+        "questionId": "01KCXGG0TR0001H0Q1FW2GMYW8",
+        "questionText": "What does TCP/IP primarily support?",
+        "domain": "IT & Technical Infrastructure",
+        "explanation": "TCP/IP.",
+        "difficulty": null,
+        "score": 1,
+        "selectedAnswers": [
+          {
+            "answerId": "01KCXGG0XB0001H0Q1FW50C8FG",
+            "value": "Network communication"
+          }
+        ],
+        "correctAnswers": [
+          {
+            "answerId": "01KCXGG0XB0001H0Q1FW50C8FG",
+            "value": "Network communication"
+          }
+        ],
+        "isCorrect": true
+      },
+      {
+        "testResultQuestionId": "01KCXK1QD57HCZ3NCBFCYB8KTD",
+        "questionId": "01KCXGG0TR0001H0Q1FW2GPKKR",
+        "questionText": "Firewall is used to:",
+        "domain": "IT & Technical Infrastructure",
+        "explanation": "Firewall role.",
+        "difficulty": null,
+        "score": 1,
+        "selectedAnswers": [
+          {
+            "answerId": "01KCXGG0XC0001H0Q1FW50HCHG",
+            "value": "Control network traffic"
+          }
+        ],
+        "correctAnswers": [
+          {
+            "answerId": "01KCXGG0XC0001H0Q1FW50HCHG",
+            "value": "Control network traffic"
+          }
+        ],
+        "isCorrect": true
+      },
+      {
+        "testResultQuestionId": "01KCXK1QD5T1A98MYEGS49DMMR",
+        "questionId": "01KCXGG0TR0001H0Q1FW2GRB90",
+        "questionText": "CI/CD mainly improves:",
+        "domain": "IT & Technical Infrastructure",
+        "explanation": "CI/CD.",
+        "difficulty": null,
+        "score": 1,
+        "selectedAnswers": [
+          {
+            "answerId": "01KCXGG0XC0001H0Q1FW50P8SG",
+            "value": "Deployment speed and reliability"
+          }
+        ],
+        "correctAnswers": [
+          {
+            "answerId": "01KCXGG0XC0001H0Q1FW50P8SG",
+            "value": "Deployment speed and reliability"
+          }
+        ],
+        "isCorrect": true
+      },
+      {
+        "testResultQuestionId": "01KCXK1QD69NTZ38H4AYJWM4EN",
+        "questionId": "01KCXGG0TR0001H0Q1FW2GT00G",
+        "questionText": "Containerization helps by:",
+        "domain": "IT & Technical Infrastructure",
+        "explanation": "Containers.",
+        "difficulty": null,
+        "score": 1,
+        "selectedAnswers": [
+          {
+            "answerId": "01KCXGG0XC0001H0Q1FW50V700",
+            "value": "Isolating applications"
+          }
+        ],
+        "correctAnswers": [
+          {
+            "answerId": "01KCXGG0XC0001H0Q1FW50V700",
+            "value": "Isolating applications"
+          }
+        ],
+        "isCorrect": true
+      },
+      {
+        "testResultQuestionId": "01KCXK1QD6Z25TS6YJFAW8BYJZ",
+        "questionId": "01KCXGG0TR0001H0Q1FW2GVTKG",
+        "questionText": "Cloud computing allows:",
+        "domain": "IT & Technical Infrastructure",
+        "explanation": "Cloud.",
+        "difficulty": null,
+        "score": 1,
+        "selectedAnswers": [
+          {
+            "answerId": "01KCXGG0XC0001H0Q1FW510380",
+            "value": "On-demand scalable resources"
+          }
+        ],
+        "correctAnswers": [
+          {
+            "answerId": "01KCXGG0XC0001H0Q1FW510380",
+            "value": "On-demand scalable resources"
+          }
+        ],
+        "isCorrect": true
+      },
+      {
+        "testResultQuestionId": "01KCXK1QD7G0785G7P0NWNA9MA",
+        "questionId": "01KCXGG0TR0001H0Q1FW2GZ51R",
+        "questionText": "Load balancer distributes:",
+        "domain": "IT & Technical Infrastructure",
+        "explanation": "Load balancing.",
+        "difficulty": null,
+        "score": 1,
+        "selectedAnswers": [
+          {
+            "answerId": "01KCXGG0XC0001H0Q1FW51AACR",
+            "value": "Network traffic"
+          }
+        ],
+        "correctAnswers": [
+          {
+            "answerId": "01KCXGG0XC0001H0Q1FW51AACR",
+            "value": "Network traffic"
+          }
+        ],
+        "isCorrect": true
+      },
+      {
+        "testResultQuestionId": "01KCXK1QD7MT7M8KAMDKDBHDD9",
+        "questionId": "01KCXGG0TR0001H0Q1FW2GXEBR",
+        "questionText": "VPN is mainly for:",
+        "domain": "IT & Technical Infrastructure",
+        "explanation": "VPN.",
+        "difficulty": null,
+        "score": 1,
+        "selectedAnswers": [
+          {
+            "answerId": "01KCXGG0XC0001H0Q1FW5155BG",
+            "value": "Secure remote access"
+          }
+        ],
+        "correctAnswers": [
+          {
+            "answerId": "01KCXGG0XC0001H0Q1FW5155BG",
+            "value": "Secure remote access"
+          }
+        ],
+        "isCorrect": true
+      },
+      {
+        "testResultQuestionId": "01KCXK1QD8J0ZK8NVB7TT40QMV",
+        "questionId": "01KCXGG0TR0001H0Q1FW2H0SS8",
+        "questionText": "DevOps emphasizes:",
+        "domain": "IT & Technical Infrastructure",
+        "explanation": "DevOps.",
+        "difficulty": null,
+        "score": 1,
+        "selectedAnswers": [
+          {
+            "answerId": "01KCXGG0XD0001H0Q1FW51F7M0",
+            "value": "Collaboration and automation"
+          }
+        ],
+        "correctAnswers": [
+          {
+            "answerId": "01KCXGG0XD0001H0Q1FW51F7M0",
+            "value": "Collaboration and automation"
+          }
+        ],
+        "isCorrect": true
+      },
+      {
+        "testResultQuestionId": "01KCXK1QD8VC4ZXN88CHXEYWG0",
+        "questionId": "01KCXGG0TR0001H0Q1FW2H2EGR",
+        "questionText": "What does TCP/IP primarily support?",
+        "domain": "IT & Technical Infrastructure",
+        "explanation": "TCP/IP.",
+        "difficulty": null,
+        "score": 1,
+        "selectedAnswers": [
+          {
+            "answerId": "01KCXGG0XD0001H0Q1FW51MFK0",
+            "value": "Network communication"
+          }
+        ],
+        "correctAnswers": [
+          {
+            "answerId": "01KCXGG0XD0001H0Q1FW51MFK0",
+            "value": "Network communication"
+          }
+        ],
+        "isCorrect": true
+      },
+      {
+        "testResultQuestionId": "01KCXK1QD9J63XMM4NB872W96W",
+        "questionId": "01KCXGG0TR0001H0Q1FW2H4290",
+        "questionText": "Firewall is used to:",
+        "domain": "IT & Technical Infrastructure",
+        "explanation": "Firewall role.",
+        "difficulty": null,
+        "score": 1,
+        "selectedAnswers": [
+          {
+            "answerId": "01KCXGG0XD0001H0Q1FW51SCT8",
+            "value": "Control network traffic"
+          }
+        ],
+        "correctAnswers": [
+          {
+            "answerId": "01KCXGG0XD0001H0Q1FW51SCT8",
+            "value": "Control network traffic"
+          }
+        ],
+        "isCorrect": true
+      },
+      {
+        "testResultQuestionId": "01KCXK1QD9MNW0VYZW31MVWYNM",
+        "questionId": "01KCXGG0TR0001H0Q1FW2H5P18",
+        "questionText": "CI/CD mainly improves:",
+        "domain": "IT & Technical Infrastructure",
+        "explanation": "CI/CD.",
+        "difficulty": null,
+        "score": 1,
+        "selectedAnswers": [
+          {
+            "answerId": "01KCXGG0XD0001H0Q1FW51Y928",
+            "value": "Deployment speed and reliability"
+          }
+        ],
+        "correctAnswers": [
+          {
+            "answerId": "01KCXGG0XD0001H0Q1FW51Y928",
+            "value": "Deployment speed and reliability"
+          }
+        ],
+        "isCorrect": true
+      },
+      {
+        "testResultQuestionId": "01KCXK1QDAYRBYFGSMZQC8AXSF",
+        "questionId": "01KCXGG0TR0001H0Q1FW2H79SG",
+        "questionText": "Containerization helps by:",
+        "domain": "IT & Technical Infrastructure",
+        "explanation": "Containers.",
+        "difficulty": null,
+        "score": 1,
+        "selectedAnswers": [
+          {
+            "answerId": "01KCXGG0XD0001H0Q1FW525X6R",
+            "value": "Removing OS dependency"
+          }
+        ],
+        "correctAnswers": [
+          {
+            "answerId": "01KCXGG0XD0001H0Q1FW523B5R",
+            "value": "Isolating applications"
+          }
+        ],
+        "isCorrect": false
+      },
+      {
+        "testResultQuestionId": "01KCXK1QDBDW3Y8E0NWRX9CN8W",
+        "questionId": "01KCXGG0TS0001H0Q1FW2HAZYR",
+        "questionText": "VPN is mainly for:",
+        "domain": "IT & Technical Infrastructure",
+        "explanation": "VPN.",
+        "difficulty": null,
+        "score": 1,
+        "selectedAnswers": [
+          {
+            "answerId": "01KCXGG0XE0001H0Q1FW52DAGG",
+            "value": "Secure remote access"
+          }
+        ],
+        "correctAnswers": [
+          {
+            "answerId": "01KCXGG0XE0001H0Q1FW52DAGG",
+            "value": "Secure remote access"
+          }
+        ],
+        "isCorrect": true
+      },
+      {
+        "testResultQuestionId": "01KCXK1QDBTNKJWYBR1GVF1G5G",
+        "questionId": "01KCXGG0TR0001H0Q1FW2H9B78",
+        "questionText": "Cloud computing allows:",
+        "domain": "IT & Technical Infrastructure",
+        "explanation": "Cloud.",
+        "difficulty": null,
+        "score": 1,
+        "selectedAnswers": [
+          {
+            "answerId": "01KCXGG0XD0001H0Q1FW528D98",
+            "value": "On-demand scalable resources"
+          }
+        ],
+        "correctAnswers": [
+          {
+            "answerId": "01KCXGG0XD0001H0Q1FW528D98",
+            "value": "On-demand scalable resources"
+          }
+        ],
+        "isCorrect": true
+      },
+      {
+        "testResultQuestionId": "01KCXK1QDCFQJNZVF7EFTRJ5PY",
+        "questionId": "01KCXGG0TS0001H0Q1FW2HE8EG",
+        "questionText": "DevOps emphasizes:",
+        "domain": "IT & Technical Infrastructure",
+        "explanation": "DevOps.",
+        "difficulty": null,
+        "score": 1,
+        "selectedAnswers": [
+          {
+            "answerId": "01KCXGG0XE0001H0Q1FW52RB1R",
+            "value": "Collaboration and automation"
+          }
+        ],
+        "correctAnswers": [
+          {
+            "answerId": "01KCXGG0XE0001H0Q1FW52RB1R",
+            "value": "Collaboration and automation"
+          }
+        ],
+        "isCorrect": true
+      },
+      {
+        "testResultQuestionId": "01KCXK1QDCJK71PEX949KA02S6",
+        "questionId": "01KCXGG0TS0001H0Q1FW2HCKQ0",
+        "questionText": "Load balancer distributes:",
+        "domain": "IT & Technical Infrastructure",
+        "explanation": "Load balancing.",
+        "difficulty": null,
+        "score": 1,
+        "selectedAnswers": [
+          {
+            "answerId": "01KCXGG0XE0001H0Q1FW52JSA8",
+            "value": "Network traffic"
+          }
+        ],
+        "correctAnswers": [
+          {
+            "answerId": "01KCXGG0XE0001H0Q1FW52JSA8",
+            "value": "Network traffic"
+          }
+        ],
+        "isCorrect": true
+      },
+      {
+        "testResultQuestionId": "01KCXK1QDD5KTC0RT7EVW3B2WX",
+        "questionId": "01KCXGG0TS0001H0Q1FW2HG03R",
+        "questionText": "What does TCP/IP primarily support?",
+        "domain": "IT & Technical Infrastructure",
+        "explanation": "TCP/IP.",
+        "difficulty": null,
+        "score": 1,
+        "selectedAnswers": [
+          {
+            "answerId": "01KCXGG0XE0001H0Q1FW52ZV98",
+            "value": "Network communication"
+          }
+        ],
+        "correctAnswers": [
+          {
+            "answerId": "01KCXGG0XE0001H0Q1FW52ZV98",
+            "value": "Network communication"
+          }
+        ],
+        "isCorrect": true
+      },
+      {
+        "testResultQuestionId": "01KCXK1QDD7YCR8YT95XPG0796",
+        "questionId": "01KCXGG0TS0001H0Q1FW2HHQS0",
+        "questionText": "Firewall is used to:",
+        "domain": "IT & Technical Infrastructure",
+        "explanation": "Firewall role.",
+        "difficulty": null,
+        "score": 1,
+        "selectedAnswers": [
+          {
+            "answerId": "01KCXGG0XE0001H0Q1FW534TF0",
+            "value": "Control network traffic"
+          }
+        ],
+        "correctAnswers": [
+          {
+            "answerId": "01KCXGG0XE0001H0Q1FW534TF0",
+            "value": "Control network traffic"
+          }
+        ],
+        "isCorrect": true
+      },
+      {
+        "testResultQuestionId": "01KCXK1QDDJ3W1ZAEAE7GHJDFH",
+        "questionId": "01KCXGG0TS0001H0Q1FW2HKGDG",
+        "questionText": "CI/CD mainly improves:",
+        "domain": "IT & Technical Infrastructure",
+        "explanation": "CI/CD.",
+        "difficulty": null,
+        "score": 1,
+        "selectedAnswers": [
+          {
+            "answerId": "01KCXGG0XE0001H0Q1FW539QP8",
+            "value": "Deployment speed and reliability"
+          }
+        ],
+        "correctAnswers": [
+          {
+            "answerId": "01KCXGG0XE0001H0Q1FW539QP8",
+            "value": "Deployment speed and reliability"
+          }
+        ],
+        "isCorrect": true
+      },
+      {
+        "testResultQuestionId": "01KCXK1QDE0E457C7NPZ8HKB44",
+        "questionId": "01KCXGG0TS0001H0Q1FW2HN648",
+        "questionText": "Containerization helps by:",
+        "domain": "IT & Technical Infrastructure",
+        "explanation": "Containers.",
+        "difficulty": null,
+        "score": 1,
+        "selectedAnswers": [
+          {
+            "answerId": "01KCXGG0XF0001H0Q1FW53EKY8",
+            "value": "Isolating applications"
+          }
+        ],
+        "correctAnswers": [
+          {
+            "answerId": "01KCXGG0XF0001H0Q1FW53EKY8",
+            "value": "Isolating applications"
+          }
+        ],
+        "isCorrect": true
+      },
+      {
+        "testResultQuestionId": "01KCXK1QDE2RH4XT81NE704C6F",
+        "questionId": "01KCXGG0TS0001H0Q1FW2HPYRR",
+        "questionText": "Cloud computing allows:",
+        "domain": "IT & Technical Infrastructure",
+        "explanation": "Cloud.",
+        "difficulty": null,
+        "score": 1,
+        "selectedAnswers": [
+          {
+            "answerId": "01KCXGG0XF0001H0Q1FW53KR08",
+            "value": "On-demand scalable resources"
+          }
+        ],
+        "correctAnswers": [
+          {
+            "answerId": "01KCXGG0XF0001H0Q1FW53KR08",
+            "value": "On-demand scalable resources"
+          }
+        ],
+        "isCorrect": true
+      },
+      {
+        "testResultQuestionId": "01KCXK1QDFFMWTHQRZS12TQWH7",
+        "questionId": "01KCXGG0TS0001H0Q1FW2HTNX8",
+        "questionText": "Load balancer distributes:",
+        "domain": "IT & Technical Infrastructure",
+        "explanation": "Load balancing.",
+        "difficulty": null,
+        "score": 1,
+        "selectedAnswers": [
+          {
+            "answerId": "01KCXGG0XF0001H0Q1FW53XV80",
+            "value": "Network traffic"
+          }
+        ],
+        "correctAnswers": [
+          {
+            "answerId": "01KCXGG0XF0001H0Q1FW53XV80",
+            "value": "Network traffic"
+          }
+        ],
+        "isCorrect": true
+      },
+      {
+        "testResultQuestionId": "01KCXK1QDFYVNF00A9D7R58GTV",
+        "questionId": "01KCXGG0TS0001H0Q1FW2HS06G",
+        "questionText": "VPN is mainly for:",
+        "domain": "IT & Technical Infrastructure",
+        "explanation": "VPN.",
+        "difficulty": null,
+        "score": 1,
+        "selectedAnswers": [
+          {
+            "answerId": "01KCXGG0XF0001H0Q1FW53RP6R",
+            "value": "Secure remote access"
+          }
+        ],
+        "correctAnswers": [
+          {
+            "answerId": "01KCXGG0XF0001H0Q1FW53RP6R",
+            "value": "Secure remote access"
+          }
+        ],
+        "isCorrect": true
+      },
+      {
+        "testResultQuestionId": "01KCXK1QDGM2542M04VBV4BRZF",
+        "questionId": "01KCXGG0TS0001H0Q1FW2HXYD0",
+        "questionText": "What does TCP/IP primarily support?",
+        "domain": "IT & Technical Infrastructure",
+        "explanation": "TCP/IP.",
+        "difficulty": null,
+        "score": 1,
+        "selectedAnswers": [
+          {
+            "answerId": "01KCXGG0XF0001H0Q1FW547XGG",
+            "value": "Network communication"
+          }
+        ],
+        "correctAnswers": [
+          {
+            "answerId": "01KCXGG0XF0001H0Q1FW547XGG",
+            "value": "Network communication"
+          }
+        ],
+        "isCorrect": true
+      },
+      {
+        "testResultQuestionId": "01KCXK1QDGZBERQ0050BX7YFX0",
+        "questionId": "01KCXGG0TS0001H0Q1FW2HWAMR",
+        "questionText": "DevOps emphasizes:",
+        "domain": "IT & Technical Infrastructure",
+        "explanation": "DevOps.",
+        "difficulty": null,
+        "score": 1,
+        "selectedAnswers": [
+          {
+            "answerId": "01KCXGG0XF0001H0Q1FW542WC8",
+            "value": "Collaboration and automation"
+          }
+        ],
+        "correctAnswers": [
+          {
+            "answerId": "01KCXGG0XF0001H0Q1FW542WC8",
+            "value": "Collaboration and automation"
+          }
+        ],
+        "isCorrect": true
+      },
+      {
+        "testResultQuestionId": "01KCXK1QDH70AP595TW2JX7HJQ",
+        "questionId": "01KCXGG0TS0001H0Q1FW2HZK4G",
+        "questionText": "Firewall is used to:",
+        "domain": "IT & Technical Infrastructure",
+        "explanation": "Firewall role.",
+        "difficulty": null,
+        "score": 1,
+        "selectedAnswers": [
+          {
+            "answerId": "01KCXGG0XG0001H0Q1FW54CYMR",
+            "value": "Control network traffic"
+          }
+        ],
+        "correctAnswers": [
+          {
+            "answerId": "01KCXGG0XG0001H0Q1FW54CYMR",
+            "value": "Control network traffic"
+          }
+        ],
+        "isCorrect": true
+      },
+      {
+        "testResultQuestionId": "01KCXK1QDHM0N2NNYA21110VK8",
+        "questionId": "01KCXGG0TS0001H0Q1FW2J1NHG",
+        "questionText": "CI/CD mainly improves:",
+        "domain": "IT & Technical Infrastructure",
+        "explanation": "CI/CD.",
+        "difficulty": null,
+        "score": 1,
+        "selectedAnswers": [
+          {
+            "answerId": "01KCXGG0XG0001H0Q1FW54GRQ0",
+            "value": "Manual testing"
+          }
+        ],
+        "correctAnswers": [
+          {
+            "answerId": "01KCXGG0XG0001H0Q1FW54HZS0",
+            "value": "Deployment speed and reliability"
+          }
+        ],
+        "isCorrect": false
+      },
+      {
+        "testResultQuestionId": "01KCXK1QDK29WV30DHXGGF012D",
+        "questionId": "01KCXGG0TS0001H0Q1FW2J4X20",
+        "questionText": "Cloud computing allows:",
+        "domain": "IT & Technical Infrastructure",
+        "explanation": "Cloud.",
+        "difficulty": null,
+        "score": 1,
+        "selectedAnswers": [
+          {
+            "answerId": "01KCXGG0XG0001H0Q1FW54VS88",
+            "value": "On-demand scalable resources"
+          }
+        ],
+        "correctAnswers": [
+          {
+            "answerId": "01KCXGG0XG0001H0Q1FW54VS88",
+            "value": "On-demand scalable resources"
+          }
+        ],
+        "isCorrect": true
+      },
+      {
+        "testResultQuestionId": "01KCXK1QDKHTMENZG1RT9336AM",
+        "questionId": "01KCXGG0TS0001H0Q1FW2J399R",
+        "questionText": "Containerization helps by:",
+        "domain": "IT & Technical Infrastructure",
+        "explanation": "Containers.",
+        "difficulty": null,
+        "score": 1,
+        "selectedAnswers": [
+          {
+            "answerId": "01KCXGG0XG0001H0Q1FW54PX08",
+            "value": "Isolating applications"
+          }
+        ],
+        "correctAnswers": [
+          {
+            "answerId": "01KCXGG0XG0001H0Q1FW54PX08",
+            "value": "Isolating applications"
+          }
+        ],
+        "isCorrect": true
+      },
+      {
+        "testResultQuestionId": "01KCXK1QDME7K1TDW451WXY61K",
+        "questionId": "01KCXGG0TS0001H0Q1FW2J6HSG",
+        "questionText": "VPN is mainly for:",
+        "domain": "IT & Technical Infrastructure",
+        "explanation": "VPN.",
+        "difficulty": null,
+        "score": 1,
+        "selectedAnswers": [
+          {
+            "answerId": "01KCXGG0XG0001H0Q1FW550MH0",
+            "value": "Secure remote access"
+          }
+        ],
+        "correctAnswers": [
+          {
+            "answerId": "01KCXGG0XG0001H0Q1FW550MH0",
+            "value": "Secure remote access"
+          }
+        ],
+        "isCorrect": true
+      },
+      {
+        "testResultQuestionId": "01KCXK1QDNP3R6Y6SE0F9H00R0",
+        "questionId": "01KCXGG0TT0001H0Q1FW2J8DBR",
+        "questionText": "Load balancer distributes:",
+        "domain": "IT & Technical Infrastructure",
+        "explanation": "Load balancing.",
+        "difficulty": null,
+        "score": 1,
+        "selectedAnswers": [
+          {
+            "answerId": "01KCXGG0XG0001H0Q1FW5571KG",
+            "value": "Source code"
+          }
+        ],
+        "correctAnswers": [
+          {
+            "answerId": "01KCXGG0XG0001H0Q1FW555QKR",
+            "value": "Network traffic"
+          }
+        ],
+        "isCorrect": false
+      },
+      {
+        "testResultQuestionId": "01KCXK1QDPYG3HBH6847P465ZF",
+        "questionId": "01KCXGG0TT0001H0Q1FW2JA140",
+        "questionText": "DevOps emphasizes:",
+        "domain": "IT & Technical Infrastructure",
+        "explanation": "DevOps.",
+        "difficulty": null,
+        "score": 1,
+        "selectedAnswers": [
+          {
+            "answerId": "01KCXGG0XH0001H0Q1FW55B6DG",
+            "value": "Collaboration and automation"
+          }
+        ],
+        "correctAnswers": [
+          {
+            "answerId": "01KCXGG0XH0001H0Q1FW55B6DG",
+            "value": "Collaboration and automation"
+          }
+        ],
+        "isCorrect": true
+      }
+    ]
+  },
+  "previousAttempt": null
+}

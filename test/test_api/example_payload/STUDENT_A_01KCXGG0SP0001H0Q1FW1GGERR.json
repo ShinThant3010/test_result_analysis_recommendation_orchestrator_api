@@ -1,0 +1,457 @@
+{
+  "studentId": "STUDENT_A",
+  "testId": "01KCXGG0SP0001H0Q1FW1GGERR",
+  "testTitle": "TOEIC Part5 Sample Test",
+  "maxCourses": 5,
+  "maxCoursesPerWeakness": 3,
+  "participantRanking": null,
+  "language": "EN",
+  "currentAttempt": {
+    "earnedScore": 15,
+    "totalScore": 20,
+    "status": "pass",
+    "questions": [
+      {
+        "testResultQuestionId": "01KCXK1Q2TH70F3N3107YZX7EX",
+        "questionId": "01KCXGG0SP0001H0Q1FW1GGQJ0",
+        "questionText": "The final design proposal ______ to the client by next Tuesday.",
+        "domain": "Language & Communication",
+        "explanation": "Future passive form 'will be sent' is required.",
+        "difficulty": null,
+        "score": 1,
+        "selectedAnswers": [
+          {
+            "answerId": "01KCXGG0TY0001H0Q1FW2PMNMR",
+            "value": "will be sent"
+          }
+        ],
+        "correctAnswers": [
+          {
+            "answerId": "01KCXGG0TY0001H0Q1FW2PMNMR",
+            "value": "will be sent"
+          }
+        ],
+        "isCorrect": true
+      },
+      {
+        "testResultQuestionId": "01KCXK1Q2VY9FJC4TZ2494BEFJ",
+        "questionId": "01KCXGG0SP0001H0Q1FW1GK6N8",
+        "questionText": "The new regulations will take effect ______ the beginning of next quarter.",
+        "domain": "Language & Communication",
+        "explanation": "Correct preposition is 'at the beginning'.",
+        "difficulty": null,
+        "score": 1,
+        "selectedAnswers": [
+          {
+            "answerId": "01KCXGG0TY0001H0Q1FW2PTK38",
+            "value": "at"
+          }
+        ],
+        "correctAnswers": [
+          {
+            "answerId": "01KCXGG0TY0001H0Q1FW2PTK38",
+            "value": "at"
+          }
+        ],
+        "isCorrect": true
+      },
+      {
+        "testResultQuestionId": "01KCXK1Q2WX6Y4X1J25Q7ZJVD8",
+        "questionId": "01KCXGG0SP0001H0Q1FW1GNA1G",
+        "questionText": "The marketing team launched a campaign that proved highly ______ among younger customers.",
+        "domain": "Language & Communication",
+        "explanation": "'Highly effective' is the correct collocation.",
+        "difficulty": null,
+        "score": 1,
+        "selectedAnswers": [
+          {
+            "answerId": "01KCXGG0TY0001H0Q1FW2PZT30",
+            "value": "effective"
+          }
+        ],
+        "correctAnswers": [
+          {
+            "answerId": "01KCXGG0TY0001H0Q1FW2PZT30",
+            "value": "effective"
+          }
+        ],
+        "isCorrect": true
+      },
+      {
+        "testResultQuestionId": "01KCXK1Q2XD8TV1MB3ZVVKQK61",
+        "questionId": "01KCXGG0SP0001H0Q1FW1GQ9GR",
+        "questionText": "Sales increased by 15% this year; ______, customer satisfaction ratings also improved.",
+        "domain": "Language & Communication",
+        "explanation": "'Therefore' expresses logical result.",
+        "difficulty": null,
+        "score": 1,
+        "selectedAnswers": [
+          {
+            "answerId": "01KCXGG0TZ0001H0Q1FW2Q81RG",
+            "value": "however"
+          }
+        ],
+        "correctAnswers": [
+          {
+            "answerId": "01KCXGG0TZ0001H0Q1FW2Q55Z0",
+            "value": "therefore"
+          }
+        ],
+        "isCorrect": false
+      },
+      {
+        "testResultQuestionId": "01KCXK1Q2Y6MEVKPYB3B1KY9DC",
+        "questionId": "01KCXGG0SP0001H0Q1FW1GS71G",
+        "questionText": "Documents ______ after the deadline will not be accepted.",
+        "domain": "Language & Communication",
+        "explanation": "Past participle 'submitted' is required.",
+        "difficulty": null,
+        "score": 1,
+        "selectedAnswers": [
+          {
+            "answerId": "01KCXGG0TZ0001H0Q1FW2QAQPG",
+            "value": "submitted"
+          }
+        ],
+        "correctAnswers": [
+          {
+            "answerId": "01KCXGG0TZ0001H0Q1FW2QAQPG",
+            "value": "submitted"
+          }
+        ],
+        "isCorrect": true
+      },
+      {
+        "testResultQuestionId": "01KCXK1Q2YY71FV3CMKD0HE6DG",
+        "questionId": "01KCXGG0SP0001H0Q1FW1GV4J8",
+        "questionText": "Our company has received valuable ______ from the consulting firm.",
+        "domain": "Language & Communication",
+        "explanation": "'Information' is uncountable.",
+        "difficulty": null,
+        "score": 1,
+        "selectedAnswers": [
+          {
+            "answerId": "01KCXGG0TZ0001H0Q1FW2QFWQR",
+            "value": "information"
+          }
+        ],
+        "correctAnswers": [
+          {
+            "answerId": "01KCXGG0TZ0001H0Q1FW2QFWQR",
+            "value": "information"
+          }
+        ],
+        "isCorrect": true
+      },
+      {
+        "testResultQuestionId": "01KCXK1Q2Z4XDPHXSXTQZJPEXK",
+        "questionId": "01KCXGG0SQ0001H0Q1FW1GZTYR",
+        "questionText": "We apologize for the inconvenience and appreciate your ______ as we resolve the issue.",
+        "domain": "Language & Communication",
+        "explanation": "Correct noun is 'patience'.",
+        "difficulty": null,
+        "score": 1,
+        "selectedAnswers": [
+          {
+            "answerId": "01KCXGG0TZ0001H0Q1FW2QTHJ0",
+            "value": "patience"
+          }
+        ],
+        "correctAnswers": [
+          {
+            "answerId": "01KCXGG0TZ0001H0Q1FW2QTHJ0",
+            "value": "patience"
+          }
+        ],
+        "isCorrect": true
+      },
+      {
+        "testResultQuestionId": "01KCXK1Q2ZVHCY9EB6387YX7PZ",
+        "questionId": "01KCXGG0SQ0001H0Q1FW1GX13R",
+        "questionText": "The director ______ the new policy during tomorrow’s briefing.",
+        "domain": "Language & Communication",
+        "explanation": "Future action → 'will explain'.",
+        "difficulty": null,
+        "score": 1,
+        "selectedAnswers": [
+          {
+            "answerId": "01KCXGG0TZ0001H0Q1FW2QN2R8",
+            "value": "will explain"
+          }
+        ],
+        "correctAnswers": [
+          {
+            "answerId": "01KCXGG0TZ0001H0Q1FW2QN2R8",
+            "value": "will explain"
+          }
+        ],
+        "isCorrect": true
+      },
+      {
+        "testResultQuestionId": "01KCXK1Q30PQ5XKCSBDVPQ5G8J",
+        "questionId": "01KCXGG0SQ0001H0Q1FW1H797R",
+        "questionText": "All security badges must ______ by the operations department before processing.",
+        "domain": "Language & Communication",
+        "explanation": "Passive form: 'be verified'.",
+        "difficulty": null,
+        "score": 1,
+        "selectedAnswers": [
+          {
+            "answerId": "01KCXGG0V00001H0Q1FW2R7KH0",
+            "value": "have verified"
+          }
+        ],
+        "correctAnswers": [
+          {
+            "answerId": "01KCXGG0V00001H0Q1FW2R51G0",
+            "value": "be verified"
+          }
+        ],
+        "isCorrect": false
+      },
+      {
+        "testResultQuestionId": "01KCXK1Q30Z56VMNKBAXGHXE24",
+        "questionId": "01KCXGG0SQ0001H0Q1FW1H1SER",
+        "questionText": "If the supplier ______ the goods today, we can begin testing immediately.",
+        "domain": "Language & Communication",
+        "explanation": "First conditional uses present simple.",
+        "difficulty": null,
+        "score": 1,
+        "selectedAnswers": [
+          {
+            "answerId": "01KCXGG0V00001H0Q1FW2QZXE0",
+            "value": "ships"
+          }
+        ],
+        "correctAnswers": [
+          {
+            "answerId": "01KCXGG0V00001H0Q1FW2QZXE0",
+            "value": "ships"
+          }
+        ],
+        "isCorrect": true
+      },
+      {
+        "testResultQuestionId": "01KCXK1Q31SKY0041PZ0MWYFGF",
+        "questionId": "01KCXGG0SQ0001H0Q1FW1HBD2G",
+        "questionText": "Mr. Rao will lead ______ initiative to reduce expenses in the logistics division.",
+        "domain": "Language & Communication",
+        "explanation": "'A initiative' is incorrect; 'an initiative' is not used; correct is 'a presentation' case. In this context: 'an initiative'? Actually correct: 'an initiative'.",
+        "difficulty": null,
+        "score": 1,
+        "selectedAnswers": [
+          {
+            "answerId": "01KCXGG0V00001H0Q1FW2RA6H8",
+            "value": "an initiative"
+          }
+        ],
+        "correctAnswers": [
+          {
+            "answerId": "01KCXGG0V00001H0Q1FW2RA6H8",
+            "value": "an initiative"
+          }
+        ],
+        "isCorrect": true
+      },
+      {
+        "testResultQuestionId": "01KCXK1Q3249CBCKF47YP2WR5E",
+        "questionId": "01KCXGG0SQ0001H0Q1FW1HE7WR",
+        "questionText": "The employee ______ received the award has worked here for more than ten years.",
+        "domain": "Language & Communication",
+        "explanation": "'Who' introduces a subject relative clause.",
+        "difficulty": null,
+        "score": 1,
+        "selectedAnswers": [
+          {
+            "answerId": "01KCXGG0V00001H0Q1FW2RGHN8",
+            "value": "whose"
+          }
+        ],
+        "correctAnswers": [
+          {
+            "answerId": "01KCXGG0V00001H0Q1FW2RF8MR",
+            "value": "who"
+          }
+        ],
+        "isCorrect": false
+      },
+      {
+        "testResultQuestionId": "01KCXK1Q332KFY3XHECC3BQ99Y",
+        "questionId": "01KCXGG0SQ0001H0Q1FW1HGM28",
+        "questionText": "Please ______ the form before the interview so we can update your file.",
+        "domain": "Language & Communication",
+        "explanation": "Correct phrasal verb is 'fill out'.",
+        "difficulty": null,
+        "score": 1,
+        "selectedAnswers": [
+          {
+            "answerId": "01KCXGG0V00001H0Q1FW2RMBQG",
+            "value": "fill out"
+          }
+        ],
+        "correctAnswers": [
+          {
+            "answerId": "01KCXGG0V00001H0Q1FW2RMBQG",
+            "value": "fill out"
+          }
+        ],
+        "isCorrect": true
+      },
+      {
+        "testResultQuestionId": "01KCXK1Q337HXTGT46HRSBRR7A",
+        "questionId": "01KCXGG0SQ0001H0Q1FW1HK07R",
+        "questionText": "The accounting report contains several errors that need to be ______ immediately.",
+        "domain": "Language & Communication",
+        "explanation": "Base verb 'corrected' is required.",
+        "difficulty": null,
+        "score": 1,
+        "selectedAnswers": [
+          {
+            "answerId": "01KCXGG0V00001H0Q1FW2RSPM8",
+            "value": "corrected"
+          }
+        ],
+        "correctAnswers": [
+          {
+            "answerId": "01KCXGG0V00001H0Q1FW2RSPM8",
+            "value": "corrected"
+          }
+        ],
+        "isCorrect": true
+      },
+      {
+        "testResultQuestionId": "01KCXK1Q346XK6RPT742G74ARZ",
+        "questionId": "01KCXGG0SQ0001H0Q1FW1HMYQR",
+        "questionText": "The manager spoke very ______ during the presentation, making her points easy to understand.",
+        "domain": "Language & Communication",
+        "explanation": "Adverb 'clearly' is required.",
+        "difficulty": null,
+        "score": 1,
+        "selectedAnswers": [
+          {
+            "answerId": "01KCXGG0V10001H0Q1FW2RYTP8",
+            "value": "clearly"
+          }
+        ],
+        "correctAnswers": [
+          {
+            "answerId": "01KCXGG0V10001H0Q1FW2RYTP8",
+            "value": "clearly"
+          }
+        ],
+        "isCorrect": true
+      },
+      {
+        "testResultQuestionId": "01KCXK1Q3490RTGPW8C3NWM347",
+        "questionId": "01KCXGG0SQ0001H0Q1FW1HPV98",
+        "questionText": "The event was postponed ______ unforeseen circumstances.",
+        "domain": "Language & Communication",
+        "explanation": "Correct phrase: 'due to'.",
+        "difficulty": null,
+        "score": 1,
+        "selectedAnswers": [
+          {
+            "answerId": "01KCXGG0V10001H0Q1FW2S3YR8",
+            "value": "due to"
+          }
+        ],
+        "correctAnswers": [
+          {
+            "answerId": "01KCXGG0V10001H0Q1FW2S3YR8",
+            "value": "due to"
+          }
+        ],
+        "isCorrect": true
+      },
+      {
+        "testResultQuestionId": "01KCXK1Q35QTDSVEQX10S6P5Q7",
+        "questionId": "01KCXGG0SR0001H0Q1FW1HWC1G",
+        "questionText": "The company is seeking ways to reduce waste and improve operational ______.",
+        "domain": "Language & Communication",
+        "explanation": "Correct noun: 'efficiency'.",
+        "difficulty": null,
+        "score": 1,
+        "selectedAnswers": [
+          {
+            "answerId": "01KCXGG0V10001H0Q1FW2SCZT8",
+            "value": "efficiencies"
+          }
+        ],
+        "correctAnswers": [
+          {
+            "answerId": "01KCXGG0V10001H0Q1FW2S91V0",
+            "value": "efficiency"
+          }
+        ],
+        "isCorrect": false
+      },
+      {
+        "testResultQuestionId": "01KCXK1Q36A7GC9XRKKQCQTG69",
+        "questionId": "01KCXGG0SR0001H0Q1FW1J2Q5G",
+        "questionText": "The new software is more intuitive; ______, some employees still prefer the old version.",
+        "domain": "Language & Communication",
+        "explanation": "Contrast → 'however'.",
+        "difficulty": null,
+        "score": 1,
+        "selectedAnswers": [
+          {
+            "answerId": "01KCXGG0V10001H0Q1FW2ST4Q0",
+            "value": "otherwise"
+          }
+        ],
+        "correctAnswers": [
+          {
+            "answerId": "01KCXGG0V10001H0Q1FW2SRVPG",
+            "value": "however"
+          }
+        ],
+        "isCorrect": false
+      },
+      {
+        "testResultQuestionId": "01KCXK1Q36FHBNFQ7MRQT15C18",
+        "questionId": "01KCXGG0SR0001H0Q1FW1J0TM0",
+        "questionText": "Employees ______ submit travel receipts within seven days of returning.",
+        "domain": "Language & Communication",
+        "explanation": "'Must' expresses obligation.",
+        "difficulty": null,
+        "score": 1,
+        "selectedAnswers": [
+          {
+            "answerId": "01KCXGG0V10001H0Q1FW2SKQMG",
+            "value": "must"
+          }
+        ],
+        "correctAnswers": [
+          {
+            "answerId": "01KCXGG0V10001H0Q1FW2SKQMG",
+            "value": "must"
+          }
+        ],
+        "isCorrect": true
+      },
+      {
+        "testResultQuestionId": "01KCXK1Q36JGZ6DR4V4HDG6MQH",
+        "questionId": "01KCXGG0SR0001H0Q1FW1HYAHG",
+        "questionText": "Please make ______ changes necessary before the document is finalized.",
+        "domain": "Language & Communication",
+        "explanation": "Definite article 'the' is required.",
+        "difficulty": null,
+        "score": 1,
+        "selectedAnswers": [
+          {
+            "answerId": "01KCXGG0V10001H0Q1FW2SE8TR",
+            "value": "the"
+          }
+        ],
+        "correctAnswers": [
+          {
+            "answerId": "01KCXGG0V10001H0Q1FW2SE8TR",
+            "value": "the"
+          }
+        ],
+        "isCorrect": true
+      }
+    ]
+  },
+  "previousAttempt": null
+}

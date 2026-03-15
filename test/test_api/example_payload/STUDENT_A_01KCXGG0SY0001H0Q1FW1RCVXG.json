@@ -1,0 +1,457 @@
+{
+  "studentId": "STUDENT_A",
+  "testId": "01KCXGG0SY0001H0Q1FW1RCVXG",
+  "testTitle": "Logic and Reasoning Sample Test II",
+  "maxCourses": 5,
+  "maxCoursesPerWeakness": 3,
+  "participantRanking": null,
+  "language": "EN",
+  "currentAttempt": {
+    "earnedScore": 17,
+    "totalScore": 20,
+    "status": "pass",
+    "questions": [
+      {
+        "testResultQuestionId": "01KCXK1Q5VPANY4JVFK9RQ1M4G",
+        "questionId": "01KCXGG0SY0001H0Q1FW1RD2R8",
+        "questionText": "Which principle is MOST associated with ensuring fairness in the distribution of resources within a society?",
+        "domain": "Logic & Reasoning",
+        "explanation": "Justice focuses on fair and equitable allocation of resources.",
+        "difficulty": null,
+        "score": 1,
+        "selectedAnswers": [
+          {
+            "answerId": "01KCXGG0VB0001H0Q1FW3305WR",
+            "value": "Justice"
+          }
+        ],
+        "correctAnswers": [
+          {
+            "answerId": "01KCXGG0VB0001H0Q1FW3305WR",
+            "value": "Justice"
+          }
+        ],
+        "isCorrect": true
+      },
+      {
+        "testResultQuestionId": "01KCXK1Q5VR43GGNFA3JDASYF6",
+        "questionId": "01KCXGG0SY0001H0Q1FW1RF36R",
+        "questionText": "Which group is MOST at risk of respiratory illness due to increased air pollution from climate change?",
+        "domain": "Logic & Reasoning",
+        "explanation": "Children and elderly individuals have higher biological vulnerability to pollutants.",
+        "difficulty": null,
+        "score": 1,
+        "selectedAnswers": [
+          {
+            "answerId": "01KCXGG0VB0001H0Q1FW335YF0",
+            "value": "Children and elderly individuals"
+          }
+        ],
+        "correctAnswers": [
+          {
+            "answerId": "01KCXGG0VB0001H0Q1FW335YF0",
+            "value": "Children and elderly individuals"
+          }
+        ],
+        "isCorrect": true
+      },
+      {
+        "testResultQuestionId": "01KCXK1Q5W1Y6SXHW13AGA546R",
+        "questionId": "01KCXGG0SZ0001H0Q1FW1RH0QG",
+        "questionText": "What does inflation primarily refer to in economics?",
+        "domain": "Logic & Reasoning",
+        "explanation": "Inflation represents an overall increase in general price levels.",
+        "difficulty": null,
+        "score": 1,
+        "selectedAnswers": [
+          {
+            "answerId": "01KCXGG0VB0001H0Q1FW33B8CG",
+            "value": "An increase in general price levels"
+          }
+        ],
+        "correctAnswers": [
+          {
+            "answerId": "01KCXGG0VB0001H0Q1FW33B8CG",
+            "value": "An increase in general price levels"
+          }
+        ],
+        "isCorrect": true
+      },
+      {
+        "testResultQuestionId": "01KCXK1Q5XXTHEBM9BYKEWJQYM",
+        "questionId": "01KCXGG0SZ0001H0Q1FW1RJW9R",
+        "questionText": "Which nutrient plays the primary role in repairing muscle tissue after exercise?",
+        "domain": "Logic & Reasoning",
+        "explanation": "Protein is the key nutrient for muscle recovery and tissue repair.",
+        "difficulty": null,
+        "score": 1,
+        "selectedAnswers": [
+          {
+            "answerId": "01KCXGG0VC0001H0Q1FW33GN7R",
+            "value": "Protein"
+          }
+        ],
+        "correctAnswers": [
+          {
+            "answerId": "01KCXGG0VC0001H0Q1FW33GN7R",
+            "value": "Protein"
+          }
+        ],
+        "isCorrect": true
+      },
+      {
+        "testResultQuestionId": "01KCXK1Q5Y8Y0N21DNYE8AK9A1",
+        "questionId": "01KCXGG0SZ0001H0Q1FW1RMMY8",
+        "questionText": "Which source of energy is classified as renewable?",
+        "domain": "Logic & Reasoning",
+        "explanation": "Wind energy replenishes naturally and is considered renewable.",
+        "difficulty": null,
+        "score": 1,
+        "selectedAnswers": [
+          {
+            "answerId": "01KCXGG0VC0001H0Q1FW33NRAG",
+            "value": "Wind"
+          }
+        ],
+        "correctAnswers": [
+          {
+            "answerId": "01KCXGG0VC0001H0Q1FW33NRAG",
+            "value": "Wind"
+          }
+        ],
+        "isCorrect": true
+      },
+      {
+        "testResultQuestionId": "01KCXK1Q5ZBTFTDR2JG60VSTSZ",
+        "questionId": "01KCXGG0SZ0001H0Q1FW1RPFH8",
+        "questionText": "What does Ohm’s Law describe in basic circuit analysis?",
+        "domain": "Logic & Reasoning",
+        "explanation": "Ohm's Law defines the linear relationship between voltage, current, and resistance.",
+        "difficulty": null,
+        "score": 1,
+        "selectedAnswers": [
+          {
+            "answerId": "01KCXGG0VC0001H0Q1FW33TYB0",
+            "value": "The relationship between voltage, current, and resistance"
+          }
+        ],
+        "correctAnswers": [
+          {
+            "answerId": "01KCXGG0VC0001H0Q1FW33TYB0",
+            "value": "The relationship between voltage, current, and resistance"
+          }
+        ],
+        "isCorrect": true
+      },
+      {
+        "testResultQuestionId": "01KCXK1Q60FMHHCN3GECRCE5WB",
+        "questionId": "01KCXGG0SZ0001H0Q1FW1RR950",
+        "questionText": "Which device is commonly used in IoT systems to detect air quality levels?",
+        "domain": "Logic & Reasoning",
+        "explanation": "Air-quality sensors such as MQ-series detect gases and pollutants in the environment.",
+        "difficulty": null,
+        "score": 1,
+        "selectedAnswers": [
+          {
+            "answerId": "01KCXGG0VC0001H0Q1FW3441BG",
+            "value": "RFID reader"
+          }
+        ],
+        "correctAnswers": [
+          {
+            "answerId": "01KCXGG0VC0001H0Q1FW3405AR",
+            "value": "Air-quality sensor (e.g., MQ-series)"
+          }
+        ],
+        "isCorrect": false
+      },
+      {
+        "testResultQuestionId": "01KCXK1Q610P3ZDEBWJPBTD5CW",
+        "questionId": "01KCXGG0SZ0001H0Q1FW1RT1SG",
+        "questionText": "In mathematics, which operation takes highest precedence?",
+        "domain": "Logic & Reasoning",
+        "explanation": "Exponents are evaluated before multiplication, division, addition, or subtraction.",
+        "difficulty": null,
+        "score": 1,
+        "selectedAnswers": [
+          {
+            "answerId": "01KCXGG0VC0001H0Q1FW345AC0",
+            "value": "Exponents"
+          }
+        ],
+        "correctAnswers": [
+          {
+            "answerId": "01KCXGG0VC0001H0Q1FW345AC0",
+            "value": "Exponents"
+          }
+        ],
+        "isCorrect": true
+      },
+      {
+        "testResultQuestionId": "01KCXK1Q623ZZTKC5KJTW4TT6X",
+        "questionId": "01KCXGG0SZ0001H0Q1FW1RVTE0",
+        "questionText": "What is the primary function of an algorithm in computing?",
+        "domain": "Logic & Reasoning",
+        "explanation": "An algorithm provides step-by-step instructions to solve a problem.",
+        "difficulty": null,
+        "score": 1,
+        "selectedAnswers": [
+          {
+            "answerId": "01KCXGG0VC0001H0Q1FW34AM9G",
+            "value": "Step-by-step instructions for solving a problem"
+          }
+        ],
+        "correctAnswers": [
+          {
+            "answerId": "01KCXGG0VC0001H0Q1FW34AM9G",
+            "value": "Step-by-step instructions for solving a problem"
+          }
+        ],
+        "isCorrect": true
+      },
+      {
+        "testResultQuestionId": "01KCXK1Q63R0GWAB7EEBQ6B356",
+        "questionId": "01KCXGG0SZ0001H0Q1FW1RXK2G",
+        "questionText": "Which factor MOST improves the energy efficiency of electric vehicles compared to gasoline cars?",
+        "domain": "Logic & Reasoning",
+        "explanation": "EVs convert a much higher proportion of electrical energy into motion.",
+        "difficulty": null,
+        "score": 1,
+        "selectedAnswers": [
+          {
+            "answerId": "01KCXGG0VD0001H0Q1FW34FW8G",
+            "value": "Higher energy-conversion efficiency"
+          }
+        ],
+        "correctAnswers": [
+          {
+            "answerId": "01KCXGG0VD0001H0Q1FW34FW8G",
+            "value": "Higher energy-conversion efficiency"
+          }
+        ],
+        "isCorrect": true
+      },
+      {
+        "testResultQuestionId": "01KCXK1Q64SWMKG62V53DY4VTR",
+        "questionId": "01KCXGG0SZ0001H0Q1FW1S14BG",
+        "questionText": "Which social media metric BEST indicates audience engagement?",
+        "domain": "Logic & Reasoning",
+        "explanation": "Engagement rate measures meaningful interactions like likes, comments, and shares.",
+        "difficulty": null,
+        "score": 1,
+        "selectedAnswers": [
+          {
+            "answerId": "01KCXGG0VD0001H0Q1FW34WQCR",
+            "value": "Reach"
+          }
+        ],
+        "correctAnswers": [
+          {
+            "answerId": "01KCXGG0VD0001H0Q1FW34T5BR",
+            "value": "Engagement rate"
+          }
+        ],
+        "isCorrect": false
+      },
+      {
+        "testResultQuestionId": "01KCXK1Q64W19Z9CQWDAH63C04",
+        "questionId": "01KCXGG0SZ0001H0Q1FW1RZBQ0",
+        "questionText": "Fuel cells generate electricity primarily through which process?",
+        "domain": "Logic & Reasoning",
+        "explanation": "Fuel cells produce electricity via electrochemical reactions rather than combustion.",
+        "difficulty": null,
+        "score": 1,
+        "selectedAnswers": [
+          {
+            "answerId": "01KCXGG0VD0001H0Q1FW34N19R",
+            "value": "Electrochemical reactions"
+          }
+        ],
+        "correctAnswers": [
+          {
+            "answerId": "01KCXGG0VD0001H0Q1FW34N19R",
+            "value": "Electrochemical reactions"
+          }
+        ],
+        "isCorrect": true
+      },
+      {
+        "testResultQuestionId": "01KCXK1Q668RE5BE2P1BWR4FVD",
+        "questionId": "01KCXGG0SZ0001H0Q1FW1S31W8",
+        "questionText": "Which macroeconomic indicator measures the average change in prices paid by consumers?",
+        "domain": "Logic & Reasoning",
+        "explanation": "The Consumer Price Index tracks price changes for a basket of goods and services.",
+        "difficulty": null,
+        "score": 1,
+        "selectedAnswers": [
+          {
+            "answerId": "01KCXGG0VD0001H0Q1FW34ZAD0",
+            "value": "Consumer Price Index"
+          }
+        ],
+        "correctAnswers": [
+          {
+            "answerId": "01KCXGG0VD0001H0Q1FW34ZAD0",
+            "value": "Consumer Price Index"
+          }
+        ],
+        "isCorrect": true
+      },
+      {
+        "testResultQuestionId": "01KCXK1Q66K5CG0YCNCVS6H4NM",
+        "questionId": "01KCXGG0SZ0001H0Q1FW1S4TGR",
+        "questionText": "Which research method helps control for confounding variables in psychology experiments?",
+        "domain": "Logic & Reasoning",
+        "explanation": "Random assignment ensures participants are distributed evenly among conditions.",
+        "difficulty": null,
+        "score": 1,
+        "selectedAnswers": [
+          {
+            "answerId": "01KCXGG0VD0001H0Q1FW354Q88",
+            "value": "Random assignment"
+          }
+        ],
+        "correctAnswers": [
+          {
+            "answerId": "01KCXGG0VD0001H0Q1FW354Q88",
+            "value": "Random assignment"
+          }
+        ],
+        "isCorrect": true
+      },
+      {
+        "testResultQuestionId": "01KCXK1Q67T08DEPWYMXK0XM2V",
+        "questionId": "01KCXGG0SZ0001H0Q1FW1S6S0R",
+        "questionText": "Which factor MOST affects blood glucose levels in individuals with diabetes?",
+        "domain": "Logic & Reasoning",
+        "explanation": "Carbohydrate intake has the most significant direct effect on blood sugar.",
+        "difficulty": null,
+        "score": 1,
+        "selectedAnswers": [
+          {
+            "answerId": "01KCXGG0VD0001H0Q1FW359VA8",
+            "value": "Carbohydrate intake"
+          }
+        ],
+        "correctAnswers": [
+          {
+            "answerId": "01KCXGG0VD0001H0Q1FW359VA8",
+            "value": "Carbohydrate intake"
+          }
+        ],
+        "isCorrect": true
+      },
+      {
+        "testResultQuestionId": "01KCXK1Q686VK228YHDXC1T50W",
+        "questionId": "01KCXGG0SZ0001H0Q1FW1S8GP0",
+        "questionText": "Which component of sustainable food systems focuses on reducing emissions from agriculture?",
+        "domain": "Logic & Reasoning",
+        "explanation": "Lowering livestock-related methane is a key emissions-reduction strategy.",
+        "difficulty": null,
+        "score": 1,
+        "selectedAnswers": [
+          {
+            "answerId": "01KCXGG0VE0001H0Q1FW35F0BG",
+            "value": "Reducing livestock methane emissions"
+          }
+        ],
+        "correctAnswers": [
+          {
+            "answerId": "01KCXGG0VE0001H0Q1FW35F0BG",
+            "value": "Reducing livestock methane emissions"
+          }
+        ],
+        "isCorrect": true
+      },
+      {
+        "testResultQuestionId": "01KCXK1Q68TMMTKACW02EGSCMP",
+        "questionId": "01KCXGG0SZ0001H0Q1FW1SA9AG",
+        "questionText": "Which concept is central to sustainable urban development?",
+        "domain": "Logic & Reasoning",
+        "explanation": "Balancing environmental protection, economic growth, and social equity defines sustainability.",
+        "difficulty": null,
+        "score": 1,
+        "selectedAnswers": [
+          {
+            "answerId": "01KCXGG0VE0001H0Q1FW35M5CR",
+            "value": "Balancing environmental, economic, and social goals"
+          }
+        ],
+        "correctAnswers": [
+          {
+            "answerId": "01KCXGG0VE0001H0Q1FW35M5CR",
+            "value": "Balancing environmental, economic, and social goals"
+          }
+        ],
+        "isCorrect": true
+      },
+      {
+        "testResultQuestionId": "01KCXK1Q698B4E86843JAR8VD7",
+        "questionId": "01KCXGG0SZ0001H0Q1FW1SCVBG",
+        "questionText": "When analyzing tourism demand, which factor MOST influences seasonal variation?",
+        "domain": "Logic & Reasoning",
+        "explanation": "Weather patterns significantly influence travel decisions and tourism cycles.",
+        "difficulty": null,
+        "score": 1,
+        "selectedAnswers": [
+          {
+            "answerId": "01KCXGG0VE0001H0Q1FW35TX70",
+            "value": "Hotel advertising"
+          }
+        ],
+        "correctAnswers": [
+          {
+            "answerId": "01KCXGG0VE0001H0Q1FW35SK78",
+            "value": "Weather patterns"
+          }
+        ],
+        "isCorrect": false
+      },
+      {
+        "testResultQuestionId": "01KCXK1Q69YWRTRTVSHFTMBPS7",
+        "questionId": "01KCXGG0SZ0001H0Q1FW1SEK0R",
+        "questionText": "Which characteristic defines a market economy?",
+        "domain": "Logic & Reasoning",
+        "explanation": "Market economies rely on supply and demand to determine prices.",
+        "difficulty": null,
+        "score": 1,
+        "selectedAnswers": [
+          {
+            "answerId": "01KCXGG0VE0001H0Q1FW35YQ98",
+            "value": "Supply and demand determine prices"
+          }
+        ],
+        "correctAnswers": [
+          {
+            "answerId": "01KCXGG0VE0001H0Q1FW35YQ98",
+            "value": "Supply and demand determine prices"
+          }
+        ],
+        "isCorrect": true
+      },
+      {
+        "testResultQuestionId": "01KCXK1Q6AGAWK60R8VHGV3Z5D",
+        "questionId": "01KCXGG0T00001H0Q1FW1SGBN8",
+        "questionText": "Which mathematical concept describes the rate at which one variable changes relative to another?",
+        "domain": "Logic & Reasoning",
+        "explanation": "Slope represents the change in one variable relative to the change in another.",
+        "difficulty": null,
+        "score": 1,
+        "selectedAnswers": [
+          {
+            "answerId": "01KCXGG0VE0001H0Q1FW363VB8",
+            "value": "Slope"
+          }
+        ],
+        "correctAnswers": [
+          {
+            "answerId": "01KCXGG0VE0001H0Q1FW363VB8",
+            "value": "Slope"
+          }
+        ],
+        "isCorrect": true
+      }
+    ]
+  },
+  "previousAttempt": null
+}

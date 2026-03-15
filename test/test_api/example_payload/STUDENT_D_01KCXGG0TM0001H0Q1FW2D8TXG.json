@@ -1,0 +1,721 @@
+{
+  "studentId": "STUDENT_D",
+  "testId": "01KCXGG0TM0001H0Q1FW2D8TXG",
+  "testTitle": "Personal Development Quiz",
+  "maxCourses": 5,
+  "maxCoursesPerWeakness": 3,
+  "participantRanking": null,
+  "language": "EN",
+  "currentAttempt": {
+    "earnedScore": 26,
+    "totalScore": 32,
+    "status": "pass",
+    "questions": [
+      {
+        "testResultQuestionId": "01KCXK1QG4FP1T63XET0W04KNV",
+        "questionId": "01KCXGG0TM0001H0Q1FW2DANGG",
+        "questionText": "A government budget primarily shows:",
+        "domain": "Professional & Workplace",
+        "explanation": "Budget definition.",
+        "difficulty": null,
+        "score": 1,
+        "selectedAnswers": [
+          {
+            "answerId": "01KCXGG0X00001H0Q1FW4NYQM8",
+            "value": "Public revenue and expenditure"
+          }
+        ],
+        "correctAnswers": [
+          {
+            "answerId": "01KCXGG0X00001H0Q1FW4NYQM8",
+            "value": "Public revenue and expenditure"
+          }
+        ],
+        "isCorrect": true
+      },
+      {
+        "testResultQuestionId": "01KCXK1QG4J040RCVXYFH3QJK0",
+        "questionId": "01KCXGG0TM0001H0Q1FW2D90S0",
+        "questionText": "Which is a key principle of public service?",
+        "domain": "Professional & Workplace",
+        "explanation": "Public service principle.",
+        "difficulty": null,
+        "score": 1,
+        "selectedAnswers": [
+          {
+            "answerId": "01KCXGG0X00001H0Q1FW4NSWBG",
+            "value": "Transparency"
+          }
+        ],
+        "correctAnswers": [
+          {
+            "answerId": "01KCXGG0X00001H0Q1FW4NSWBG",
+            "value": "Transparency"
+          }
+        ],
+        "isCorrect": true
+      },
+      {
+        "testResultQuestionId": "01KCXK1QG51TER3PNZRM9TMQZ8",
+        "questionId": "01KCXGG0TM0001H0Q1FW2DCA80",
+        "questionText": "What is the main role of a project charter?",
+        "domain": "Professional & Workplace",
+        "explanation": "Project charter.",
+        "difficulty": null,
+        "score": 1,
+        "selectedAnswers": [
+          {
+            "answerId": "01KCXGG0X10001H0Q1FW4P6208",
+            "value": "Hire staff"
+          }
+        ],
+        "correctAnswers": [
+          {
+            "answerId": "01KCXGG0X10001H0Q1FW4P3KW8",
+            "value": "Define objectives and authority"
+          }
+        ],
+        "isCorrect": false
+      },
+      {
+        "testResultQuestionId": "01KCXK1QG64EY45SZ8XXX20WZ1",
+        "questionId": "01KCXGG0TN0001H0Q1FW2DGRTG",
+        "questionText": "Public accountability means:",
+        "domain": "Professional & Workplace",
+        "explanation": "Accountability.",
+        "difficulty": null,
+        "score": 1,
+        "selectedAnswers": [
+          {
+            "answerId": "01KCXGG0X10001H0Q1FW4PF8XR",
+            "value": "No reporting needed"
+          }
+        ],
+        "correctAnswers": [
+          {
+            "answerId": "01KCXGG0X10001H0Q1FW4PCQW0",
+            "value": "Officials answer to citizens"
+          }
+        ],
+        "isCorrect": false
+      },
+      {
+        "testResultQuestionId": "01KCXK1QG6GR369SNGR841V42T",
+        "questionId": "01KCXGG0TM0001H0Q1FW2DF158",
+        "questionText": "Conflict of interest occurs when:",
+        "domain": "Professional & Workplace",
+        "explanation": "Conflict definition.",
+        "difficulty": null,
+        "score": 1,
+        "selectedAnswers": [
+          {
+            "answerId": "01KCXGG0X10001H0Q1FW4P8F50",
+            "value": "Personal interest influences official duty"
+          }
+        ],
+        "correctAnswers": [
+          {
+            "answerId": "01KCXGG0X10001H0Q1FW4P8F50",
+            "value": "Personal interest influences official duty"
+          }
+        ],
+        "isCorrect": true
+      },
+      {
+        "testResultQuestionId": "01KCXK1QG7776SEK217P75G4T5",
+        "questionId": "01KCXGG0TN0001H0Q1FW2DJDJ0",
+        "questionText": "Risk management aims to:",
+        "domain": "Professional & Workplace",
+        "explanation": "Risk mitigation.",
+        "difficulty": null,
+        "score": 1,
+        "selectedAnswers": [
+          {
+            "answerId": "01KCXGG0X10001H0Q1FW4PP0R0",
+            "value": "Transfer all risk"
+          }
+        ],
+        "correctAnswers": [
+          {
+            "answerId": "01KCXGG0X10001H0Q1FW4PKEQ0",
+            "value": "Identify and mitigate risks"
+          }
+        ],
+        "isCorrect": false
+      },
+      {
+        "testResultQuestionId": "01KCXK1QG851XMECTHN5KCFMPV",
+        "questionId": "01KCXGG0TN0001H0Q1FW2DM66G",
+        "questionText": "KPIs are used to:",
+        "domain": "Professional & Workplace",
+        "explanation": "Performance measurement.",
+        "difficulty": null,
+        "score": 1,
+        "selectedAnswers": [
+          {
+            "answerId": "01KCXGG0X10001H0Q1FW4PRMQG",
+            "value": "Measure performance"
+          }
+        ],
+        "correctAnswers": [
+          {
+            "answerId": "01KCXGG0X10001H0Q1FW4PRMQG",
+            "value": "Measure performance"
+          }
+        ],
+        "isCorrect": true
+      },
+      {
+        "testResultQuestionId": "01KCXK1QG8GYKS7SDPM285003P",
+        "questionId": "01KCXGG0TN0001H0Q1FW2DP0SG",
+        "questionText": "Which leadership style enforces strict control?",
+        "domain": "Professional & Workplace",
+        "explanation": "Autocratic leadership.",
+        "difficulty": null,
+        "score": 1,
+        "selectedAnswers": [
+          {
+            "answerId": "01KCXGG0X20001H0Q1FW4PY1JR",
+            "value": "Autocratic"
+          }
+        ],
+        "correctAnswers": [
+          {
+            "answerId": "01KCXGG0X20001H0Q1FW4PY1JR",
+            "value": "Autocratic"
+          }
+        ],
+        "isCorrect": true
+      },
+      {
+        "testResultQuestionId": "01KCXK1QG9DCH02VGD2S4KNCY6",
+        "questionId": "01KCXGG0TN0001H0Q1FW2DS998",
+        "questionText": "A government budget primarily shows:",
+        "domain": "Professional & Workplace",
+        "explanation": "Budget definition.",
+        "difficulty": null,
+        "score": 1,
+        "selectedAnswers": [
+          {
+            "answerId": "01KCXGG0X20001H0Q1FW4Q85SR",
+            "value": "Public revenue and expenditure"
+          }
+        ],
+        "correctAnswers": [
+          {
+            "answerId": "01KCXGG0X20001H0Q1FW4Q85SR",
+            "value": "Public revenue and expenditure"
+          }
+        ],
+        "isCorrect": true
+      },
+      {
+        "testResultQuestionId": "01KCXK1QG9F13AGV080XQXEGTW",
+        "questionId": "01KCXGG0TN0001H0Q1FW2DTY0R",
+        "questionText": "What is the main role of a project charter?",
+        "domain": "Professional & Workplace",
+        "explanation": "Project charter.",
+        "difficulty": null,
+        "score": 1,
+        "selectedAnswers": [
+          {
+            "answerId": "01KCXGG0X20001H0Q1FW4QENT0",
+            "value": "Close project"
+          }
+        ],
+        "correctAnswers": [
+          {
+            "answerId": "01KCXGG0X20001H0Q1FW4QD8WG",
+            "value": "Define objectives and authority"
+          }
+        ],
+        "isCorrect": false
+      },
+      {
+        "testResultQuestionId": "01KCXK1QG9GVQHJKNNWZQ5Y64G",
+        "questionId": "01KCXGG0TN0001H0Q1FW2DQNH0",
+        "questionText": "Which is a key principle of public service?",
+        "domain": "Professional & Workplace",
+        "explanation": "Public service principle.",
+        "difficulty": null,
+        "score": 1,
+        "selectedAnswers": [
+          {
+            "answerId": "01KCXGG0X20001H0Q1FW4Q2WVG",
+            "value": "Transparency"
+          }
+        ],
+        "correctAnswers": [
+          {
+            "answerId": "01KCXGG0X20001H0Q1FW4Q2WVG",
+            "value": "Transparency"
+          }
+        ],
+        "isCorrect": true
+      },
+      {
+        "testResultQuestionId": "01KCXK1QGAKEE8DPTMVYQ686E0",
+        "questionId": "01KCXGG0TN0001H0Q1FW2DWJR8",
+        "questionText": "Conflict of interest occurs when:",
+        "domain": "Professional & Workplace",
+        "explanation": "Conflict definition.",
+        "difficulty": null,
+        "score": 1,
+        "selectedAnswers": [
+          {
+            "answerId": "01KCXGG0X20001H0Q1FW4QJA0R",
+            "value": "Personal interest influences official duty"
+          }
+        ],
+        "correctAnswers": [
+          {
+            "answerId": "01KCXGG0X20001H0Q1FW4QJA0R",
+            "value": "Personal interest influences official duty"
+          }
+        ],
+        "isCorrect": true
+      },
+      {
+        "testResultQuestionId": "01KCXK1QGBBRCFPRMZJHHJ85QP",
+        "questionId": "01KCXGG0TN0001H0Q1FW2E0048",
+        "questionText": "Risk management aims to:",
+        "domain": "Professional & Workplace",
+        "explanation": "Risk mitigation.",
+        "difficulty": null,
+        "score": 1,
+        "selectedAnswers": [
+          {
+            "answerId": "01KCXGG0X30001H0Q1FW4QWJ4R",
+            "value": "Identify and mitigate risks"
+          }
+        ],
+        "correctAnswers": [
+          {
+            "answerId": "01KCXGG0X30001H0Q1FW4QWJ4R",
+            "value": "Identify and mitigate risks"
+          }
+        ],
+        "isCorrect": true
+      },
+      {
+        "testResultQuestionId": "01KCXK1QGBCFJDTZP0P8XHNQ8C",
+        "questionId": "01KCXGG0TN0001H0Q1FW2E1MVR",
+        "questionText": "KPIs are used to:",
+        "domain": "Professional & Workplace",
+        "explanation": "Performance measurement.",
+        "difficulty": null,
+        "score": 1,
+        "selectedAnswers": [
+          {
+            "answerId": "01KCXGG0X30001H0Q1FW4R4698",
+            "value": "Reduce transparency"
+          }
+        ],
+        "correctAnswers": [
+          {
+            "answerId": "01KCXGG0X30001H0Q1FW4R1DDG",
+            "value": "Measure performance"
+          }
+        ],
+        "isCorrect": false
+      },
+      {
+        "testResultQuestionId": "01KCXK1QGBMA11YGFW1E0TW9YG",
+        "questionId": "01KCXGG0TN0001H0Q1FW2DYADG",
+        "questionText": "Public accountability means:",
+        "domain": "Professional & Workplace",
+        "explanation": "Accountability.",
+        "difficulty": null,
+        "score": 1,
+        "selectedAnswers": [
+          {
+            "answerId": "01KCXGG0X20001H0Q1FW4QPBX0",
+            "value": "Officials answer to citizens"
+          }
+        ],
+        "correctAnswers": [
+          {
+            "answerId": "01KCXGG0X20001H0Q1FW4QPBX0",
+            "value": "Officials answer to citizens"
+          }
+        ],
+        "isCorrect": true
+      },
+      {
+        "testResultQuestionId": "01KCXK1QGC22329FJ4BM5MC5BM",
+        "questionId": "01KCXGG0TN0001H0Q1FW2E39K8",
+        "questionText": "Which leadership style enforces strict control?",
+        "domain": "Professional & Workplace",
+        "explanation": "Autocratic leadership.",
+        "difficulty": null,
+        "score": 1,
+        "selectedAnswers": [
+          {
+            "answerId": "01KCXGG0X30001H0Q1FW4R6RA8",
+            "value": "Autocratic"
+          }
+        ],
+        "correctAnswers": [
+          {
+            "answerId": "01KCXGG0X30001H0Q1FW4R6RA8",
+            "value": "Autocratic"
+          }
+        ],
+        "isCorrect": true
+      },
+      {
+        "testResultQuestionId": "01KCXK1QGD2H924DZ0W8WPVXP6",
+        "questionId": "01KCXGG0TN0001H0Q1FW2E4YAR",
+        "questionText": "Which is a key principle of public service?",
+        "domain": "Professional & Workplace",
+        "explanation": "Public service principle.",
+        "difficulty": null,
+        "score": 1,
+        "selectedAnswers": [
+          {
+            "answerId": "01KCXGG0X30001H0Q1FW4RBZA0",
+            "value": "Transparency"
+          }
+        ],
+        "correctAnswers": [
+          {
+            "answerId": "01KCXGG0X30001H0Q1FW4RBZA0",
+            "value": "Transparency"
+          }
+        ],
+        "isCorrect": true
+      },
+      {
+        "testResultQuestionId": "01KCXK1QGD4NJ396832100CVQK",
+        "questionId": "01KCXGG0TN0001H0Q1FW2E6K28",
+        "questionText": "A government budget primarily shows:",
+        "domain": "Professional & Workplace",
+        "explanation": "Budget definition.",
+        "difficulty": null,
+        "score": 1,
+        "selectedAnswers": [
+          {
+            "answerId": "01KCXGG0X30001H0Q1FW4RFTBG",
+            "value": "Private income"
+          }
+        ],
+        "correctAnswers": [
+          {
+            "answerId": "01KCXGG0X30001H0Q1FW4RH0E8",
+            "value": "Public revenue and expenditure"
+          }
+        ],
+        "isCorrect": false
+      },
+      {
+        "testResultQuestionId": "01KCXK1QGE1VKS2C64CVVB82K1",
+        "questionId": "01KCXGG0TN0001H0Q1FW2E9WH8",
+        "questionText": "Conflict of interest occurs when:",
+        "domain": "Professional & Workplace",
+        "explanation": "Conflict definition.",
+        "difficulty": null,
+        "score": 1,
+        "selectedAnswers": [
+          {
+            "answerId": "01KCXGG0X40001H0Q1FW4RVV40",
+            "value": "Personal interest influences official duty"
+          }
+        ],
+        "correctAnswers": [
+          {
+            "answerId": "01KCXGG0X40001H0Q1FW4RVV40",
+            "value": "Personal interest influences official duty"
+          }
+        ],
+        "isCorrect": true
+      },
+      {
+        "testResultQuestionId": "01KCXK1QGE4CMNHMMFZ928VMY7",
+        "questionId": "01KCXGG0TN0001H0Q1FW2E87SR",
+        "questionText": "What is the main role of a project charter?",
+        "domain": "Professional & Workplace",
+        "explanation": "Project charter.",
+        "difficulty": null,
+        "score": 1,
+        "selectedAnswers": [
+          {
+            "answerId": "01KCXGG0X30001H0Q1FW4RPQ20",
+            "value": "Define objectives and authority"
+          }
+        ],
+        "correctAnswers": [
+          {
+            "answerId": "01KCXGG0X30001H0Q1FW4RPQ20",
+            "value": "Define objectives and authority"
+          }
+        ],
+        "isCorrect": true
+      },
+      {
+        "testResultQuestionId": "01KCXK1QGFJ39BP1R6MWSMBKK8",
+        "questionId": "01KCXGG0TN0001H0Q1FW2ED608",
+        "questionText": "Risk management aims to:",
+        "domain": "Professional & Workplace",
+        "explanation": "Risk mitigation.",
+        "difficulty": null,
+        "score": 1,
+        "selectedAnswers": [
+          {
+            "answerId": "01KCXGG0X40001H0Q1FW4S5QH0",
+            "value": "Identify and mitigate risks"
+          }
+        ],
+        "correctAnswers": [
+          {
+            "answerId": "01KCXGG0X40001H0Q1FW4S5QH0",
+            "value": "Identify and mitigate risks"
+          }
+        ],
+        "isCorrect": true
+      },
+      {
+        "testResultQuestionId": "01KCXK1QGFZHM828ZYE9SC6TSP",
+        "questionId": "01KCXGG0TN0001H0Q1FW2EBH8R",
+        "questionText": "Public accountability means:",
+        "domain": "Professional & Workplace",
+        "explanation": "Accountability.",
+        "difficulty": null,
+        "score": 1,
+        "selectedAnswers": [
+          {
+            "answerId": "01KCXGG0X40001H0Q1FW4RZFAR",
+            "value": "Officials answer to citizens"
+          }
+        ],
+        "correctAnswers": [
+          {
+            "answerId": "01KCXGG0X40001H0Q1FW4RZFAR",
+            "value": "Officials answer to citizens"
+          }
+        ],
+        "isCorrect": true
+      },
+      {
+        "testResultQuestionId": "01KCXK1QGG46DCXRQF8Y6DSMBG",
+        "questionId": "01KCXGG0TP0001H0Q1FW2EEWP8",
+        "questionText": "KPIs are used to:",
+        "domain": "Professional & Workplace",
+        "explanation": "Performance measurement.",
+        "difficulty": null,
+        "score": 1,
+        "selectedAnswers": [
+          {
+            "answerId": "01KCXGG0X40001H0Q1FW4SATKR",
+            "value": "Measure performance"
+          }
+        ],
+        "correctAnswers": [
+          {
+            "answerId": "01KCXGG0X40001H0Q1FW4SATKR",
+            "value": "Measure performance"
+          }
+        ],
+        "isCorrect": true
+      },
+      {
+        "testResultQuestionId": "01KCXK1QGGYDK7YVVT7KYEM7X6",
+        "questionId": "01KCXGG0TP0001H0Q1FW2EGMBG",
+        "questionText": "Which leadership style enforces strict control?",
+        "domain": "Professional & Workplace",
+        "explanation": "Autocratic leadership.",
+        "difficulty": null,
+        "score": 1,
+        "selectedAnswers": [
+          {
+            "answerId": "01KCXGG0X40001H0Q1FW4SFNWG",
+            "value": "Autocratic"
+          }
+        ],
+        "correctAnswers": [
+          {
+            "answerId": "01KCXGG0X40001H0Q1FW4SFNWG",
+            "value": "Autocratic"
+          }
+        ],
+        "isCorrect": true
+      },
+      {
+        "testResultQuestionId": "01KCXK1QGHHJ6TMWSH9P0FX5NN",
+        "questionId": "01KCXGG0TP0001H0Q1FW2EJ83R",
+        "questionText": "Which is a key principle of public service?",
+        "domain": "Professional & Workplace",
+        "explanation": "Public service principle.",
+        "difficulty": null,
+        "score": 1,
+        "selectedAnswers": [
+          {
+            "answerId": "01KCXGG0X40001H0Q1FW4SMH58",
+            "value": "Transparency"
+          }
+        ],
+        "correctAnswers": [
+          {
+            "answerId": "01KCXGG0X40001H0Q1FW4SMH58",
+            "value": "Transparency"
+          }
+        ],
+        "isCorrect": true
+      },
+      {
+        "testResultQuestionId": "01KCXK1QGHW9ZNMQ6FMBTEQQPS",
+        "questionId": "01KCXGG0TP0001H0Q1FW2EKVW0",
+        "questionText": "A government budget primarily shows:",
+        "domain": "Professional & Workplace",
+        "explanation": "Budget definition.",
+        "difficulty": null,
+        "score": 1,
+        "selectedAnswers": [
+          {
+            "answerId": "01KCXGG0X50001H0Q1FW4SSGB0",
+            "value": "Public revenue and expenditure"
+          }
+        ],
+        "correctAnswers": [
+          {
+            "answerId": "01KCXGG0X50001H0Q1FW4SSGB0",
+            "value": "Public revenue and expenditure"
+          }
+        ],
+        "isCorrect": true
+      },
+      {
+        "testResultQuestionId": "01KCXK1QGJ4ZF4N4XT0Z85RXRC",
+        "questionId": "01KCXGG0TP0001H0Q1FW2ERT2G",
+        "questionText": "Public accountability means:",
+        "domain": "Professional & Workplace",
+        "explanation": "Accountability.",
+        "difficulty": null,
+        "score": 1,
+        "selectedAnswers": [
+          {
+            "answerId": "01KCXGG0X50001H0Q1FW4T7HJ0",
+            "value": "Officials answer to citizens"
+          }
+        ],
+        "correctAnswers": [
+          {
+            "answerId": "01KCXGG0X50001H0Q1FW4T7HJ0",
+            "value": "Officials answer to citizens"
+          }
+        ],
+        "isCorrect": true
+      },
+      {
+        "testResultQuestionId": "01KCXK1QGJCC1WBB5T1WKB1YNR",
+        "questionId": "01KCXGG0TP0001H0Q1FW2EQ5B0",
+        "questionText": "Conflict of interest occurs when:",
+        "domain": "Professional & Workplace",
+        "explanation": "Conflict definition.",
+        "difficulty": null,
+        "score": 1,
+        "selectedAnswers": [
+          {
+            "answerId": "01KCXGG0X50001H0Q1FW4T3HM8",
+            "value": "Personal interest influences official duty"
+          }
+        ],
+        "correctAnswers": [
+          {
+            "answerId": "01KCXGG0X50001H0Q1FW4T3HM8",
+            "value": "Personal interest influences official duty"
+          }
+        ],
+        "isCorrect": true
+      },
+      {
+        "testResultQuestionId": "01KCXK1QGJR3Z8G9E4265QTDNA",
+        "questionId": "01KCXGG0TP0001H0Q1FW2ENGKG",
+        "questionText": "What is the main role of a project charter?",
+        "domain": "Professional & Workplace",
+        "explanation": "Project charter.",
+        "difficulty": null,
+        "score": 1,
+        "selectedAnswers": [
+          {
+            "answerId": "01KCXGG0X50001H0Q1FW4SYCK0",
+            "value": "Define objectives and authority"
+          }
+        ],
+        "correctAnswers": [
+          {
+            "answerId": "01KCXGG0X50001H0Q1FW4SYCK0",
+            "value": "Define objectives and authority"
+          }
+        ],
+        "isCorrect": true
+      },
+      {
+        "testResultQuestionId": "01KCXK1QGKKQSGGY9BQ3XJQJS6",
+        "questionId": "01KCXGG0TP0001H0Q1FW2EW2J8",
+        "questionText": "KPIs are used to:",
+        "domain": "Professional & Workplace",
+        "explanation": "Performance measurement.",
+        "difficulty": null,
+        "score": 1,
+        "selectedAnswers": [
+          {
+            "answerId": "01KCXGG0X50001H0Q1FW4TJF5G",
+            "value": "Measure performance"
+          }
+        ],
+        "correctAnswers": [
+          {
+            "answerId": "01KCXGG0X50001H0Q1FW4TJF5G",
+            "value": "Measure performance"
+          }
+        ],
+        "isCorrect": true
+      },
+      {
+        "testResultQuestionId": "01KCXK1QGKSS06EX11YHXB7XXV",
+        "questionId": "01KCXGG0TP0001H0Q1FW2ETDTR",
+        "questionText": "Risk management aims to:",
+        "domain": "Professional & Workplace",
+        "explanation": "Risk mitigation.",
+        "difficulty": null,
+        "score": 1,
+        "selectedAnswers": [
+          {
+            "answerId": "01KCXGG0X50001H0Q1FW4TDJXG",
+            "value": "Identify and mitigate risks"
+          }
+        ],
+        "correctAnswers": [
+          {
+            "answerId": "01KCXGG0X50001H0Q1FW4TDJXG",
+            "value": "Identify and mitigate risks"
+          }
+        ],
+        "isCorrect": true
+      },
+      {
+        "testResultQuestionId": "01KCXK1QGMEST90CSM3BJ21MT8",
+        "questionId": "01KCXGG0TP0001H0Q1FW2EXQ9R",
+        "questionText": "Which leadership style enforces strict control?",
+        "domain": "Professional & Workplace",
+        "explanation": "Autocratic leadership.",
+        "difficulty": null,
+        "score": 1,
+        "selectedAnswers": [
+          {
+            "answerId": "01KCXGG0X50001H0Q1FW4TQFAG",
+            "value": "Autocratic"
+          }
+        ],
+        "correctAnswers": [
+          {
+            "answerId": "01KCXGG0X50001H0Q1FW4TQFAG",
+            "value": "Autocratic"
+          }
+        ],
+        "isCorrect": true
+      }
+    ]
+  },
+  "previousAttempt": null
+}

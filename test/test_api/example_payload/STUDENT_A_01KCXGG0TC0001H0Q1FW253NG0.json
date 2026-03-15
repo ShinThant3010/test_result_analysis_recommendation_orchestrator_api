@@ -1,0 +1,677 @@
+{
+  "studentId": "STUDENT_A",
+  "testId": "01KCXGG0TC0001H0Q1FW253NG0",
+  "testTitle": "Information Technology Sample Test I",
+  "maxCourses": 5,
+  "maxCoursesPerWeakness": 3,
+  "participantRanking": null,
+  "language": "EN",
+  "currentAttempt": {
+    "earnedScore": 22,
+    "totalScore": 30,
+    "status": "pass",
+    "questions": [
+      {
+        "testResultQuestionId": "01KCXK1Q96X95BAEHSK1NZA4C7",
+        "questionId": "01KCXGG0TC0001H0Q1FW253WAR",
+        "questionText": "Solve: 2(x − 4) = 10",
+        "domain": "Mathematics",
+        "explanation": "2x−8=10 → 2x=18 → x=9.",
+        "difficulty": null,
+        "score": 1,
+        "selectedAnswers": [
+          {
+            "answerId": "01KCXGG0WA0001H0Q1FW407GJ0",
+            "value": "x=9"
+          }
+        ],
+        "correctAnswers": [
+          {
+            "answerId": "01KCXGG0WA0001H0Q1FW407GJ0",
+            "value": "x=9"
+          }
+        ],
+        "isCorrect": true
+      },
+      {
+        "testResultQuestionId": "01KCXK1Q97E6R2PC54KZJTWECZ",
+        "questionId": "01KCXGG0TC0001H0Q1FW2576S0",
+        "questionText": "If log10(1000)=?",
+        "domain": "Mathematics",
+        "explanation": "10^3=1000 so log10(1000)=3.",
+        "difficulty": null,
+        "score": 1,
+        "selectedAnswers": [
+          {
+            "answerId": "01KCXGG0WA0001H0Q1FW40G10R",
+            "value": "3"
+          }
+        ],
+        "correctAnswers": [
+          {
+            "answerId": "01KCXGG0WA0001H0Q1FW40G10R",
+            "value": "3"
+          }
+        ],
+        "isCorrect": true
+      },
+      {
+        "testResultQuestionId": "01KCXK1Q97SKB83PXCBQ6JR3ER",
+        "questionId": "01KCXGG0TC0001H0Q1FW255H28",
+        "questionText": "What is the value of (3/4) ÷ (2/3)?",
+        "domain": "Mathematics",
+        "explanation": "Divide by a fraction → multiply by its reciprocal: (3/4)*(3/2)=9/8.",
+        "difficulty": null,
+        "score": 1,
+        "selectedAnswers": [
+          {
+            "answerId": "01KCXGG0WA0001H0Q1FW409YP0",
+            "value": "9/8"
+          }
+        ],
+        "correctAnswers": [
+          {
+            "answerId": "01KCXGG0WA0001H0Q1FW409YP0",
+            "value": "9/8"
+          }
+        ],
+        "isCorrect": true
+      },
+      {
+        "testResultQuestionId": "01KCXK1Q985CNHRDC11XGT3M7X",
+        "questionId": "01KCXGG0TC0001H0Q1FW258XF0",
+        "questionText": "Which is the solution set of x^2 = 16?",
+        "domain": "Mathematics",
+        "explanation": "Both 4 and -4 square to 16.",
+        "difficulty": null,
+        "score": 1,
+        "selectedAnswers": [
+          {
+            "answerId": "01KCXGG0WA0001H0Q1FW40PE38",
+            "value": "x=±4"
+          }
+        ],
+        "correctAnswers": [
+          {
+            "answerId": "01KCXGG0WA0001H0Q1FW40PE38",
+            "value": "x=±4"
+          }
+        ],
+        "isCorrect": true
+      },
+      {
+        "testResultQuestionId": "01KCXK1Q98MA63YJ4FWZNBMY5K",
+        "questionId": "01KCXGG0TC0001H0Q1FW25AK5R",
+        "questionText": "What is the next number in the sequence: 2, 6, 18, 54, ... ?",
+        "domain": "Mathematics",
+        "explanation": "Each term ×3 → 54×3=162.",
+        "difficulty": null,
+        "score": 1,
+        "selectedAnswers": [
+          {
+            "answerId": "01KCXGG0WA0001H0Q1FW40RX6G",
+            "value": "56"
+          }
+        ],
+        "correctAnswers": [
+          {
+            "answerId": "01KCXGG0WA0001H0Q1FW40WZ2R",
+            "value": "162"
+          }
+        ],
+        "isCorrect": false
+      },
+      {
+        "testResultQuestionId": "01KCXK1Q994JBMEQZ5AVGTGDRG",
+        "questionId": "01KCXGG0TC0001H0Q1FW25C7X8",
+        "questionText": "Derivative of 5x (with respect to x) is:",
+        "domain": "Mathematics",
+        "explanation": "d/dx(5x)=5.",
+        "difficulty": null,
+        "score": 1,
+        "selectedAnswers": [
+          {
+            "answerId": "01KCXGG0WA0001H0Q1FW40YB10",
+            "value": "5"
+          }
+        ],
+        "correctAnswers": [
+          {
+            "answerId": "01KCXGG0WA0001H0Q1FW40YB10",
+            "value": "5"
+          }
+        ],
+        "isCorrect": true
+      },
+      {
+        "testResultQuestionId": "01KCXK1Q9A02SYJYASY7GW1C9N",
+        "questionId": "01KCXGG0TC0001H0Q1FW25DXM0",
+        "questionText": "If a right triangle has legs 6 and 8, its hypotenuse is:",
+        "domain": "Mathematics",
+        "explanation": "Pythagorean theorem: sqrt(36+64)=sqrt(100)=10.",
+        "difficulty": null,
+        "score": 1,
+        "selectedAnswers": [
+          {
+            "answerId": "01KCXGG0WB0001H0Q1FW414FA8",
+            "value": "12"
+          }
+        ],
+        "correctAnswers": [
+          {
+            "answerId": "01KCXGG0WB0001H0Q1FW413790",
+            "value": "10"
+          }
+        ],
+        "isCorrect": false
+      },
+      {
+        "testResultQuestionId": "01KCXK1Q9B6J6CCVEMY274CSB4",
+        "questionId": "01KCXGG0TC0001H0Q1FW25FKAR",
+        "questionText": "Convert 0.3 repeating (0.333...) to a fraction:",
+        "domain": "Mathematics",
+        "explanation": "0.333... = 1/3.",
+        "difficulty": null,
+        "score": 1,
+        "selectedAnswers": [
+          {
+            "answerId": "01KCXGG0WB0001H0Q1FW419CHG",
+            "value": "1/3"
+          }
+        ],
+        "correctAnswers": [
+          {
+            "answerId": "01KCXGG0WB0001H0Q1FW419CHG",
+            "value": "1/3"
+          }
+        ],
+        "isCorrect": true
+      },
+      {
+        "testResultQuestionId": "01KCXK1Q9BWV19R669Y2QMMNM1",
+        "questionId": "01KCXGG0TC0001H0Q1FW25KGAR",
+        "questionText": "Which concept best describes a function calling itself?",
+        "domain": "Computer Science",
+        "explanation": "Recursion is self-calling.",
+        "difficulty": null,
+        "score": 1,
+        "selectedAnswers": [
+          {
+            "answerId": "01KCXGG0WB0001H0Q1FW41GSV8",
+            "value": "Memoization"
+          }
+        ],
+        "correctAnswers": [
+          {
+            "answerId": "01KCXGG0WB0001H0Q1FW41EBQ8",
+            "value": "Recursion"
+          }
+        ],
+        "isCorrect": false
+      },
+      {
+        "testResultQuestionId": "01KCXK1Q9D8DJVX6XAPN5XG933",
+        "questionId": "01KCXGG0TC0001H0Q1FW25PYP0",
+        "questionText": "What is the output of: 'hello'[1:4] in Python?",
+        "domain": "Computer Science",
+        "explanation": "Slice from index 1 to 3 → 'ell'.",
+        "difficulty": null,
+        "score": 1,
+        "selectedAnswers": [
+          {
+            "answerId": "01KCXGG0WB0001H0Q1FW41PZ3R",
+            "value": "hel"
+          }
+        ],
+        "correctAnswers": [
+          {
+            "answerId": "01KCXGG0WB0001H0Q1FW41REZ0",
+            "value": "ell"
+          }
+        ],
+        "isCorrect": false
+      },
+      {
+        "testResultQuestionId": "01KCXK1Q9DRPMWSTG2EB8C0WYA",
+        "questionId": "01KCXGG0TC0001H0Q1FW25N800",
+        "questionText": "In Big-O, which grows fastest as n increases?",
+        "domain": "Computer Science",
+        "explanation": "n^2 grows faster than n, log n, or constant.",
+        "difficulty": null,
+        "score": 1,
+        "selectedAnswers": [
+          {
+            "answerId": "01KCXGG0WB0001H0Q1FW41MG0G",
+            "value": "O(n^2)"
+          }
+        ],
+        "correctAnswers": [
+          {
+            "answerId": "01KCXGG0WB0001H0Q1FW41MG0G",
+            "value": "O(n^2)"
+          }
+        ],
+        "isCorrect": true
+      },
+      {
+        "testResultQuestionId": "01KCXK1Q9EA9TTN7893NFSC1RP",
+        "questionId": "01KCXGG0TC0001H0Q1FW25RMCR",
+        "questionText": "Which structure is best for fast membership checks (average case) in Python?",
+        "domain": "Computer Science",
+        "explanation": "Sets are hash-based → average O(1) membership.",
+        "difficulty": null,
+        "score": 1,
+        "selectedAnswers": [
+          {
+            "answerId": "01KCXGG0WB0001H0Q1FW41XB70",
+            "value": "set"
+          }
+        ],
+        "correctAnswers": [
+          {
+            "answerId": "01KCXGG0WB0001H0Q1FW41XB70",
+            "value": "set"
+          }
+        ],
+        "isCorrect": true
+      },
+      {
+        "testResultQuestionId": "01KCXK1Q9F56D1MD50DA27PCJP",
+        "questionId": "01KCXGG0TC0001H0Q1FW25TA3G",
+        "questionText": "A bug that appears only under specific timing/concurrency is often called:",
+        "domain": "Computer Science",
+        "explanation": "Race conditions depend on timing.",
+        "difficulty": null,
+        "score": 1,
+        "selectedAnswers": [
+          {
+            "answerId": "01KCXGG0WC0001H0Q1FW42412R",
+            "value": "Race condition"
+          }
+        ],
+        "correctAnswers": [
+          {
+            "answerId": "01KCXGG0WC0001H0Q1FW42412R",
+            "value": "Race condition"
+          }
+        ],
+        "isCorrect": true
+      },
+      {
+        "testResultQuestionId": "01KCXK1Q9FHKC6YDY5GE5GXAH6",
+        "questionId": "01KCXGG0TD0001H0Q1FW25VZT8",
+        "questionText": "Which algorithmic technique is used by merge sort?",
+        "domain": "Computer Science",
+        "explanation": "Merge sort splits and merges (divide and conquer).",
+        "difficulty": null,
+        "score": 1,
+        "selectedAnswers": [
+          {
+            "answerId": "01KCXGG0WC0001H0Q1FW42A5C0",
+            "value": "Divide and conquer"
+          }
+        ],
+        "correctAnswers": [
+          {
+            "answerId": "01KCXGG0WC0001H0Q1FW42A5C0",
+            "value": "Divide and conquer"
+          }
+        ],
+        "isCorrect": true
+      },
+      {
+        "testResultQuestionId": "01KCXK1Q9G8TV2DHBPHMW9NC0N",
+        "questionId": "01KCXGG0TD0001H0Q1FW25XNH0",
+        "questionText": "In OOP, encapsulation primarily means:",
+        "domain": "Computer Science",
+        "explanation": "Encapsulation hides internal state via interfaces/access control.",
+        "difficulty": null,
+        "score": 1,
+        "selectedAnswers": [
+          {
+            "answerId": "01KCXGG0WC0001H0Q1FW42E1CR",
+            "value": "Bundling data with methods and controlling access"
+          }
+        ],
+        "correctAnswers": [
+          {
+            "answerId": "01KCXGG0WC0001H0Q1FW42E1CR",
+            "value": "Bundling data with methods and controlling access"
+          }
+        ],
+        "isCorrect": true
+      },
+      {
+        "testResultQuestionId": "01KCXK1Q9HPMP22KG8VZ5M5VNM",
+        "questionId": "01KCXGG0TD0001H0Q1FW25ZB7R",
+        "questionText": "Which is a typical use of a hash function in data structures?",
+        "domain": "Computer Science",
+        "explanation": "Hash maps use hashes to locate buckets.",
+        "difficulty": null,
+        "score": 1,
+        "selectedAnswers": [
+          {
+            "answerId": "01KCXGG0WC0001H0Q1FW42KC9G",
+            "value": "Mapping keys to bucket locations"
+          }
+        ],
+        "correctAnswers": [
+          {
+            "answerId": "01KCXGG0WC0001H0Q1FW42KC9G",
+            "value": "Mapping keys to bucket locations"
+          }
+        ],
+        "isCorrect": true
+      },
+      {
+        "testResultQuestionId": "01KCXK1Q9HZD3SSNT482NY0S10",
+        "questionId": "01KCXGG0TD0001H0Q1FW2614VG",
+        "questionText": "In A/B testing, the 'control' group is:",
+        "domain": "Data & Analytics",
+        "explanation": "Control is the baseline condition.",
+        "difficulty": null,
+        "score": 1,
+        "selectedAnswers": [
+          {
+            "answerId": "01KCXGG0WC0001H0Q1FW42RFC8",
+            "value": "The baseline/current variant"
+          }
+        ],
+        "correctAnswers": [
+          {
+            "answerId": "01KCXGG0WC0001H0Q1FW42RFC8",
+            "value": "The baseline/current variant"
+          }
+        ],
+        "isCorrect": true
+      },
+      {
+        "testResultQuestionId": "01KCXK1Q9J5VRX5MBZE287YF2N",
+        "questionId": "01KCXGG0TD0001H0Q1FW262SK0",
+        "questionText": "Which plot is best to visualize the relationship between two numerical variables?",
+        "domain": "Data & Analytics",
+        "explanation": "Scatter plots show pairs of numeric values.",
+        "difficulty": null,
+        "score": 1,
+        "selectedAnswers": [
+          {
+            "answerId": "01KCXGG0WC0001H0Q1FW42W7G0",
+            "value": "Pie chart"
+          }
+        ],
+        "correctAnswers": [
+          {
+            "answerId": "01KCXGG0WD0001H0Q1FW42XEJ0",
+            "value": "Scatter plot"
+          }
+        ],
+        "isCorrect": false
+      },
+      {
+        "testResultQuestionId": "01KCXK1Q9KC5ZRXKA6EKMZNWK3",
+        "questionId": "01KCXGG0TD0001H0Q1FW26650G",
+        "questionText": "Standard deviation measures:",
+        "domain": "Data & Analytics",
+        "explanation": "It quantifies dispersion around the mean.",
+        "difficulty": null,
+        "score": 1,
+        "selectedAnswers": [
+          {
+            "answerId": "01KCXGG0WD0001H0Q1FW437AZ0",
+            "value": "Spread/variability"
+          }
+        ],
+        "correctAnswers": [
+          {
+            "answerId": "01KCXGG0WD0001H0Q1FW437AZ0",
+            "value": "Spread/variability"
+          }
+        ],
+        "isCorrect": true
+      },
+      {
+        "testResultQuestionId": "01KCXK1Q9KCY0R21TBJE1QS5GF",
+        "questionId": "01KCXGG0TD0001H0Q1FW264F9R",
+        "questionText": "If a model has high bias, it is likely:",
+        "domain": "Data & Analytics",
+        "explanation": "High bias often means underfitting.",
+        "difficulty": null,
+        "score": 1,
+        "selectedAnswers": [
+          {
+            "answerId": "01KCXGG0WD0001H0Q1FW432BS8",
+            "value": "Underfitting"
+          }
+        ],
+        "correctAnswers": [
+          {
+            "answerId": "01KCXGG0WD0001H0Q1FW432BS8",
+            "value": "Underfitting"
+          }
+        ],
+        "isCorrect": true
+      },
+      {
+        "testResultQuestionId": "01KCXK1Q9MMR7FTZK4HMPV2HVK",
+        "questionId": "01KCXGG0TD0001H0Q1FW269FER",
+        "questionText": "Which is an example of data leakage?",
+        "domain": "Data & Analytics",
+        "explanation": "Leakage uses info unavailable at prediction time.",
+        "difficulty": null,
+        "score": 1,
+        "selectedAnswers": [
+          {
+            "answerId": "01KCXGG0WD0001H0Q1FW43G28G",
+            "value": "Training and test split"
+          }
+        ],
+        "correctAnswers": [
+          {
+            "answerId": "01KCXGG0WD0001H0Q1FW43HA9R",
+            "value": "Using future information to predict the past"
+          }
+        ],
+        "isCorrect": false
+      },
+      {
+        "testResultQuestionId": "01KCXK1Q9MRAKPWBEK1959VKQE",
+        "questionId": "01KCXGG0TD0001H0Q1FW267SR0",
+        "questionText": "A confusion matrix is used for:",
+        "domain": "Data & Analytics",
+        "explanation": "Confusion matrices summarize classification outcomes.",
+        "difficulty": null,
+        "score": 1,
+        "selectedAnswers": [
+          {
+            "answerId": "01KCXGG0WD0001H0Q1FW43C770",
+            "value": "Classification evaluation"
+          }
+        ],
+        "correctAnswers": [
+          {
+            "answerId": "01KCXGG0WD0001H0Q1FW43C770",
+            "value": "Classification evaluation"
+          }
+        ],
+        "isCorrect": true
+      },
+      {
+        "testResultQuestionId": "01KCXK1Q9P046ZJP1N2SW7KCTB",
+        "questionId": "01KCXGG0TD0001H0Q1FW26BA1R",
+        "questionText": "What does HAVING do in SQL?",
+        "domain": "Databases",
+        "explanation": "HAVING filters after GROUP BY/aggregates.",
+        "difficulty": null,
+        "score": 1,
+        "selectedAnswers": [
+          {
+            "answerId": "01KCXGG0WD0001H0Q1FW43PCD8",
+            "value": "Filters groups after aggregation"
+          }
+        ],
+        "correctAnswers": [
+          {
+            "answerId": "01KCXGG0WD0001H0Q1FW43PCD8",
+            "value": "Filters groups after aggregation"
+          }
+        ],
+        "isCorrect": true
+      },
+      {
+        "testResultQuestionId": "01KCXK1Q9QW3YHM7T3W3QJ9D1V",
+        "questionId": "01KCXGG0TD0001H0Q1FW26CZRG",
+        "questionText": "Which join returns only matching rows from both tables?",
+        "domain": "Databases",
+        "explanation": "INNER JOIN keeps matches only.",
+        "difficulty": null,
+        "score": 1,
+        "selectedAnswers": [
+          {
+            "answerId": "01KCXGG0WE0001H0Q1FW43XPS8",
+            "value": "FULL OUTER JOIN"
+          }
+        ],
+        "correctAnswers": [
+          {
+            "answerId": "01KCXGG0WE0001H0Q1FW43WFQ8",
+            "value": "INNER JOIN"
+          }
+        ],
+        "isCorrect": false
+      },
+      {
+        "testResultQuestionId": "01KCXK1Q9R2HAM9T04J2W14KAY",
+        "questionId": "01KCXGG0TD0001H0Q1FW26ENF8",
+        "questionText": "In a relational model, a foreign key primarily enforces:",
+        "domain": "Databases",
+        "explanation": "Foreign keys ensure references point to existing rows.",
+        "difficulty": null,
+        "score": 1,
+        "selectedAnswers": [
+          {
+            "answerId": "01KCXGG0WE0001H0Q1FW4404X8",
+            "value": "Referential integrity"
+          }
+        ],
+        "correctAnswers": [
+          {
+            "answerId": "01KCXGG0WE0001H0Q1FW4404X8",
+            "value": "Referential integrity"
+          }
+        ],
+        "isCorrect": true
+      },
+      {
+        "testResultQuestionId": "01KCXK1Q9RVYB8RYQJCWKGCKRK",
+        "questionId": "01KCXGG0TD0001H0Q1FW26GA6R",
+        "questionText": "Which command changes existing data in a table?",
+        "domain": "Databases",
+        "explanation": "UPDATE modifies existing rows.",
+        "difficulty": null,
+        "score": 1,
+        "selectedAnswers": [
+          {
+            "answerId": "01KCXGG0WE0001H0Q1FW445FT0",
+            "value": "UPDATE"
+          }
+        ],
+        "correctAnswers": [
+          {
+            "answerId": "01KCXGG0WE0001H0Q1FW445FT0",
+            "value": "UPDATE"
+          }
+        ],
+        "isCorrect": true
+      },
+      {
+        "testResultQuestionId": "01KCXK1Q9SFCQV0ZJC6C07XV6R",
+        "questionId": "01KCXGG0TD0001H0Q1FW26HZXG",
+        "questionText": "A table with a composite primary key means the primary key is:",
+        "domain": "Databases",
+        "explanation": "Composite key uses multiple columns together.",
+        "difficulty": null,
+        "score": 1,
+        "selectedAnswers": [
+          {
+            "answerId": "01KCXGG0WE0001H0Q1FW44CY30",
+            "value": "A set of columns whose combination is unique"
+          }
+        ],
+        "correctAnswers": [
+          {
+            "answerId": "01KCXGG0WE0001H0Q1FW44CY30",
+            "value": "A set of columns whose combination is unique"
+          }
+        ],
+        "isCorrect": true
+      },
+      {
+        "testResultQuestionId": "01KCXK1Q9SRGBB2M5150AKP82N",
+        "questionId": "01KCXGG0TD0001H0Q1FW26KMN0",
+        "questionText": "In k-means clustering, k represents:",
+        "domain": "Artificial Intelligence",
+        "explanation": "k is the number of clusters.",
+        "difficulty": null,
+        "score": 1,
+        "selectedAnswers": [
+          {
+            "answerId": "01KCXGG0WE0001H0Q1FW44J250",
+            "value": "Number of clusters"
+          }
+        ],
+        "correctAnswers": [
+          {
+            "answerId": "01KCXGG0WE0001H0Q1FW44J250",
+            "value": "Number of clusters"
+          }
+        ],
+        "isCorrect": true
+      },
+      {
+        "testResultQuestionId": "01KCXK1Q9T34RTPSM1MTNDGQSD",
+        "questionId": "01KCXGG0TD0001H0Q1FW26PX4R",
+        "questionText": "If statement P implies Q (P → Q) is false, then:",
+        "domain": "Logic & Reasoning",
+        "explanation": "An implication is false only when P is true and Q is false.",
+        "difficulty": null,
+        "score": 1,
+        "selectedAnswers": [
+          {
+            "answerId": "01KCXGG0WF0001H0Q1FW44ZQN0",
+            "value": "P is false and Q is true"
+          }
+        ],
+        "correctAnswers": [
+          {
+            "answerId": "01KCXGG0WF0001H0Q1FW44WRXR",
+            "value": "P is true and Q is false"
+          }
+        ],
+        "isCorrect": false
+      },
+      {
+        "testResultQuestionId": "01KCXK1Q9TKY6D2CTV9TSDRAX0",
+        "questionId": "01KCXGG0TD0001H0Q1FW26N9CG",
+        "questionText": "Overfitting in ML means the model:",
+        "domain": "Artificial Intelligence",
+        "explanation": "Overfitting harms generalization.",
+        "difficulty": null,
+        "score": 1,
+        "selectedAnswers": [
+          {
+            "answerId": "01KCXGG0WE0001H0Q1FW44NV80",
+            "value": "Performs well on training but poorly on new data"
+          }
+        ],
+        "correctAnswers": [
+          {
+            "answerId": "01KCXGG0WE0001H0Q1FW44NV80",
+            "value": "Performs well on training but poorly on new data"
+          }
+        ],
+        "isCorrect": true
+      }
+    ]
+  },
+  "previousAttempt": null
+}

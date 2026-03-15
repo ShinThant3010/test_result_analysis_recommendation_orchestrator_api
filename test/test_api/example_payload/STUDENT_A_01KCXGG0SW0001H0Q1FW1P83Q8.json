@@ -1,0 +1,457 @@
+{
+  "studentId": "STUDENT_A",
+  "testId": "01KCXGG0SW0001H0Q1FW1P83Q8",
+  "testTitle": "Logic and Reasoning Sample Test I",
+  "maxCourses": 5,
+  "maxCoursesPerWeakness": 3,
+  "participantRanking": null,
+  "language": "EN",
+  "currentAttempt": {
+    "earnedScore": 15,
+    "totalScore": 20,
+    "status": "pass",
+    "questions": [
+      {
+        "testResultQuestionId": "01KCXK1Q4YW0TSZ7S7YW29KJHY",
+        "questionId": "01KCXGG0SW0001H0Q1FW1P8DFR",
+        "questionText": "A city is deciding where to locate a new community health centre that focuses on low-income residents. The ethical guidelines say the centre should (1) be within walking distance of the largest low-income neighbourhood, (2) not be next to a commercial alcohol district, and (3) prioritize areas with few existing clinics. Three candidate locations are proposed: Site A: in the middle of the largest low-income area, next to a street with many bars, with no clinic nearby. Site B: 15 minutes by bus from the largest low-income area, far from alcohol outlets, with one small clinic nearby. Site C: at the edge of the largest low-income area, not near alcohol outlets, with no clinic nearby. Which choice best follows the guidelines?",
+        "domain": "Logic & Reasoning",
+        "explanation": "Site C is still walkable, not near alcohol outlets, and has no clinic nearby, so it satisfies all three guidelines better than the other options.",
+        "difficulty": null,
+        "score": 1,
+        "selectedAnswers": [
+          {
+            "answerId": "01KCXGG0V70001H0Q1FW2YZSG0",
+            "value": "Site C, because it balances proximity, safety, and lack of clinics"
+          }
+        ],
+        "correctAnswers": [
+          {
+            "answerId": "01KCXGG0V70001H0Q1FW2YZSG0",
+            "value": "Site C, because it balances proximity, safety, and lack of clinics"
+          }
+        ],
+        "isCorrect": true
+      },
+      {
+        "testResultQuestionId": "01KCXK1Q4ZC212BMC9YE35ZTF1",
+        "questionId": "01KCXGG0SW0001H0Q1FW1PAJTG",
+        "questionText": "A city introduces a regulation requiring all construction companies to report dust-control measures before starting any demolition activity. A company claims it is fully compliant because it submits dust reports for ongoing projects every Friday. Which of the following, if true, most weakens the company’s claim?",
+        "domain": "Logic & Reasoning",
+        "explanation": "Submitting reports after starting demolition violates the requirement that reporting must occur before work begins.",
+        "difficulty": null,
+        "score": 1,
+        "selectedAnswers": [
+          {
+            "answerId": "01KCXGG0V70001H0Q1FW2Z408G",
+            "value": "The company often begins demolition work days before submitting the weekly report"
+          }
+        ],
+        "correctAnswers": [
+          {
+            "answerId": "01KCXGG0V70001H0Q1FW2Z408G",
+            "value": "The company often begins demolition work days before submitting the weekly report"
+          }
+        ],
+        "isCorrect": true
+      },
+      {
+        "testResultQuestionId": "01KCXK1Q4ZYRQXSSJ6E5JBCCE8",
+        "questionId": "01KCXGG0SW0001H0Q1FW1PCM88",
+        "questionText": "A social work team will run three evening programs in one week: youth mentoring (Y), elderly home visits (E), and street outreach (S), each on a different day from Monday to Wednesday. Rules: (1) If Y is on Monday, then S must be on Wednesday. (2) E cannot be on Monday. (3) S must not be on the day immediately after E. Which of the following schedules is possible?",
+        "domain": "Logic & Reasoning",
+        "explanation": "Option C is the only schedule that follows all rules:Y is not on Monday (so rule 1 doesn’t apply), E is not on Monday (rule 2 satisfied), and S is before E—not the day immediately after—so rule 3 is also satisfied.",
+        "difficulty": null,
+        "score": 1,
+        "selectedAnswers": [
+          {
+            "answerId": "01KCXGG0V70001H0Q1FW2ZAF9G",
+            "value": "Mon: S, Tue: E, Wed: Y"
+          }
+        ],
+        "correctAnswers": [
+          {
+            "answerId": "01KCXGG0V70001H0Q1FW2ZAF9G",
+            "value": "Mon: S, Tue: E, Wed: Y"
+          }
+        ],
+        "isCorrect": true
+      },
+      {
+        "testResultQuestionId": "01KCXK1Q50YCCTAC7KKNZWYPQB",
+        "questionId": "01KCXGG0SW0001H0Q1FW1PEJR8",
+        "questionText": "A public health researcher argues: as heat waves become more frequent due to climate change, cities must invest in more shaded public spaces, otherwise hospital admissions for heat-related illnesses will continue to rise among outdoor workers and the elderly. Which assumption is most necessary for this argument?",
+        "domain": "Logic & Reasoning",
+        "explanation": "The argument assumes that shaded public spaces actually reduce harmful heat exposure for vulnerable groups; without that, the proposed solution would not help.",
+        "difficulty": null,
+        "score": 1,
+        "selectedAnswers": [
+          {
+            "answerId": "01KCXGG0V70001H0Q1FW2ZG208",
+            "value": "Climate change will also increase cold waves in some regions"
+          }
+        ],
+        "correctAnswers": [
+          {
+            "answerId": "01KCXGG0V70001H0Q1FW2ZERZR",
+            "value": "Shaded public spaces significantly reduce heat exposure for vulnerable groups"
+          }
+        ],
+        "isCorrect": false
+      },
+      {
+        "testResultQuestionId": "01KCXK1Q51N89VE9R3NZQW6DKK",
+        "questionId": "01KCXGG0SW0001H0Q1FW1PJ8XG",
+        "questionText": "A researcher claims: adopting a Mediterranean-style diet in coastal cities will significantly reduce the environmental impact of food systems there. Which of the following, if true, most supports this claim?",
+        "domain": "Logic & Reasoning",
+        "explanation": "Mediterranean diets tend to be more plant-based and use less red meat, which is directly associated with lower environmental impact than meat-heavy diets.",
+        "difficulty": null,
+        "score": 1,
+        "selectedAnswers": [
+          {
+            "answerId": "01KCXGG0V80001H0Q1FW2ZSRHR",
+            "value": "Mediterranean diets typically use more plant-based foods and less red meat than current diets in those cities"
+          }
+        ],
+        "correctAnswers": [
+          {
+            "answerId": "01KCXGG0V80001H0Q1FW2ZSRHR",
+            "value": "Mediterranean diets typically use more plant-based foods and less red meat than current diets in those cities"
+          }
+        ],
+        "isCorrect": true
+      },
+      {
+        "testResultQuestionId": "01KCXK1Q51V3DYD0FZEB9B7B9C",
+        "questionId": "01KCXGG0SW0001H0Q1FW1PGEAG",
+        "questionText": "A city plans to replace diesel buses on three lines (L1, L2, L3) with electric buses. Due to budget limits, they can electrify only two lines now. Data show: L1 has the highest passenger volume, L2 passes through areas with the worst air quality, and L3 has moderate volume and good existing air quality. The city’s goal is to maximize public health benefits. Which choice best matches this goal?",
+        "domain": "Logic & Reasoning",
+        "explanation": "Electrifying both the highest volume line and the line in the worst air quality area (L1 and L2) gives the largest reduction in total pollution exposure for people.",
+        "difficulty": null,
+        "score": 1,
+        "selectedAnswers": [
+          {
+            "answerId": "01KCXGG0V70001H0Q1FW2ZJN0G",
+            "value": "Electrify L1 and L2"
+          }
+        ],
+        "correctAnswers": [
+          {
+            "answerId": "01KCXGG0V70001H0Q1FW2ZJN0G",
+            "value": "Electrify L1 and L2"
+          }
+        ],
+        "isCorrect": true
+      },
+      {
+        "testResultQuestionId": "01KCXK1Q521EGTZ2HBRAZDDK4Y",
+        "questionId": "01KCXGG0SX0001H0Q1FW1PM7DG",
+        "questionText": "A firm can fund only one of three projects this year: Project A has high expected return and very high risk; Project B has moderate expected return and low risk; Project C has low expected return but clear environmental benefits and positive brand impact. The board states: (1) we must avoid very high financial risk this year; (2) we will only choose a project that either has low risk or clearly improves our environmental reputation. Which project choice satisfies the board’s conditions?",
+        "domain": "Logic & Reasoning",
+        "explanation": "Project A violates the first rule. Projects B and C both satisfy the conditions: B is low risk, and C improves environmental reputation without very high risk.",
+        "difficulty": null,
+        "score": 1,
+        "selectedAnswers": [
+          {
+            "answerId": "01KCXGG0V80001H0Q1FW302CXG",
+            "value": "Both Project B and Project C"
+          }
+        ],
+        "correctAnswers": [
+          {
+            "answerId": "01KCXGG0V80001H0Q1FW302CXG",
+            "value": "Both Project B and Project C"
+          }
+        ],
+        "isCorrect": true
+      },
+      {
+        "testResultQuestionId": "01KCXK1Q523JQQWJZCRTBGCHV8",
+        "questionId": "01KCXGG0SX0001H0Q1FW1PQWKG",
+        "questionText": "A government analyst argues: 'If a city wants to reduce its total waste volume, it must expand recycling programs. Therefore, any city that does not expand recycling cannot reduce waste.' Which of the following, if true, most weakens the argument?",
+        "domain": "Logic & Reasoning",
+        "explanation": "Showing waste can be reduced without expanding recycling breaks the claimed necessity.",
+        "difficulty": null,
+        "score": 1,
+        "selectedAnswers": [
+          {
+            "answerId": "01KCXGG0V80001H0Q1FW304YYG",
+            "value": "A city reduced waste significantly by introducing strict limits on single-use packaging"
+          }
+        ],
+        "correctAnswers": [
+          {
+            "answerId": "01KCXGG0V80001H0Q1FW304YYG",
+            "value": "A city reduced waste significantly by introducing strict limits on single-use packaging"
+          }
+        ],
+        "isCorrect": true
+      },
+      {
+        "testResultQuestionId": "01KCXK1Q53E93HY5VG4D5M374V",
+        "questionId": "01KCXGG0SX0001H0Q1FW1PWB60",
+        "questionText": "A smart building wants to install three kinds of IoT sensors: temperature (T), air quality (A), and motion (M) on three floors: 1st, 2nd, and 3rd. Rules: (1) every floor must have at least one sensor; (2) the same sensor type cannot be installed on only one floor in the whole building; (3) if A is on the 1st floor, M must be on the 2nd floor. One planned layout is: 1st floor has T and A, 2nd floor has M, 3rd floor has T. Which statement about this layout is true?",
+        "domain": "Logic & Reasoning",
+        "explanation": "All floors have sensors, T appears on two floors, A appears with the required M on the 2nd floor, and M exists, so the layout satisfies all three rules.",
+        "difficulty": null,
+        "score": 1,
+        "selectedAnswers": [
+          {
+            "answerId": "01KCXGG0V90001H0Q1FW30JX7R",
+            "value": "It satisfies all three rules"
+          }
+        ],
+        "correctAnswers": [
+          {
+            "answerId": "01KCXGG0V90001H0Q1FW30JX7R",
+            "value": "It satisfies all three rules"
+          }
+        ],
+        "isCorrect": true
+      },
+      {
+        "testResultQuestionId": "01KCXK1Q53MD3HWM9V68AH795V",
+        "questionId": "01KCXGG0SX0001H0Q1FW1PSS50",
+        "questionText": "A government economist claims: if we raise the tax on sugary drinks, total sugar consumption in the country will definitely fall. Which of the following, if true, most seriously challenges this conclusion?",
+        "domain": "Logic & Reasoning",
+        "explanation": "If people respond by buying more high-sugar snacks instead of sugary drinks, then total sugar consumption might stay the same or even increase.",
+        "difficulty": null,
+        "score": 1,
+        "selectedAnswers": [
+          {
+            "answerId": "01KCXGG0V80001H0Q1FW3098MR",
+            "value": "Some consumers will switch from sugary drinks to high-sugar snacks instead"
+          }
+        ],
+        "correctAnswers": [
+          {
+            "answerId": "01KCXGG0V80001H0Q1FW3098MR",
+            "value": "Some consumers will switch from sugary drinks to high-sugar snacks instead"
+          }
+        ],
+        "isCorrect": true
+      },
+      {
+        "testResultQuestionId": "01KCXK1Q54G67ZZFN9G17QDWSE",
+        "questionId": "01KCXGG0SX0001H0Q1FW1PY5S0",
+        "questionText": "A startup claims that using a public blockchain for cross-border payments will automatically ensure full regulatory compliance in every country involved. Which assumption must their claim rely on?",
+        "domain": "Logic & Reasoning",
+        "explanation": "The claim requires that regulators in all involved countries accept blockchain records as legally valid and sufficient for compliance.",
+        "difficulty": null,
+        "score": 1,
+        "selectedAnswers": [
+          {
+            "answerId": "01KCXGG0V90001H0Q1FW30Q038",
+            "value": "Cryptocurrency prices will remain stable over time"
+          }
+        ],
+        "correctAnswers": [
+          {
+            "answerId": "01KCXGG0V90001H0Q1FW30M688",
+            "value": "All countries accept blockchain records as legally valid evidence"
+          }
+        ],
+        "isCorrect": false
+      },
+      {
+        "testResultQuestionId": "01KCXK1Q55HXX6AGRJDHRS2VP6",
+        "questionId": "01KCXGG0SX0001H0Q1FW1Q0JXR",
+        "questionText": "A tourist board observes that visitors who join food tours tend to stay longer in the city than those who join historical tours. The board concludes that joining food tours causes visitors to extend their stay. Which of the following, if true, most seriously weakens this conclusion?",
+        "domain": "Logic & Reasoning",
+        "explanation": "If longer-stay visitors simply choose food tours, then the causation is reversed and the conclusion fails.",
+        "difficulty": null,
+        "score": 1,
+        "selectedAnswers": [
+          {
+            "answerId": "01KCXGG0V90001H0Q1FW30TV4R",
+            "value": "Visitors who plan longer stays choose food tours because they have more available time"
+          }
+        ],
+        "correctAnswers": [
+          {
+            "answerId": "01KCXGG0V90001H0Q1FW30TV4R",
+            "value": "Visitors who plan longer stays choose food tours because they have more available time"
+          }
+        ],
+        "isCorrect": true
+      },
+      {
+        "testResultQuestionId": "01KCXK1Q55V4XQY73F87H33WGC",
+        "questionId": "01KCXGG0SX0001H0Q1FW1Q474G",
+        "questionText": "A hospital maps the journey of patients with type 2 diabetes and finds: many patients miss follow-up appointments because they cannot take time off work; medication adherence improves when patients receive SMS reminders; and patients report confusion about which professional to contact for diet advice. Based on this mapping, which intervention is most directly supported?",
+        "domain": "Logic & Reasoning",
+        "explanation": "Extending clinic hours to evenings and weekends directly addresses the barrier of patients being unable to attend during working hours.",
+        "difficulty": null,
+        "score": 1,
+        "selectedAnswers": [
+          {
+            "answerId": "01KCXGG0V90001H0Q1FW313S90",
+            "value": "Extending clinic hours to evenings and weekends"
+          }
+        ],
+        "correctAnswers": [
+          {
+            "answerId": "01KCXGG0V90001H0Q1FW313S90",
+            "value": "Extending clinic hours to evenings and weekends"
+          }
+        ],
+        "isCorrect": true
+      },
+      {
+        "testResultQuestionId": "01KCXK1Q55WFJQW2WSEKVHYY7R",
+        "questionId": "01KCXGG0SX0001H0Q1FW1Q2DGR",
+        "questionText": "A coach designs a weekly plan for a runner: at least two high-intensity interval training (HIIT) sessions, no HIIT on the day immediately after a long-distance run, and at least one full rest day. One proposed schedule (Mon to Sun) is: Mon HIIT, Tue long run, Wed rest, Thu easy run, Fri HIIT, Sat easy run, Sun rest. Which statement is correct?",
+        "domain": "Logic & Reasoning",
+        "explanation": "The plan includes two HIIT days, avoids HIIT directly after the long run, and includes rest days on Wednesday and Sunday, so it follows all three rules.",
+        "difficulty": null,
+        "score": 1,
+        "selectedAnswers": [
+          {
+            "answerId": "01KCXGG0V90001H0Q1FW312H7R",
+            "value": "The plan satisfies all three rules"
+          }
+        ],
+        "correctAnswers": [
+          {
+            "answerId": "01KCXGG0V90001H0Q1FW312H7R",
+            "value": "The plan satisfies all three rules"
+          }
+        ],
+        "isCorrect": true
+      },
+      {
+        "testResultQuestionId": "01KCXK1Q5634MPH3M9XZG91M38",
+        "questionId": "01KCXGG0SX0001H0Q1FW1Q5YSR",
+        "questionText": "Advocates argue: to reduce legal conflicts around access to insulin, countries must classify insulin as an essential medicine that cannot be subject to extreme price increases. Which of the following, if true, most strengthens this argument?",
+        "domain": "Logic & Reasoning",
+        "explanation": "If countries that classify insulin as essential already have price controls, it shows that such classification can lead to protection against extreme price increases.",
+        "difficulty": null,
+        "score": 1,
+        "selectedAnswers": [
+          {
+            "answerId": "01KCXGG0V90001H0Q1FW31BS4G",
+            "value": "Insulin was discovered more than 100 years ago"
+          }
+        ],
+        "correctAnswers": [
+          {
+            "answerId": "01KCXGG0V90001H0Q1FW31973G",
+            "value": "In countries that classify insulin as essential, price controls already exist"
+          }
+        ],
+        "isCorrect": false
+      },
+      {
+        "testResultQuestionId": "01KCXK1Q57BPPF4NVGX767WPCG",
+        "questionId": "01KCXGG0SX0001H0Q1FW1Q9G2R",
+        "questionText": "A researcher states: 'People who take a daily 10-minute concentration quiz show improvement after two weeks, so the quiz itself improves concentration.' Which of the following, if true, most weakens this conclusion?",
+        "domain": "Logic & Reasoning",
+        "explanation": "If participants also engaged in other activities that improve concentration, the quiz cannot be identified as the true cause.",
+        "difficulty": null,
+        "score": 1,
+        "selectedAnswers": [
+          {
+            "answerId": "01KCXGG0VA0001H0Q1FW31MX48",
+            "value": "Participants also practiced memory-training exercises during the same two-week period"
+          }
+        ],
+        "correctAnswers": [
+          {
+            "answerId": "01KCXGG0VA0001H0Q1FW31MX48",
+            "value": "Participants also practiced memory-training exercises during the same two-week period"
+          }
+        ],
+        "isCorrect": true
+      },
+      {
+        "testResultQuestionId": "01KCXK1Q57DXVV85W7FA1TAKP1",
+        "questionId": "01KCXGG0SX0001H0Q1FW1Q7QE8",
+        "questionText": "A researcher runs an experiment on a new meditation app. Participants volunteer online and are then allowed to choose whether they are in the meditation group or the control group. After four weeks, the meditation group has much lower stress scores. The researcher concludes that the app itself caused the reduction in stress. Which of the following, if true, most seriously weakens this conclusion?",
+        "domain": "Logic & Reasoning",
+        "explanation": "If participants who chose the meditation group were already more motivated to reduce stress, then pre-existing differences, not the app, may explain the results.",
+        "difficulty": null,
+        "score": 1,
+        "selectedAnswers": [
+          {
+            "answerId": "01KCXGG0V90001H0Q1FW31FT1G",
+            "value": "Participants who chose the meditation group were already more motivated to reduce stress"
+          }
+        ],
+        "correctAnswers": [
+          {
+            "answerId": "01KCXGG0V90001H0Q1FW31FT1G",
+            "value": "Participants who chose the meditation group were already more motivated to reduce stress"
+          }
+        ],
+        "isCorrect": true
+      },
+      {
+        "testResultQuestionId": "01KCXK1Q58WF6PA8SJ56Q3CTYT",
+        "questionId": "01KCXGG0SX0001H0Q1FW1QB7R0",
+        "questionText": "A tourism board notes: posts tagged with the city’s main hashtag that include short videos receive twice as many shares as photo-only posts, and visitors who share posts are more likely to recommend the city to friends. The board concludes that encouraging tourists to post short videos will significantly increase word-of-mouth promotion of the city. Which of the following, if true, most supports this conclusion?",
+        "domain": "Logic & Reasoning",
+        "explanation": "If short videos are more likely to appear on the platform’s recommendation page, they will get more visibility and shares, supporting the idea of more word-of-mouth.",
+        "difficulty": null,
+        "score": 1,
+        "selectedAnswers": [
+          {
+            "answerId": "01KCXGG0VA0001H0Q1FW31V888",
+            "value": "Many tourists dislike using hashtags in their posts"
+          }
+        ],
+        "correctAnswers": [
+          {
+            "answerId": "01KCXGG0VA0001H0Q1FW31T070",
+            "value": "Short videos are more likely to appear on the platform’s recommendation page than static photos"
+          }
+        ],
+        "isCorrect": false
+      },
+      {
+        "testResultQuestionId": "01KCXK1Q5SS42367Y8YF0ZPXJR",
+        "questionId": "01KCXGG0SX0001H0Q1FW1QCZD8",
+        "questionText": "A travel company offers three city tours: Historical (H), Food (F), and Nightlife (N). For a one-day package, a customer can choose two tours, subject to: (1) H and N cannot be taken together; (2) if F is chosen, it must not be combined with any tour that ends after 9 pm; (3) H ends at 7 pm, F ends at 5 pm, N ends after 10 pm. Which pair of tours is allowed?",
+        "domain": "Logic & Reasoning",
+        "explanation": "The pair H and F finishes at 7 pm and 5 pm and does not violate any rule; all other pairs break at least one constraint.",
+        "difficulty": null,
+        "score": 1,
+        "selectedAnswers": [
+          {
+            "answerId": "01KCXGG0VA0001H0Q1FW321KC8",
+            "value": "F and F"
+          }
+        ],
+        "correctAnswers": [
+          {
+            "answerId": "01KCXGG0VA0001H0Q1FW320BB0",
+            "value": "H and F"
+          }
+        ],
+        "isCorrect": false
+      },
+      {
+        "testResultQuestionId": "01KCXK1Q5T85MPDF9N2Y96CMPZ",
+        "questionId": "01KCXGG0SX0001H0Q1FW1QEWY0",
+        "questionText": "A planner argues: if a city wants to be truly sustainable, it must reduce car dependency. Therefore, any urban plan that expands highways cannot be considered sustainable. Which of the following, if true, most weakens this argument?",
+        "domain": "Logic & Reasoning",
+        "explanation": "If the highway expansion includes dedicated lanes for electric buses and high-occupancy vehicles, it can actually reduce car dependency, contradicting the planner’s claim.",
+        "difficulty": null,
+        "score": 1,
+        "selectedAnswers": [
+          {
+            "answerId": "01KCXGG0VA0001H0Q1FW322WCR",
+            "value": "The planned highway expansion includes dedicated lanes for electric buses and high-occupancy vehicles"
+          }
+        ],
+        "correctAnswers": [
+          {
+            "answerId": "01KCXGG0VA0001H0Q1FW322WCR",
+            "value": "The planned highway expansion includes dedicated lanes for electric buses and high-occupancy vehicles"
+          }
+        ],
+        "isCorrect": true
+      }
+    ]
+  },
+  "previousAttempt": null
+}

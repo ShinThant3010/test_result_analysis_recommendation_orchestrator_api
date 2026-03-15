@@ -74,6 +74,7 @@ class OrchestratorService:
             incorrect_cases, incorrect_summary = build_incorrect_cases(
                 current=current,
             )
+            print("# incorrect cases: ", len(incorrect_cases))
 
         ### --------------------- prepare for performance comparison --------------------- ###
             domain_performance = compute_domain_performance(
@@ -114,6 +115,7 @@ class OrchestratorService:
         ### --------------------------- if no incorrect answers --------------------------- ###
             weaknesses = await fetch_weaknesses(self._client, incorrect_cases)
             test_analysis_output = summarize_weaknesses(weaknesses)
+            print("weakness extraction success.")
 
             limited_weaknesses = weaknesses[:5]
             recommendations = await fetch_recommendations(
@@ -123,6 +125,7 @@ class OrchestratorService:
                 max_courses_per_weakness=data.max_courses_per_weakness,
             )
             course_recommendation_output = summarize_recommendations(recommendations)
+            print("course recommendation success.")
 
             participant_ranking_value = (
                 data.participant_ranking

@@ -1,0 +1,721 @@
+{
+  "studentId": "STUDENT_D",
+  "testId": "01KCXGG0TT0001H0Q1FW2JBG00",
+  "testTitle": "Reasoning & Literacy 101",
+  "maxCourses": 5,
+  "maxCoursesPerWeakness": 3,
+  "participantRanking": null,
+  "language": "EN",
+  "currentAttempt": {
+    "earnedScore": 0,
+    "totalScore": 32,
+    "status": "fail",
+    "questions": [
+      {
+        "testResultQuestionId": "01KCXK1QDQ0G3SJFERB1ZR271R",
+        "questionId": "01KCXGG0TT0001H0Q1FW2JBNVG",
+        "questionText": "If all officers are trained and some employees are officers, then:",
+        "domain": "General Reasoning & Digital Literacy",
+        "explanation": "Logical inference.",
+        "difficulty": null,
+        "score": 1,
+        "selectedAnswers": [
+          {
+            "answerId": "01KCXGG0XH0001H0Q1FW55ETM8",
+            "value": "All employees are trained"
+          }
+        ],
+        "correctAnswers": [
+          {
+            "answerId": "01KCXGG0XH0001H0Q1FW55G4M0",
+            "value": "Some employees are trained"
+          }
+        ],
+        "isCorrect": false
+      },
+      {
+        "testResultQuestionId": "01KCXK1QDRNJXXZH0KQX4GXQQX",
+        "questionId": "01KCXGG0TT0001H0Q1FW2JD9KR",
+        "questionText": "Which number completes the series: 5, 10, 20, 40, ?",
+        "domain": "General Reasoning & Digital Literacy",
+        "explanation": "Series pattern.",
+        "difficulty": null,
+        "score": 1,
+        "selectedAnswers": [
+          {
+            "answerId": "01KCXGG0XH0001H0Q1FW55KVRG",
+            "value": "45"
+          }
+        ],
+        "correctAnswers": [
+          {
+            "answerId": "01KCXGG0XH0001H0Q1FW55PAVR",
+            "value": "80"
+          }
+        ],
+        "isCorrect": false
+      },
+      {
+        "testResultQuestionId": "01KCXK1QDS1M4WS2FKZSKBWSZW",
+        "questionId": "01KCXGG0TT0001H0Q1FW2JF37G",
+        "questionText": "A website URL starting with https indicates:",
+        "domain": "General Reasoning & Digital Literacy",
+        "explanation": "HTTPS.",
+        "difficulty": null,
+        "score": 1,
+        "selectedAnswers": [
+          {
+            "answerId": "01KCXGG0XH0001H0Q1FW55VC00",
+            "value": "Government website"
+          }
+        ],
+        "correctAnswers": [
+          {
+            "answerId": "01KCXGG0XH0001H0Q1FW55T5X8",
+            "value": "Encrypted connection"
+          }
+        ],
+        "isCorrect": false
+      },
+      {
+        "testResultQuestionId": "01KCXK1QDTCQ5C5G3RZ78ARY0M",
+        "questionId": "01KCXGG0TT0001H0Q1FW2JGSXG",
+        "questionText": "Strong password should include:",
+        "domain": "General Reasoning & Digital Literacy",
+        "explanation": "Password security.",
+        "difficulty": null,
+        "score": 1,
+        "selectedAnswers": [
+          {
+            "answerId": "01KCXGG0XH0001H0Q1FW55Z71G",
+            "value": "Personal name"
+          }
+        ],
+        "correctAnswers": [
+          {
+            "answerId": "01KCXGG0XH0001H0Q1FW560D48",
+            "value": "Letters, numbers, symbols"
+          }
+        ],
+        "isCorrect": false
+      },
+      {
+        "testResultQuestionId": "01KCXK1QDVJ8W1E4XBD35G2Q88",
+        "questionId": "01KCXGG0TT0001H0Q1FW2JJEN0",
+        "questionText": "Digital literacy mainly refers to:",
+        "domain": "General Reasoning & Digital Literacy",
+        "explanation": "Digital literacy.",
+        "difficulty": null,
+        "score": 1,
+        "selectedAnswers": [
+          {
+            "answerId": "01KCXGG0XH0001H0Q1FW5658D0",
+            "value": "Programming only"
+          }
+        ],
+        "correctAnswers": [
+          {
+            "answerId": "01KCXGG0XH0001H0Q1FW5642A8",
+            "value": "Using digital tools safely and effectively"
+          }
+        ],
+        "isCorrect": false
+      },
+      {
+        "testResultQuestionId": "01KCXK1QDWQ6NJ6A37WVWZ7FVS",
+        "questionId": "01KCXGG0TT0001H0Q1FW2JM3CG",
+        "questionText": "Phishing attempts usually aim to:",
+        "domain": "General Reasoning & Digital Literacy",
+        "explanation": "Phishing.",
+        "difficulty": null,
+        "score": 1,
+        "selectedAnswers": [
+          {
+            "answerId": "01KCXGG0XJ0001H0Q1FW567PH0",
+            "value": "Improve security"
+          }
+        ],
+        "correctAnswers": [
+          {
+            "answerId": "01KCXGG0XJ0001H0Q1FW568XK0",
+            "value": "Steal sensitive information"
+          }
+        ],
+        "isCorrect": false
+      },
+      {
+        "testResultQuestionId": "01KCXK1QDXMVT4QJYTJ3MM8CHP",
+        "questionId": "01KCXGG0TT0001H0Q1FW2JNQ4R",
+        "questionText": "If A is false and A OR B is true, then B is:",
+        "domain": "General Reasoning & Digital Literacy",
+        "explanation": "Logic OR.",
+        "difficulty": null,
+        "score": 1,
+        "selectedAnswers": [
+          {
+            "answerId": "01KCXGG0XJ0001H0Q1FW56GBW0",
+            "value": "Both"
+          }
+        ],
+        "correctAnswers": [
+          {
+            "answerId": "01KCXGG0XJ0001H0Q1FW56CHSR",
+            "value": "True"
+          }
+        ],
+        "isCorrect": false
+      },
+      {
+        "testResultQuestionId": "01KCXK1QDZVX5KTH6W1AGGTJ5E",
+        "questionId": "01KCXGG0TT0001H0Q1FW2JQBW8",
+        "questionText": "Two-factor authentication improves security by:",
+        "domain": "General Reasoning & Digital Literacy",
+        "explanation": "2FA.",
+        "difficulty": null,
+        "score": 1,
+        "selectedAnswers": [
+          {
+            "answerId": "01KCXGG0XJ0001H0Q1FW56HSRR",
+            "value": "Using two passwords"
+          }
+        ],
+        "correctAnswers": [
+          {
+            "answerId": "01KCXGG0XJ0001H0Q1FW56K2S8",
+            "value": "Adding second verification step"
+          }
+        ],
+        "isCorrect": false
+      },
+      {
+        "testResultQuestionId": "01KCXK1QE01JGPT96VG983J02Y",
+        "questionId": "01KCXGG0TT0001H0Q1FW2JS0KR",
+        "questionText": "If all officers are trained and some employees are officers, then:",
+        "domain": "General Reasoning & Digital Literacy",
+        "explanation": "Logical inference.",
+        "difficulty": null,
+        "score": 1,
+        "selectedAnswers": [
+          {
+            "answerId": "01KCXGG0XJ0001H0Q1FW56PQ00",
+            "value": "All employees are trained"
+          }
+        ],
+        "correctAnswers": [
+          {
+            "answerId": "01KCXGG0XJ0001H0Q1FW56QY20",
+            "value": "Some employees are trained"
+          }
+        ],
+        "isCorrect": false
+      },
+      {
+        "testResultQuestionId": "01KCXK1QE14KD4PATC3GTBVKW5",
+        "questionId": "01KCXGG0TT0001H0Q1FW2JTMC0",
+        "questionText": "Which number completes the series: 5, 10, 20, 40, ?",
+        "domain": "General Reasoning & Digital Literacy",
+        "explanation": "Series pattern.",
+        "difficulty": null,
+        "score": 1,
+        "selectedAnswers": [
+          {
+            "answerId": "01KCXGG0XJ0001H0Q1FW56XWFR",
+            "value": "60"
+          }
+        ],
+        "correctAnswers": [
+          {
+            "answerId": "01KCXGG0XJ0001H0Q1FW56Z7ER",
+            "value": "80"
+          }
+        ],
+        "isCorrect": false
+      },
+      {
+        "testResultQuestionId": "01KCXK1QE241V4FBZVGMBARVYA",
+        "questionId": "01KCXGG0TT0001H0Q1FW2JW848",
+        "questionText": "A website URL starting with https indicates:",
+        "domain": "General Reasoning & Digital Literacy",
+        "explanation": "HTTPS.",
+        "difficulty": null,
+        "score": 1,
+        "selectedAnswers": [
+          {
+            "answerId": "01KCXGG0XJ0001H0Q1FW571MKG",
+            "value": "Public access"
+          }
+        ],
+        "correctAnswers": [
+          {
+            "answerId": "01KCXGG0XJ0001H0Q1FW5730HR",
+            "value": "Encrypted connection"
+          }
+        ],
+        "isCorrect": false
+      },
+      {
+        "testResultQuestionId": "01KCXK1QE320AXNS844E4XYXHM",
+        "questionId": "01KCXGG0TT0001H0Q1FW2JXWVR",
+        "questionText": "Strong password should include:",
+        "domain": "General Reasoning & Digital Literacy",
+        "explanation": "Password security.",
+        "difficulty": null,
+        "score": 1,
+        "selectedAnswers": [
+          {
+            "answerId": "01KCXGG0XK0001H0Q1FW5782N8",
+            "value": "Personal name"
+          }
+        ],
+        "correctAnswers": [
+          {
+            "answerId": "01KCXGG0XK0001H0Q1FW5798R0",
+            "value": "Letters, numbers, symbols"
+          }
+        ],
+        "isCorrect": false
+      },
+      {
+        "testResultQuestionId": "01KCXK1QE4PV82PNVZ1FAFVXMP",
+        "questionId": "01KCXGG0TT0001H0Q1FW2JZJJG",
+        "questionText": "Digital literacy mainly refers to:",
+        "domain": "General Reasoning & Digital Literacy",
+        "explanation": "Digital literacy.",
+        "difficulty": null,
+        "score": 1,
+        "selectedAnswers": [
+          {
+            "answerId": "01KCXGG0XK0001H0Q1FW57FB2R",
+            "value": "Gaming skills"
+          }
+        ],
+        "correctAnswers": [
+          {
+            "answerId": "01KCXGG0XK0001H0Q1FW57CXY0",
+            "value": "Using digital tools safely and effectively"
+          }
+        ],
+        "isCorrect": false
+      },
+      {
+        "testResultQuestionId": "01KCXK1QE56J82CKQBNRY839CZ",
+        "questionId": "01KCXGG0TT0001H0Q1FW2K17A0",
+        "questionText": "Phishing attempts usually aim to:",
+        "domain": "General Reasoning & Digital Literacy",
+        "explanation": "Phishing.",
+        "difficulty": null,
+        "score": 1,
+        "selectedAnswers": [
+          {
+            "answerId": "01KCXGG0XK0001H0Q1FW57K648",
+            "value": "Speed up systems"
+          }
+        ],
+        "correctAnswers": [
+          {
+            "answerId": "01KCXGG0XK0001H0Q1FW57HS6R",
+            "value": "Steal sensitive information"
+          }
+        ],
+        "isCorrect": false
+      },
+      {
+        "testResultQuestionId": "01KCXK1QE69AC8TBW9GV96TDKK",
+        "questionId": "01KCXGG0TT0001H0Q1FW2K2W1G",
+        "questionText": "If A is false and A OR B is true, then B is:",
+        "domain": "General Reasoning & Digital Literacy",
+        "explanation": "Logic OR.",
+        "difficulty": null,
+        "score": 1,
+        "selectedAnswers": [
+          {
+            "answerId": "01KCXGG0XK0001H0Q1FW57PVA8",
+            "value": "False"
+          }
+        ],
+        "correctAnswers": [
+          {
+            "answerId": "01KCXGG0XK0001H0Q1FW57NM88",
+            "value": "True"
+          }
+        ],
+        "isCorrect": false
+      },
+      {
+        "testResultQuestionId": "01KCXK1QE72143MHAWDXW0SG89",
+        "questionId": "01KCXGG0TT0001H0Q1FW2K4FSR",
+        "questionText": "Two-factor authentication improves security by:",
+        "domain": "General Reasoning & Digital Literacy",
+        "explanation": "2FA.",
+        "difficulty": null,
+        "score": 1,
+        "selectedAnswers": [
+          {
+            "answerId": "01KCXGG0XK0001H0Q1FW57WWNR",
+            "value": "Encrypting files twice"
+          }
+        ],
+        "correctAnswers": [
+          {
+            "answerId": "01KCXGG0XK0001H0Q1FW57VPK0",
+            "value": "Adding second verification step"
+          }
+        ],
+        "isCorrect": false
+      },
+      {
+        "testResultQuestionId": "01KCXK1QE80YEN2WS5D0F1EX84",
+        "questionId": "01KCXGG0TT0001H0Q1FW2K64H8",
+        "questionText": "If all officers are trained and some employees are officers, then:",
+        "domain": "General Reasoning & Digital Literacy",
+        "explanation": "Logical inference.",
+        "difficulty": null,
+        "score": 1,
+        "selectedAnswers": [
+          {
+            "answerId": "01KCXGG0XK0001H0Q1FW581PZ8",
+            "value": "No employees are trained"
+          }
+        ],
+        "correctAnswers": [
+          {
+            "answerId": "01KCXGG0XK0001H0Q1FW580GWG",
+            "value": "Some employees are trained"
+          }
+        ],
+        "isCorrect": false
+      },
+      {
+        "testResultQuestionId": "01KCXK1QE96H8G4FYJPEVYVPD0",
+        "questionId": "01KCXGG0TV0001H0Q1FW2K7X5R",
+        "questionText": "Which number completes the series: 5, 10, 20, 40, ?",
+        "domain": "General Reasoning & Digital Literacy",
+        "explanation": "Series pattern.",
+        "difficulty": null,
+        "score": 1,
+        "selectedAnswers": [
+          {
+            "answerId": "01KCXGG0XM0001H0Q1FW587SA0",
+            "value": "100"
+          }
+        ],
+        "correctAnswers": [
+          {
+            "answerId": "01KCXGG0XM0001H0Q1FW586J80",
+            "value": "80"
+          }
+        ],
+        "isCorrect": false
+      },
+      {
+        "testResultQuestionId": "01KCXK1QEA5E22YWKMN5R0JZQP",
+        "questionId": "01KCXGG0TV0001H0Q1FW2K9KVR",
+        "questionText": "A website URL starting with https indicates:",
+        "domain": "General Reasoning & Digital Literacy",
+        "explanation": "HTTPS.",
+        "difficulty": null,
+        "score": 1,
+        "selectedAnswers": [
+          {
+            "answerId": "01KCXGG0XM0001H0Q1FW58CVDG",
+            "value": "Faster speed"
+          }
+        ],
+        "correctAnswers": [
+          {
+            "answerId": "01KCXGG0XM0001H0Q1FW58A7E0",
+            "value": "Encrypted connection"
+          }
+        ],
+        "isCorrect": false
+      },
+      {
+        "testResultQuestionId": "01KCXK1QEBAWMGG0DMDR2XXWM3",
+        "questionId": "01KCXGG0TV0001H0Q1FW2KB7M0",
+        "questionText": "Strong password should include:",
+        "domain": "General Reasoning & Digital Literacy",
+        "explanation": "Password security.",
+        "difficulty": null,
+        "score": 1,
+        "selectedAnswers": [
+          {
+            "answerId": "01KCXGG0XM0001H0Q1FW58E1G8",
+            "value": "Only letters"
+          }
+        ],
+        "correctAnswers": [
+          {
+            "answerId": "01KCXGG0XM0001H0Q1FW58GFM8",
+            "value": "Letters, numbers, symbols"
+          }
+        ],
+        "isCorrect": false
+      },
+      {
+        "testResultQuestionId": "01KCXK1QEBSV6HFZJQBR4RKQND",
+        "questionId": "01KCXGG0TV0001H0Q1FW2KCVC8",
+        "questionText": "Digital literacy mainly refers to:",
+        "domain": "General Reasoning & Digital Literacy",
+        "explanation": "Digital literacy.",
+        "difficulty": null,
+        "score": 1,
+        "selectedAnswers": [
+          {
+            "answerId": "01KCXGG0XM0001H0Q1FW58PMWR",
+            "value": "Gaming skills"
+          }
+        ],
+        "correctAnswers": [
+          {
+            "answerId": "01KCXGG0XM0001H0Q1FW58M3V0",
+            "value": "Using digital tools safely and effectively"
+          }
+        ],
+        "isCorrect": false
+      },
+      {
+        "testResultQuestionId": "01KCXK1QEDJY6NYX9Q4BR1KXZA",
+        "questionId": "01KCXGG0TV0001H0Q1FW2KEJ28",
+        "questionText": "Phishing attempts usually aim to:",
+        "domain": "General Reasoning & Digital Literacy",
+        "explanation": "Phishing.",
+        "difficulty": null,
+        "score": 1,
+        "selectedAnswers": [
+          {
+            "answerId": "01KCXGG0XM0001H0Q1FW58TB20",
+            "value": "Speed up systems"
+          }
+        ],
+        "correctAnswers": [
+          {
+            "answerId": "01KCXGG0XM0001H0Q1FW58S400",
+            "value": "Steal sensitive information"
+          }
+        ],
+        "isCorrect": false
+      },
+      {
+        "testResultQuestionId": "01KCXK1QEEFDAY1QTBREAY45BW",
+        "questionId": "01KCXGG0TV0001H0Q1FW2KG6SR",
+        "questionText": "If A is false and A OR B is true, then B is:",
+        "domain": "General Reasoning & Digital Literacy",
+        "explanation": "Logic OR.",
+        "difficulty": null,
+        "score": 1,
+        "selectedAnswers": [
+          {
+            "answerId": "01KCXGG0XN0001H0Q1FW591X80",
+            "value": "Both"
+          }
+        ],
+        "correctAnswers": [
+          {
+            "answerId": "01KCXGG0XM0001H0Q1FW58XZ8R",
+            "value": "True"
+          }
+        ],
+        "isCorrect": false
+      },
+      {
+        "testResultQuestionId": "01KCXK1QEF6HNFCSJCDS4HP2YW",
+        "questionId": "01KCXGG0TV0001H0Q1FW2KHVH8",
+        "questionText": "Two-factor authentication improves security by:",
+        "domain": "General Reasoning & Digital Literacy",
+        "explanation": "2FA.",
+        "difficulty": null,
+        "score": 1,
+        "selectedAnswers": [
+          {
+            "answerId": "01KCXGG0XN0001H0Q1FW595W6G",
+            "value": "Encrypting files twice"
+          }
+        ],
+        "correctAnswers": [
+          {
+            "answerId": "01KCXGG0XN0001H0Q1FW594H7G",
+            "value": "Adding second verification step"
+          }
+        ],
+        "isCorrect": false
+      },
+      {
+        "testResultQuestionId": "01KCXK1QEGK33RTX3BW9Q8QS0G",
+        "questionId": "01KCXGG0TV0001H0Q1FW2KKR2R",
+        "questionText": "If all officers are trained and some employees are officers, then:",
+        "domain": "General Reasoning & Digital Literacy",
+        "explanation": "Logical inference.",
+        "difficulty": null,
+        "score": 1,
+        "selectedAnswers": [
+          {
+            "answerId": "01KCXGG0XN0001H0Q1FW598F6R",
+            "value": "All employees are trained"
+          }
+        ],
+        "correctAnswers": [
+          {
+            "answerId": "01KCXGG0XN0001H0Q1FW599P8R",
+            "value": "Some employees are trained"
+          }
+        ],
+        "isCorrect": false
+      },
+      {
+        "testResultQuestionId": "01KCXK1QEHXGW87H8HGR7T54PQ",
+        "questionId": "01KCXGG0TV0001H0Q1FW2KP1AG",
+        "questionText": "Which number completes the series: 5, 10, 20, 40, ?",
+        "domain": "General Reasoning & Digital Literacy",
+        "explanation": "Series pattern.",
+        "difficulty": null,
+        "score": 1,
+        "selectedAnswers": [
+          {
+            "answerId": "01KCXGG0XN0001H0Q1FW59EQD0",
+            "value": "60"
+          }
+        ],
+        "correctAnswers": [
+          {
+            "answerId": "01KCXGG0XN0001H0Q1FW59FXFR",
+            "value": "80"
+          }
+        ],
+        "isCorrect": false
+      },
+      {
+        "testResultQuestionId": "01KCXK1QEJVQETWRE2AAFTAC0A",
+        "questionId": "01KCXGG0TV0001H0Q1FW2KQRZR",
+        "questionText": "A website URL starting with https indicates:",
+        "domain": "General Reasoning & Digital Literacy",
+        "explanation": "HTTPS.",
+        "difficulty": null,
+        "score": 1,
+        "selectedAnswers": [
+          {
+            "answerId": "01KCXGG0XN0001H0Q1FW59JBKR",
+            "value": "Public access"
+          }
+        ],
+        "correctAnswers": [
+          {
+            "answerId": "01KCXGG0XN0001H0Q1FW59KJNR",
+            "value": "Encrypted connection"
+          }
+        ],
+        "isCorrect": false
+      },
+      {
+        "testResultQuestionId": "01KCXK1QEMXX1D855EHJPYDVAT",
+        "questionId": "01KCXGG0TV0001H0Q1FW2KSCR0",
+        "questionText": "Strong password should include:",
+        "domain": "General Reasoning & Digital Literacy",
+        "explanation": "Password security.",
+        "difficulty": null,
+        "score": 1,
+        "selectedAnswers": [
+          {
+            "answerId": "01KCXGG0XN0001H0Q1FW59Q6WG",
+            "value": "Only letters"
+          }
+        ],
+        "correctAnswers": [
+          {
+            "answerId": "01KCXGG0XN0001H0Q1FW59SM18",
+            "value": "Letters, numbers, symbols"
+          }
+        ],
+        "isCorrect": false
+      },
+      {
+        "testResultQuestionId": "01KCXK1QEPH5N9EX1DW78R84PD",
+        "questionId": "01KCXGG0TV0001H0Q1FW2KV0G8",
+        "questionText": "Digital literacy mainly refers to:",
+        "domain": "General Reasoning & Digital Literacy",
+        "explanation": "Digital literacy.",
+        "difficulty": null,
+        "score": 1,
+        "selectedAnswers": [
+          {
+            "answerId": "01KCXGG0XP0001H0Q1FW59ZW7G",
+            "value": "Gaming skills"
+          }
+        ],
+        "correctAnswers": [
+          {
+            "answerId": "01KCXGG0XN0001H0Q1FW59X978",
+            "value": "Using digital tools safely and effectively"
+          }
+        ],
+        "isCorrect": false
+      },
+      {
+        "testResultQuestionId": "01KCXK1QEQ0P573RSPQMYV7JW7",
+        "questionId": "01KCXGG0TV0001H0Q1FW2KWN7R",
+        "questionText": "Phishing attempts usually aim to:",
+        "domain": "General Reasoning & Digital Literacy",
+        "explanation": "Phishing.",
+        "difficulty": null,
+        "score": 1,
+        "selectedAnswers": [
+          {
+            "answerId": "01KCXGG0XP0001H0Q1FW5A3GE8",
+            "value": "Speed up systems"
+          }
+        ],
+        "correctAnswers": [
+          {
+            "answerId": "01KCXGG0XP0001H0Q1FW5A29C8",
+            "value": "Steal sensitive information"
+          }
+        ],
+        "isCorrect": false
+      },
+      {
+        "testResultQuestionId": "01KCXK1QES183ZWRA14ZS5CTV6",
+        "questionId": "01KCXGG0TV0001H0Q1FW2KY9Z8",
+        "questionText": "If A is false and A OR B is true, then B is:",
+        "domain": "General Reasoning & Digital Literacy",
+        "explanation": "Logic OR.",
+        "difficulty": null,
+        "score": 1,
+        "selectedAnswers": [
+          {
+            "answerId": "01KCXGG0XP0001H0Q1FW5A9JS0",
+            "value": "Both"
+          }
+        ],
+        "correctAnswers": [
+          {
+            "answerId": "01KCXGG0XP0001H0Q1FW5A5YJ8",
+            "value": "True"
+          }
+        ],
+        "isCorrect": false
+      },
+      {
+        "testResultQuestionId": "01KCXK1QET9405BY53PXSRRDX7",
+        "questionId": "01KCXGG0TV0001H0Q1FW2KZXQG",
+        "questionText": "Two-factor authentication improves security by:",
+        "domain": "General Reasoning & Digital Literacy",
+        "explanation": "2FA.",
+        "difficulty": null,
+        "score": 1,
+        "selectedAnswers": [
+          {
+            "answerId": "01KCXGG0XP0001H0Q1FW5AARVR",
+            "value": "Using two passwords"
+          }
+        ],
+        "correctAnswers": [
+          {
+            "answerId": "01KCXGG0XP0001H0Q1FW5ABZXR",
+            "value": "Adding second verification step"
+          }
+        ],
+        "isCorrect": false
+      }
+    ]
+  },
+  "previousAttempt": null
+}

@@ -1,0 +1,677 @@
+{
+  "studentId": "STUDENT_A",
+  "testId": "01KCXGG0TA0001H0Q1FW23F3VG",
+  "testTitle": "Information Technology 101",
+  "maxCourses": 5,
+  "maxCoursesPerWeakness": 3,
+  "participantRanking": null,
+  "language": "EN",
+  "currentAttempt": {
+    "earnedScore": 25,
+    "totalScore": 30,
+    "status": "pass",
+    "questions": [
+      {
+        "testResultQuestionId": "01KCXK1Q87X9EW1N4ZGCP2804Y",
+        "questionId": "01KCXGG0TA0001H0Q1FW23FBNG",
+        "questionText": "What is 15% of 80?",
+        "domain": "Mathematics",
+        "explanation": "15% = 0.15; 0.15×80 = 12.",
+        "difficulty": null,
+        "score": 1,
+        "selectedAnswers": [
+          {
+            "answerId": "01KCXGG0W50001H0Q1FW3VAA98",
+            "value": "12"
+          }
+        ],
+        "correctAnswers": [
+          {
+            "answerId": "01KCXGG0W50001H0Q1FW3VAA98",
+            "value": "12"
+          }
+        ],
+        "isCorrect": true
+      },
+      {
+        "testResultQuestionId": "01KCXK1Q88MYYJGDZCHSE261KA",
+        "questionId": "01KCXGG0TA0001H0Q1FW23HB4R",
+        "questionText": "Solve for x: 3x + 5 = 20",
+        "domain": "Mathematics",
+        "explanation": "3x = 15, so x = 5.",
+        "difficulty": null,
+        "score": 1,
+        "selectedAnswers": [
+          {
+            "answerId": "01KCXGG0W50001H0Q1FW3VKG7G",
+            "value": "5"
+          }
+        ],
+        "correctAnswers": [
+          {
+            "answerId": "01KCXGG0W50001H0Q1FW3VKG7G",
+            "value": "5"
+          }
+        ],
+        "isCorrect": true
+      },
+      {
+        "testResultQuestionId": "01KCXK1Q88P9K7Y1AGVWM7BYFT",
+        "questionId": "01KCXGG0TA0001H0Q1FW23K6Q0",
+        "questionText": "If f(x)=2x−1, what is f(6)?",
+        "domain": "Mathematics",
+        "explanation": "f(6)=2×6−1=11.",
+        "difficulty": null,
+        "score": 1,
+        "selectedAnswers": [
+          {
+            "answerId": "01KCXGG0W50001H0Q1FW3VX1WR",
+            "value": "12"
+          }
+        ],
+        "correctAnswers": [
+          {
+            "answerId": "01KCXGG0W50001H0Q1FW3VVQX0",
+            "value": "11"
+          }
+        ],
+        "isCorrect": false
+      },
+      {
+        "testResultQuestionId": "01KCXK1Q89VFQ1XPDEYGAHPK25",
+        "questionId": "01KCXGG0TA0001H0Q1FW23N0AR",
+        "questionText": "What is the slope of the line passing through (2,3) and (6,11)?",
+        "domain": "Mathematics",
+        "explanation": "Slope = (11−3)/(6−2)=8/4=2.",
+        "difficulty": null,
+        "score": 1,
+        "selectedAnswers": [
+          {
+            "answerId": "01KCXGG0W50001H0Q1FW3W2408",
+            "value": "4"
+          }
+        ],
+        "correctAnswers": [
+          {
+            "answerId": "01KCXGG0W50001H0Q1FW3VZKXR",
+            "value": "2"
+          }
+        ],
+        "isCorrect": false
+      },
+      {
+        "testResultQuestionId": "01KCXK1Q8AH7XMC1E3EVYCGFT5",
+        "questionId": "01KCXGG0TA0001H0Q1FW23RFN8",
+        "questionText": "Which fraction is equivalent to 0.125?",
+        "domain": "Mathematics",
+        "explanation": "0.125 = 125/1000 = 1/8.",
+        "difficulty": null,
+        "score": 1,
+        "selectedAnswers": [
+          {
+            "answerId": "01KCXGG0W60001H0Q1FW3W9T38",
+            "value": "1/8"
+          }
+        ],
+        "correctAnswers": [
+          {
+            "answerId": "01KCXGG0W60001H0Q1FW3W9T38",
+            "value": "1/8"
+          }
+        ],
+        "isCorrect": true
+      },
+      {
+        "testResultQuestionId": "01KCXK1Q8AY4Q6F7QHHHFMS58P",
+        "questionId": "01KCXGG0TA0001H0Q1FW23PR00",
+        "questionText": "Simplify: (x^2)(x^3)",
+        "domain": "Mathematics",
+        "explanation": "Multiply same base → add exponents: 2+3=5.",
+        "difficulty": null,
+        "score": 1,
+        "selectedAnswers": [
+          {
+            "answerId": "01KCXGG0W50001H0Q1FW3W3C1G",
+            "value": "x^5"
+          }
+        ],
+        "correctAnswers": [
+          {
+            "answerId": "01KCXGG0W50001H0Q1FW3W3C1G",
+            "value": "x^5"
+          }
+        ],
+        "isCorrect": true
+      },
+      {
+        "testResultQuestionId": "01KCXK1Q8BM7GSZA4QEZ41JPN0",
+        "questionId": "01KCXGG0TA0001H0Q1FW23T6B8",
+        "questionText": "What is the area of a circle with radius 3? (Use π)",
+        "domain": "Mathematics",
+        "explanation": "Area = πr² = π×9 = 9π.",
+        "difficulty": null,
+        "score": 1,
+        "selectedAnswers": [
+          {
+            "answerId": "01KCXGG0W60001H0Q1FW3WEW6R",
+            "value": "9π"
+          }
+        ],
+        "correctAnswers": [
+          {
+            "answerId": "01KCXGG0W60001H0Q1FW3WEW6R",
+            "value": "9π"
+          }
+        ],
+        "isCorrect": true
+      },
+      {
+        "testResultQuestionId": "01KCXK1Q8BXD1VVTE9QB44HXEG",
+        "questionId": "01KCXGG0TA0001H0Q1FW23W0Y8",
+        "questionText": "Evaluate: 2^5",
+        "domain": "Mathematics",
+        "explanation": "2^5 = 32.",
+        "difficulty": null,
+        "score": 1,
+        "selectedAnswers": [
+          {
+            "answerId": "01KCXGG0W60001H0Q1FW3WN1F8",
+            "value": "32"
+          }
+        ],
+        "correctAnswers": [
+          {
+            "answerId": "01KCXGG0W60001H0Q1FW3WN1F8",
+            "value": "32"
+          }
+        ],
+        "isCorrect": true
+      },
+      {
+        "testResultQuestionId": "01KCXK1Q8CRPT397X2KF4A183W",
+        "questionId": "01KCXGG0TB0001H0Q1FW241XDG",
+        "questionText": "What is the output of: for i in range(3): print(i)",
+        "domain": "Computer Science",
+        "explanation": "range(3) yields 0,1,2.",
+        "difficulty": null,
+        "score": 1,
+        "selectedAnswers": [
+          {
+            "answerId": "01KCXGG0W60001H0Q1FW3X562G",
+            "value": "3 2 1"
+          }
+        ],
+        "correctAnswers": [
+          {
+            "answerId": "01KCXGG0W60001H0Q1FW3X2QYG",
+            "value": "0 1 2"
+          }
+        ],
+        "isCorrect": false
+      },
+      {
+        "testResultQuestionId": "01KCXK1Q8CXT10R8SVT9JF6HA1",
+        "questionId": "01KCXGG0TB0001H0Q1FW2406QG",
+        "questionText": "Which data structure is LIFO?",
+        "domain": "Computer Science",
+        "explanation": "Stack is Last-In-First-Out.",
+        "difficulty": null,
+        "score": 1,
+        "selectedAnswers": [
+          {
+            "answerId": "01KCXGG0W60001H0Q1FW3WXQSG",
+            "value": "Stack"
+          }
+        ],
+        "correctAnswers": [
+          {
+            "answerId": "01KCXGG0W60001H0Q1FW3WXQSG",
+            "value": "Stack"
+          }
+        ],
+        "isCorrect": true
+      },
+      {
+        "testResultQuestionId": "01KCXK1Q8CY532K51D0P48W78X",
+        "questionId": "01KCXGG0TB0001H0Q1FW23YG1G",
+        "questionText": "In Python, what does len([1,2,3]) return?",
+        "domain": "Computer Science",
+        "explanation": "The list has 3 elements.",
+        "difficulty": null,
+        "score": 1,
+        "selectedAnswers": [
+          {
+            "answerId": "01KCXGG0W60001H0Q1FW3WRQMG",
+            "value": "3"
+          }
+        ],
+        "correctAnswers": [
+          {
+            "answerId": "01KCXGG0W60001H0Q1FW3WRQMG",
+            "value": "3"
+          }
+        ],
+        "isCorrect": true
+      },
+      {
+        "testResultQuestionId": "01KCXK1Q8DK2TY7TC789QNYYHW",
+        "questionId": "01KCXGG0TB0001H0Q1FW243M3G",
+        "questionText": "Big-O of binary search on a sorted array is:",
+        "domain": "Computer Science",
+        "explanation": "Binary search halves the search space each step.",
+        "difficulty": null,
+        "score": 1,
+        "selectedAnswers": [
+          {
+            "answerId": "01KCXGG0W70001H0Q1FW3X7M6G",
+            "value": "O(log n)"
+          }
+        ],
+        "correctAnswers": [
+          {
+            "answerId": "01KCXGG0W70001H0Q1FW3X7M6G",
+            "value": "O(log n)"
+          }
+        ],
+        "isCorrect": true
+      },
+      {
+        "testResultQuestionId": "01KCXK1Q8E82HKQ4T9Q9P6TRSZ",
+        "questionId": "01KCXGG0TB0001H0Q1FW245ASG",
+        "questionText": "Which is a correct Boolean expression in most languages?",
+        "domain": "Computer Science",
+        "explanation": "Equality comparison commonly uses ==.",
+        "difficulty": null,
+        "score": 1,
+        "selectedAnswers": [
+          {
+            "answerId": "01KCXGG0W70001H0Q1FW3XCJD0",
+            "value": "x == 5"
+          }
+        ],
+        "correctAnswers": [
+          {
+            "answerId": "01KCXGG0W70001H0Q1FW3XCJD0",
+            "value": "x == 5"
+          }
+        ],
+        "isCorrect": true
+      },
+      {
+        "testResultQuestionId": "01KCXK1Q8ESETP1K8ESXQTG6C7",
+        "questionId": "01KCXGG0TB0001H0Q1FW246ZH0",
+        "questionText": "What does 'immutable' mean?",
+        "domain": "Computer Science",
+        "explanation": "Immutable objects cannot be modified after they are created.",
+        "difficulty": null,
+        "score": 1,
+        "selectedAnswers": [
+          {
+            "answerId": "01KCXGG0W70001H0Q1FW3XHFM8",
+            "value": "Cannot be changed after creation"
+          }
+        ],
+        "correctAnswers": [
+          {
+            "answerId": "01KCXGG0W70001H0Q1FW3XHFM8",
+            "value": "Cannot be changed after creation"
+          }
+        ],
+        "isCorrect": true
+      },
+      {
+        "testResultQuestionId": "01KCXK1Q8FB31HV3YVSBHJBC4R",
+        "questionId": "01KCXGG0TB0001H0Q1FW24ACX0",
+        "questionText": "In Python, what does 'break' do inside a loop?",
+        "domain": "Computer Science",
+        "explanation": "break exits the loop.",
+        "difficulty": null,
+        "score": 1,
+        "selectedAnswers": [
+          {
+            "answerId": "01KCXGG0W70001H0Q1FW3XVNSR",
+            "value": "Stops the loop immediately"
+          }
+        ],
+        "correctAnswers": [
+          {
+            "answerId": "01KCXGG0W70001H0Q1FW3XVNSR",
+            "value": "Stops the loop immediately"
+          }
+        ],
+        "isCorrect": true
+      },
+      {
+        "testResultQuestionId": "01KCXK1Q8FHH8CFWFNSE3QTYNJ",
+        "questionId": "01KCXGG0TB0001H0Q1FW248N7R",
+        "questionText": "Which sorting algorithm is typically O(n^2) in the average case?",
+        "domain": "Computer Science",
+        "explanation": "Bubble sort is O(n^2) average/worst.",
+        "difficulty": null,
+        "score": 1,
+        "selectedAnswers": [
+          {
+            "answerId": "01KCXGG0W70001H0Q1FW3XQXP0",
+            "value": "Bubble sort"
+          }
+        ],
+        "correctAnswers": [
+          {
+            "answerId": "01KCXGG0W70001H0Q1FW3XQXP0",
+            "value": "Bubble sort"
+          }
+        ],
+        "isCorrect": true
+      },
+      {
+        "testResultQuestionId": "01KCXK1Q8W1J68B9FBFKH67QHB",
+        "questionId": "01KCXGG0TB0001H0Q1FW24C2KR",
+        "questionText": "Which measure of central tendency is most robust to outliers?",
+        "domain": "Data & Analytics",
+        "explanation": "Median is less affected by extreme values.",
+        "difficulty": null,
+        "score": 1,
+        "selectedAnswers": [
+          {
+            "answerId": "01KCXGG0W70001H0Q1FW3Y1T30",
+            "value": "Mode"
+          }
+        ],
+        "correctAnswers": [
+          {
+            "answerId": "01KCXGG0W70001H0Q1FW3Y0K10",
+            "value": "Median"
+          }
+        ],
+        "isCorrect": false
+      },
+      {
+        "testResultQuestionId": "01KCXK1Q8XFQ8ETSVP63H125K9",
+        "questionId": "01KCXGG0TB0001H0Q1FW24DS9R",
+        "questionText": "A 'bar chart' is best for showing:",
+        "domain": "Data & Analytics",
+        "explanation": "Bar charts compare categories.",
+        "difficulty": null,
+        "score": 1,
+        "selectedAnswers": [
+          {
+            "answerId": "01KCXGG0W80001H0Q1FW3Y6R9G",
+            "value": "Counts across categories"
+          }
+        ],
+        "correctAnswers": [
+          {
+            "answerId": "01KCXGG0W80001H0Q1FW3Y6R9G",
+            "value": "Counts across categories"
+          }
+        ],
+        "isCorrect": true
+      },
+      {
+        "testResultQuestionId": "01KCXK1Q8Y2Q8MQRFCJX85CRT7",
+        "questionId": "01KCXGG0TB0001H0Q1FW24FF0G",
+        "questionText": "If correlation between X and Y is -0.9, it indicates:",
+        "domain": "Data & Analytics",
+        "explanation": "Correlation close to -1 means strong negative association.",
+        "difficulty": null,
+        "score": 1,
+        "selectedAnswers": [
+          {
+            "answerId": "01KCXGG0W80001H0Q1FW3YBMHG",
+            "value": "No relationship"
+          }
+        ],
+        "correctAnswers": [
+          {
+            "answerId": "01KCXGG0W80001H0Q1FW3YADFG",
+            "value": "Strong negative relationship"
+          }
+        ],
+        "isCorrect": false
+      },
+      {
+        "testResultQuestionId": "01KCXK1Q8ZGM3A2Q143B7TRQCJ",
+        "questionId": "01KCXGG0TB0001H0Q1FW24H5PG",
+        "questionText": "In a dataset, a 'feature' usually means:",
+        "domain": "Data & Analytics",
+        "explanation": "Features are input variables.",
+        "difficulty": null,
+        "score": 1,
+        "selectedAnswers": [
+          {
+            "answerId": "01KCXGG0W80001H0Q1FW3YFBP0",
+            "value": "An input variable used for prediction"
+          }
+        ],
+        "correctAnswers": [
+          {
+            "answerId": "01KCXGG0W80001H0Q1FW3YFBP0",
+            "value": "An input variable used for prediction"
+          }
+        ],
+        "isCorrect": true
+      },
+      {
+        "testResultQuestionId": "01KCXK1Q9050K1RZ1AMP4ZBPN0",
+        "questionId": "01KCXGG0TB0001H0Q1FW24MJ38",
+        "questionText": "Which SQL clause filters rows before aggregation?",
+        "domain": "Databases",
+        "explanation": "WHERE filters rows before GROUP BY.",
+        "difficulty": null,
+        "score": 1,
+        "selectedAnswers": [
+          {
+            "answerId": "01KCXGG0W80001H0Q1FW3YR4Y0",
+            "value": "WHERE"
+          }
+        ],
+        "correctAnswers": [
+          {
+            "answerId": "01KCXGG0W80001H0Q1FW3YR4Y0",
+            "value": "WHERE"
+          }
+        ],
+        "isCorrect": true
+      },
+      {
+        "testResultQuestionId": "01KCXK1Q90B5D9G3SRSXS8VPVX",
+        "questionId": "01KCXGG0TB0001H0Q1FW24JWCG",
+        "questionText": "What does a p-value represent (in simple terms)?",
+        "domain": "Data & Analytics",
+        "explanation": "It measures how surprising the data is under the null hypothesis.",
+        "difficulty": null,
+        "score": 1,
+        "selectedAnswers": [
+          {
+            "answerId": "01KCXGG0W80001H0Q1FW3YMERR",
+            "value": "Probability of observing data this extreme if null is true"
+          }
+        ],
+        "correctAnswers": [
+          {
+            "answerId": "01KCXGG0W80001H0Q1FW3YMERR",
+            "value": "Probability of observing data this extreme if null is true"
+          }
+        ],
+        "isCorrect": true
+      },
+      {
+        "testResultQuestionId": "01KCXK1Q91V5V23J3A7BTSSE28",
+        "questionId": "01KCXGG0TB0001H0Q1FW24P8S8",
+        "questionText": "Which key uniquely identifies each row in a table?",
+        "domain": "Databases",
+        "explanation": "Primary key uniquely identifies rows.",
+        "difficulty": null,
+        "score": 1,
+        "selectedAnswers": [
+          {
+            "answerId": "01KCXGG0W80001H0Q1FW3YY880",
+            "value": "Primary key"
+          }
+        ],
+        "correctAnswers": [
+          {
+            "answerId": "01KCXGG0W80001H0Q1FW3YY880",
+            "value": "Primary key"
+          }
+        ],
+        "isCorrect": true
+      },
+      {
+        "testResultQuestionId": "01KCXK1Q920A5W7E74E8B6AH0D",
+        "questionId": "01KCXGG0TB0001H0Q1FW24ST28",
+        "questionText": "Which normal form mainly reduces repeating groups and ensures atomic columns?",
+        "domain": "Databases",
+        "explanation": "1NF enforces atomic values and removes repeating groups.",
+        "difficulty": null,
+        "score": 1,
+        "selectedAnswers": [
+          {
+            "answerId": "01KCXGG0W90001H0Q1FW3Z6SP0",
+            "value": "1NF"
+          }
+        ],
+        "correctAnswers": [
+          {
+            "answerId": "01KCXGG0W90001H0Q1FW3Z6SP0",
+            "value": "1NF"
+          }
+        ],
+        "isCorrect": true
+      },
+      {
+        "testResultQuestionId": "01KCXK1Q92Q4NYKJ979PDVASEW",
+        "questionId": "01KCXGG0TB0001H0Q1FW24R3C8",
+        "questionText": "What does JOIN do in SQL?",
+        "domain": "Databases",
+        "explanation": "JOIN combines rows across tables using a join condition.",
+        "difficulty": null,
+        "score": 1,
+        "selectedAnswers": [
+          {
+            "answerId": "01KCXGG0W90001H0Q1FW3Z34G0",
+            "value": "Combines rows from two tables based on a condition"
+          }
+        ],
+        "correctAnswers": [
+          {
+            "answerId": "01KCXGG0W90001H0Q1FW3Z34G0",
+            "value": "Combines rows from two tables based on a condition"
+          }
+        ],
+        "isCorrect": true
+      },
+      {
+        "testResultQuestionId": "01KCXK1Q938AE4TWMG0ZWNENTH",
+        "questionId": "01KCXGG0TB0001H0Q1FW24VFS0",
+        "questionText": "Which index structure is commonly used to speed up range queries?",
+        "domain": "Databases",
+        "explanation": "B-trees support ordered traversal for ranges.",
+        "difficulty": null,
+        "score": 1,
+        "selectedAnswers": [
+          {
+            "answerId": "01KCXGG0W90001H0Q1FW3ZD5S8",
+            "value": "B-tree index"
+          }
+        ],
+        "correctAnswers": [
+          {
+            "answerId": "01KCXGG0W90001H0Q1FW3ZD5S8",
+            "value": "B-tree index"
+          }
+        ],
+        "isCorrect": true
+      },
+      {
+        "testResultQuestionId": "01KCXK1Q93WAHRWFAMM65W85F3",
+        "questionId": "01KCXGG0TC0001H0Q1FW24X5FR",
+        "questionText": "In supervised learning, the model is trained using:",
+        "domain": "Artificial Intelligence",
+        "explanation": "Supervised learning uses labeled examples.",
+        "difficulty": null,
+        "score": 1,
+        "selectedAnswers": [
+          {
+            "answerId": "01KCXGG0W90001H0Q1FW3ZJ30G",
+            "value": "Labeled input-output pairs"
+          }
+        ],
+        "correctAnswers": [
+          {
+            "answerId": "01KCXGG0W90001H0Q1FW3ZJ30G",
+            "value": "Labeled input-output pairs"
+          }
+        ],
+        "isCorrect": true
+      },
+      {
+        "testResultQuestionId": "01KCXK1Q9407B2A2REP24SXRFQ",
+        "questionId": "01KCXGG0TC0001H0Q1FW24YT78",
+        "questionText": "Which metric is commonly used for classification accuracy?",
+        "domain": "Artificial Intelligence",
+        "explanation": "Accuracy measures correct predictions / total.",
+        "difficulty": null,
+        "score": 1,
+        "selectedAnswers": [
+          {
+            "answerId": "01KCXGG0W90001H0Q1FW3ZR79R",
+            "value": "Accuracy"
+          }
+        ],
+        "correctAnswers": [
+          {
+            "answerId": "01KCXGG0W90001H0Q1FW3ZR79R",
+            "value": "Accuracy"
+          }
+        ],
+        "isCorrect": true
+      },
+      {
+        "testResultQuestionId": "01KCXK1Q944MMTVK47JTS4Q226",
+        "questionId": "01KCXGG0TC0001H0Q1FW250FY0",
+        "questionText": "If all A are B, and all B are C, then:",
+        "domain": "Logic & Reasoning",
+        "explanation": "Transitive property: A ⊆ B and B ⊆ C implies A ⊆ C.",
+        "difficulty": null,
+        "score": 1,
+        "selectedAnswers": [
+          {
+            "answerId": "01KCXGG0W90001H0Q1FW3ZVVGG",
+            "value": "All A are C"
+          }
+        ],
+        "correctAnswers": [
+          {
+            "answerId": "01KCXGG0W90001H0Q1FW3ZVVGG",
+            "value": "All A are C"
+          }
+        ],
+        "isCorrect": true
+      },
+      {
+        "testResultQuestionId": "01KCXK1Q95FF7ZN79B7KD7NGVD",
+        "questionId": "01KCXGG0TC0001H0Q1FW2525MR",
+        "questionText": "A statement is TRUE, and its negation is:",
+        "domain": "Logic & Reasoning",
+        "explanation": "Negation of a true statement is false.",
+        "difficulty": null,
+        "score": 1,
+        "selectedAnswers": [
+          {
+            "answerId": "01KCXGG0W90001H0Q1FW400VNG",
+            "value": "FALSE"
+          }
+        ],
+        "correctAnswers": [
+          {
+            "answerId": "01KCXGG0W90001H0Q1FW400VNG",
+            "value": "FALSE"
+          }
+        ],
+        "isCorrect": true
+      }
+    ]
+  },
+  "previousAttempt": null
+}

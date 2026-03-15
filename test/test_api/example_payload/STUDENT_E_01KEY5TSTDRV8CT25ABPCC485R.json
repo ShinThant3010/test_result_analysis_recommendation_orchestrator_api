@@ -1,0 +1,457 @@
+{
+  "studentId": "STUDENT_E",
+  "testId": "01KEY5TSTDRV8CT25ABPCC485R",
+  "testTitle": "Music Knowledge 101",
+  "maxCourses": 5,
+  "maxCoursesPerWeakness": 3,
+  "participantRanking": null,
+  "language": "EN",
+  "currentAttempt": {
+    "earnedScore": 12,
+    "totalScore": 20,
+    "status": "pass",
+    "questions": [
+      {
+        "testResultQuestionId": "01KEY5TSTG02D3SXV4QW2JCGSB",
+        "questionId": "01KEY5TSTEA0TV7M7V3C9MAKM0",
+        "questionText": "Which of these is a percussion instrument?",
+        "domain": "music",
+        "explanation": "A snare drum is played by striking it, making it a percussion instrument.",
+        "difficulty": null,
+        "score": 1,
+        "selectedAnswers": [
+          {
+            "answerId": "01KEY5TSTETV9Y2YTC7A2G4SXY",
+            "value": "Cello"
+          }
+        ],
+        "correctAnswers": [
+          {
+            "answerId": "01KEY5TSTE5H0098KYTE1ERC0P",
+            "value": "Snare drum"
+          }
+        ],
+        "isCorrect": false
+      },
+      {
+        "testResultQuestionId": "01KEY5TSTG0Z0RJ0TRZAVVPEHV",
+        "questionId": "01KEY5TSTEQ8DKS9HGYMSB4FKA",
+        "questionText": "A 'rest' in sheet music indicates:",
+        "domain": "music",
+        "explanation": "A rest tells the performer not to play for a specified length of time.",
+        "difficulty": null,
+        "score": 1,
+        "selectedAnswers": [
+          {
+            "answerId": "01KEY5TSTEPM6HK2PSWJRE0J0S",
+            "value": "Repeat the section"
+          }
+        ],
+        "correctAnswers": [
+          {
+            "answerId": "01KEY5TSTE9RNGSFYEAF2WQMCK",
+            "value": "Silence for a duration"
+          }
+        ],
+        "isCorrect": false
+      },
+      {
+        "testResultQuestionId": "01KEY5TSTG4BD6D2STJQ6JZVG9",
+        "questionId": "01KEY5TSTDH3NWTP94DF4F82ZV",
+        "questionText": "A 'triad' chord is made of how many distinct notes?",
+        "domain": "music",
+        "explanation": "A triad contains three notes: root, third, and fifth.",
+        "difficulty": null,
+        "score": 1,
+        "selectedAnswers": [
+          {
+            "answerId": "01KEY5TSTDQQC392NCSD6XSM9T",
+            "value": "3"
+          }
+        ],
+        "correctAnswers": [
+          {
+            "answerId": "01KEY5TSTDQQC392NCSD6XSM9T",
+            "value": "3"
+          }
+        ],
+        "isCorrect": true
+      },
+      {
+        "testResultQuestionId": "01KEY5TSTG7CAWY5H8Y4ZYPFQQ",
+        "questionId": "01KEY5TSTDJY2CQKSTYXPDE6ND",
+        "questionText": "Which of these is a woodwind instrument?",
+        "domain": "music",
+        "explanation": "The flute is a woodwind instrument (despite being made of metal in many modern versions).",
+        "difficulty": null,
+        "score": 1,
+        "selectedAnswers": [
+          {
+            "answerId": "01KEY5TSTDA8SR9P8KG5TB3BP6",
+            "value": "Flute"
+          }
+        ],
+        "correctAnswers": [
+          {
+            "answerId": "01KEY5TSTDA8SR9P8KG5TB3BP6",
+            "value": "Flute"
+          }
+        ],
+        "isCorrect": true
+      },
+      {
+        "testResultQuestionId": "01KEY5TSTG7HAYC46K2RRPZHFD",
+        "questionId": "01KEY5TSTEDZ0ZN69CR3SKR675",
+        "questionText": "In music, 'crescendo' means:",
+        "domain": "music",
+        "explanation": "Crescendo indicates a gradual increase in volume.",
+        "difficulty": null,
+        "score": 1,
+        "selectedAnswers": [
+          {
+            "answerId": "01KEY5TSTER039STYKGJ0Z1DM3",
+            "value": "Gradually speed up"
+          }
+        ],
+        "correctAnswers": [
+          {
+            "answerId": "01KEY5TSTEM64FCZ59RKCFN3MP",
+            "value": "Gradually get louder"
+          }
+        ],
+        "isCorrect": false
+      },
+      {
+        "testResultQuestionId": "01KEY5TSTGBFCSSYJ8NMAKNY23",
+        "questionId": "01KEY5TSTE5WMQDBXR43S7RG44",
+        "questionText": "Which Italian term means 'very fast' and is often used for tempo markings?",
+        "domain": "music",
+        "explanation": "Presto is a tempo marking meaning very fast.",
+        "difficulty": null,
+        "score": 1,
+        "selectedAnswers": [
+          {
+            "answerId": "01KEY5TSTEG06FMR3M4703QWE7",
+            "value": "Presto"
+          }
+        ],
+        "correctAnswers": [
+          {
+            "answerId": "01KEY5TSTEG06FMR3M4703QWE7",
+            "value": "Presto"
+          }
+        ],
+        "isCorrect": true
+      },
+      {
+        "testResultQuestionId": "01KEY5TSTGE0SS720Z653Y8R45",
+        "questionId": "01KEY5TSTDXKXJ6JYGQKRBRQH7",
+        "questionText": "What is the standard concert pitch note that orchestras tune to most often?",
+        "domain": "music",
+        "explanation": "Orchestras commonly tune to A4 (often 440 Hz).",
+        "difficulty": null,
+        "score": 1,
+        "selectedAnswers": [
+          {
+            "answerId": "01KEY5TSTESMKR46GQG0968HXC",
+            "value": "E4"
+          }
+        ],
+        "correctAnswers": [
+          {
+            "answerId": "01KEY5TSTDNNPEDGF6CRAGDZJ3",
+            "value": "A4"
+          }
+        ],
+        "isCorrect": false
+      },
+      {
+        "testResultQuestionId": "01KEY5TSTGFWF5SMAWNNCXHE62",
+        "questionId": "01KEY5TSTD473EHQRQTE1Q08Y7",
+        "questionText": "How many semitones are in an octave in Western equal temperament?",
+        "domain": "music",
+        "explanation": "An octave is divided into 12 equal semitone steps in Western equal temperament.",
+        "difficulty": null,
+        "score": 1,
+        "selectedAnswers": [
+          {
+            "answerId": "01KEY5TSTD7QSXWVJ01Q0ZS9X2",
+            "value": "12"
+          }
+        ],
+        "correctAnswers": [
+          {
+            "answerId": "01KEY5TSTD7QSXWVJ01Q0ZS9X2",
+            "value": "12"
+          }
+        ],
+        "isCorrect": true
+      },
+      {
+        "testResultQuestionId": "01KEY5TSTGH0759KGK8RMKKW46",
+        "questionId": "01KEY5TSTE6E33R1VF7SPGHWGP",
+        "questionText": "Which composer is strongly associated with the Baroque period and wrote the 'Brandenburg Concertos'?",
+        "domain": "music",
+        "explanation": "Bach is a key Baroque composer and wrote the Brandenburg Concertos.",
+        "difficulty": null,
+        "score": 1,
+        "selectedAnswers": [
+          {
+            "answerId": "01KEY5TSTE2NF0E4F6Q3V7KT54",
+            "value": "Johann Sebastian Bach"
+          }
+        ],
+        "correctAnswers": [
+          {
+            "answerId": "01KEY5TSTE2NF0E4F6Q3V7KT54",
+            "value": "Johann Sebastian Bach"
+          }
+        ],
+        "isCorrect": true
+      },
+      {
+        "testResultQuestionId": "01KEY5TSTGH9XMQDDHFBR2115H",
+        "questionId": "01KEY5TSTDCA3WNFKA1RQQC3R9",
+        "questionText": "What does the musical term 'forte' mean?",
+        "domain": "music",
+        "explanation": "Forte (f) indicates a loud dynamic.",
+        "difficulty": null,
+        "score": 1,
+        "selectedAnswers": [
+          {
+            "answerId": "01KEY5TSTDF0GVAKTDP968S7PK",
+            "value": "Play smoothly"
+          }
+        ],
+        "correctAnswers": [
+          {
+            "answerId": "01KEY5TSTDBPMNEQABMFMN33AV",
+            "value": "Play loudly"
+          }
+        ],
+        "isCorrect": false
+      },
+      {
+        "testResultQuestionId": "01KEY5TSTGJZK6F1KQM38KRC5B",
+        "questionId": "01KEY5TSTDC829W5ZPXEAX1744",
+        "questionText": "Which instrument family does the violin belong to?",
+        "domain": "music",
+        "explanation": "The violin produces sound from vibrating strings, so it is a string instrument.",
+        "difficulty": null,
+        "score": 1,
+        "selectedAnswers": [
+          {
+            "answerId": "01KEY5TSTDKJ3BSK52ND0DKJHV",
+            "value": "String"
+          }
+        ],
+        "correctAnswers": [
+          {
+            "answerId": "01KEY5TSTDKJ3BSK52ND0DKJHV",
+            "value": "String"
+          }
+        ],
+        "isCorrect": true
+      },
+      {
+        "testResultQuestionId": "01KEY5TSTGKVYKY6FC268V1NFS",
+        "questionId": "01KEY5TSTEVD69ARPBG512ACZ0",
+        "questionText": "Which instrument is known for using a slide to change pitch?",
+        "domain": "music",
+        "explanation": "The trombone uses a slide to vary the length of tubing and change pitch.",
+        "difficulty": null,
+        "score": 1,
+        "selectedAnswers": [
+          {
+            "answerId": "01KEY5TSTE81DHD949CC34JGDD",
+            "value": "Trombone"
+          }
+        ],
+        "correctAnswers": [
+          {
+            "answerId": "01KEY5TSTE81DHD949CC34JGDD",
+            "value": "Trombone"
+          }
+        ],
+        "isCorrect": true
+      },
+      {
+        "testResultQuestionId": "01KEY5TSTGM6KG04P0CTB0BC2X",
+        "questionId": "01KEY5TSTECKSFH87R6AMEHH6Z",
+        "questionText": "What does 'tempo' refer to in music?",
+        "domain": "music",
+        "explanation": "Tempo is the speed at which music is played, often measured in BPM.",
+        "difficulty": null,
+        "score": 1,
+        "selectedAnswers": [
+          {
+            "answerId": "01KEY5TSTEY362JGG30SCMHWG7",
+            "value": "The speed of the beat"
+          }
+        ],
+        "correctAnswers": [
+          {
+            "answerId": "01KEY5TSTEY362JGG30SCMHWG7",
+            "value": "The speed of the beat"
+          }
+        ],
+        "isCorrect": true
+      },
+      {
+        "testResultQuestionId": "01KEY5TSTGM907RNZ2JT0Y72GZ",
+        "questionId": "01KEY5TSTEH0JZ4Q3YQRMHHW22",
+        "questionText": "The 'key signature' in sheet music primarily tells you:",
+        "domain": "music",
+        "explanation": "Key signatures indicate the sharps/flats used consistently in the piece.",
+        "difficulty": null,
+        "score": 1,
+        "selectedAnswers": [
+          {
+            "answerId": "01KEY5TSTENZDZPPMAQJZ3BFRY",
+            "value": "How many measures to repeat"
+          }
+        ],
+        "correctAnswers": [
+          {
+            "answerId": "01KEY5TSTEE1AQ0TH3ZNXTA63E",
+            "value": "Which notes are sharp/flat throughout"
+          }
+        ],
+        "isCorrect": false
+      },
+      {
+        "testResultQuestionId": "01KEY5TSTGN2B1WHDNF01RF01R",
+        "questionId": "01KEY5TSTEY8605PZV45BB05VC",
+        "questionText": "Which note is the 'tonic' in the key of C major?",
+        "domain": "music",
+        "explanation": "The tonic is the home note of the key; in C major, it is C.",
+        "difficulty": null,
+        "score": 1,
+        "selectedAnswers": [
+          {
+            "answerId": "01KEY5TSTEJ3F9YTM2BJ7JW15W",
+            "value": "D"
+          }
+        ],
+        "correctAnswers": [
+          {
+            "answerId": "01KEY5TSTERAEB429QKR1KZ49A",
+            "value": "C"
+          }
+        ],
+        "isCorrect": false
+      },
+      {
+        "testResultQuestionId": "01KEY5TSTGPZXKBZZS363GR9PD",
+        "questionId": "01KEY5TSTE210QZV1ASQKSMY5C",
+        "questionText": "Which time signature means there are three quarter-note beats per measure?",
+        "domain": "music",
+        "explanation": "3/4 indicates three quarter-note beats per bar (e.g., many waltzes).",
+        "difficulty": null,
+        "score": 1,
+        "selectedAnswers": [
+          {
+            "answerId": "01KEY5TSTE576YRCB3RDNH544A",
+            "value": "3/4"
+          }
+        ],
+        "correctAnswers": [
+          {
+            "answerId": "01KEY5TSTE576YRCB3RDNH544A",
+            "value": "3/4"
+          }
+        ],
+        "isCorrect": true
+      },
+      {
+        "testResultQuestionId": "01KEY5TSTGRP1RY2JCDN3GTQTW",
+        "questionId": "01KEY5TSTEWTX7RZJ21BX9P4QY",
+        "questionText": "In a major scale, what is the interval pattern in whole (W) and half (H) steps?",
+        "domain": "music",
+        "explanation": "Major scale pattern: whole, whole, half, whole, whole, whole, half.",
+        "difficulty": null,
+        "score": 1,
+        "selectedAnswers": [
+          {
+            "answerId": "01KEY5TSTEPPPQB07MZ744YJKZ",
+            "value": "W W H W W W H"
+          }
+        ],
+        "correctAnswers": [
+          {
+            "answerId": "01KEY5TSTEPPPQB07MZ744YJKZ",
+            "value": "W W H W W W H"
+          }
+        ],
+        "isCorrect": true
+      },
+      {
+        "testResultQuestionId": "01KEY5TSTGRZBJYAAZ0FZ6WYSQ",
+        "questionId": "01KEY5TSTDVG3S1Y3PFHBGTWXA",
+        "questionText": "Which clef is most commonly used for the left hand in piano music?",
+        "domain": "music",
+        "explanation": "Piano notation typically uses treble for right hand and bass for left hand.",
+        "difficulty": null,
+        "score": 1,
+        "selectedAnswers": [
+          {
+            "answerId": "01KEY5TSTDR4235PME0ZHSY3GN",
+            "value": "Bass clef"
+          }
+        ],
+        "correctAnswers": [
+          {
+            "answerId": "01KEY5TSTDR4235PME0ZHSY3GN",
+            "value": "Bass clef"
+          }
+        ],
+        "isCorrect": true
+      },
+      {
+        "testResultQuestionId": "01KEY5TSTGX43AQYKE9X83GDWQ",
+        "questionId": "01KEY5TSTDZ4HKB6GHMV8RB8FT",
+        "questionText": "Who composed the 'Fifth Symphony' famous for its opening four-note motif?",
+        "domain": "music",
+        "explanation": "Beethoven’s Symphony No. 5 is known for its iconic 'da-da-da-DUM' opening.",
+        "difficulty": null,
+        "score": 1,
+        "selectedAnswers": [
+          {
+            "answerId": "01KEY5TSTDP9025NS3PA1GNTJ2",
+            "value": "Ludwig van Beethoven"
+          }
+        ],
+        "correctAnswers": [
+          {
+            "answerId": "01KEY5TSTDP9025NS3PA1GNTJ2",
+            "value": "Ludwig van Beethoven"
+          }
+        ],
+        "isCorrect": true
+      },
+      {
+        "testResultQuestionId": "01KEY5TSTGXQ2Z5RRQ00WYRN7T",
+        "questionId": "01KEY5TSTE5S6EC5Q99EKYWKJ8",
+        "questionText": "What is the name for playing two or more notes at the same time?",
+        "domain": "music",
+        "explanation": "Harmony involves simultaneous notes/chords supporting the melody.",
+        "difficulty": null,
+        "score": 1,
+        "selectedAnswers": [
+          {
+            "answerId": "01KEY5TSTEHNSNAHV5SAN5KN8E",
+            "value": "Rhythm"
+          }
+        ],
+        "correctAnswers": [
+          {
+            "answerId": "01KEY5TSTE05B7FJRZGA76XCPC",
+            "value": "Harmony"
+          }
+        ],
+        "isCorrect": false
+      }
+    ]
+  },
+  "previousAttempt": null
+}

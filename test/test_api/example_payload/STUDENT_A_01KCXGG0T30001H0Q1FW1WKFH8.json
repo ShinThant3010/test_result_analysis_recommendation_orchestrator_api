@@ -1,0 +1,677 @@
+{
+  "studentId": "STUDENT_A",
+  "testId": "01KCXGG0T30001H0Q1FW1WKFH8",
+  "testTitle": "Business Administration Sample Test I",
+  "maxCourses": 5,
+  "maxCoursesPerWeakness": 3,
+  "participantRanking": null,
+  "language": "EN",
+  "currentAttempt": {
+    "earnedScore": 22,
+    "totalScore": 30,
+    "status": "pass",
+    "questions": [
+      {
+        "testResultQuestionId": "01KCXK1Q6YKP80DXG3H8YDP6G4",
+        "questionId": "01KCXGG0T30001H0Q1FW1WNE18",
+        "questionText": "SWOT analysis is used to assess:",
+        "domain": "Business Administration",
+        "explanation": "SWOT analysis.",
+        "difficulty": null,
+        "score": 1,
+        "selectedAnswers": [
+          {
+            "answerId": "01KCXGG0VN0001H0Q1FW3CD8N8",
+            "value": "Internal and external environment"
+          }
+        ],
+        "correctAnswers": [
+          {
+            "answerId": "01KCXGG0VN0001H0Q1FW3CD8N8",
+            "value": "Internal and external environment"
+          }
+        ],
+        "isCorrect": true
+      },
+      {
+        "testResultQuestionId": "01KCXK1Q6YSPXATG943ZP4QR36",
+        "questionId": "01KCXGG0T30001H0Q1FW1WKPC0",
+        "questionText": "Which function of management involves setting objectives?",
+        "domain": "Business Administration",
+        "explanation": "Planning defines objectives.",
+        "difficulty": null,
+        "score": 1,
+        "selectedAnswers": [
+          {
+            "answerId": "01KCXGG0VN0001H0Q1FW3C6ZFR",
+            "value": "Planning"
+          }
+        ],
+        "correctAnswers": [
+          {
+            "answerId": "01KCXGG0VN0001H0Q1FW3C6ZFR",
+            "value": "Planning"
+          }
+        ],
+        "isCorrect": true
+      },
+      {
+        "testResultQuestionId": "01KCXK1Q6ZH7G6842HFCV4ZRQ8",
+        "questionId": "01KCXGG0T30001H0Q1FW1WQ4Q8",
+        "questionText": "Which is an example of a controllable cost?",
+        "domain": "Business Administration",
+        "explanation": "Direct labor varies with output.",
+        "difficulty": null,
+        "score": 1,
+        "selectedAnswers": [
+          {
+            "answerId": "01KCXGG0VN0001H0Q1FW3CKHTR",
+            "value": "Direct labor"
+          }
+        ],
+        "correctAnswers": [
+          {
+            "answerId": "01KCXGG0VN0001H0Q1FW3CKHTR",
+            "value": "Direct labor"
+          }
+        ],
+        "isCorrect": true
+      },
+      {
+        "testResultQuestionId": "01KCXK1Q6ZW29XADNP52J47CX8",
+        "questionId": "01KCXGG0T30001H0Q1FW1WRWCG",
+        "questionText": "Span of control refers to:",
+        "domain": "Business Administration",
+        "explanation": "Span of control.",
+        "difficulty": null,
+        "score": 1,
+        "selectedAnswers": [
+          {
+            "answerId": "01KCXGG0VN0001H0Q1FW3CQ9YG",
+            "value": "Subordinates per manager"
+          }
+        ],
+        "correctAnswers": [
+          {
+            "answerId": "01KCXGG0VN0001H0Q1FW3CQ9YG",
+            "value": "Subordinates per manager"
+          }
+        ],
+        "isCorrect": true
+      },
+      {
+        "testResultQuestionId": "01KCXK1Q709VGBVPA4PEP326YF",
+        "questionId": "01KCXGG0T30001H0Q1FW1WWBQ0",
+        "questionText": "KPIs are primarily used to:",
+        "domain": "Business Administration",
+        "explanation": "KPIs measure results.",
+        "difficulty": null,
+        "score": 1,
+        "selectedAnswers": [
+          {
+            "answerId": "01KCXGG0VP0001H0Q1FW3D0B0G",
+            "value": "Punish employees"
+          }
+        ],
+        "correctAnswers": [
+          {
+            "answerId": "01KCXGG0VP0001H0Q1FW3D1K1R",
+            "value": "Measure performance"
+          }
+        ],
+        "isCorrect": false
+      },
+      {
+        "testResultQuestionId": "01KCXK1Q70H3A318C07MZ07Q53",
+        "questionId": "01KCXGG0T30001H0Q1FW1WTM1R",
+        "questionText": "Which leadership style encourages participation?",
+        "domain": "Business Administration",
+        "explanation": "Democratic leadership.",
+        "difficulty": null,
+        "score": 1,
+        "selectedAnswers": [
+          {
+            "answerId": "01KCXGG0VN0001H0Q1FW3CWA3G",
+            "value": "Democratic"
+          }
+        ],
+        "correctAnswers": [
+          {
+            "answerId": "01KCXGG0VN0001H0Q1FW3CWA3G",
+            "value": "Democratic"
+          }
+        ],
+        "isCorrect": true
+      },
+      {
+        "testResultQuestionId": "01KCXK1Q71QA1E1ZS9P5P9HA7S",
+        "questionId": "01KCXGG0T30001H0Q1FW1WY6A0",
+        "questionText": "Maslow’s hierarchy focuses on:",
+        "domain": "Business Administration",
+        "explanation": "Motivation theory.",
+        "difficulty": null,
+        "score": 1,
+        "selectedAnswers": [
+          {
+            "answerId": "01KCXGG0VP0001H0Q1FW3D5B5G",
+            "value": "Finance"
+          }
+        ],
+        "correctAnswers": [
+          {
+            "answerId": "01KCXGG0VP0001H0Q1FW3D6J7G",
+            "value": "Motivation"
+          }
+        ],
+        "isCorrect": false
+      },
+      {
+        "testResultQuestionId": "01KCXK1Q720JME1PZWC2XW2531",
+        "questionId": "01KCXGG0T30001H0Q1FW1WZXZ8",
+        "questionText": "Cost leadership strategy relies on:",
+        "domain": "Business Administration",
+        "explanation": "Cost leadership.",
+        "difficulty": null,
+        "score": 1,
+        "selectedAnswers": [
+          {
+            "answerId": "01KCXGG0VP0001H0Q1FW3DBNA8",
+            "value": "Economies of scale"
+          }
+        ],
+        "correctAnswers": [
+          {
+            "answerId": "01KCXGG0VP0001H0Q1FW3DBNA8",
+            "value": "Economies of scale"
+          }
+        ],
+        "isCorrect": true
+      },
+      {
+        "testResultQuestionId": "01KCXK1Q7302TJG56E11S90CC9",
+        "questionId": "01KCXGG0T30001H0Q1FW1X1NMG",
+        "questionText": "A mission statement defines:",
+        "domain": "Business Administration",
+        "explanation": "Mission purpose.",
+        "difficulty": null,
+        "score": 1,
+        "selectedAnswers": [
+          {
+            "answerId": "01KCXGG0VP0001H0Q1FW3DH168",
+            "value": "Long-term purpose"
+          }
+        ],
+        "correctAnswers": [
+          {
+            "answerId": "01KCXGG0VP0001H0Q1FW3DH168",
+            "value": "Long-term purpose"
+          }
+        ],
+        "isCorrect": true
+      },
+      {
+        "testResultQuestionId": "01KCXK1Q73E2SDZP19J2KNXBX4",
+        "questionId": "01KCXGG0T30001H0Q1FW1X3D9R",
+        "questionText": "Change management aims to:",
+        "domain": "Business Administration",
+        "explanation": "Managing change.",
+        "difficulty": null,
+        "score": 1,
+        "selectedAnswers": [
+          {
+            "answerId": "01KCXGG0VP0001H0Q1FW3DMSA0",
+            "value": "Avoid change"
+          }
+        ],
+        "correctAnswers": [
+          {
+            "answerId": "01KCXGG0VP0001H0Q1FW3DP0C0",
+            "value": "Manage transition"
+          }
+        ],
+        "isCorrect": false
+      },
+      {
+        "testResultQuestionId": "01KCXK1Q744EPGM2BXSAXDMB3R",
+        "questionId": "01KCXGG0T30001H0Q1FW1X53ZR",
+        "questionText": "Which function of management involves setting objectives?",
+        "domain": "Business Administration",
+        "explanation": "Planning defines objectives.",
+        "difficulty": null,
+        "score": 1,
+        "selectedAnswers": [
+          {
+            "answerId": "01KCXGG0VP0001H0Q1FW3DT288",
+            "value": "Planning"
+          }
+        ],
+        "correctAnswers": [
+          {
+            "answerId": "01KCXGG0VP0001H0Q1FW3DT288",
+            "value": "Planning"
+          }
+        ],
+        "isCorrect": true
+      },
+      {
+        "testResultQuestionId": "01KCXK1Q75XPF3HZMPRE74CWFY",
+        "questionId": "01KCXGG0T30001H0Q1FW1X6VN0",
+        "questionText": "SWOT analysis is used to assess:",
+        "domain": "Business Administration",
+        "explanation": "SWOT analysis.",
+        "difficulty": null,
+        "score": 1,
+        "selectedAnswers": [
+          {
+            "answerId": "01KCXGG0VQ0001H0Q1FW3DZ6A8",
+            "value": "Financial statements"
+          }
+        ],
+        "correctAnswers": [
+          {
+            "answerId": "01KCXGG0VQ0001H0Q1FW3E0EBG",
+            "value": "Internal and external environment"
+          }
+        ],
+        "isCorrect": false
+      },
+      {
+        "testResultQuestionId": "01KCXK1Q77TJ74FW5JTV0VWHT9",
+        "questionId": "01KCXGG0T40001H0Q1FW1X8R6G",
+        "questionText": "Which is an example of a controllable cost?",
+        "domain": "Business Administration",
+        "explanation": "Direct labor varies with output.",
+        "difficulty": null,
+        "score": 1,
+        "selectedAnswers": [
+          {
+            "answerId": "01KCXGG0VQ0001H0Q1FW3E6KM0",
+            "value": "Direct labor"
+          }
+        ],
+        "correctAnswers": [
+          {
+            "answerId": "01KCXGG0VQ0001H0Q1FW3E6KM0",
+            "value": "Direct labor"
+          }
+        ],
+        "isCorrect": true
+      },
+      {
+        "testResultQuestionId": "01KCXK1Q78HH94KSRD8R4Y2VZ2",
+        "questionId": "01KCXGG0T40001H0Q1FW1XAFVR",
+        "questionText": "Span of control refers to:",
+        "domain": "Business Administration",
+        "explanation": "Span of control.",
+        "difficulty": null,
+        "score": 1,
+        "selectedAnswers": [
+          {
+            "answerId": "01KCXGG0VQ0001H0Q1FW3E90RR",
+            "value": "Hierarchy levels"
+          }
+        ],
+        "correctAnswers": [
+          {
+            "answerId": "01KCXGG0VQ0001H0Q1FW3EA7TR",
+            "value": "Subordinates per manager"
+          }
+        ],
+        "isCorrect": false
+      },
+      {
+        "testResultQuestionId": "01KCXK1Q79XBBK0J6560PQEY59",
+        "questionId": "01KCXGG0T40001H0Q1FW1XC9FG",
+        "questionText": "Which leadership style encourages participation?",
+        "domain": "Business Administration",
+        "explanation": "Democratic leadership.",
+        "difficulty": null,
+        "score": 1,
+        "selectedAnswers": [
+          {
+            "answerId": "01KCXGG0VQ0001H0Q1FW3EGJYR",
+            "value": "Bureaucratic"
+          }
+        ],
+        "correctAnswers": [
+          {
+            "answerId": "01KCXGG0VQ0001H0Q1FW3EF618",
+            "value": "Democratic"
+          }
+        ],
+        "isCorrect": false
+      },
+      {
+        "testResultQuestionId": "01KCXK1Q7BNVN7DP4GTFVQ6Z4G",
+        "questionId": "01KCXGG0T40001H0Q1FW1XE14R",
+        "questionText": "KPIs are primarily used to:",
+        "domain": "Business Administration",
+        "explanation": "KPIs measure results.",
+        "difficulty": null,
+        "score": 1,
+        "selectedAnswers": [
+          {
+            "answerId": "01KCXGG0VQ0001H0Q1FW3EM84R",
+            "value": "Measure performance"
+          }
+        ],
+        "correctAnswers": [
+          {
+            "answerId": "01KCXGG0VQ0001H0Q1FW3EM84R",
+            "value": "Measure performance"
+          }
+        ],
+        "isCorrect": true
+      },
+      {
+        "testResultQuestionId": "01KCXK1Q7C4G8X1DA2JZW11AHG",
+        "questionId": "01KCXGG0T40001H0Q1FW1XFQTR",
+        "questionText": "Maslow’s hierarchy focuses on:",
+        "domain": "Business Administration",
+        "explanation": "Motivation theory.",
+        "difficulty": null,
+        "score": 1,
+        "selectedAnswers": [
+          {
+            "answerId": "01KCXGG0VQ0001H0Q1FW3ES5C0",
+            "value": "Motivation"
+          }
+        ],
+        "correctAnswers": [
+          {
+            "answerId": "01KCXGG0VQ0001H0Q1FW3ES5C0",
+            "value": "Motivation"
+          }
+        ],
+        "isCorrect": true
+      },
+      {
+        "testResultQuestionId": "01KCXK1Q7CD7GX81MTR54N0Y0G",
+        "questionId": "01KCXGG0T40001H0Q1FW1XHFG0",
+        "questionText": "Cost leadership strategy relies on:",
+        "domain": "Business Administration",
+        "explanation": "Cost leadership.",
+        "difficulty": null,
+        "score": 1,
+        "selectedAnswers": [
+          {
+            "answerId": "01KCXGG0VR0001H0Q1FW3EY1M0",
+            "value": "Economies of scale"
+          }
+        ],
+        "correctAnswers": [
+          {
+            "answerId": "01KCXGG0VR0001H0Q1FW3EY1M0",
+            "value": "Economies of scale"
+          }
+        ],
+        "isCorrect": true
+      },
+      {
+        "testResultQuestionId": "01KCXK1Q7DTY0FH5J6WXF18SYC",
+        "questionId": "01KCXGG0T40001H0Q1FW1XK660",
+        "questionText": "A mission statement defines:",
+        "domain": "Business Administration",
+        "explanation": "Mission purpose.",
+        "difficulty": null,
+        "score": 1,
+        "selectedAnswers": [
+          {
+            "answerId": "01KCXGG0VR0001H0Q1FW3F2WWR",
+            "value": "Long-term purpose"
+          }
+        ],
+        "correctAnswers": [
+          {
+            "answerId": "01KCXGG0VR0001H0Q1FW3F2WWR",
+            "value": "Long-term purpose"
+          }
+        ],
+        "isCorrect": true
+      },
+      {
+        "testResultQuestionId": "01KCXK1Q7ED87GNV4WKVE7A7M6",
+        "questionId": "01KCXGG0T40001H0Q1FW1XNDF8",
+        "questionText": "Change management aims to:",
+        "domain": "Business Administration",
+        "explanation": "Managing change.",
+        "difficulty": null,
+        "score": 1,
+        "selectedAnswers": [
+          {
+            "answerId": "01KCXGG0VR0001H0Q1FW3F7R5G",
+            "value": "Manage transition"
+          }
+        ],
+        "correctAnswers": [
+          {
+            "answerId": "01KCXGG0VR0001H0Q1FW3F7R5G",
+            "value": "Manage transition"
+          }
+        ],
+        "isCorrect": true
+      },
+      {
+        "testResultQuestionId": "01KCXK1Q7EXEMQAA1KAGW0BQS8",
+        "questionId": "01KCXGG0T40001H0Q1FW1XQ54G",
+        "questionText": "Which function of management involves setting objectives?",
+        "domain": "Business Administration",
+        "explanation": "Planning defines objectives.",
+        "difficulty": null,
+        "score": 1,
+        "selectedAnswers": [
+          {
+            "answerId": "01KCXGG0VR0001H0Q1FW3FBK70",
+            "value": "Planning"
+          }
+        ],
+        "correctAnswers": [
+          {
+            "answerId": "01KCXGG0VR0001H0Q1FW3FBK70",
+            "value": "Planning"
+          }
+        ],
+        "isCorrect": true
+      },
+      {
+        "testResultQuestionId": "01KCXK1Q7F3GZWR4F83GT47YR5",
+        "questionId": "01KCXGG0T40001H0Q1FW1XW0D8",
+        "questionText": "Which is an example of a controllable cost?",
+        "domain": "Business Administration",
+        "explanation": "Direct labor varies with output.",
+        "difficulty": null,
+        "score": 1,
+        "selectedAnswers": [
+          {
+            "answerId": "01KCXGG0VR0001H0Q1FW3FPGTG",
+            "value": "Manager salary"
+          }
+        ],
+        "correctAnswers": [
+          {
+            "answerId": "01KCXGG0VR0001H0Q1FW3FQQWG",
+            "value": "Direct labor"
+          }
+        ],
+        "isCorrect": false
+      },
+      {
+        "testResultQuestionId": "01KCXK1Q7FJAZDMW2EXZZHQXZE",
+        "questionId": "01KCXGG0T40001H0Q1FW1XT0Y0",
+        "questionText": "SWOT analysis is used to assess:",
+        "domain": "Business Administration",
+        "explanation": "SWOT analysis.",
+        "difficulty": null,
+        "score": 1,
+        "selectedAnswers": [
+          {
+            "answerId": "01KCXGG0VR0001H0Q1FW3FHNHR",
+            "value": "Internal and external environment"
+          }
+        ],
+        "correctAnswers": [
+          {
+            "answerId": "01KCXGG0VR0001H0Q1FW3FHNHR",
+            "value": "Internal and external environment"
+          }
+        ],
+        "isCorrect": true
+      },
+      {
+        "testResultQuestionId": "01KCXK1Q7G5839M3C3NTQ21RX3",
+        "questionId": "01KCXGG0T40001H0Q1FW1XXT10",
+        "questionText": "Span of control refers to:",
+        "domain": "Business Administration",
+        "explanation": "Span of control.",
+        "difficulty": null,
+        "score": 1,
+        "selectedAnswers": [
+          {
+            "answerId": "01KCXGG0VS0001H0Q1FW3FVC38",
+            "value": "Subordinates per manager"
+          }
+        ],
+        "correctAnswers": [
+          {
+            "answerId": "01KCXGG0VS0001H0Q1FW3FVC38",
+            "value": "Subordinates per manager"
+          }
+        ],
+        "isCorrect": true
+      },
+      {
+        "testResultQuestionId": "01KCXK1Q7HD74SPWJ78NJTGMA5",
+        "questionId": "01KCXGG0T40001H0Q1FW1Y1G68",
+        "questionText": "KPIs are primarily used to:",
+        "domain": "Business Administration",
+        "explanation": "KPIs measure results.",
+        "difficulty": null,
+        "score": 1,
+        "selectedAnswers": [
+          {
+            "answerId": "01KCXGG0VS0001H0Q1FW3G59FG",
+            "value": "Measure performance"
+          }
+        ],
+        "correctAnswers": [
+          {
+            "answerId": "01KCXGG0VS0001H0Q1FW3G59FG",
+            "value": "Measure performance"
+          }
+        ],
+        "isCorrect": true
+      },
+      {
+        "testResultQuestionId": "01KCXK1Q7HV7XABS136QM06VK9",
+        "questionId": "01KCXGG0T40001H0Q1FW1XZHP8",
+        "questionText": "Which leadership style encourages participation?",
+        "domain": "Business Administration",
+        "explanation": "Democratic leadership.",
+        "difficulty": null,
+        "score": 1,
+        "selectedAnswers": [
+          {
+            "answerId": "01KCXGG0VS0001H0Q1FW3G06CR",
+            "value": "Democratic"
+          }
+        ],
+        "correctAnswers": [
+          {
+            "answerId": "01KCXGG0VS0001H0Q1FW3G06CR",
+            "value": "Democratic"
+          }
+        ],
+        "isCorrect": true
+      },
+      {
+        "testResultQuestionId": "01KCXK1Q7JGMCQD5VGAKTYPZ61",
+        "questionId": "01KCXGG0T40001H0Q1FW1Y3CQR",
+        "questionText": "Maslow’s hierarchy focuses on:",
+        "domain": "Business Administration",
+        "explanation": "Motivation theory.",
+        "difficulty": null,
+        "score": 1,
+        "selectedAnswers": [
+          {
+            "answerId": "01KCXGG0VS0001H0Q1FW3GBDRR",
+            "value": "Operations"
+          }
+        ],
+        "correctAnswers": [
+          {
+            "answerId": "01KCXGG0VS0001H0Q1FW3GA6PR",
+            "value": "Motivation"
+          }
+        ],
+        "isCorrect": false
+      },
+      {
+        "testResultQuestionId": "01KCXK1Q7KH2ZBWQN2BTNRM503",
+        "questionId": "01KCXGG0T50001H0Q1FW1Y8CWR",
+        "questionText": "Change management aims to:",
+        "domain": "Business Administration",
+        "explanation": "Managing change.",
+        "difficulty": null,
+        "score": 1,
+        "selectedAnswers": [
+          {
+            "answerId": "01KCXGG0VT0001H0Q1FW3GRTFG",
+            "value": "Manage transition"
+          }
+        ],
+        "correctAnswers": [
+          {
+            "answerId": "01KCXGG0VT0001H0Q1FW3GRTFG",
+            "value": "Manage transition"
+          }
+        ],
+        "isCorrect": true
+      },
+      {
+        "testResultQuestionId": "01KCXK1Q7KQ8X2CRPADAK084VK",
+        "questionId": "01KCXGG0T40001H0Q1FW1Y6R58",
+        "questionText": "A mission statement defines:",
+        "domain": "Business Administration",
+        "explanation": "Mission purpose.",
+        "difficulty": null,
+        "score": 1,
+        "selectedAnswers": [
+          {
+            "answerId": "01KCXGG0VS0001H0Q1FW3GKY7G",
+            "value": "Long-term purpose"
+          }
+        ],
+        "correctAnswers": [
+          {
+            "answerId": "01KCXGG0VS0001H0Q1FW3GKY7G",
+            "value": "Long-term purpose"
+          }
+        ],
+        "isCorrect": true
+      },
+      {
+        "testResultQuestionId": "01KCXK1Q7KXZT8FVT9GDDHSFBJ",
+        "questionId": "01KCXGG0T40001H0Q1FW1Y52EG",
+        "questionText": "Cost leadership strategy relies on:",
+        "domain": "Business Administration",
+        "explanation": "Cost leadership.",
+        "difficulty": null,
+        "score": 1,
+        "selectedAnswers": [
+          {
+            "answerId": "01KCXGG0VS0001H0Q1FW3GF2YR",
+            "value": "Economies of scale"
+          }
+        ],
+        "correctAnswers": [
+          {
+            "answerId": "01KCXGG0VS0001H0Q1FW3GF2YR",
+            "value": "Economies of scale"
+          }
+        ],
+        "isCorrect": true
+      }
+    ]
+  },
+  "previousAttempt": null
+}
